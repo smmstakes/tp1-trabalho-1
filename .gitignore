@@ -32,5 +32,9 @@
 *.app
 *.bak
 
+# Others
+*.depend
+*.layout
+
 # Folders
 bin/
