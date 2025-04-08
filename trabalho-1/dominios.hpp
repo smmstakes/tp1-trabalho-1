@@ -36,4 +36,18 @@ class CPF {
         std::string getCPF() const {return cpf;}
 };
 
+class Data {
+    private:
+        std::string data;
+        bool ehAnoBissexto(int ano){
+            // Combinamos metodos de retorno direto na classe? inline?
+            return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        };
+        void validar(const std::string& data);
+        
+    public:
+        void set(std::string ano);
+        std::string get(){return data;}
+};
+
 #endif // DOMINIOS_HPP_INCLUDED
