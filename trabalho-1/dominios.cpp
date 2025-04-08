@@ -1,13 +1,15 @@
+#include <set>
+#include <regex>
+#include <string>
+#include <stdexcept>
+#include <iostream>
+
 #include "dominios.hpp"
 
-#include <stdexcept>
-#include <string>
-#include <iostream>
-#include <regex>
+const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 
 void Codigo::validaCodigo(std::string cod) {
-    std::regex regExp("[0-9]{5}");
-    if (!std::regex_match(cod, regExp)) {
+    if (!std::regex_match(cod, PADRAO_CODIGO)) {
         throw std::invalid_argument("Código inválido.");
     }
 }
@@ -18,9 +20,10 @@ void Codigo::setCod(std::string codigo) {
     // TODO: Precisa retornar um erro tratado caso o código a ser setado já exista no bd
 }
 
+const std::regex CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO("\\w[a-zA-Z0-9 ]{0,11}");
+
 void CodigoNegociacao::validaCodNegociacao(std::string cod) {
-    std::regex regExp("\\w[a-zA-Z0-9 ]{0,11}");
-    if (!std::regex_match(cod, regExp)) {
+    if (!std::regex_match(cod, PADRAO_CODIGO_NEGOCIACAO)) {
         throw std::invalid_argument("Codigo de Negociação inválido.");
     }
 }
@@ -30,9 +33,10 @@ void CodigoNegociacao::setCodNegociacao(std::string codNegociacao) {
     this->codNegociacao = codNegociacao;
 }
 
+const std::regex CPF::PADRAO_CPF("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
+
 void CPF::validaCPF(std::string cpf) {
-    std::regex regExp("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
-    if (!std::regex_match(cpf, regExp)) {
+    if (!std::regex_match(cpf, PADRAO_CPF)) {
         throw std::invalid_argument("CPF inválido.");
     }
 }

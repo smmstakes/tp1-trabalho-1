@@ -1,12 +1,14 @@
 #ifndef DOMINIOS_HPP_INCLUDED
 #define DOMINIOS_HPP_INCLUDED
 
+#include <regex>
 #include <string>
 
 
 class Codigo {
     private:
         std::string codigo;
+        static const std::regex PADRAO_CODIGO;
         void validaCodigo(std::string cod);
 
     public:
@@ -18,6 +20,7 @@ class Codigo {
 class CodigoNegociacao {
     private:
         std::string codNegociacao;
+        static const std::regex PADRAO_CODIGO_NEGOCIACAO;
         void validaCodNegociacao(std::string cod);
 
     public:
@@ -29,6 +32,7 @@ class CodigoNegociacao {
 class CPF {
     private:
         std::string cpf;
+        static const std::regex PADRAO_CPF;
         void validaCPF(std::string cpf);
 
     public:
