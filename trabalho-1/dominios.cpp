@@ -1,8 +1,8 @@
 #include <set>
 #include <regex>
 #include <string>
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
 
 #include "dominios.hpp"
 
@@ -64,7 +64,7 @@ void Data::validar(const std::string& data) {
 
     int diasNoMes[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
 
-    if (mes == 2 && this->ehAnoBissexto(ano)) {
+    if (mes == 2 && ehAnoBissexto(ano)) {
         diasNoMes[2] = 29;
     }
 

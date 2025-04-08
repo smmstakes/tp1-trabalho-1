@@ -44,7 +44,7 @@ class Data {
     private:
         static const std::regex FORMATO;
         std::string data;
-        bool ehAnoBissexto(int ano){
+        bool ehAnoBissexto(int ano) const{
             // Combinamos metodos de retorno direto na classe? inline?
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
