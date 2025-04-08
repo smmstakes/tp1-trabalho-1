@@ -42,6 +42,7 @@ class CPF {
 
 class Data {
     private:
+        static const std::regex FORMATO;
         std::string data;
         bool ehAnoBissexto(int ano){
             // Combinamos metodos de retorno direto na classe? inline?
@@ -51,7 +52,7 @@ class Data {
         
     public:
         void set(std::string ano);
-        std::string get(){return data;}
+        std::string get() const {return data;}
 };
 
 #endif // DOMINIOS_HPP_INCLUDED

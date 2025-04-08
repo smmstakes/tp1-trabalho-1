@@ -46,11 +46,11 @@ void CPF::setCPF(std::string cpf) {
     this->cpf = cpf;
 }
 
-void Data::validar(const std::string& data) {
-    std::regex formato("^\\d{8}$");
+const std::regex Data::FORMATO("^\\d{8}$");
 
-    if (!std::regex_match(data, formato)) {
-        throw std::invalid_argument("Formato inválido: a data deve ter 8 dígitos numéricos (YYYYMMDD).");
+void Data::validar(const std::string& data) {
+    if (!std::regex_match(data, FORMATO)) {
+        throw std::invalid_argument("Formato inválido: a data deve ter 8 dígitos numéricos (AAAAMMDD).");
     }
 
     int ano, mes, dia;
@@ -73,6 +73,6 @@ void Data::validar(const std::string& data) {
 }
 
 void Data::set(std::string data){
-    this->validar(data);
+    validar(data);
     this->data = data;
 }
