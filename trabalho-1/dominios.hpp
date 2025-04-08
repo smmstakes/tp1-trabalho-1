@@ -40,4 +40,18 @@ class CPF {
         std::string getCPF() const {return cpf;}
 };
 
+
+class Senha {
+    private:
+        std::string senha;
+        static const int TAMANHO_MAX = 6;
+        static const std::regex PADRAO_SENHA;
+        void validaSenha(std::string senha);
+
+    public:
+        void setSenha(std::string senha);
+        std::string getSenha() const {return senha;}
+
+};
+
 #endif // DOMINIOS_HPP_INCLUDED
