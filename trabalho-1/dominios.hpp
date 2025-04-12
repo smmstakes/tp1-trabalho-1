@@ -40,4 +40,32 @@ class CPF {
         std::string getCPF() const {return cpf;}
 };
 
+class Dinheiro
+{
+    private :
+        float dinheiro;
+        static const float Dinheiro_Min = 0.01;
+        static const float Dinheiro_Max = 1000000.00;
+        void validarDinheiro (float dinheiro);
+    public:
+        float getDinheiro(float dinheiro) const {return dinheiro};
+        void setDinheiro (float dinheiro);
+};
+
+class Quantidade
+{
+    private:
+        int quantidade;
+        static const int Valor_Min= 1;
+        static const int Valor_Max=1000000;
+        void validarQuantidade (int quantidade);
+    public:
+        int getQuantidade (int quantidade) const {return quantidade};
+        void setQuantidade (int quantidade);
+
+};
+
+
+
+
 #endif // DOMINIOS_HPP_INCLUDED
