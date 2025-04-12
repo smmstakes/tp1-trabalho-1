@@ -16,6 +16,19 @@ class Codigo {
         std::string getValor() const {return codigo;}
 };
 
+class Nome {
+    private:
+        std::string nome;
+        int vrf = 0;
+        int vrfs = 0;
+        int vrfb = 0;
+        void validar(std::string nome);
+
+    public:
+        void setCPF(std::string nome);
+        std::string getCPF() const {return nome;}
+};
+
 
 class CodigoNegociacao {
     private:

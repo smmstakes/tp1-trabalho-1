@@ -76,3 +76,20 @@ void Data::set(std::string data){
     validar(data);
     this->data = data;
 }
+
+void Nome::validar(std::string nome){
+    cout << "type a name ";
+    getline(cin, nome);
+    if (nome.size() > 20){
+        cout << "The name is bigger than 20 characters";
+    }
+    else{
+        vrfs = 1;
+        cout << "The name has the correct size";
+    }
+}
+
+void Nome::set(std::string nome){
+    validar(nome);
+    this->nome = nome;
+}
