@@ -8,49 +8,49 @@
 
 const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 
-void Codigo::validaCodigo(std::string cod) {
+void Codigo::validar(std::string cod) {
     if (!std::regex_match(cod, PADRAO_CODIGO)) {
         throw std::invalid_argument("Código inválido.");
     }
 }
 
-void Codigo::setCod(std::string codigo) {
-    validaCodigo(codigo);
+void Codigo::set(std::string codigo) {
+    validar(codigo);
     this->codigo = codigo;
 }
 
 
 const std::regex CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO("\\w[a-zA-Z0-9 ]{0,11}");
 
-void CodigoNegociacao::validaCodNegociacao(std::string cod) {
+void CodigoNegociacao::validar(std::string cod) {
     if (!std::regex_match(cod, PADRAO_CODIGO_NEGOCIACAO)) {
         throw std::invalid_argument("Codigo de Negociação inválido.");
     }
 }
 
-void CodigoNegociacao::setCodNegociacao(std::string codNegociacao) {
-    validaCodNegociacao(codNegociacao);
+void CodigoNegociacao::set(std::string codNegociacao) {
+    validar(codNegociacao);
     this->codNegociacao = codNegociacao;
 }
 
 
 const std::regex CPF::PADRAO_CPF("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
 
-void CPF::validaCPF(std::string cpf) {
+void CPF::validar(std::string cpf) {
     if (!std::regex_match(cpf, PADRAO_CPF)) {
-        throw std::invalid_argument("CPF inválido.");
+        throw std::invalid_argument("CPF não segue o padrão pedido.");
     }
 }
 
-void CPF::setCPF(std::string cpf) {
-    validaCPF(cpf);
+void CPF::set(std::string cpf) {
+    validar(cpf);
     this->cpf = cpf;
 }
 
 
 const std::regex Senha::PADRAO_SENHA("[a-zA-Z0-9#$%&]{6}");
 
-void Senha::validaSenha(std::string senha) {
+void Senha::validar(std::string senha) {
     if (!std::regex_match(senha, PADRAO_SENHA)) {
         throw std::invalid_argument("Senha inválida deve ter exatamente 6 caracteres válidos.");
     }
@@ -80,7 +80,7 @@ void Senha::validaSenha(std::string senha) {
     }
 }
 
-void Senha::setSenha(std::string senha) {
-    validaSenha(senha);
+void Senha::set(std::string senha) {
+    validar(senha);
     this->senha = senha;
 }
