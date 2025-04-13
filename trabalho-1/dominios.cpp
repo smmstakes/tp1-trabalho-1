@@ -3,7 +3,6 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
-
 #include "dominios.hpp"
 
 const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
@@ -46,6 +45,32 @@ void CPF::setCPF(std::string cpf) {
     this->cpf = cpf;
 }
 
+
+const double Dinheiro::DINHEIRO_MIN = 0.01;
+const double Dinheiro::DINHEIRO_MAX = 1000000.00;
+void Dinheiro::validar(double dinheiro){
+    if (dinheiro > DINHEIRO_MAX || dinheiro < DINHEIRO_MIN){
+        throw std:: invalid_argument ("Quantia de Dinheiro Inválida, por favor digite um valor entre 0.01 a 1000000.00 .");
+    }
+}
+void Dinheiro::set(double dinheiro){
+    validar(dinheiro);
+    this-> dinheiro = dinheiro;
+
+}
+
+void Quantidade::validar(int Quantidade){
+    if (quantidade< VALOR_MIN || quantidade > VALOR_MAX){
+        throw std :: invalid_argument("Quantidade Inválida, por favor digite um valor entre 1 a 1000000 .");
+    }
+}
+
+void Quantidade::set(int quantidade){
+    validar(quantidade);
+    this-> quantidade = quantidade;
+}
+
+
 const std::regex Data::FORMATO("^\\d{8}$");
 
 void Data::validar(const std::string& data) {
@@ -58,7 +83,7 @@ void Data::validar(const std::string& data) {
     ano = std::stoi(data.substr(0, 4));
     mes = std::stoi(data.substr(4, 2));
     dia = std::stoi(data.substr(6, 2));
-    
+
     if (mes < 1 || mes > 12)
         throw std::invalid_argument("Mês inválido: deve estar entre 01 e 12.");
 
