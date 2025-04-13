@@ -55,4 +55,15 @@ class Data {
         std::string get() const {return data;}
 };
 
+class Perfil {
+    private:
+    std::string perfil;
+    static const std::regex PADRAO_PERFIL;
+    void valida(std::string perfil);
+
+    public:
+    void set(std::string perfil);
+    std::string get() const{return perfil;}
+};
+
 #endif // DOMINIOS_HPP_INCLUDED
