@@ -45,10 +45,11 @@ void CPF::setCPF(std::string cpf) {
     this->cpf = cpf;
 }
 
+
+const double Dinheiro::DINHEIRO_MIN = 0.01;
+const double Dinheiro::DINHEIRO_MAX = 1000000.00;
 void Dinheiro::validar(double dinheiro){
-    DINHEIRO_MIN;
-    DINHEIRO_MAX;
-    if (dinheiro > DINHEIRO_MAX && dinheiro < DINHEIRO_MIN){
+    if (dinheiro > DINHEIRO_MAX || dinheiro < DINHEIRO_MIN){
         throw std:: invalid_argument ("Quantia de Dinheiro Inválida, por favor digite um valor entre 0.01 a 1000000.00 .");
     }
 }
@@ -59,8 +60,6 @@ void Dinheiro::set(double dinheiro){
 }
 
 void Quantidade::validar(int Quantidade){
-    VALOR_MIN;
-    VALOR_MAX;
     if (quantidade< VALOR_MIN || quantidade > VALOR_MAX){
         throw std :: invalid_argument("Quantidade Inválida, por favor digite um valor entre 1 a 1000000 .");
     }

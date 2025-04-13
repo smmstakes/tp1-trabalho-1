@@ -43,11 +43,11 @@ class CPF {
 class Dinheiro {
     private :
         double dinheiro;
-        static const double DINHEIRO_MIN = 0.01;
-        static const double DINHEIRO_MAX = 1000000.00;
+        static const double DINHEIRO_MIN;
+        static const double DINHEIRO_MAX;
         void validar(double dinheiro);
     public:
-        double get() {return dinheiro};
+        double get() const {return dinheiro};
         void set(double dinheiro);
 // Criado por Pedro Vale - 231038733
 };
@@ -59,7 +59,7 @@ class Quantidade {
         static const int VALOR_MAX=1000000;
         void validar(int quantidade);
     public:
-        int get() {return quantidade};
+        int get() const {return quantidade};
         void set(int quantidade);
 // Criada por Pedro Vale - 231038733
 };
