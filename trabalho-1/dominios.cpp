@@ -45,30 +45,29 @@ void CPF::setCPF(std::string cpf) {
     this->cpf = cpf;
 }
 
-void Dinheiro::validarDinheiro(float dinheiro)
-{
-    if (dinheiro > Dinheiro_Max && dinheiro < Dinheiro_Min){
+void Dinheiro::validar(double dinheiro){
+    DINHEIRO_MIN;
+    DINHEIRO_MAX;
+    if (dinheiro > DINHEIRO_MAX && dinheiro < DINHEIRO_MIN){
         throw std:: invalid_argument ("Quantia de Dinheiro Inválida, por favor digite um valor entre 0.01 a 1000000.00 .");
     }
 }
-void Dinheiro::setDinheiro (float dinheiro)
-{
-    validarDinheiro(dinheiro);
+void Dinheiro::set(double dinheiro){
+    validar(dinheiro);
     this-> dinheiro = dinheiro;
 
 }
 
-void Quantidade::validarQuantidade(int Quantidade)
-{
-    if (quantidade<Valor_Min || quantidade > Valor_Max)
-    {
+void Quantidade::validar(int Quantidade){
+    VALOR_MIN;
+    VALOR_MAX;
+    if (quantidade< VALOR_MIN || quantidade > VALOR_MAX){
         throw std :: invalid_argument("Quantidade Inválida, por favor digite um valor entre 1 a 1000000 .");
     }
 }
 
-void Quantidade::setQuantidade (int quantidade)
-{
-    validarQuantidade(quantidade);
+void Quantidade::set(int quantidade){
+    validar(quantidade);
     this-> quantidade = quantidade;
 }
 
@@ -85,7 +84,7 @@ void Data::validar(const std::string& data) {
     ano = std::stoi(data.substr(0, 4));
     mes = std::stoi(data.substr(4, 2));
     dia = std::stoi(data.substr(6, 2));
-    
+
     if (mes < 1 || mes > 12)
         throw std::invalid_argument("Mês inválido: deve estar entre 01 e 12.");
 

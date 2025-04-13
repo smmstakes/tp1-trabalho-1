@@ -40,29 +40,28 @@ class CPF {
         std::string getCPF() const {return cpf;}
 };
 
-class Dinheiro
-{
+class Dinheiro {
     private :
-        float dinheiro;
-        static const float Dinheiro_Min = 0.01;
-        static const float Dinheiro_Max = 1000000.00;
-        void validarDinheiro (float dinheiro);
+        double dinheiro;
+        static const double DINHEIRO_MIN = 0.01;
+        static const double DINHEIRO_MAX = 1000000.00;
+        void validar(double dinheiro);
     public:
-        float getDinheiro(float dinheiro) const {return dinheiro};
-        void setDinheiro (float dinheiro);
+        double get() {return dinheiro};
+        void set(double dinheiro);
+// Criado por Pedro Vale - 231038733
 };
 
-class Quantidade
-{
+class Quantidade {
     private:
         int quantidade;
-        static const int Valor_Min= 1;
-        static const int Valor_Max=1000000;
-        void validarQuantidade (int quantidade);
+        static const int VALOR_MIN= 1;
+        static const int VALOR_MAX=1000000;
+        void validar(int quantidade);
     public:
-        int getQuantidade (int quantidade) const {return quantidade};
-        void setQuantidade (int quantidade);
-
+        int get() {return quantidade};
+        void set(int quantidade);
+// Criada por Pedro Vale - 231038733
 };
 
 class Data {
@@ -74,7 +73,7 @@ class Data {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
         void validar(const std::string& data);
-        
+
     public:
         void set(std::string ano);
         std::string get() const {return data;}
