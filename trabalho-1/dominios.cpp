@@ -78,14 +78,37 @@ void Data::set(std::string data){
 }
 
 void Nome::validar(std::string nome){
+    int vrfs = 0;
+    int vrfb = 1;
+
     cout << "type a name ";
     getline(cin, nome);
+
     if (nome.size() > 20){
-        cout << "The name is bigger than 20 characters";
+        cout << "The name is bigger than 20 characters, try again." << endl;
+        validar();
+        return;
     }
     else{
         vrfs = 1;
-        cout << "The name has the correct size";
+        cout << "The name has the correct size" << endl;
+    }
+
+    for (int i = 0; i < nome.size(); i++){
+        if (nome[i] == ' ' && nome[i+1] == ' '){
+            cout << "The name has two blank spaces, try again" << endl;
+            vrfb = 0;
+            validar();
+            return;
+        }
+    }
+
+    if(vrfb == 1){
+        cout << "The name has no two blank spaces" << endl;
+        }
+
+    if (vrfs == 1 && vrfb == 1){
+        cout << "The name is correct" << endl;
     }
 }
 

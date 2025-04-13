@@ -19,14 +19,11 @@ class Codigo {
 class Nome {
     private:
         std::string nome;
-        int vrf = 0;
-        int vrfs = 0;
-        int vrfb = 0;
         void validar(std::string nome);
 
     public:
-        void setCPF(std::string nome);
-        std::string getCPF() const {return nome;}
+        void setNome(std::string nome);
+        std::string getNome() const {return nome;}
 };
 
 
