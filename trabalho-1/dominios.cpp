@@ -1,4 +1,3 @@
-#include <set>
 #include <regex>
 #include <string>
 #include <stdexcept>
@@ -55,15 +54,12 @@ void Senha::validar(std::string senha) {
         throw std::invalid_argument("Senha inválida deve ter exatamente 6 caracteres válidos.");
     }
 
-    std::set<char> caracteresSenha;
     bool temDigito = false;
     bool temEspecial = false;
     bool temMaiuscula = false;
     bool temMinuscula = false;
 
     for (auto c : senha) {
-        caracteresSenha.insert(c);
-
         if (std::isdigit(c)) {
             temDigito = true;
         } else if (std::isupper(c)) {

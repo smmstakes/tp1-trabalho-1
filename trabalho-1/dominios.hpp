@@ -44,7 +44,6 @@ class CPF {
 class Senha {
     private:
         std::string senha;
-        static const int TAMANHO_MAX = 6;
         static const std::regex PADRAO_SENHA;
         void validar(std::string senha);
 
