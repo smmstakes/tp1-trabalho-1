@@ -9,11 +9,11 @@ class Codigo {
     private:
         std::string codigo;
         static const std::regex PADRAO_CODIGO;
-        void validaCodigo(std::string cod);
+        void validar(std::string cod);
 
     public:
-        void setCod(std::string codigo);
-        std::string getValor() const {return codigo;}
+        void set(std::string codigo);
+        std::string get() const {return codigo;}
 };
 
 class Nome {
@@ -33,11 +33,11 @@ class CodigoNegociacao {
     private:
         std::string codNegociacao;
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
-        void validaCodNegociacao(std::string cod);
+        void validar(std::string cod);
 
     public:
-        void setCodNegociacao(std::string codNegociacao);
-        std::string getCodNegociacao() const {return codNegociacao;}
+        void set(std::string codNegociacao);
+        std::string get() const {return codNegociacao;}
 };
 
 
@@ -45,11 +45,11 @@ class CPF {
     private:
         std::string cpf;
         static const std::regex PADRAO_CPF;
-        void validaCPF(std::string cpf);
+        void validar(std::string cpf);
 
     public:
-        void setCPF(std::string cpf);
-        std::string getCPF() const {return cpf;}
+        void set(std::string cpf);
+        std::string get() const {return cpf;}
 };
 
 class Dinheiro {
@@ -78,10 +78,9 @@ class Quantidade {
 
 class Data {
     private:
-        static const std::regex FORMATO;
         std::string data;
-        bool ehAnoBissexto(int ano) const{
-            // Combinamos metodos de retorno direto na classe? inline?
+        static const std::regex FORMATO;
+        bool ehAnoBissexto(int ano) const {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
         void validar(const std::string& data);
@@ -91,15 +90,54 @@ class Data {
         std::string get() const {return data;}
 };
 
+
 class Perfil {
     private:
-    std::string perfil;
-    static const std::regex PADRAO_PERFIL;
-    void valida(std::string perfil);
+        std::string perfil;
+        static const std::regex PADRAO_PERFIL;
+        void validar(std::string perfil);
 
     public:
-    void set(std::string perfil);
-    std::string get() const{return perfil;}
+        void set(std::string perfil);
+        std::string get() const {return perfil;}
+};
+
+
+class Dinheiro {
+    private :
+        double dinheiro;
+        static const double DINHEIRO_MIN;
+        static const double DINHEIRO_MAX;
+        void validar(double dinheiro);
+
+    public:
+        void set(double dinheiro);
+        double get() const {return dinheiro;}
+};
+
+
+class Quantidade {
+    private:
+        int quantidade;
+        static const int VALOR_MIN = 1;
+        static const int VALOR_MAX = 1000000;
+        void validar(int quantidade);
+
+    public:
+        void set(int quantidade);
+        int get() const {return quantidade;}
+};
+
+
+class Senha {
+    private:
+        std::string senha;
+        static const std::regex PADRAO_SENHA;
+        void validar(std::string senha);
+
+    public:
+        void set(std::string senha);
+        std::string get() const {return senha;}
 };
 
 #endif // DOMINIOS_HPP_INCLUDED
