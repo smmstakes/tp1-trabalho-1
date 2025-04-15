@@ -16,6 +16,18 @@ class Codigo {
         std::string get() const {return codigo;}
 };
 
+class Nome {
+    private:
+        static const int LIMITE_CARACTERES_NOME;
+        static const std::regex FORMATO;
+        std::string nome;
+        void validar(std::string nome);
+
+    public:
+        void set(std::string nome);
+        std::string get() const {return nome;}
+};
+
 
 class CodigoNegociacao {
     private:
@@ -40,6 +52,29 @@ class CPF {
         std::string get() const {return cpf;}
 };
 
+class Dinheiro {
+    private :
+        double dinheiro;
+        static const double DINHEIRO_MIN;
+        static const double DINHEIRO_MAX;
+        void validar(double dinheiro);
+    public:
+        double get() const {return dinheiro;};
+        void set(double dinheiro);
+// Criado por Pedro Vale - 231038733
+};
+
+class Quantidade {
+    private:
+        int quantidade;
+        static const int VALOR_MIN= 1;
+        static const int VALOR_MAX=1000000;
+        void validar(int quantidade);
+    public:
+        int get() const {return quantidade;};
+        void set(int quantidade);
+// Criada por Pedro Vale - 231038733
+};
 
 class Data {
     private:
