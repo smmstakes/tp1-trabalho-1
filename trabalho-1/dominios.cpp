@@ -81,6 +81,33 @@ void Data::set(std::string data){
 }
 
 
+const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
+
+void Nome::validar(std::string nome){
+
+    if (nome.size() > LIMITE_CARACTERES_NOME){
+        throw std::invalid_argument("O nome não pode ser maior do que 20 caracteres");
+    }
+
+    if(!std::regex_match(nome, FORMATO)){
+        throw std::invalid_argument("O nome não pode ter caracteres especiais");
+    }
+
+    for (size_t i = 1; i < nome.length(); i++){
+        if (nome[i] == ' ' && nome[i] == nome[i-1]){
+            throw std::invalid_argument("O nome não pode ter dois espaços em branco seguidos");
+        }
+    }
+};
+
+const int Nome::LIMITE_CARACTERES_NOME = 20;
+
+void Nome::set(std::string nome){
+    validar(nome);
+    this->nome = nome;
+};
+
+
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 
 void Perfil::validar(std::string perfil){
