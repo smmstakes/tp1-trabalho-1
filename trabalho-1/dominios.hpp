@@ -4,16 +4,20 @@
 #include <regex>
 #include <string>
 
-
-class Codigo {
+class Dominio {
     private:
-        std::string codigo;
-        static const std::regex PADRAO_CODIGO;
-        void validar(std::string cod);
+        std::string valor;
+        virtual void validar(std::string valor) = 0;
 
     public:
         void set(std::string codigo);
-        std::string get() const {return codigo;}
+        std::string get() const { return valor; };
+};
+
+class Codigo: public Dominio {
+    private:
+        static const std::regex PADRAO_CODIGO;
+        void validar(std::string cod);
 };
 
 class Nome {

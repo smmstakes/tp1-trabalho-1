@@ -5,7 +5,10 @@
 
 #include "dominios.hpp"
 
-
+void Dominio::set(std::string valor){
+    validar(valor);
+    this->valor = valor;
+}
 const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 
 void Codigo::validar(std::string cod) {
@@ -13,13 +16,6 @@ void Codigo::validar(std::string cod) {
         throw std::invalid_argument("Código inválido.");
     }
 }
-
-void Codigo::set(std::string codigo) {
-    validar(codigo);
-    this->codigo = codigo;
-    // TODO: Precisa retornar um erro tratado caso o código a ser setado já exista no bd
-}
-
 
 const std::regex CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO("\\w[a-zA-Z0-9 ]{0,11}");
 
