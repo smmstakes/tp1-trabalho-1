@@ -14,7 +14,7 @@ class Dominio {
         std::string get() const { return valor; };
 };
 
-class Codigo: public Dominio {
+class Codigo:public Dominio {
     private:
         static const std::regex PADRAO_CODIGO;
         void validar(std::string cod);
@@ -24,36 +24,21 @@ class Nome {
     private:
         static const int LIMITE_CARACTERES_NOME;
         static const std::regex FORMATO;
-        std::string nome;
         void validar(std::string nome);
-
-    public:
-        void set(std::string nome);
-        std::string get() const {return nome;}
 };
 
 
 class CodigoNegociacao {
     private:
-        std::string codNegociacao;
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
         void validar(std::string cod);
-
-    public:
-        void set(std::string codNegociacao);
-        std::string get() const {return codNegociacao;}
 };
 
 
 class CPF {
     private:
-        std::string cpf;
         static const std::regex PADRAO_CPF;
         void validar(std::string cpf);
-
-    public:
-        void set(std::string cpf);
-        std::string get() const {return cpf;}
 };
 
 class Dinheiro {
@@ -82,39 +67,24 @@ class Quantidade {
 
 class Data {
     private:
-        std::string data;
         static const std::regex FORMATO;
         bool ehAnoBissexto(int ano) const {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
         void validar(const std::string& data);
-
-    public:
-        void set(std::string ano);
-        std::string get() const {return data;}
 };
 
 
 class Perfil {
     private:
-        std::string perfil;
         static const std::regex PADRAO_PERFIL;
         void validar(std::string perfil);
-
-    public:
-        void set(std::string perfil);
-        std::string get() const {return perfil;}
 };
 
 class Senha {
     private:
-        std::string senha;
         static const std::regex PADRAO_SENHA;
         void validar(std::string senha);
-
-    public:
-        void set(std::string senha);
-        std::string get() const {return senha;}
 };
 
 #endif // DOMINIOS_HPP_INCLUDED

@@ -9,8 +9,8 @@ void Dominio::set(std::string valor){
     validar(valor);
     this->valor = valor;
 }
-const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 
+const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 void Codigo::validar(std::string cod) {
     if (!std::regex_match(cod, PADRAO_CODIGO)) {
         throw std::invalid_argument("Código inválido.");
@@ -25,12 +25,6 @@ void CodigoNegociacao::validar(std::string cod) {
     }
 }
 
-void CodigoNegociacao::set(std::string codNegociacao) {
-    validar(codNegociacao);
-    this->codNegociacao = codNegociacao;
-}
-
-
 const std::regex CPF::PADRAO_CPF("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
 
 void CPF::validar(std::string cpf) {
@@ -38,12 +32,6 @@ void CPF::validar(std::string cpf) {
         throw std::invalid_argument("CPF não segue o padrão pedido.");
     }
 }
-
-void CPF::set(std::string cpf) {
-    validar(cpf);
-    this->cpf = cpf;
-}
-
 
 const std::regex Data::FORMATO("^\\d{8}$");
 
@@ -71,12 +59,6 @@ void Data::validar(const std::string& data) {
         throw std::invalid_argument("Dia inválido para o mês informado.");
 }
 
-void Data::set(std::string data){
-    validar(data);
-    this->data = data;
-}
-
-
 const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
 
 void Nome::validar(std::string nome){
@@ -98,12 +80,6 @@ void Nome::validar(std::string nome){
 
 const int Nome::LIMITE_CARACTERES_NOME = 20;
 
-void Nome::set(std::string nome){
-    validar(nome);
-    this->nome = nome;
-};
-
-
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 
 void Perfil::validar(std::string perfil){
@@ -111,12 +87,6 @@ void Perfil::validar(std::string perfil){
         throw std::invalid_argument("Perfil inválido.");
     }
 }
-
-void Perfil::set(std::string perfil){
-    validar(perfil);
-    this->perfil = perfil;
-}
-
 
 const double Dinheiro::DINHEIRO_MIN = 0.01;
 const double Dinheiro::DINHEIRO_MAX = 1000000.00;
@@ -172,9 +142,4 @@ void Senha::validar(std::string senha) {
     if (!temDigito || !temEspecial || !temMaiuscula || !temMinuscula) {
         throw std::invalid_argument("Senha não contém todos os caracteres necessários.");
     }
-}
-
-void Senha::set(std::string senha) {
-    validar(senha);
-    this->senha = senha;
 }
