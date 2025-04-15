@@ -23,4 +23,16 @@ class Ordem {
         int getQuantidade() const {return quantidade.get();}
 };
 
+class Conta{
+        private:
+                CPF cpf; 
+                Nome nome;
+                Senha senha;
+
+        public:
+                Conta(const std::string& cpf, const std::string& nome, const std::string& senha);
+                std::string getCpf() const {return cpf.get();}
+                std::string getNome() const {return nome.get();}
+                std::string getSenha() const {return senha.get();}                
+};
 #endif // ENTIDADES_HPP_INCLUDED
