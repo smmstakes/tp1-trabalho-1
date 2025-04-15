@@ -102,44 +102,32 @@ void Data::set(std::string data){
     this->data = data;
 }
 
+
+const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
+
 void Nome::validar(std::string nome){
-    int vrfs = 0;
-    int vrfb = 1;
 
-    cout << "type a name ";
-    getline(cin, nome);
-
-    if (nome.size() > 20){
-        cout << "The name is bigger than 20 characters, try again." << endl;
-        validar();
-        return;
-    }
-    else{
-        vrfs = 1;
-        cout << "The name has the correct size" << endl;
+    if (nome.size() > LIMITE_CARACTERES_NOME){
+        throw std::invalid_argument("O nome não pode ser maior do que 20 caracteres");
     }
 
-    for (int i = 0; i < nome.size(); i++){
-        if (nome[i] == ' ' && nome[i+1] == ' '){
-            cout << "The name has two blank spaces, try again" << endl;
-            vrfb = 0;
-            validar();
-            return;
+    if(!std::regex_match(nome, FORMATO)){
+        throw std::invalid_argument("O nome não pode ter caracteres especiais");
+    }
+
+    for (size_t i = 1; i < nome.length(); i++){
+        if (nome[i] == ' ' && nome[i] == nome[i-1]){
+            throw std::invalid_argument("O nome não pode ter dois espaços em branco seguidos");
         }
     }
+};
 
-    if(vrfb == 1){
-        cout << "The name has no two blank spaces" << endl;
-        }
-
-    if (vrfs == 1 && vrfb == 1){
-        cout << "The name is correct" << endl;
-    }
-}
+const int Nome::LIMITE_CARACTERES_NOME = 20;
 
 void Nome::set(std::string nome){
     validar(nome);
     this->nome = nome;
+};
 
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 

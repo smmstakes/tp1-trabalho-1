@@ -18,12 +18,14 @@ class Codigo {
 
 class Nome {
     private:
+        static const int LIMITE_CARACTERES_NOME;
+        static const std::regex FORMATO;
         std::string nome;
         void validar(std::string nome);
 
     public:
-        void setNome(std::string nome);
-        std::string getNome() const {return nome;}
+        void set(std::string nome);
+        std::string get() const {return nome;}
 };
 
 
@@ -57,7 +59,7 @@ class Dinheiro {
         static const double DINHEIRO_MAX;
         void validar(double dinheiro);
     public:
-        double get() const {return dinheiro};
+        double get() const {return dinheiro;};
         void set(double dinheiro);
 // Criado por Pedro Vale - 231038733
 };
@@ -69,7 +71,7 @@ class Quantidade {
         static const int VALOR_MAX=1000000;
         void validar(int quantidade);
     public:
-        int get() const {return quantidade};
+        int get() const {return quantidade;};
         void set(int quantidade);
 // Criada por Pedro Vale - 231038733
 };
