@@ -83,14 +83,14 @@ void Data::set(std::string data){
 
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 
-void Perfil::valida(std::string perfil){
-    if (!std::regex_match(perfil,PADRAO_PERFIL)){
+void Perfil::validar(std::string perfil){
+    if (!std::regex_match(perfil, PADRAO_PERFIL)){
         throw std::invalid_argument("Perfil inválido.");
     }
 }
 
 void Perfil::set(std::string perfil){
-    valida(perfil);
+    validar(perfil);
     this->perfil = perfil;
 }
 
