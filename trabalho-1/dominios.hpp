@@ -102,33 +102,6 @@ class Perfil {
         std::string get() const {return perfil;}
 };
 
-
-class Dinheiro {
-    private :
-        double dinheiro;
-        static const double DINHEIRO_MIN;
-        static const double DINHEIRO_MAX;
-        void validar(double dinheiro);
-
-    public:
-        void set(double dinheiro);
-        double get() const {return dinheiro;}
-};
-
-
-class Quantidade {
-    private:
-        int quantidade;
-        static const int VALOR_MIN = 1;
-        static const int VALOR_MAX = 1000000;
-        void validar(int quantidade);
-
-    public:
-        void set(int quantidade);
-        int get() const {return quantidade;}
-};
-
-
 class Senha {
     private:
         std::string senha;
