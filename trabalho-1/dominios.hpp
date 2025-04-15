@@ -52,4 +52,54 @@ class Senha {
         std::string get() const {return senha;}
 };
 
+class Dinheiro {
+    private :
+        double dinheiro;
+        static const double DINHEIRO_MIN;
+        static const double DINHEIRO_MAX;
+        void validar(double dinheiro);
+    public:
+        double get() const {return dinheiro};
+        void set(double dinheiro);
+// Criado por Pedro Vale - 231038733
+};
+
+class Quantidade {
+    private:
+        int quantidade;
+        static const int VALOR_MIN= 1;
+        static const int VALOR_MAX=1000000;
+        void validar(int quantidade);
+    public:
+        int get() const {return quantidade};
+        void set(int quantidade);
+// Criada por Pedro Vale - 231038733
+};
+
+class Data {
+    private:
+        static const std::regex FORMATO;
+        std::string data;
+        bool ehAnoBissexto(int ano) const{
+            // Combinamos metodos de retorno direto na classe? inline?
+            return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        };
+        void validar(const std::string& data);
+
+    public:
+        void set(std::string ano);
+        std::string get() const {return data;}
+};
+
+class Perfil {
+    private:
+    std::string perfil;
+    static const std::regex PADRAO_PERFIL;
+    void valida(std::string perfil);
+
+    public:
+    void set(std::string perfil);
+    std::string get() const{return perfil;}
+};
+
 #endif // DOMINIOS_HPP_INCLUDED
