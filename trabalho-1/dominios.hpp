@@ -9,11 +9,11 @@ class Codigo {
     private:
         std::string codigo;
         static const std::regex PADRAO_CODIGO;
-        void validaCodigo(std::string cod);
+        void validar(std::string cod);
 
     public:
-        void setCod(std::string codigo);
-        std::string getValor() const {return codigo;}
+        void set(std::string codigo);
+        std::string get() const {return codigo;}
 };
 
 
@@ -21,11 +21,11 @@ class CodigoNegociacao {
     private:
         std::string codNegociacao;
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
-        void validaCodNegociacao(std::string cod);
+        void validar(std::string cod);
 
     public:
-        void setCodNegociacao(std::string codNegociacao);
-        std::string getCodNegociacao() const {return codNegociacao;}
+        void set(std::string codNegociacao);
+        std::string get() const {return codNegociacao;}
 };
 
 
@@ -33,11 +33,23 @@ class CPF {
     private:
         std::string cpf;
         static const std::regex PADRAO_CPF;
-        void validaCPF(std::string cpf);
+        void validar(std::string cpf);
 
     public:
-        void setCPF(std::string cpf);
-        std::string getCPF() const {return cpf;}
+        void set(std::string cpf);
+        std::string get() const {return cpf;}
+};
+
+
+class Senha {
+    private:
+        std::string senha;
+        static const std::regex PADRAO_SENHA;
+        void validar(std::string senha);
+
+    public:
+        void set(std::string senha);
+        std::string get() const {return senha;}
 };
 
 class Dinheiro {
