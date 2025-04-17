@@ -88,6 +88,7 @@ class Data {
     public:
         void set(std::string ano);
         std::string get() const {return data;}
+// Criada por Suyanne Miranda - 222006445
 };
 
 
