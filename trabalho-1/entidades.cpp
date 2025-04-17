@@ -16,3 +16,10 @@ Ordem::Ordem(const std::string& cod, const std::string& codNeg, const std::strin
     this->preco.set(preco);
     quantidade.set(qtd);
 }
+
+Conta::Conta(const std::string& cpf, const std::string& nome, const std::string& senha)
+    : cpf{}, nome{}, senha{} {
+    this->cpf.set(cpf);
+    this->nome.set(nome);
+    this->senha.set(senha);
+}
