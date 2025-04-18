@@ -4,114 +4,85 @@
 #include <regex>
 #include <string>
 
-
-class Codigo {
+template<typename Tipo>
+class Dominio {
     private:
-        std::string codigo;
-        static const std::regex PADRAO_CODIGO;
-        void validar(std::string cod);
+        Tipo valor;
+        virtual void validar(const Tipo& valor) = 0;
 
     public:
-        void set(std::string codigo);
-        std::string get() const {return codigo;}
+        void set(const Tipo& valor) {
+            validar(valor);
+            this->valor = valor;
+        };
+        Tipo get() const { return valor; };
+
+        virtual ~Dominio() = default;
 };
 
-class Nome {
+class Codigo:public Dominio<std::string> {
+    private:
+        static const std::regex PADRAO_CODIGO;
+        void validar(const std::string& cod) override;
+};
+
+class Nome:public Dominio<std::string> {
     private:
         static const int LIMITE_CARACTERES_NOME;
         static const std::regex FORMATO;
-        std::string nome;
-        void validar(std::string nome);
-
-    public:
-        void set(std::string nome);
-        std::string get() const {return nome;}
+        void validar(const std::string& nome) override;
 };
 
-
-class CodigoNegociacao {
+class CodigoNegociacao:public Dominio<std::string> {
     private:
-        std::string codNegociacao;
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
-        void validar(std::string cod);
-
-    public:
-        void set(std::string codNegociacao);
-        std::string get() const {return codNegociacao;}
+        void validar(const std::string& cod) override;
 };
 
-
-class CPF {
+class CPF:public Dominio<std::string> {
     private:
-        std::string cpf;
         static const std::regex PADRAO_CPF;
-        void validar(std::string cpf);
-
-    public:
-        void set(std::string cpf);
-        std::string get() const {return cpf;}
+        void validar(const std::string& cpf) override;
 };
 
-class Dinheiro {
+class Dinheiro:public Dominio<double> {
     private :
         double dinheiro;
         static const double DINHEIRO_MIN;
         static const double DINHEIRO_MAX;
-        void validar(double dinheiro);
-    public:
-        double get() const {return dinheiro;};
-        void set(double dinheiro);
+        void validar(const double& dinheiro) override;
 // Criado por Pedro Vale - 231038733
 };
 
-class Quantidade {
+class Quantidade:public Dominio<int> {
     private:
         int quantidade;
         static const int VALOR_MIN= 1;
         static const int VALOR_MAX=1000000;
-        void validar(int quantidade);
-    public:
-        int get() const {return quantidade;};
-        void set(int quantidade);
+        void validar(const int& quantidade) override;
 // Criada por Pedro Vale - 231038733
 };
 
-class Data {
+class Data:public Dominio<std::string> {
     private:
-        std::string data;
         static const std::regex FORMATO;
         bool ehAnoBissexto(int ano) const {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
-        void validar(const std::string& data);
-
-    public:
-        void set(std::string ano);
-        std::string get() const {return data;}
+        void validar(const std::string& data) override;
 // Criada por Suyanne Miranda - 222006445
 };
 
-
-class Perfil {
+class Perfil:public Dominio<std::string>{
     private:
-        std::string perfil;
         static const std::regex PADRAO_PERFIL;
-        void validar(std::string perfil);
-
-    public:
-        void set(std::string perfil);
-        std::string get() const {return perfil;}
+        void validar(const std::string& perfil) override;
 };
 
-class Senha {
+class Senha:public Dominio<std::string> {
     private:
-        std::string senha;
         static const std::regex PADRAO_SENHA;
-        void validar(std::string senha);
-
-    public:
-        void set(std::string senha);
-        std::string get() const {return senha;}
+        void validar(const std::string& senha) override;
 };
 
 #endif // DOMINIOS_HPP_INCLUDED
