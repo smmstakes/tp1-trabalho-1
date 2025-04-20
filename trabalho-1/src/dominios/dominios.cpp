@@ -9,7 +9,7 @@ const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");
 
 void Codigo::validar(const std::string& cod) {
     if (!std::regex_match(cod, PADRAO_CODIGO)) {
-        throw std::invalid_argument("Código inválido.");
+        throw std::invalid_argument("Código inválido: ");
     }
 }
 
@@ -17,7 +17,7 @@ const std::regex CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO("\\w[a-zA-Z0-9 ]{0,1
 
 void CodigoNegociacao::validar(const std::string& cod) {
     if (!std::regex_match(cod, PADRAO_CODIGO_NEGOCIACAO)) {
-        throw std::invalid_argument("Codigo de Negociação inválido.");
+        throw std::invalid_argument("Codigo de Negociação inválido: ");
     }
 }
 
