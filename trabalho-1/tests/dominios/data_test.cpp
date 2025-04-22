@@ -3,50 +3,56 @@
 
 #include "data_test.hpp"
 
-const static std::string DATA_VALIDA = "19640120";
-const static std::string DATA_FORMATO_INVALIDO = "2024210";
-const static std::string DATA_MES_INVALIDO = "20251322";
-const static std::string DATA_DIA_INVALIDO = "20000229";
-
+const static std::string VALOR_VALIDO = "20240229";
+const static std::string FORMATO_INVALIDO = "2024210";
+const static std::string MES_INVALIDO = "20251322";
+const static std::string DIA_INVALIDO = "20240230";
 
 void TUData::testarCenarioValido() {
-    try {
-        data->set(DATA_VALIDA);
-        if (data->get() != DATA_VALIDA){
-            std::cerr << "Valor válido não aceito.\n";
-            estado = FALHA;
-        }
-    } catch(std::invalid_argument &excecao) {
-        std::cerr << "Ocorreu uma exceção: " << excecao.what() << "\n";
+    data->set(VALOR_VALIDO);
+    if (data->get() != VALOR_VALIDO){
         estado = FALHA;
+        return;
     }
+    std::cout << "TUData: testarCenarioValido -> SUCESSO \n";
 }
 
 void TUData::testarFormatoInvalido() {
     try {
-        data->set(DATA_FORMATO_INVALIDO);
-        std::cerr << "Código com digito inválido aceito.\n";
+        data->set(FORMATO_INVALIDO);
+        std::cerr << "TUData: testarFormatoInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
-        std::cerr << excecao.what() << "Digito inválido.\n";
+        std::cerr << "TUData: testarFormatoInvalido -> SUCESSO\n";
     }
 }
 
-// void TUData::testarTamanhoInvalido() {
-//     try {
-//         codigo->set(CODIGO_TAMANHO_INVALIDO);
-//         std::cerr << "Código com tamanho inválido aceito.\n";
-//         estado = FALHA;
-//     } catch(std::invalid_argument &excecao) {
-//         std::cerr << excecao.what() << "Tamanho inválido.\n";
-//     }
-// }
+void TUData::testarMesInvalido() {
+    try {
+        data->set(MES_INVALIDO);
+        std::cout << "TUData: testarMesInvalido -> FALHA\n";
+        estado = FALHA;
+    } catch(std::invalid_argument &excecao) {
+        std::cout << "TUData: testarMesInvalido -> SUCESSO\n";
+    }
+}
 
-// int TUData::run() {
-//     setUp();
-//     testarCenarioValido();
-//     testarDigitoInvalido();
-//     testarTamanhoInvalido();
-//     tearDown();
-//     return estado;
-// }
+void TUData::testarDiaInvalido() {
+    try {
+        data->set(DIA_INVALIDO);
+        std::cout << "TUData: testarDiaInvalido -> FALHA\n";
+        estado = FALHA;
+    } catch(std::invalid_argument &excecao) {
+        std::cout << "TUData: testarDiaInvalido -> SUCESSO\n";
+    }
+}
+
+int TUData::run() {
+    setUp();
+    testarCenarioValido();
+    testarFormatoInvalido();
+    testarMesInvalido();
+    testarDiaInvalido();
+    tearDown();
+    return estado;
+}
