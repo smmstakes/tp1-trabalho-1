@@ -7,6 +7,13 @@ Carteira::Carteira (const std::string& codigo, const std::string& nome,
         this->nome.set(nome);
         this->perfil.set(perfil);
     }
+    
+void Carteira::setPerfil(std::string perfil) {
+    this->perfil.set(perfil);
+};    
+void Carteira::setNome(std::string nome) {
+    this->nome.set(nome);
+};
 
 Ordem::Ordem(const std::string& cod, const std::string& codNeg, const std::string& data,
     double preco, int qtd) : codigo {}, codNegociacao {}, data {}, preco {}, quantidade {} {
@@ -22,4 +29,10 @@ Conta::Conta(const std::string& cpf, const std::string& nome, const std::string&
     this->cpf.set(cpf);
     this->nome.set(nome);
     this->senha.set(senha);
-}
+}     
+void Conta::setSenha(std::string senha) {
+    this->senha.set(senha);
+};    
+void Conta::setNome(std::string nome) {
+    this->nome.set(nome);
+};

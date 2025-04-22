@@ -13,7 +13,9 @@ class Carteira {
         std::string getCodigo() const{return codigo.get();}
         std::string getNome() const {return nome.get();}
         std::string getPerfil() const {return perfil.get();}
-};
+        void setNome(std::string nome);
+        void setPerfil(std::string perfil);
+    };
 
 class Ordem {
     private:
@@ -43,6 +45,8 @@ class Conta{
         Conta(const std::string& cpf, const std::string& nome, const std::string& senha);
         std::string getCpf() const {return cpf.get();}
         std::string getNome() const {return nome.get();}
-        std::string getSenha() const {return senha.get();}                
+        std::string getSenha() const {return senha.get();}           
+        void setNome(std::string nome);
+        void setSenha(std::string senha);     
 };
 #endif // ENTIDADES_HPP_INCLUDED
