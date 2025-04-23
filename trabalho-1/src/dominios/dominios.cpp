@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include <unordered_set>
 
 #include "dominios.hpp"
 
@@ -110,12 +111,16 @@ void Senha::validar(const std::string& senha) {
         throw std::invalid_argument("Senha inválida deve ter exatamente 6 caracteres válidos.");
     }
 
+    std::unordered_set<char> caracteres;
+
     bool temDigito = false;
     bool temEspecial = false;
     bool temMaiuscula = false;
     bool temMinuscula = false;
 
     for (auto c : senha) {
+        caracteres.insert(c);
+
         if (std::isdigit(c)) {
             temDigito = true;
         } else if (std::isupper(c)) {
@@ -125,6 +130,10 @@ void Senha::validar(const std::string& senha) {
         } else if (c == '#' || c == '$' || c == '%' || c == '&') {
             temEspecial = true;
         }
+    }
+
+    if (caracteres.size() != TAMANHO_SENHA) {
+        throw std::invalid_argument("Senha contém caracteres duplicados.");
     }
 
     if (!temDigito || !temEspecial || !temMaiuscula || !temMinuscula) {

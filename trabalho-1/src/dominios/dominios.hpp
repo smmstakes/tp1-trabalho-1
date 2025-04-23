@@ -81,6 +81,7 @@ class Perfil:public Dominio<std::string>{
 
 class Senha:public Dominio<std::string> {
     private:
+        static const int TAMANHO_SENHA = 6;
         static const std::regex PADRAO_SENHA;
         void validar(const std::string& senha) override;
 };
