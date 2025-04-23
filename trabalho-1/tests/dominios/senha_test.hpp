@@ -1,5 +1,5 @@
-#ifndef CPF_TEST_HPP_INCLUDED
-#define CPF_TEST_HPP_INCLUDED
+#ifndef SENHA_TEST_HPP_INCLUDED
+#define SENHA_TEST_HPP_INCLUDED
 
 #include <string>
 
@@ -16,8 +16,15 @@ class TUSenha {
         Senha *senha;
         int estado;
 
-        void setUp();
-        void tearDown();
+        void TUSenha::setUp() {
+            senha = new Senha();
+            estado = SUCESSO;
+        }
+        
+        void TUSenha::tearDown() {
+            delete senha;
+        }
+        
         void testarCenarioValido();
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
@@ -31,4 +38,4 @@ class TUSenha {
         int run();
 };
 
-#endif // CPF_TEST_HPP_INCLUDED
+#endif // SENHA_TEST_HPP_INCLUDED
