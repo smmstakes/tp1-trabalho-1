@@ -30,10 +30,10 @@ void CPF::validar(const std::string& cpf) {
     }
 }
 
-const std::regex Data::FORMATO("^\\d{8}$");
+const std::regex Data::PADRAO_DATA("^\\d{8}$");
 
 void Data::validar(const std::string& data) {
-    if (!std::regex_match(data, FORMATO)) {
+    if (!std::regex_match(data, PADRAO_DATA)) {
         throw std::invalid_argument("Formato inválido: a data deve ter 8 dígitos numéricos (AAAAMMDD).");
     }
 
@@ -60,7 +60,7 @@ void Data::validar(const std::string& data) {
         throw std::invalid_argument("Dia inválido para o mês informado.");
 }
 
-const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
+const std::regex Nome::PADRAO_NOME("^[A-Za-z0-9 ]+$");
 
 void Nome::validar(const std::string& nome){
 
@@ -68,7 +68,7 @@ void Nome::validar(const std::string& nome){
         throw std::invalid_argument("O nome não pode ser maior do que 20 caracteres");
     }
 
-    if(!std::regex_match(nome, FORMATO)){
+    if(!std::regex_match(nome, PADRAO_NOME)){
         throw std::invalid_argument("O nome não pode ter caracteres especiais");
     }
 
