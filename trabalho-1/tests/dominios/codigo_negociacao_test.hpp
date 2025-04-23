@@ -10,10 +10,19 @@ class TUCodigoNegociacao {
         const static std::string CODIGO_VALIDO;
         const static std::string CODIGO_DIGITO_INVALIDO;
         const static std::string CODIGO_TAMANHO_INVALIDO;
+        
         CodigoNegociacao *codNegociacao;
         int estado;
-        void setUp();
-        void tearDown();
+
+        void setUp() {
+            codNegociacao = new CodigoNegociacao();
+            estado = SUCESSO;
+        };
+
+        void tearDown() {
+            delete codNegociacao;
+        };
+
         void testarCenarioValido();
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
@@ -21,6 +30,7 @@ class TUCodigoNegociacao {
     public:
         const static int SUCESSO = 1;
         const static int FALHA = -1;
+
         int run();
 };
 

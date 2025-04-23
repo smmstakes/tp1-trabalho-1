@@ -4,10 +4,10 @@
 #include "data_test.hpp"
 
 const std::string TUData::VALOR_VALIDO = "20240229";
-const std::string TUData::FORMATO_INVALIDO = "2024210";
-const std::string TUData::MES_INVALIDO = "20251322";
 const std::string TUData::DIA_INVALIDO = "20240230";
+const std::string TUData::MES_INVALIDO = "20251322";
 const std::string TUData::ANO_INVALIDO = "00000101";
+const std::string TUData::FORMATO_INVALIDO = "2024210";
 
 void TUData::testarCenarioValido() {
     data->set(VALOR_VALIDO);
@@ -19,13 +19,13 @@ void TUData::testarCenarioValido() {
     std::cout << "TUData: testarCenarioValido -> SUCESSO \n";
 }
 
-void TUData::testarFormatoInvalido() {
+void TUData::testarDiaInvalido() {
     try {
-        data->set(FORMATO_INVALIDO);
-        std::cout << "TUData: testarFormatoInvalido -> FALHA\n";
+        data->set(DIA_INVALIDO);
+        std::cout << "TUData: testarDiaInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarFormatoInvalido -> SUCESSO\n";
+        std::cout << "TUData: testarDiaInvalido -> SUCESSO\n";
     }
 }
 
@@ -39,16 +39,6 @@ void TUData::testarMesInvalido() {
     }
 }
 
-void TUData::testarDiaInvalido() {
-    try {
-        data->set(DIA_INVALIDO);
-        std::cout << "TUData: testarDiaInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarDiaInvalido -> SUCESSO\n";
-    }
-}
-
 void TUData::testarAnoInvalido() {
     try {
         data->set(ANO_INVALIDO);
@@ -59,13 +49,25 @@ void TUData::testarAnoInvalido() {
     }
 }
 
+void TUData::testarFormatoInvalido() {
+    try {
+        data->set(FORMATO_INVALIDO);
+        std::cout << "TUData: testarFormatoInvalido -> FALHA\n";
+        estado = FALHA;
+    } catch(std::invalid_argument &excecao) {
+        std::cout << "TUData: testarFormatoInvalido -> SUCESSO\n";
+    }
+}
+
 int TUData::run() {
     setUp();
+
     testarCenarioValido();
-    testarFormatoInvalido();
-    testarMesInvalido();
     testarDiaInvalido();
+    testarMesInvalido();
     testarAnoInvalido();
+    testarFormatoInvalido();
+
     tearDown();
     return estado;
 }

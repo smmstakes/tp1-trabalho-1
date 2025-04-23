@@ -41,6 +41,10 @@
 		<Unit filename="tests/dominios/codigo_negociacao_test.hpp" />
 		<Unit filename="tests/dominios/codigo_test.cpp" />
 		<Unit filename="tests/dominios/codigo_test.hpp" />
+		<Unit filename="tests/dominios/cpf_test.cpp" />
+		<Unit filename="tests/dominios/cpf_test.hpp" />
+		<Unit filename="tests/dominios/data_test.cpp" />
+		<Unit filename="tests/dominios/data_test.hpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

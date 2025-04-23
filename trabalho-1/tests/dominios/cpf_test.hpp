@@ -15,8 +15,15 @@ class TUCPF {
         CPF *cpf;
         int estado;
 
-        void setUp();
-        void tearDown();
+        void setUp() {
+            cpf = new CPF();
+            estado = SUCESSO;
+        };
+
+        void tearDown() {
+            delete cpf;
+        };
+
         void testarCenarioValido();
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
