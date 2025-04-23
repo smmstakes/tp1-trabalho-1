@@ -1,0 +1,24 @@
+name: Testes C++
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Instalar o g++
+        run: sudo apt update && sudo apt install -y g++
+
+      - name: Compilar o projeto
+        run: g++ main.cpp $(find ./tests -name "*.cpp") ./src/dominios/dominios.cpp -o main
+
+      - name: Rodar os testes
+        run: ./main
