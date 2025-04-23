@@ -7,16 +7,6 @@ const std::string TUCodigoNegociacao::CODIGO_VALIDO = "ABC123def   ";
 const std::string TUCodigoNegociacao::CODIGO_DIGITO_INVALIDO = "ABC123def ! ";
 const std::string TUCodigoNegociacao::CODIGO_TAMANHO_INVALIDO = "ABC123defG4   ";
 
-
-void TUCodigoNegociacao::setUp() {
-    codNegociacao = new CodigoNegociacao();
-    estado = SUCESSO;
-}
-
-void TUCodigoNegociacao::tearDown() {
-    delete codNegociacao;
-}
-
 void TUCodigoNegociacao::testarCenarioValido() {
     try {
         codNegociacao->set(CODIGO_VALIDO);
@@ -52,9 +42,11 @@ void TUCodigoNegociacao::testarTamanhoInvalido() {
 
 int TUCodigoNegociacao::run() {
     setUp();
+
     testarCenarioValido();
     testarDigitoInvalido();
     testarTamanhoInvalido();
+    
     tearDown();
     return estado;
 }

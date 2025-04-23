@@ -7,16 +7,6 @@ const std::string TUCodigo::CODIGO_VALIDO = "04562";
 const std::string TUCodigo::CODIGO_DIGITO_INVALIDO = "678A5";
 const std::string TUCodigo::CODIGO_TAMANHO_INVALIDO = "032785";
 
-
-void TUCodigo::setUp() {
-    codigo = new Codigo();
-    estado = SUCESSO;
-}
-
-void TUCodigo::tearDown() {
-    delete codigo;
-}
-
 void TUCodigo::testarCenarioValido() {
     try {
         codigo->set(CODIGO_VALIDO);
@@ -52,9 +42,11 @@ void TUCodigo::testarTamanhoInvalido() {
 
 int TUCodigo::run() {
     setUp();
+
     testarCenarioValido();
     testarDigitoInvalido();
     testarTamanhoInvalido();
+
     tearDown();
     return estado;
 }

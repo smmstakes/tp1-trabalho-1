@@ -8,16 +8,6 @@ const std::string TUCPF::DIGITO_INVALIDO = "12E.4S6.789-O1";
 const std::string TUCPF::TAMANHO_INVALIDO = "123.456.789-012";
 const std::string TUCPF::FORMATACAO_INVALIDA = "12345678901";
 
-
-void TUCPF::setUp() {
-    cpf = new CPF();
-    estado = SUCESSO;
-}
-
-void TUCPF::tearDown() {
-    delete cpf;
-}
-
 void TUCPF::testarCenarioValido() {
     try {
         cpf->set(VALOR_VALIDO);
