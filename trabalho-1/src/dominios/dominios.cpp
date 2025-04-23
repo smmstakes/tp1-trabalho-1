@@ -42,6 +42,10 @@ void Data::validar(const std::string& data) {
     mes = std::stoi(data.substr(4, 2));
     dia = std::stoi(data.substr(6, 2));
 
+    if (ano == 0) {
+        throw std::invalid_argument("Ano inválido: não é permitido o ano 0000.");
+    }
+
     if (mes < 1 || mes > 12)
         throw std::invalid_argument("Mês inválido: deve estar entre 01 e 12.");
 
