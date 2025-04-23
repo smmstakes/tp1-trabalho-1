@@ -64,7 +64,7 @@ const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
 
 void Nome::validar(const std::string& nome){
 
-    if (nome.size() > LIMITE_CARACTERES_NOME){
+    if (nome.size() > TAMANHO_NOME){
         throw std::invalid_argument("O nome não pode ser maior do que 20 caracteres");
     }
 
@@ -78,8 +78,6 @@ void Nome::validar(const std::string& nome){
         }
     }
 };
-
-const int Nome::LIMITE_CARACTERES_NOME = 20;
 
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 

@@ -28,8 +28,8 @@ class Codigo:public Dominio<std::string> {
 
 class Nome:public Dominio<std::string> {
     private:
-        static const int LIMITE_CARACTERES_NOME;
         static const std::regex FORMATO;
+        static const int Nome::TAMANHO_NOME = 20;
         void validar(const std::string& nome) override;
 };
 
