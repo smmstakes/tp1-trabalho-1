@@ -7,10 +7,11 @@
 
 class TUData {
     private:
-        const static std::string DATA_VALIDA;
-        const static std::string DATA_FORMATO_INVALIDO;
-        const static std::string DATA_MES_INVALIDO;
-        const static std::string DATA_DIA_INVALIDO;
+        const static std::string VALOR_VALIDO;
+        const static std::string FORMATO_INVALIDO;
+        const static std::string MES_INVALIDO;
+        const static std::string DIA_INVALIDO;
+        const static std::string ANO_INVALIDO;
         Data *data;
         int estado;
         void setUp() {
@@ -25,6 +26,7 @@ class TUData {
         void testarFormatoInvalido();
         void testarMesInvalido();
         void testarDiaInvalido();
+        void testarAnoInvalido();
 
     public:
         const static int SUCESSO = 1;
