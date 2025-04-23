@@ -3,11 +3,11 @@
 
 #include <string>
 
-#include "../../src/dominios/dominios.hpp"
+// #include "../../src/dominios/dominios.hpp"
 
 template<typename Tipo>
 class TUDominio {
-    private:
+    protected:
         Tipo *valor;
         int estado;
 
@@ -15,17 +15,15 @@ class TUDominio {
             valor = new Tipo();
             estado = SUCESSO;
         };
-        void tearDown() { delete valor };
-        void testarCenarioValido();
-        // void testarDigitoInvalido();
-        // void testarTamanhoInvalido();
-        // void testarFormatacaoInvalida();
+        void tearDown() { delete valor ;};
+        virtual void testarCenarioValido() = 0;
 
     public:
         const static int SUCESSO = 1;
         const static int FALHA = -1;
 
         virtual int run() = 0;
+        virtual ~TUDominio() = default;
 };
 
 #endif // DOMINIO_TEST_HPP_INCLUDED
