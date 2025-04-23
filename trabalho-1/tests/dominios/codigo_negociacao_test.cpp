@@ -11,11 +11,14 @@ void TUCodigoNegociacao::testarCenarioValido() {
     try {
         codNegociacao->set(CODIGO_VALIDO);
         if (codNegociacao->get() != CODIGO_VALIDO){
-            std::cerr << "Valor válido não aceito.\n";
+            std::cout << "TUCodigoNegociacao: testarCenarioValido -> FALHA\n";
             estado = FALHA;
+            return;
         }
+        std::cout << "TUCodigoNegociacao: testarCenarioValido -> SUCESSO\n";
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << "Ocorreu uma exceção: " << excecao.what() << "\n";
+        std::cout << "TUCodigoNegociacao: testarCenarioValido -> FALHA\n";
         estado = FALHA;
     }
 }
@@ -23,20 +26,22 @@ void TUCodigoNegociacao::testarCenarioValido() {
 void TUCodigoNegociacao::testarDigitoInvalido() {
     try {
         codNegociacao->set(CODIGO_DIGITO_INVALIDO);
-        std::cerr << "Código com digito inválido aceito.\n";
+        std::cout << "TUCodigoNegociacao: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << excecao.what() << "Digito inválido.\n";
+        std::cout << "TUCodigoNegociacao: testarDigitoInvalido -> SUCESSO\n";
     }
 }
 
 void TUCodigoNegociacao::testarTamanhoInvalido() {
     try {
         codNegociacao->set(CODIGO_TAMANHO_INVALIDO);
-        std::cerr << "Código com tamanho inválido aceito.\n";
+        std::cout << "TUCodigoNegociacao: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << excecao.what() << "Tamanho inválido.\n";
+        std::cout << "TUCodigoNegociacao: testarTamanhoInvalido -> SUCESSO\n";
     }
 }
 

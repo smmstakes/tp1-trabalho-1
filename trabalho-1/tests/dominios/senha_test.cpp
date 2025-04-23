@@ -3,11 +3,11 @@
 
 #include "senha_test.hpp"
 
-const std::string VALOR_VALIDO = "3aG#k8";
-const std::string DIGITO_INVALIDO = "jD2!&l";
-const std::string TAMANHO_INVALIDO = "Mn09#%W";
-const std::string CRITERIO_MINIMO_INVALIDO = "sd23#$";
-const std::string CARACTER_DUPLICADO_INVALIDO = "4rX4#y";
+const std::string TUSenha::VALOR_VALIDO = "3aG#k8";
+const std::string TUSenha::DIGITO_INVALIDO = "jD2!&l";
+const std::string TUSenha::TAMANHO_INVALIDO = "Mn09#%W";
+const std::string TUSenha::CRITERIO_MINIMO_INVALIDO = "sd23#$";
+const std::string TUSenha::CARACTER_DUPLICADO_INVALIDO = "4rX4#y";
 
 void TUSenha::testarCenarioValido() {
     try {

@@ -11,11 +11,14 @@ void TUCodigo::testarCenarioValido() {
     try {
         codigo->set(CODIGO_VALIDO);
         if (codigo->get() != CODIGO_VALIDO){
-            std::cerr << "Valor válido não aceito.\n";
+            std::cout << "TUCodigo: testarCenarioValido -> FALHA\n";
             estado = FALHA;
+            return;
         }
+        std::cout << "TUCodigo: testarCenarioValido -> SUCESSO\n";
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << "Ocorreu uma exceção: " << excecao.what() << "\n";
+        std::cout << "TUCodigo: testarCenarioValido -> FALHA\n";
         estado = FALHA;
     }
 }
@@ -23,20 +26,22 @@ void TUCodigo::testarCenarioValido() {
 void TUCodigo::testarDigitoInvalido() {
     try {
         codigo->set(CODIGO_DIGITO_INVALIDO);
-        std::cerr << "Código com digito inválido aceito.\n";
+        std::cout << "TUCodigo: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << excecao.what() << "Digito inválido.\n";
+        std::cout << "TUCodigo: testarDigitoInvalido -> SUCESSO\n";
     }
 }
 
 void TUCodigo::testarTamanhoInvalido() {
     try {
         codigo->set(CODIGO_TAMANHO_INVALIDO);
-        std::cerr << "Código com tamanho inválido aceito.\n";
+        std::cout << "TUCodigo: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
+
     } catch(std::invalid_argument &excecao) {
-        std::cerr << excecao.what() << "Tamanho inválido.\n";
+        std::cout << "TUCodigo: testarTamanhoInvalido -> SUCESSO\n";
     }
 }
 
