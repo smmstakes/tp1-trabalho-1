@@ -11,8 +11,8 @@ const std::string TUSenha::CARACTER_DUPLICADO_INVALIDO = "4rX4#y";
 
 void TUSenha::testarCenarioValido() {
     try {
-        senha->set(VALOR_VALIDO);
-        if (senha->get() != VALOR_VALIDO){
+        valor->set(VALOR_VALIDO);
+        if (valor->get() != VALOR_VALIDO){
             std::cout << "TUSenha: testarCenarioValido -> FALHA\n";
             estado = FALHA;
             return;
@@ -27,7 +27,7 @@ void TUSenha::testarCenarioValido() {
 
 void TUSenha::testarDigitoInvalido() {
     try {
-        senha->set(DIGITO_INVALIDO);
+        valor->set(DIGITO_INVALIDO);
         std::cout << "TUSenha: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
 
@@ -38,7 +38,7 @@ void TUSenha::testarDigitoInvalido() {
 
 void TUSenha::testarTamanhoInvalido() {
     try {
-        senha->set(TAMANHO_INVALIDO);
+        valor->set(TAMANHO_INVALIDO);
         std::cout << "TUSenha: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
         
@@ -49,7 +49,7 @@ void TUSenha::testarTamanhoInvalido() {
 
 void TUSenha::testarCriterioMinimoInvalido() {
     try {
-        senha->set(CRITERIO_MINIMO_INVALIDO);
+        valor->set(CRITERIO_MINIMO_INVALIDO);
         std::cout << "TUSenha: testarCriterioMinimoInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
@@ -59,7 +59,7 @@ void TUSenha::testarCriterioMinimoInvalido() {
 
 void TUSenha::testarCaracterDuplicadoInvalido() {
     try {
-        senha->set(CARACTER_DUPLICADO_INVALIDO);
+        valor->set(CARACTER_DUPLICADO_INVALIDO);
         std::cout << "TUSenha: testarCaracterDuplicadoInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
