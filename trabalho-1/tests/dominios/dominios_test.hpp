@@ -3,8 +3,6 @@
 
 #include <string>
 
-// #include "../../src/dominios/dominios.hpp"
-
 template<typename Tipo>
 class TUDominio {
     protected:

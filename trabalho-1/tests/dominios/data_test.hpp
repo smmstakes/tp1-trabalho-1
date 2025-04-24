@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "../../src/dominios/dominios.hpp"
 #include "dominios_test.hpp"
+#include "../../src/dominios/dominios.hpp"
 
 class TUData:public TUDominio<Data>{
     private:

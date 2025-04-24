@@ -13,13 +13,13 @@ class TUCPF:public TUDominio<CPF> {
         const static std::string TAMANHO_INVALIDO;
         const static std::string FORMATACAO_INVALIDA;
 
-        void testarCenarioValido();
+        void testarCenarioValido() override;
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
         void testarFormatacaoInvalida();
 
     public:
-        int run();
+        int run() override;
 };
 
 #endif // CPF_TEST_HPP_INCLUDED
