@@ -9,8 +9,8 @@ const std::string TUCodigo::CODIGO_TAMANHO_INVALIDO = "032785";
 
 void TUCodigo::testarCenarioValido() {
     try {
-        codigo->set(CODIGO_VALIDO);
-        if (codigo->get() != CODIGO_VALIDO){
+        valor->set(CODIGO_VALIDO);
+        if (valor->get() != CODIGO_VALIDO){
             std::cout << "TUCodigo: testarCenarioValido -> FALHA\n";
             estado = FALHA;
             return;
@@ -25,7 +25,7 @@ void TUCodigo::testarCenarioValido() {
 
 void TUCodigo::testarDigitoInvalido() {
     try {
-        codigo->set(CODIGO_DIGITO_INVALIDO);
+        valor->set(CODIGO_DIGITO_INVALIDO);
         std::cout << "TUCodigo: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
 
@@ -36,7 +36,7 @@ void TUCodigo::testarDigitoInvalido() {
 
 void TUCodigo::testarTamanhoInvalido() {
     try {
-        codigo->set(CODIGO_TAMANHO_INVALIDO);
+        valor->set(CODIGO_TAMANHO_INVALIDO);
         std::cout << "TUCodigo: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
 
