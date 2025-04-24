@@ -10,8 +10,8 @@ const std::string TUData::ANO_INVALIDO = "00000101";
 const std::string TUData::FORMATO_INVALIDO = "2024210";
 
 void TUData::testarCenarioValido() {
-    data->set(VALOR_VALIDO);
-    if (data->get() != VALOR_VALIDO){
+    valor->set(VALOR_VALIDO);
+    if (valor->get() != VALOR_VALIDO){
         estado = FALHA;
         std::cout << "TUData: testarCenarioValido -> FALHA \n";
         return;
@@ -21,7 +21,7 @@ void TUData::testarCenarioValido() {
 
 void TUData::testarDiaInvalido() {
     try {
-        data->set(DIA_INVALIDO);
+        valor->set(DIA_INVALIDO);
         std::cout << "TUData: testarDiaInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
@@ -31,7 +31,7 @@ void TUData::testarDiaInvalido() {
 
 void TUData::testarMesInvalido() {
     try {
-        data->set(MES_INVALIDO);
+        valor->set(MES_INVALIDO);
         std::cout << "TUData: testarMesInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
@@ -41,7 +41,7 @@ void TUData::testarMesInvalido() {
 
 void TUData::testarAnoInvalido() {
     try {
-        data->set(ANO_INVALIDO);
+        valor->set(ANO_INVALIDO);
         std::cout << "TUData: testarAnoInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
@@ -51,7 +51,7 @@ void TUData::testarAnoInvalido() {
 
 void TUData::testarFormatoInvalido() {
     try {
-        data->set(FORMATO_INVALIDO);
+        valor->set(FORMATO_INVALIDO);
         std::cout << "TUData: testarFormatoInvalido -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {

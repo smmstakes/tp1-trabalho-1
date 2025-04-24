@@ -9,8 +9,8 @@ const std::string TUCodigoNegociacao::CODIGO_TAMANHO_INVALIDO = "ABC123defG4   "
 
 void TUCodigoNegociacao::testarCenarioValido() {
     try {
-        codNegociacao->set(CODIGO_VALIDO);
-        if (codNegociacao->get() != CODIGO_VALIDO){
+        valor->set(CODIGO_VALIDO);
+        if (valor->get() != CODIGO_VALIDO){
             std::cout << "TUCodigoNegociacao: testarCenarioValido -> FALHA\n";
             estado = FALHA;
             return;
@@ -25,7 +25,7 @@ void TUCodigoNegociacao::testarCenarioValido() {
 
 void TUCodigoNegociacao::testarDigitoInvalido() {
     try {
-        codNegociacao->set(CODIGO_DIGITO_INVALIDO);
+        valor->set(CODIGO_DIGITO_INVALIDO);
         std::cout << "TUCodigoNegociacao: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
 
@@ -36,7 +36,7 @@ void TUCodigoNegociacao::testarDigitoInvalido() {
 
 void TUCodigoNegociacao::testarTamanhoInvalido() {
     try {
-        codNegociacao->set(CODIGO_TAMANHO_INVALIDO);
+        valor->set(CODIGO_TAMANHO_INVALIDO);
         std::cout << "TUCodigoNegociacao: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
 

@@ -3,9 +3,10 @@
 
 #include <string>
 
+#include "dominios_test.hpp"
 #include "../../src/dominios/dominios.hpp"
 
-class TUSenha {
+class TUSenha:public TUDominio<Senha> {
     private:
         const static std::string VALOR_VALIDO;
         const static std::string DIGITO_INVALIDO;
@@ -13,29 +14,14 @@ class TUSenha {
         const static std::string CRITERIO_MINIMO_INVALIDO;
         const static std::string CARACTER_DUPLICADO_INVALIDO;
 
-        Senha *senha;
-        int estado;
-
-        void setUp() {
-            senha = new Senha();
-            estado = SUCESSO;
-        }
-        
-        void tearDown() {
-            delete senha;
-        }
-        
-        void testarCenarioValido();
+        void testarCenarioValido() override;
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
         void testarCriterioMinimoInvalido();
         void testarCaracterDuplicadoInvalido();
 
     public:
-        const static int SUCESSO = 1;
-        const static int FALHA = -1;
-
-        int run();
+        int run() override;
 };
 
 #endif // SENHA_TEST_HPP_INCLUDED
