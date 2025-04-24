@@ -16,12 +16,12 @@ class TUSenha {
         Senha *senha;
         int estado;
 
-        void TUSenha::setUp() {
+        void setUp() {
             senha = new Senha();
             estado = SUCESSO;
         }
         
-        void TUSenha::tearDown() {
+        void tearDown() {
             delete senha;
         }
         

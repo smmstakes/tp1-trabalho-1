@@ -51,7 +51,7 @@ class Data:public Dominio<std::string> {
 class Nome:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_NOME;
-        static const int Nome::TAMANHO_NOME = 20;
+        static const int TAMANHO_NOME = 20;
         void validar(const std::string& nome) override;
 };
 

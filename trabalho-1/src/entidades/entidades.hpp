@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "dominios.hpp"
+#include "../dominios/dominios.hpp"
 
 class Conta{
     private:
