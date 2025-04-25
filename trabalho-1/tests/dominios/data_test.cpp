@@ -11,7 +11,7 @@ const std::string TUData::FORMATO_INVALIDO = "2024210";
 
 void TUData::testarCenarioValido() {
     valor->set(VALOR_VALIDO);
-    if (valor->get() == VALOR_VALIDO){
+    if (valor->get() != VALOR_VALIDO){
         estado = FALHA;
         std::cout << "TUData: testarCenarioValido -> FALHA \n";
         return;
