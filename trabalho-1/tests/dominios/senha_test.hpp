@@ -1,25 +1,27 @@
-#ifndef CPF_TEST_HPP_INCLUDED
-#define CPF_TEST_HPP_INCLUDED
+#ifndef SENHA_TEST_HPP_INCLUDED
+#define SENHA_TEST_HPP_INCLUDED
 
 #include <string>
 
 #include "dominios_test.hpp"
 #include "../../src/dominios/dominios.hpp"
 
-class TUCPF:public TUDominio<CPF> {
+class TUSenha:public TUDominio<Senha> {
     private:
         const static std::string VALOR_VALIDO;
         const static std::string DIGITO_INVALIDO;
         const static std::string TAMANHO_INVALIDO;
-        const static std::string FORMATACAO_INVALIDA;
+        const static std::string CRITERIO_MINIMO_INVALIDO;
+        const static std::string CARACTER_DUPLICADO_INVALIDO;
 
         void testarCenarioValido() override;
         void testarDigitoInvalido();
         void testarTamanhoInvalido();
-        void testarFormatacaoInvalida();
+        void testarCriterioMinimoInvalido();
+        void testarCaracterDuplicadoInvalido();
 
     public:
         int run() override;
 };
 
-#endif // CPF_TEST_HPP_INCLUDED
+#endif // SENHA_TEST_HPP_INCLUDED

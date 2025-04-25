@@ -26,13 +26,6 @@ class Codigo:public Dominio<std::string> {
         void validar(const std::string& cod) override;
 };
 
-class Nome:public Dominio<std::string> {
-    private:
-        static const int LIMITE_CARACTERES_NOME;
-        static const std::regex FORMATO;
-        void validar(const std::string& nome) override;
-};
-
 class CodigoNegociacao:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
@@ -43,6 +36,29 @@ class CPF:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_CPF;
         void validar(const std::string& cpf) override;
+};
+
+class Data:public Dominio<std::string> {
+    private:
+        static const std::regex PADRAO_DATA;
+        bool ehAnoBissexto(int ano) const {
+            return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        };
+        void validar(const std::string& data) override;
+// Criada por Suyanne Miranda - 222006445
+};
+
+class Nome:public Dominio<std::string> {
+    private:
+        static const std::regex PADRAO_NOME;
+        static const int TAMANHO_NOME = 20;
+        void validar(const std::string& nome) override;
+};
+
+class Perfil:public Dominio<std::string>{
+    private:
+        static const std::regex PADRAO_PERFIL;
+        void validar(const std::string& perfil) override;
 };
 
 class Dinheiro:public Dominio<double> {
@@ -57,30 +73,15 @@ class Dinheiro:public Dominio<double> {
 class Quantidade:public Dominio<int> {
     private:
         int quantidade;
-        static const int VALOR_MIN= 1;
-        static const int VALOR_MAX=1000000;
+        static const int VALOR_MIN = 1;
+        static const int VALOR_MAX = 1000000;
         void validar(const int& quantidade) override;
 // Criada por Pedro Vale - 231038733
 };
 
-class Data:public Dominio<std::string> {
-    private:
-        static const std::regex FORMATO;
-        bool ehAnoBissexto(int ano) const {
-            return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
-        };
-        void validar(const std::string& data) override;
-// Criada por Suyanne Miranda - 222006445
-};
-
-class Perfil:public Dominio<std::string>{
-    private:
-        static const std::regex PADRAO_PERFIL;
-        void validar(const std::string& perfil) override;
-};
-
 class Senha:public Dominio<std::string> {
     private:
+        static const int TAMANHO_SENHA = 6;
         static const std::regex PADRAO_SENHA;
         void validar(const std::string& senha) override;
 };

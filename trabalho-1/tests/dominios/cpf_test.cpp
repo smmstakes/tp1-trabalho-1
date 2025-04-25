@@ -8,61 +8,51 @@ const std::string TUCPF::DIGITO_INVALIDO = "12E.4S6.789-O1";
 const std::string TUCPF::TAMANHO_INVALIDO = "123.456.789-012";
 const std::string TUCPF::FORMATACAO_INVALIDA = "12345678901";
 
-
-void TUCPF::setUp() {
-    cpf = new CPF();
-    estado = SUCESSO;
-}
-
-void TUCPF::tearDown() {
-    delete cpf;
-}
-
 void TUCPF::testarCenarioValido() {
     try {
-        cpf->set(VALOR_VALIDO);
-        if (cpf->get() != VALOR_VALIDO){
-            std::cout << "TUCPF: testarCenarioValido -> FALHA!\n";
+        valor->set(VALOR_VALIDO);
+        if (valor->get() != VALOR_VALIDO){
+            std::cout << "TUCPF: testarCenarioValido -> FALHA\n";
             estado = FALHA;
             return;
         }
-        std::cout << "TUCPF: testarCenarioValido -> SUCESSO!\n";
+        std::cout << "TUCPF: testarCenarioValido -> SUCESSO\n";
 
     } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarCenarioValido -> FALHA!\n";
+        std::cout << "TUCPF: testarCenarioValido -> FALHA\n";
         estado = FALHA;
     }
 }
 
 void TUCPF::testarDigitoInvalido() {
     try {
-        cpf->set(DIGITO_INVALIDO);
-        std::cout << "TUCPF: testarDigitoInvalido -> FALHA!\n";
+        valor->set(DIGITO_INVALIDO);
+        std::cout << "TUCPF: testarDigitoInvalido -> FALHA\n";
         estado = FALHA;
 
     } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarDigitoInvalido -> SUCESSO!\n";
+        std::cout << "TUCPF: testarDigitoInvalido -> SUCESSO\n";
     }
 }
 
 void TUCPF::testarTamanhoInvalido() {
     try {
-        cpf->set(TAMANHO_INVALIDO);
-        std::cout << "TUCPF: testarTamanhoInvalido -> FALHA!\n";
+        valor->set(TAMANHO_INVALIDO);
+        std::cout << "TUCPF: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
         
     } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarTamanhoInvalido -> SUCESSO!\n";
+        std::cout << "TUCPF: testarTamanhoInvalido -> SUCESSO\n";
     }
 }
 
 void TUCPF::testarFormatacaoInvalida() {
     try {
-        cpf->set(FORMATACAO_INVALIDA);
-        std::cout << "TUCPF: testarFormatacaoInvalida -> FALHA!\n";
+        valor->set(FORMATACAO_INVALIDA);
+        std::cout << "TUCPF: testarFormatacaoInvalida -> FALHA\n";
         estado = FALHA;
     } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarFormatacaoInvalida -> SUCESSO!\n";
+        std::cout << "TUCPF: testarFormatacaoInvalida -> SUCESSO\n";
     }
 }
 

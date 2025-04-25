@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include <unordered_set>
 
 #include "dominios.hpp"
 
@@ -29,10 +30,10 @@ void CPF::validar(const std::string& cpf) {
     }
 }
 
-const std::regex Data::FORMATO("^\\d{8}$");
+const std::regex Data::PADRAO_DATA("^\\d{8}$");
 
 void Data::validar(const std::string& data) {
-    if (!std::regex_match(data, FORMATO)) {
+    if (!std::regex_match(data, PADRAO_DATA)) {
         throw std::invalid_argument("Formato inválido: a data deve ter 8 dígitos numéricos (AAAAMMDD).");
     }
 
@@ -59,15 +60,15 @@ void Data::validar(const std::string& data) {
         throw std::invalid_argument("Dia inválido para o mês informado.");
 }
 
-const std::regex Nome::FORMATO("^[A-Za-z0-9 ]+$");
+const std::regex Nome::PADRAO_NOME("^[A-Za-z0-9 ]+$");
 
 void Nome::validar(const std::string& nome){
 
-    if (nome.size() > LIMITE_CARACTERES_NOME){
+    if (nome.size() > TAMANHO_NOME){
         throw std::invalid_argument("O nome não pode ser maior do que 20 caracteres");
     }
 
-    if(!std::regex_match(nome, FORMATO)){
+    if(!std::regex_match(nome, PADRAO_NOME)){
         throw std::invalid_argument("O nome não pode ter caracteres especiais");
     }
 
@@ -77,8 +78,6 @@ void Nome::validar(const std::string& nome){
         }
     }
 };
-
-const int Nome::LIMITE_CARACTERES_NOME = 20;
 
 const std::regex Perfil::PADRAO_PERFIL("(Conservador|Moderado|Agressivo)");
 
@@ -110,12 +109,16 @@ void Senha::validar(const std::string& senha) {
         throw std::invalid_argument("Senha inválida deve ter exatamente 6 caracteres válidos.");
     }
 
+    std::unordered_set<char> caracteres;
+
     bool temDigito = false;
     bool temEspecial = false;
     bool temMaiuscula = false;
     bool temMinuscula = false;
 
     for (auto c : senha) {
+        caracteres.insert(c);
+
         if (std::isdigit(c)) {
             temDigito = true;
         } else if (std::isupper(c)) {
@@ -125,6 +128,10 @@ void Senha::validar(const std::string& senha) {
         } else if (c == '#' || c == '$' || c == '%' || c == '&') {
             temEspecial = true;
         }
+    }
+
+    if (caracteres.size() != TAMANHO_SENHA) {
+        throw std::invalid_argument("Senha contém caracteres duplicados.");
     }
 
     if (!temDigito || !temEspecial || !temMaiuscula || !temMinuscula) {
