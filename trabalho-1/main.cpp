@@ -3,6 +3,7 @@
 #include "./tests/dominios/cpf_test.hpp"
 #include "./tests/dominios/cpf_test.hpp"
 #include "./tests/dominios/data_test.hpp"
+#include "./tests/dominios/senha_test.hpp"
 #include "./tests/dominios/codigo_test.hpp"
 #include "./tests/dominios/dominios_test.hpp"
 #include "./tests/dominios/codigo_negociacao_test.hpp"
@@ -14,6 +15,7 @@ int main() {
         GerenciadorDeTestes::executar(new TUCPF(), "TUCPF");
         GerenciadorDeTestes::executar(new TUData(), "TUData");
         GerenciadorDeTestes::executar(new TUSenha(), "TUSenha");
+
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
         return 1;
