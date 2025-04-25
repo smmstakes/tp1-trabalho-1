@@ -10,8 +10,8 @@ const std::string TUData::DIA_INVALIDO = "20240230";
 const std::string TUData::ANO_INVALIDO = "00000101";
 
 void TUData::testarCenarioValido() {
-    data->set(VALOR_VALIDO);
-    if (data->get() != VALOR_VALIDO){
+    valor->set(VALOR_VALIDO);
+    if (valor->get() == VALOR_VALIDO){
         estado = FALHA;
         std::cout << "TUData: testarCenarioValido -> FALHA \n";
         return;
