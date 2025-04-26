@@ -13,6 +13,7 @@ class TUDinheiro: public TUDominio<Dinheiro>{
         void testarCenarioValido() override;
         void testarTamanhoInvalido();
         void testarValorInvalido();
+
     public:
         int run() override;
 };

@@ -35,3 +35,14 @@ void TUQuantidade::testarValorInvalido(){
         std::cout<< "TUQuantidade: testarValorInvalido -> SUCESSO"<<std::endl;
     }
 }
+
+int TUQuantidade::run(){
+    setUp();
+
+    testarCenarioValido();
+    testarTamanhoInvalido();
+    testarValorInvalido();
+
+    tearDown();
+    return estado;
+}

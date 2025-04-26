@@ -35,3 +35,14 @@ void TUDinheiro::testarValorInvalido(){
         std::cout<< "TUDinheiro: testarValorInvalido -> SUCESSO"<<std::endl;
     }
 }
+
+int TUDinheiro::run(){
+    setUp();
+
+    testarCenarioValido();
+    testarTamanhoInvalido();
+    testarValorInvalido();
+
+    tearDown();
+    return estado;
+}
