@@ -8,13 +8,20 @@ const int TUQuantidade::QUANTIDADE_TAMANHO_INVALIDO = 10000000;
 const int TUQuantidade::QUANTIDADE_VALOR_INVALIDO = 1000001;
 
 void TUQuantidade::testarCenarioValido(){
-    valor->set(QUANTIDADE_VALIDA);
-    if (valor->get() != QUANTIDADE_VALIDA){
+    try {
+        valor->set(QUANTIDADE_VALIDA);
+        if (valor->get() != QUANTIDADE_VALIDA){
+            std::cout<< "TUQuantidade: testarCenarioValido -> FALHA"<<std::endl;
+            estado=FALHA;
+            return;
+        }
+        std::cout<<"TUQuantidade: testarCenarioValido -> SUCESSO"<<std::endl;
+
+    } catch (const std::invalid_argument& e){
         std::cout<< "TUQuantidade: testarCenarioValido -> FALHA"<<std::endl;
         estado=FALHA;
-        return;
     }
-    std::cout<<"TUQuantidade: testarCenarioValido -> SUCESSO"<<std::endl;
+    
 }
 
 void TUQuantidade::testarTamanhoInvalido(){

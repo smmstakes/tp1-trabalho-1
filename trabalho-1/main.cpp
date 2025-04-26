@@ -17,8 +17,8 @@ int main() {
         GerenciadorDeTestes::executar(new TUCPF(), "TUCPF");
         GerenciadorDeTestes::executar(new TUData(), "TUData");
         GerenciadorDeTestes::executar(new TUSenha(), "TUSenha");
-        GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
         GerenciadorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
+        GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
 
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
