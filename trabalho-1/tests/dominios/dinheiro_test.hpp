@@ -6,9 +6,9 @@
 
 class TUDinheiro: public TUDominio<Dinheiro>{
     private:
-        const static double DINHEIRO_VALIDO;
-        const static double DINHEIRO_TAMANHO_INVALIDO;
-        const static double DINHEIRO_VALOR_INVALIDO;
+        const static double VALOR_VALIDO;
+        const static double TAMANHO_INVALIDO;
+        const static double VALOR_INVALIDO;
 
         void testarCenarioValido() override;
         void testarTamanhoInvalido();

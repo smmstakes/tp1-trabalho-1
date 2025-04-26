@@ -4,6 +4,8 @@
 #include "./tests/dominios/senha_test.hpp"
 #include "./tests/dominios/codigo_test.hpp"
 #include "./tests/dominios/codigo_negociacao_test.hpp"
+#include "./tests/dominios/quantidade_test.hpp"
+#include "./tests/dominios/dinheiro_test.hpp"
 
 using namespace std;
 
