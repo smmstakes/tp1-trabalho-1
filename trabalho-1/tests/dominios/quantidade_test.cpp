@@ -18,7 +18,7 @@ void TUQuantidade::testarCenarioValido(){
         std::cout<<"TUQuantidade: testarCenarioValido -> SUCESSO"<<std::endl;
 
     } catch (const std::invalid_argument& e){
-        std::cout<< "TUQuantidade: testarCenarioValido -> FALHA"<<std::endl;
+        std::cout<< "TUQuantidade: testarCenarioValido -> FALHA" << ".Excessão: " << e.what() << std::endl;
         estado=FALHA;
     }
     
