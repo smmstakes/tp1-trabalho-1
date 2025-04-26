@@ -7,6 +7,8 @@
 #include "./tests/dominios/codigo_test.hpp"
 #include "./tests/dominios/dominios_test.hpp"
 #include "./tests/dominios/codigo_negociacao_test.hpp"
+#include "./tests/dominios/quantidade_test.hpp"
+#include "./tests/dominios/dinheiro_test.hpp"
 
 int main() {
     try {
@@ -15,6 +17,8 @@ int main() {
         GerenciadorDeTestes::executar(new TUCPF(), "TUCPF");
         GerenciadorDeTestes::executar(new TUData(), "TUData");
         GerenciadorDeTestes::executar(new TUSenha(), "TUSenha");
+        GerenciadorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
+        GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
 
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
