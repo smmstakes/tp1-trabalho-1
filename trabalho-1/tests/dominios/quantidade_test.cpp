@@ -3,14 +3,14 @@
 
 #include "quantidade_test.hpp"
 
-const int TUQuantidade::QUANTIDADE_VALIDA = 999999;
-const int TUQuantidade::QUANTIDADE_TAMANHO_INVALIDO = 10000000;
-const int TUQuantidade::QUANTIDADE_VALOR_INVALIDO = 1000001;
+const int TUQuantidade::VALOR_VALIDO = 999999;
+const int TUQuantidade::TAMANHO_INVALIDO = 10000000;
+const int TUQuantidade::VALOR_INVALIDO = 1000001;
 
 void TUQuantidade::testarCenarioValido(){
     try {
-        valor->set(QUANTIDADE_VALIDA);
-        if (valor->get() != QUANTIDADE_VALIDA){
+        valor->set(VALOR_VALIDO);
+        if (valor->get() != VALOR_VALIDO){
             std::cout<< "TUQuantidade: testarCenarioValido -> FALHA"<<std::endl;
             estado=FALHA;
             return;
@@ -26,7 +26,7 @@ void TUQuantidade::testarCenarioValido(){
 
 void TUQuantidade::testarTamanhoInvalido(){
     try{
-        valor->set(QUANTIDADE_TAMANHO_INVALIDO);
+        valor->set(TAMANHO_INVALIDO);
         std::cout<< "TUQuantidade: testarTamanhoInvalido -> FALHA"<<std::endl;
         estado= FALHA;
     } catch(std::invalid_argument &excecao){
@@ -35,7 +35,7 @@ void TUQuantidade::testarTamanhoInvalido(){
 }
 void TUQuantidade::testarValorInvalido(){
     try{
-        valor->set(QUANTIDADE_VALOR_INVALIDO);
+        valor->set(VALOR_INVALIDO);
         std::cout<< "TUQuantidade: testarValorInvalido -> FALHA"<<std::endl;
         estado= FALHA;
     } catch(std::invalid_argument &excecao){

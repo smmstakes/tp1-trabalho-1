@@ -6,9 +6,9 @@
 
 class TUQuantidade: public TUDominio<Quantidade> {
     private:
-        const static int QUANTIDADE_VALIDA;
-        const static int QUANTIDADE_TAMANHO_INVALIDO;
-        const static int QUANTIDADE_VALOR_INVALIDO;
+        const static int VALOR_VALIDO;
+        const static int TAMANHO_INVALIDO;
+        const static int VALOR_INVALIDO;
         
         void testarCenarioValido() override;
         void testarTamanhoInvalido();
