@@ -96,7 +96,7 @@ void Dinheiro::validar(const double& dinheiro){
     }
 }
 
-void Quantidade::validar(const int& Quantidade){
+void Quantidade::validar(const int& quantidade){
     if (quantidade < VALOR_MIN || quantidade > VALOR_MAX){
         throw std::invalid_argument("Quantidade Inválida, por favor digite um valor entre 1 a 1000000.");
     }
