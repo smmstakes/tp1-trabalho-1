@@ -3,13 +3,13 @@
 
 #include "perfil_test.hpp"
 
-const std::string TUPerfil::PERFIL_VALIDO = "Moderado"; // Pode ser Conservador, Moderado ou Agressivo
-const std::string TUPerfil::PERFIL_INVALIDO = "Radical"; //Qualquer coisa que não seja nenhum dos três
+const std::string TUPerfil::VALOR_VALIDO = "Moderado"; // Pode ser Conservador, Moderado ou Agressivo
+const std::string TUPerfil::VALOR_INVALIDO = "Radical";
 
 void TUPerfil::testarCenarioValido(){
     try{
-        valor->set(PERFIL_VALIDO);
-        if (valor->get() != PERFIL_VALIDO){
+        valor->set(VALOR_VALIDO);
+        if (valor->get() != VALOR_VALIDO){
             std::cout << "TUPerfil: testarCenarioValido -> FALHA\n";
             estado = FALHA;
             return;
@@ -23,7 +23,7 @@ void TUPerfil::testarCenarioValido(){
 
 void TUPerfil::testarCenarioInvalido(){
     try{
-        valor->set(PERFIL_INVALIDO);
+        valor->set(VALOR_INVALIDO);
         std::cout << "TUPerfil: testarTamanhoInvalido -> FALHA\n";
         estado = FALHA;
 

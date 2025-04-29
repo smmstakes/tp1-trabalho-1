@@ -8,8 +8,8 @@
 
 class TUPerfil:public TUDominio<Perfil>{
     private:
-        const static std::string PERFIL_VALIDO;
-        const static std::string PERFIL_INVALIDO;
+        const static std::string VALOR_VALIDO;
+        const static std::string VALOR_INVALIDO;
 
         void testarCenarioValido() override;
         void testarCenarioInvalido();
