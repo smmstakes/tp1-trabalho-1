@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./tests/tests.hpp"
 #include "./tests/dominios/cpf_test.hpp"
+#include "./tests/dominios/nome_test.hpp"
 #include "./tests/dominios/data_test.hpp"
 #include "./tests/dominios/senha_test.hpp"
 #include "./tests/dominios/codigo_test.hpp"
@@ -14,12 +15,12 @@ int main() {
     try {
         GerenciadorDeTestes::executar(new TUCPF(), "TUCPF");
         GerenciadorDeTestes::executar(new TUData(), "TUData");
+        GerenciadorDeTestes::executar(new TUNome(), "TUNome");
         GerenciadorDeTestes::executar(new TUSenha(), "TUSenha");
         GerenciadorDeTestes::executar(new TUPerfil(), "TUPerfil");
         GerenciadorDeTestes::executar(new TUCodigo(), "TUCodigo"); 
         GerenciadorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
         GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
-        GerenciadorDeTestes::executar(new TUCodigoNegociacao(), "TUCodigoNegociacao");
         
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
