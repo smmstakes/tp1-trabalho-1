@@ -29,7 +29,9 @@ class Carteira {
         std::string getCodigo() const{return codigo.get();}
         std::string getNome() const {return nome.get();}
         std::string getPerfil() const {return perfil.get();}
-};
+        void setNome(std::string nome);
+        void setPerfil(std::string perfil);
+    };
 
 class Ordem {
     private:
