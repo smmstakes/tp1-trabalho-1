@@ -11,17 +11,21 @@
 #include "./tests/dominios/quantidade_test.hpp"
 #include "./tests/dominios/codigo_negociacao_test.hpp"
 
+#include "./tests/entidades/ordem_test.hpp"
+
 int main() {
     try {
-        GerenciadorDeTestes::executar(new TUCPF(), "TUCPF");
-        GerenciadorDeTestes::executar(new TUData(), "TUData");
-        GerenciadorDeTestes::executar(new TUNome(), "TUNome");
-        GerenciadorDeTestes::executar(new TUSenha(), "TUSenha");
-        GerenciadorDeTestes::executar(new TUPerfil(), "TUPerfil");
-        GerenciadorDeTestes::executar(new TUCodigo(), "TUCodigo"); 
-        GerenciadorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
-        GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
-        GerenciadorDeTestes::executar(new TUCodigoNegociacao, "TUCodigoNegociacao");
+        ExecutorDeTestes::executar(new TUCPF(), "TUCPF");
+        ExecutorDeTestes::executar(new TUData(), "TUData");
+        ExecutorDeTestes::executar(new TUNome(), "TUNome");
+        ExecutorDeTestes::executar(new TUSenha(), "TUSenha");
+        ExecutorDeTestes::executar(new TUPerfil(), "TUPerfil");
+        ExecutorDeTestes::executar(new TUCodigo(), "TUCodigo"); 
+        ExecutorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
+        ExecutorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
+        ExecutorDeTestes::executar(new TUCodigoNegociacao, "TUCodigoNegociacao");
+
+        ExecutorDeTestes::executar(new TUOrdem, "TUOrdem");
         
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
