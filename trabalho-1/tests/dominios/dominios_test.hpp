@@ -3,14 +3,14 @@
 
 #include <string>
 
-template<typename Tipo>
+template<typename Dominio>
 class TUDominio {
     protected:
-        Tipo *valor;
+        Dominio *valor;
         int estado;
 
         void setUp() {
-            valor = new Tipo();
+            valor = new Dominio();
             estado = SUCESSO;
         };
         void tearDown() { delete valor ;};
