@@ -21,6 +21,7 @@ int main() {
         GerenciadorDeTestes::executar(new TUCodigo(), "TUCodigo"); 
         GerenciadorDeTestes::executar(new TUDinheiro(), "TUDinheiro");
         GerenciadorDeTestes::executar(new TUQuantidade(), "TUQuantidade");
+        GerenciadorDeTestes::executar(new TUCodigoNegociacao, "TUCodigoNegociacao");
         
     } catch (const std::string& nomeTipo) {
         std::cerr << "Erro: teste '" << nomeTipo << "' falhou. Encerrando execução." << std::endl;
