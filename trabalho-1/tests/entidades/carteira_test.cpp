@@ -1,8 +1,9 @@
-#include "carteira_test.hpp"
-
 #include <iostream>
 #include <string>
 #include <stdexcept>
+
+#include "../tests.hpp"
+#include "carteira_test.hpp"
 
 const std::string TUCarteira::CODIGO_VALIDO = "24680";
 const std::string TUCarteira::NOME_VALIDO = "Felipe Santos 10";
@@ -13,29 +14,10 @@ void TUCarteira::setUp() {
     estado = SUCESSO;
 }
 
-void TUCarteira::testarCenarioValido(){
-    try{
-        if(entidade->getCodigo() != CODIGO_VALIDO){
-            std::cout << "TUCarteira: testarCenarioValido -> Codigo -> FALHA" <<std::endl;
-            estado = FALHA;
-        }
-        std::cout<< "TUCarteira: testarCenarioValido -> Codigo -> SUCESSO"<<std::endl;
-        
-        if(entidade->getNome() != NOME_VALIDO){
-            std::cout<<"TUCarteira: testarCenarioValido -> Nome -> FALHA"<<std::endl;
-            estado = FALHA;
-        }
-        std::cout<<"TUCarteira: testarCenarioValido -> Nome -> SUCESSO"<<std::endl;
-
-        if (entidade->getPerfil()!= PERFIL_VALIDO){
-            std::cout<< "TUCarteira: testarCenarioValido -> Perfil -> FALHA"<<std::endl;
-            estado = FALHA;
-        }
-        std::cout<<"TUCarteira: testarCenarioValido -> Perfil -> SUCESSO"<<std::endl;
-    } catch (std::invalid_argument &excecao){
-        std::cout<< "TUCarteira: testarCenarioValido -> FALHA"<<std::endl;
-        estado = FALHA;
-    }
+void TUCarteira::testarCenarioValido() {
+    TUUtils::assertIgual(entidade->getCodigo(), CODIGO_VALIDO, "testarCenarioValido -> Codigo", "TUCarteira", estado);
+    TUUtils::assertIgual(entidade->getNome(), NOME_VALIDO, "testarCenarioValido -> Nome", "TUCarteira", estado);
+    TUUtils::assertIgual(entidade->getPerfil(), PERFIL_VALIDO, "testarCenarioValido -> Perfil", "TUCarteira", estado);
 }
 
 int TUCarteira::run (){
