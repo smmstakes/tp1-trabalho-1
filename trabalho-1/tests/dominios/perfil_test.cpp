@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "perfil_test.hpp"
 
 const std::string TUPerfil::VALOR_VALIDO = "Moderado"; // Pode ser Conservador, Moderado ou Agressivo

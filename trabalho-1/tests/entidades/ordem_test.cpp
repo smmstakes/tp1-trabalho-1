@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 #include "ordem_test.hpp"
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 
 const int TUOrdem::QUANTIDADE_VALIDA = 5000;
 const double TUOrdem::DINHEIRO_VALIDO = 123456.78;
@@ -17,11 +17,11 @@ void TUOrdem::setUp() {
 }
 
 void TUOrdem::testarCenarioValido() {
-    TUUtils::assertIgual(entidade->getCodigo(), CODIGO_VALIDO, "Codigo", "TUOrdem", estado);
-    TUUtils::assertIgual(entidade->getCodNegociacao(), CODIGO_NEGOCIACAO_VALIDO, "CodigoNegociacao", "TUOrdem", estado);
-    TUUtils::assertIgual(entidade->getData(), DATA_VALIDA, "Data", "TUOrdem", estado);
-    TUUtils::assertIgual(entidade->getDinheiro(), DINHEIRO_VALIDO, "Dinheiro", "TUOrdem", estado);
-    TUUtils::assertIgual(entidade->getQuantidade(), QUANTIDADE_VALIDA, "Quantidade", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getCodigo(), CODIGO_VALIDO, "testarCenarioValido -> Codigo", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getCodNegociacao(), CODIGO_NEGOCIACAO_VALIDO, "testarCenarioValido -> CodigoNegociacao", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getData(), DATA_VALIDA, "testarCenarioValido -> Data", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getDinheiro(), DINHEIRO_VALIDO, "testarCenarioValido -> Dinheiro", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getQuantidade(), QUANTIDADE_VALIDA, "testarCenarioValido -> Quantidade", "TUOrdem", estado);
 }
 
 int TUOrdem::run() {

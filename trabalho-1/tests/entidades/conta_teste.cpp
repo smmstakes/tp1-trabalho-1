@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "conta_test.hpp"
 
 const std::string TUConta::CPF_VALIDO = "123-456-789-10";

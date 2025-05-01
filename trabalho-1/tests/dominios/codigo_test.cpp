@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "codigo_test.hpp"
 
 const std::string TUCodigo::VALOR_VALIDO = "04562";

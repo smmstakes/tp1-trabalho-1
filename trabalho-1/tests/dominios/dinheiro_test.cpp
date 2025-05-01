@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "dinheiro_test.hpp"
 
 const double TUDinheiro::VALOR_VALIDO = 999999.99;

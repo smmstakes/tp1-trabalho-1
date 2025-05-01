@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "quantidade_test.hpp"
 
 const int TUQuantidade::VALOR_VALIDO = 999999;

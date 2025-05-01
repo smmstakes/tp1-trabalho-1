@@ -2,7 +2,7 @@
 #include <string>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "carteira_test.hpp"
 
 const std::string TUCarteira::CODIGO_VALIDO = "24680";

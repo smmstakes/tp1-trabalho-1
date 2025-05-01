@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "senha_test.hpp"
 
 const std::string TUSenha::VALOR_VALIDO = "3aG#k8";

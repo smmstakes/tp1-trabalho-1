@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "nome_test.hpp"
 
 const std::string TUNome::VALOR_VALIDO = "Maria de Alencar";

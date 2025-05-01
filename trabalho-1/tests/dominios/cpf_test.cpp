@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "../tests.hpp"
+#include "../utils/tu_utils.hpp"
 #include "cpf_test.hpp"
 
 const std::string TUCPF::VALOR_VALIDO = "123.456.789-01";
