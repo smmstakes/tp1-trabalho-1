@@ -3,7 +3,9 @@
 #include <stdexcept>
 
 #include "ordem_test.hpp"
+#include "../tests.hpp"
 
+const int TUOrdem::QUANTIDADE_VALIDA = 5000;
 const double TUOrdem::DINHEIRO_VALIDO = 123456.78;
 const std::string TUOrdem::DATA_VALIDA = "20250429";
 const std::string TUOrdem::CODIGO_VALIDO = "01385";
@@ -15,46 +17,11 @@ void TUOrdem::setUp() {
 }
 
 void TUOrdem::testarCenarioValido() {
-    try {
-        if (entidade->getCodigo() != CODIGO_VALIDO) {
-            std::cout << "TUOrdem: testarCenarioValido -> Codigo -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUOrdem: testarCenarioValido -> Codigo -> SUCESSO\n";
-
-        if (entidade->getCodNegociacao() != CODIGO_NEGOCIACAO_VALIDO) {
-            std::cout << "TUOrdem: testarCenarioValido -> CodigoNegociacao -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUOrdem: testarCenarioValido -> CodigoNegociacao -> SUCESSO\n";
-
-        if (entidade->getData() != DATA_VALIDA) {
-            std::cout << "TUOrdem: testarCenarioValido -> Data -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUOrdem: testarCenarioValido -> Data -> SUCESSO\n";
-
-        if (entidade->getDinheiro() != DINHEIRO_VALIDO) {
-            std::cout << "TUOrdem: testarCenarioValido -> Dinheiro -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUOrdem: testarCenarioValido -> Dinheiro -> SUCESSO\n";
-
-        if (entidade->getQuantidade() != QUANTIDADE_VALIDA) {
-            std::cout << "TUOrdem: testarCenarioValido -> Quantidade -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUOrdem: testarCenarioValido -> Quantidade -> SUCESSO\n";
-        
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUOrdem: testarCenarioValido -> FALHA\n";
-        estado = FALHA;
-    }
+    TUUtils::assertIgual(entidade->getCodigo(), CODIGO_VALIDO, "Codigo", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getCodNegociacao(), CODIGO_NEGOCIACAO_VALIDO, "CodigoNegociacao", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getData(), DATA_VALIDA, "Data", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getDinheiro(), DINHEIRO_VALIDO, "Dinheiro", "TUOrdem", estado);
+    TUUtils::assertIgual(entidade->getQuantidade(), QUANTIDADE_VALIDA, "Quantidade", "TUOrdem", estado);
 }
 
 int TUOrdem::run() {
