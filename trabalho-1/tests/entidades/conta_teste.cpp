@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "../utils/tu_utils.hpp"
 #include "conta_test.hpp"
 
 const std::string TUConta::CPF_VALIDO = "123-456-789-10";
@@ -13,33 +14,10 @@ void TUConta::setUp(){
     estado = SUCESSO;
 }
 
-void TUConta::testarCenarioValido(){
-    try {
-        if (entidade->getCpf() != CPF_VALIDO) {
-            std::cout << "TUConta: testarCenarioValido -> CPF -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUConta: testarCenarioValido -> CPF -> SUCESSO\n";
-
-        if (entidade->getNome() != NOME_VALIDO) {
-            std::cout << "TUConta: testarCenarioValido -> Nome -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUConta: testarCenarioValido -> Nome -> SUCESSO\n";
-
-        if (entidade->getSenha() != SENHA_VALIDA) {
-            std::cout << "TUConta: testarCenarioValido -> Senha -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUConta: testarCenarioValido -> Senha -> SUCESSO\n";
-
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUConta: testarCenarioValido -> FALHA\n";
-        estado = FALHA;
-    }
+void TUConta::testarCenarioValido() {
+    TUUtils::assertIgual(entidade->getCpf(), CPF_VALIDO, "testarCenarioValido -> CPF", "TUConta", estado);
+    TUUtils::assertIgual(entidade->getNome(), NOME_VALIDO, "testarCenarioValido -> Nome", "TUConta", estado);
+    TUUtils::assertIgual(entidade->getSenha(), SENHA_VALIDA, "testarCenarioValido -> Senha", "TUConta", estado);
 }
 
 int TUConta::run(){

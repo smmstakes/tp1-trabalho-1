@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "../utils/tu_utils.hpp"
 #include "data_test.hpp"
 
 const std::string TUData::VALOR_VALIDO = "20240229";
@@ -11,52 +12,23 @@ const std::string TUData::FORMATO_INVALIDO = "2024210";
 
 void TUData::testarCenarioValido() {
     valor->set(VALOR_VALIDO);
-    if (valor->get() != VALOR_VALIDO){
-        estado = FALHA;
-        std::cout << "TUData: testarCenarioValido -> FALHA \n";
-        return;
-    }
-    std::cout << "TUData: testarCenarioValido -> SUCESSO \n";
+    TUUtils::assertIgual(valor->get(), VALOR_VALIDO, "testarCenarioValido", "TUData", estado);
 }
 
 void TUData::testarDiaInvalido() {
-    try {
-        valor->set(DIA_INVALIDO);
-        std::cout << "TUData: testarDiaInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarDiaInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(DIA_INVALIDO); }, "testarDiaInvalido", "TUData", estado);
 }
 
 void TUData::testarMesInvalido() {
-    try {
-        valor->set(MES_INVALIDO);
-        std::cout << "TUData: testarMesInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarMesInvalido -> SUCESSO\n";
-    }
+   TUUtils::assertExcecao([this]() { valor->set(MES_INVALIDO); }, "testarMesInvalido", "TUData", estado);
 }
 
 void TUData::testarAnoInvalido() {
-    try {
-        valor->set(ANO_INVALIDO);
-        std::cout << "TUData: testarAnoInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarAnoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(ANO_INVALIDO); }, "testarAnoInvalido", "TUData", estado);
 }
 
 void TUData::testarFormatoInvalido() {
-    try {
-        valor->set(FORMATO_INVALIDO);
-        std::cout << "TUData: testarFormatoInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUData: testarFormatoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(FORMATO_INVALIDO); }, "testarFormatoInvalido", "TUData", estado);
 }
 
 int TUData::run() {

@@ -8,7 +8,7 @@
 
 class TUOrdem : public TUEntidade<Ordem> {
     private:
-        const static int QUANTIDADE_VALIDA = 5000;
+        const static int QUANTIDADE_VALIDA;
         const static double DINHEIRO_VALIDO;
         const static std::string DATA_VALIDA;
         const static std::string CODIGO_VALIDO;
