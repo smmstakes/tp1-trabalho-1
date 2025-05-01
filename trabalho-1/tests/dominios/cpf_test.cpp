@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "../tests.hpp"
 #include "cpf_test.hpp"
 
 const std::string TUCPF::VALOR_VALIDO = "123.456.789-01";
@@ -9,52 +10,22 @@ const std::string TUCPF::TAMANHO_INVALIDO = "123.456.789-012";
 const std::string TUCPF::FORMATACAO_INVALIDA = "12345678901";
 
 void TUCPF::testarCenarioValido() {
-    try {
-        valor->set(VALOR_VALIDO);
-        if (valor->get() != VALOR_VALIDO){
-            std::cout << "TUCPF: testarCenarioValido -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUCPF: testarCenarioValido -> SUCESSO\n";
-
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarCenarioValido -> FALHA\n";
-        estado = FALHA;
-    }
+    valor->set(VALOR_VALIDO);
+    TUUtils::assertIgual(valor->get(), VALOR_VALIDO, "testarCenarioValido", "TUCPF", estado);
 }
 
 void TUCPF::testarDigitoInvalido() {
-    try {
-        valor->set(DIGITO_INVALIDO);
-        std::cout << "TUCPF: testarDigitoInvalido -> FALHA\n";
-        estado = FALHA;
-
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarDigitoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(DIGITO_INVALIDO); }, "testarDigitoInvalido", "TUCPF", estado);
 }
 
 void TUCPF::testarTamanhoInvalido() {
-    try {
-        valor->set(TAMANHO_INVALIDO);
-        std::cout << "TUCPF: testarTamanhoInvalido -> FALHA\n";
-        estado = FALHA;
-        
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarTamanhoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(TAMANHO_INVALIDO); }, "testarTamanhoInvalido", "TUCPF", estado);
 }
 
 void TUCPF::testarFormatacaoInvalida() {
-    try {
-        valor->set(FORMATACAO_INVALIDA);
-        std::cout << "TUCPF: testarFormatacaoInvalida -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUCPF: testarFormatacaoInvalida -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(FORMATACAO_INVALIDA); }, "testarFormatacaoInvalida", "TUCPF", estado);
 }
+
 
 int TUCPF::run() {
     setUp();

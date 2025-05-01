@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "../tests.hpp"
 #include "senha_test.hpp"
 
 const std::string TUSenha::VALOR_VALIDO = "3aG#k8";
@@ -10,61 +11,24 @@ const std::string TUSenha::CRITERIO_MINIMO_INVALIDO = "sd23#$";
 const std::string TUSenha::CARACTER_DUPLICADO_INVALIDO = "4rX4#y";
 
 void TUSenha::testarCenarioValido() {
-    try {
-        valor->set(VALOR_VALIDO);
-        if (valor->get() != VALOR_VALIDO){
-            std::cout << "TUSenha: testarCenarioValido -> FALHA\n";
-            estado = FALHA;
-            return;
-        }
-        std::cout << "TUSenha: testarCenarioValido -> SUCESSO\n";
-
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUSenha: testarCenarioValido -> FALHA\n";
-        estado = FALHA;
-    }
+    valor->set(VALOR_VALIDO);
+    TUUtils::assertIgual(valor->get(), VALOR_VALIDO, "testarCenarioValido", "TUSenha", estado);
 }
 
 void TUSenha::testarDigitoInvalido() {
-    try {
-        valor->set(DIGITO_INVALIDO);
-        std::cout << "TUSenha: testarDigitoInvalido -> FALHA\n";
-        estado = FALHA;
-
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUSenha: testarDigitoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(DIGITO_INVALIDO); }, "testarDigitoInvalido", "TUSenha", estado);
 }
 
 void TUSenha::testarTamanhoInvalido() {
-    try {
-        valor->set(TAMANHO_INVALIDO);
-        std::cout << "TUSenha: testarTamanhoInvalido -> FALHA\n";
-        estado = FALHA;
-        
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUSenha: testarTamanhoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(TAMANHO_INVALIDO); }, "testarTamanhoInvalido", "TUSenha", estado);
 }
 
 void TUSenha::testarCriterioMinimoInvalido() {
-    try {
-        valor->set(CRITERIO_MINIMO_INVALIDO);
-        std::cout << "TUSenha: testarCriterioMinimoInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUSenha: testarCriterioMinimoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(CRITERIO_MINIMO_INVALIDO); }, "testarCriterioMinimoInvalido", "TUSenha", estado);
 }
 
 void TUSenha::testarCaracterDuplicadoInvalido() {
-    try {
-        valor->set(CARACTER_DUPLICADO_INVALIDO);
-        std::cout << "TUSenha: testarCaracterDuplicadoInvalido -> FALHA\n";
-        estado = FALHA;
-    } catch(std::invalid_argument &excecao) {
-        std::cout << "TUSenha: testarCaracterDuplicadoInvalido -> SUCESSO\n";
-    }
+    TUUtils::assertExcecao([this]() { valor->set(CARACTER_DUPLICADO_INVALIDO); }, "testarCaracterDuplicadoInvalido", "TUSenha", estado);
 }
 
 int TUSenha::run() {

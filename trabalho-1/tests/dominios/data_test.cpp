@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "data_test.hpp"
 #include "../tests.hpp"
+#include "data_test.hpp"
 
 const std::string TUData::VALOR_VALIDO = "20240229";
 const std::string TUData::DIA_INVALIDO = "20240230";
