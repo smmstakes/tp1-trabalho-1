@@ -35,6 +35,17 @@ class TUUtils {
             std::cout << nomeClasse << ": " << nomeMetodo << " -> FALHA\n";
             estado = FALHA;
         }
+
+        template<typename Metodo>
+        static void assertExcecao(Metodo metodo, const std::string& nomeMetodo, const std::string& nomeClasse, int& estado) {
+            try {
+                metodo();
+                std::cout << nomeClasse << ": " << nomeMetodo << " -> FALHA\n";
+                estado = FALHA;
+            } catch (std::invalid_argument&) {
+                std::cout << nomeClasse << ": " << nomeMetodo << " -> SUCESSO\n";
+            }
+        }
 };
 
 #endif // TESTS_HPP_INCLUDED
