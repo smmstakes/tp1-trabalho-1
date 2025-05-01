@@ -8,9 +8,9 @@
 
 class TUCodigoNegociacao:public TUDominio<CodigoNegociacao>{
     private:
-        const static std::string CODIGO_VALIDO;
-        const static std::string CODIGO_DIGITO_INVALIDO;
-        const static std::string CODIGO_TAMANHO_INVALIDO;
+        const static std::string VALOR_VALIDO;
+        const static std::string DIGITO_INVALIDO;
+        const static std::string TAMANHO_INVALIDO;
 
         void testarCenarioValido() override;
         void testarDigitoInvalido();
