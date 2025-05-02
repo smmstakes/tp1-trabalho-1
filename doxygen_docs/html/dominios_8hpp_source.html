@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Código-Fonte de trabalho-1/src/dominios/dominios.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dominios_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dominios.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dominios_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DOMINIOS_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DOMINIOS_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;regex&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tipo&gt;</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classDominio.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="classDominio.html">Dominio</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classDominio.html#a90d9c573c768098defd29500c301d572">   10</a></span>        Tipo <a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classDominio.html#a488c325c3eb4b06789a1deec579cd056">   11</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classDominio.html#a488c325c3eb4b06789a1deec579cd056">validar</a>(<span class="keyword">const</span> Tipo&amp; <a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>) = 0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classDominio.html#a7b9db4b3fb043c04b47d1d341623adfa">   14</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classDominio.html#a7b9db4b3fb043c04b47d1d341623adfa">set</a>(<span class="keyword">const</span> Tipo&amp; <a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_function" href="classDominio.html#a488c325c3eb4b06789a1deec579cd056">validar</a>(<a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            this-&gt;valor = <a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        };</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classDominio.html#a3c0c21348e0777221516006d07ca2f41">   18</a></span>        Tipo <a class="code hl_function" href="classDominio.html#a3c0c21348e0777221516006d07ca2f41">get</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>; };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classDominio.html#aa2fb97c946e506b45b2e1c940da4735f">   20</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classDominio.html#aa2fb97c946e506b45b2e1c940da4735f">~Dominio</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classCodigo.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classCodigo.html">Codigo</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">   25</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">PADRAO_CODIGO</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">validar</a>(<span class="keyword">const</span> std::string&amp; cod) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classCodigoNegociacao.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="classCodigoNegociacao.html">CodigoNegociacao</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">   31</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">PADRAO_CODIGO_NEGOCIACAO</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">validar</a>(<span class="keyword">const</span> std::string&amp; cod) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classCPF.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="classCPF.html">CPF</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">   37</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">PADRAO_CPF</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCPF.html#ade7019833dd47198011322a6541f5509">validar</a>(<span class="keyword">const</span> std::string&amp; cpf) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classData.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="classData.html">Data</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">   43</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">PADRAO_DATA</a>;</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classData.html#a6cb236c3ad8020c241f130a932d1b7e7">   44</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classData.html#a6cb236c3ad8020c241f130a932d1b7e7">ehAnoBissexto</a>(<span class="keywordtype">int</span> ano)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">return</span> (ano % 4 == 0 &amp;&amp; ano % 100 != 0) || (ano % 400 == 0);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        };</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classData.html#a797ef6a26ea9db50f091542f5809006a">validar</a>(<span class="keyword">const</span> std::string&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// Criada por Suyanne Miranda - 222006445</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classNome.html">   51</a></span><span class="keyword">class </span><a class="code hl_class" href="classNome.html">Nome</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">   53</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">PADRAO_NOME</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classNome.html#a5b8b3f0aaf19279c0379fea89e44505c">   54</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classNome.html#a5b8b3f0aaf19279c0379fea89e44505c">TAMANHO_NOME</a> = 20;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">validar</a>(<span class="keyword">const</span> std::string&amp; nome) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classPerfil.html">   58</a></span><span class="keyword">class </span><a class="code hl_class" href="classPerfil.html">Perfil</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt;{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">   60</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">PADRAO_PERFIL</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">validar</a>(<span class="keyword">const</span> std::string&amp; perfil) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classDinheiro.html">   64</a></span><span class="keyword">class </span><a class="code hl_class" href="classDinheiro.html">Dinheiro</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;double&gt; {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    private :</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">   66</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">dinheiro</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">   67</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">DINHEIRO_MIN</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">   68</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">DINHEIRO_MAX</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">validar</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; <a class="code hl_variable" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">dinheiro</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">// Criado por Pedro Vale - 231038733</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classQuantidade.html">   73</a></span><span class="keyword">class </span><a class="code hl_class" href="classQuantidade.html">Quantidade</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;int&gt; {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">   75</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">quantidade</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classQuantidade.html#a681fc437ff5361a14402fb4d0a66f698">   76</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classQuantidade.html#a681fc437ff5361a14402fb4d0a66f698">VALOR_MIN</a> = 1;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classQuantidade.html#acc78d7a87a0705de05bb9457c4efc2a8">   77</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classQuantidade.html#acc78d7a87a0705de05bb9457c4efc2a8">VALOR_MAX</a> = 1000000;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">validar</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_variable" href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">quantidade</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">// Criada por Pedro Vale - 231038733</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classSenha.html">   82</a></span><span class="keyword">class </span><a class="code hl_class" href="classSenha.html">Senha</a>:<span class="keyword">public</span> <a class="code hl_class" href="classDominio.html">Dominio</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classSenha.html#a080e1ebdc3ceeea808aa162063cdf7bc">   84</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classSenha.html#a080e1ebdc3ceeea808aa162063cdf7bc">TAMANHO_SENHA</a> = 6;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">   85</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> std::regex <a class="code hl_variable" href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">PADRAO_SENHA</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">validar</a>(<span class="keyword">const</span> std::string&amp; senha) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif </span><span class="comment">// DOMINIOS_HPP_INCLUDED</span></div>
+<div class="ttc" id="aclassCPF_html"><div class="ttname"><a href="classCPF.html">CPF</a></div><div class="ttdef"><b>Definição</b> <a href="#l00035">dominios.hpp:35</a></div></div>
+<div class="ttc" id="aclassCPF_html_aa0387bcf53e13a6843de9bdc9fa71193"><div class="ttname"><a href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">CPF::PADRAO_CPF</a></div><div class="ttdeci">static const std::regex PADRAO_CPF</div><div class="ttdef"><b>Definição</b> <a href="#l00037">dominios.hpp:37</a></div></div>
+<div class="ttc" id="aclassCPF_html_ade7019833dd47198011322a6541f5509"><div class="ttname"><a href="classCPF.html#ade7019833dd47198011322a6541f5509">CPF::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cpf) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00027">dominios.cpp:27</a></div></div>
+<div class="ttc" id="aclassCodigoNegociacao_html"><div class="ttname"><a href="classCodigoNegociacao.html">CodigoNegociacao</a></div><div class="ttdef"><b>Definição</b> <a href="#l00029">dominios.hpp:29</a></div></div>
+<div class="ttc" id="aclassCodigoNegociacao_html_a29abd21ed4e48c47884bdc9c02716388"><div class="ttname"><a href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">CodigoNegociacao::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cod) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00019">dominios.cpp:19</a></div></div>
+<div class="ttc" id="aclassCodigoNegociacao_html_ac6c5c9b4e1ed1fdcdb6d9ac012f42b80"><div class="ttname"><a href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO</a></div><div class="ttdeci">static const std::regex PADRAO_CODIGO_NEGOCIACAO</div><div class="ttdef"><b>Definição</b> <a href="#l00031">dominios.hpp:31</a></div></div>
+<div class="ttc" id="aclassCodigo_html"><div class="ttname"><a href="classCodigo.html">Codigo</a></div><div class="ttdef"><b>Definição</b> <a href="#l00023">dominios.hpp:23</a></div></div>
+<div class="ttc" id="aclassCodigo_html_a61d47dc449c04fde35c2a71f36d97b86"><div class="ttname"><a href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">Codigo::PADRAO_CODIGO</a></div><div class="ttdeci">static const std::regex PADRAO_CODIGO</div><div class="ttdef"><b>Definição</b> <a href="#l00025">dominios.hpp:25</a></div></div>
+<div class="ttc" id="aclassCodigo_html_ae8d817fd9b20d1ba280339a0fb973b8a"><div class="ttname"><a href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">Codigo::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cod) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00011">dominios.cpp:11</a></div></div>
+<div class="ttc" id="aclassData_html"><div class="ttname"><a href="classData.html">Data</a></div><div class="ttdef"><b>Definição</b> <a href="#l00041">dominios.hpp:41</a></div></div>
+<div class="ttc" id="aclassData_html_a6cb236c3ad8020c241f130a932d1b7e7"><div class="ttname"><a href="classData.html#a6cb236c3ad8020c241f130a932d1b7e7">Data::ehAnoBissexto</a></div><div class="ttdeci">bool ehAnoBissexto(int ano) const</div><div class="ttdef"><b>Definição</b> <a href="#l00044">dominios.hpp:44</a></div></div>
+<div class="ttc" id="aclassData_html_a797ef6a26ea9db50f091542f5809006a"><div class="ttname"><a href="classData.html#a797ef6a26ea9db50f091542f5809006a">Data::validar</a></div><div class="ttdeci">void validar(const std::string &amp;data) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00035">dominios.cpp:35</a></div></div>
+<div class="ttc" id="aclassData_html_ab4d0bad70ba2547d0ab95d3469498581"><div class="ttname"><a href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">Data::PADRAO_DATA</a></div><div class="ttdeci">static const std::regex PADRAO_DATA</div><div class="ttdef"><b>Definição</b> <a href="#l00043">dominios.hpp:43</a></div></div>
+<div class="ttc" id="aclassDinheiro_html"><div class="ttname"><a href="classDinheiro.html">Dinheiro</a></div><div class="ttdef"><b>Definição</b> <a href="#l00064">dominios.hpp:64</a></div></div>
+<div class="ttc" id="aclassDinheiro_html_a036d99a4533865dd13fb8398b377e9f4"><div class="ttname"><a href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">Dinheiro::DINHEIRO_MAX</a></div><div class="ttdeci">static const double DINHEIRO_MAX</div><div class="ttdef"><b>Definição</b> <a href="#l00068">dominios.hpp:68</a></div></div>
+<div class="ttc" id="aclassDinheiro_html_a09b3187283cbf3f299883498e69f28e6"><div class="ttname"><a href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">Dinheiro::dinheiro</a></div><div class="ttdeci">double dinheiro</div><div class="ttdef"><b>Definição</b> <a href="#l00066">dominios.hpp:66</a></div></div>
+<div class="ttc" id="aclassDinheiro_html_a0fd7eb182aaa915d1bf66cb33659fd91"><div class="ttname"><a href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">Dinheiro::validar</a></div><div class="ttdeci">void validar(const double &amp;dinheiro) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00093">dominios.cpp:93</a></div></div>
+<div class="ttc" id="aclassDinheiro_html_af9ac6ed6ea6817f8050cf8d7cabd5cf4"><div class="ttname"><a href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">Dinheiro::DINHEIRO_MIN</a></div><div class="ttdeci">static const double DINHEIRO_MIN</div><div class="ttdef"><b>Definição</b> <a href="#l00067">dominios.hpp:67</a></div></div>
+<div class="ttc" id="aclassDominio_html"><div class="ttname"><a href="classDominio.html">Dominio</a></div><div class="ttdef"><b>Definição</b> <a href="#l00008">dominios.hpp:8</a></div></div>
+<div class="ttc" id="aclassDominio_html_a3c0c21348e0777221516006d07ca2f41"><div class="ttname"><a href="classDominio.html#a3c0c21348e0777221516006d07ca2f41">Dominio::get</a></div><div class="ttdeci">Tipo get() const</div><div class="ttdef"><b>Definição</b> <a href="#l00018">dominios.hpp:18</a></div></div>
+<div class="ttc" id="aclassDominio_html_a488c325c3eb4b06789a1deec579cd056"><div class="ttname"><a href="classDominio.html#a488c325c3eb4b06789a1deec579cd056">Dominio::validar</a></div><div class="ttdeci">virtual void validar(const Tipo &amp;valor)=0</div></div>
+<div class="ttc" id="aclassDominio_html_a7b9db4b3fb043c04b47d1d341623adfa"><div class="ttname"><a href="classDominio.html#a7b9db4b3fb043c04b47d1d341623adfa">Dominio::set</a></div><div class="ttdeci">void set(const Tipo &amp;valor)</div><div class="ttdef"><b>Definição</b> <a href="#l00014">dominios.hpp:14</a></div></div>
+<div class="ttc" id="aclassDominio_html_a90d9c573c768098defd29500c301d572"><div class="ttname"><a href="classDominio.html#a90d9c573c768098defd29500c301d572">Dominio::valor</a></div><div class="ttdeci">Tipo valor</div><div class="ttdef"><b>Definição</b> <a href="#l00010">dominios.hpp:10</a></div></div>
+<div class="ttc" id="aclassDominio_html_aa2fb97c946e506b45b2e1c940da4735f"><div class="ttname"><a href="classDominio.html#aa2fb97c946e506b45b2e1c940da4735f">Dominio::~Dominio</a></div><div class="ttdeci">virtual ~Dominio()=default</div></div>
+<div class="ttc" id="aclassNome_html"><div class="ttname"><a href="classNome.html">Nome</a></div><div class="ttdef"><b>Definição</b> <a href="#l00051">dominios.hpp:51</a></div></div>
+<div class="ttc" id="aclassNome_html_a5b8b3f0aaf19279c0379fea89e44505c"><div class="ttname"><a href="classNome.html#a5b8b3f0aaf19279c0379fea89e44505c">Nome::TAMANHO_NOME</a></div><div class="ttdeci">static const int TAMANHO_NOME</div><div class="ttdef"><b>Definição</b> <a href="#l00054">dominios.hpp:54</a></div></div>
+<div class="ttc" id="aclassNome_html_a7f8fcaf9252e27fd79cca43724ce159a"><div class="ttname"><a href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">Nome::PADRAO_NOME</a></div><div class="ttdeci">static const std::regex PADRAO_NOME</div><div class="ttdef"><b>Definição</b> <a href="#l00053">dominios.hpp:53</a></div></div>
+<div class="ttc" id="aclassNome_html_ae5b906e0ca844f1318b2e059ef9e4113"><div class="ttname"><a href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">Nome::validar</a></div><div class="ttdeci">void validar(const std::string &amp;nome) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00065">dominios.cpp:65</a></div></div>
+<div class="ttc" id="aclassPerfil_html"><div class="ttname"><a href="classPerfil.html">Perfil</a></div><div class="ttdef"><b>Definição</b> <a href="#l00058">dominios.hpp:58</a></div></div>
+<div class="ttc" id="aclassPerfil_html_a4c4623884d153f5d01e0fc03fb320888"><div class="ttname"><a href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">Perfil::PADRAO_PERFIL</a></div><div class="ttdeci">static const std::regex PADRAO_PERFIL</div><div class="ttdef"><b>Definição</b> <a href="#l00060">dominios.hpp:60</a></div></div>
+<div class="ttc" id="aclassPerfil_html_a78a505dd1640da61677ca7da5650e097"><div class="ttname"><a href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">Perfil::validar</a></div><div class="ttdeci">void validar(const std::string &amp;perfil) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00084">dominios.cpp:84</a></div></div>
+<div class="ttc" id="aclassQuantidade_html"><div class="ttname"><a href="classQuantidade.html">Quantidade</a></div><div class="ttdef"><b>Definição</b> <a href="#l00073">dominios.hpp:73</a></div></div>
+<div class="ttc" id="aclassQuantidade_html_a681fc437ff5361a14402fb4d0a66f698"><div class="ttname"><a href="classQuantidade.html#a681fc437ff5361a14402fb4d0a66f698">Quantidade::VALOR_MIN</a></div><div class="ttdeci">static const int VALOR_MIN</div><div class="ttdef"><b>Definição</b> <a href="#l00076">dominios.hpp:76</a></div></div>
+<div class="ttc" id="aclassQuantidade_html_ab3fe8a6a797b010a40812661870c42d8"><div class="ttname"><a href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">Quantidade::quantidade</a></div><div class="ttdeci">int quantidade</div><div class="ttdef"><b>Definição</b> <a href="#l00075">dominios.hpp:75</a></div></div>
+<div class="ttc" id="aclassQuantidade_html_acc78d7a87a0705de05bb9457c4efc2a8"><div class="ttname"><a href="classQuantidade.html#acc78d7a87a0705de05bb9457c4efc2a8">Quantidade::VALOR_MAX</a></div><div class="ttdeci">static const int VALOR_MAX</div><div class="ttdef"><b>Definição</b> <a href="#l00077">dominios.hpp:77</a></div></div>
+<div class="ttc" id="aclassQuantidade_html_ae2e425fca28297d3c1608af43030aea4"><div class="ttname"><a href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">Quantidade::validar</a></div><div class="ttdeci">void validar(const int &amp;quantidade) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00099">dominios.cpp:99</a></div></div>
+<div class="ttc" id="aclassSenha_html"><div class="ttname"><a href="classSenha.html">Senha</a></div><div class="ttdef"><b>Definição</b> <a href="#l00082">dominios.hpp:82</a></div></div>
+<div class="ttc" id="aclassSenha_html_a080e1ebdc3ceeea808aa162063cdf7bc"><div class="ttname"><a href="classSenha.html#a080e1ebdc3ceeea808aa162063cdf7bc">Senha::TAMANHO_SENHA</a></div><div class="ttdeci">static const int TAMANHO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="#l00084">dominios.hpp:84</a></div></div>
+<div class="ttc" id="aclassSenha_html_a406080add9a437fbd312c6993eef8d4f"><div class="ttname"><a href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">Senha::PADRAO_SENHA</a></div><div class="ttdeci">static const std::regex PADRAO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="#l00085">dominios.hpp:85</a></div></div>
+<div class="ttc" id="aclassSenha_html_ac582f5254c7a9d2c256c274d89cd93f8"><div class="ttname"><a href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">Senha::validar</a></div><div class="ttdeci">void validar(const std::string &amp;senha) override</div><div class="ttdef"><b>Definição</b> <a href="dominios_8cpp_source.html#l00107">dominios.cpp:107</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23095629569aa78ec444c88f65e23989.html">trabalho-1</a></li><li class="navelem"><a class="el" href="dir_1ba8a6b5653aec2a0b269606c9885314.html">src</a></li><li class="navelem"><a class="el" href="dir_46455d84755d12e15e8f73dc14b7fc65.html">dominios</a></li><li class="navelem"><a class="el" href="dominios_8hpp.html">dominios.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

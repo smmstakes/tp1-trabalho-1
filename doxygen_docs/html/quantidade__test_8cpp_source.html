@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Código-Fonte de trabalho-1/tests/dominios/quantidade_test.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('quantidade__test_8cpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">quantidade_test.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="quantidade__test_8cpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="tu__utils_8hpp.html">../utils/tu_utils.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="quantidade__test_8hpp.html">quantidade_test.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classTUQuantidade.html#ad7cc40146940e8b64bd7d81744238e7f">TUQuantidade::VALOR_VALIDO</a> = 999999;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classTUQuantidade.html#ac87045452c8ce8b449203168b945d4cd">TUQuantidade::TAMANHO_INVALIDO</a> = 10000000;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classTUQuantidade.html#aedb1e17f1054e10fc01703f873c6f463">TUQuantidade::VALOR_INVALIDO</a> = 1000001;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classTUQuantidade.html#ad2b1090314a163049bf1ba95e0b56ee3">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTUQuantidade.html#ad2b1090314a163049bf1ba95e0b56ee3">TUQuantidade::testarCenarioValido</a>() {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_variable" href="classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb">valor</a>-&gt;set(<a class="code hl_variable" href="classTUQuantidade.html#ad7cc40146940e8b64bd7d81744238e7f">VALOR_VALIDO</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a>(<a class="code hl_variable" href="classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb">valor</a>-&gt;get(), <a class="code hl_variable" href="classTUQuantidade.html#ad7cc40146940e8b64bd7d81744238e7f">VALOR_VALIDO</a>, <span class="stringliteral">&quot;testarCenarioValido&quot;</span>, <span class="stringliteral">&quot;TUQuantidade&quot;</span>, <a class="code hl_variable" href="classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5">estado</a>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classTUQuantidade.html#ab9649eea665784f84a0926fd47de79e3">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTUQuantidade.html#ab9649eea665784f84a0926fd47de79e3">TUQuantidade::testarTamanhoInvalido</a>() {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="classTUUtils.html#ad4f3b6795a76e93dcbbbe6ca22eeb8c1">TUUtils::assertExcecao</a>([<span class="keyword">this</span>]() { <a class="code hl_variable" href="classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb">valor</a>-&gt;set(<a class="code hl_variable" href="classTUQuantidade.html#ac87045452c8ce8b449203168b945d4cd">TAMANHO_INVALIDO</a>); }, <span class="stringliteral">&quot;testarTamanhoInvalido&quot;</span>, <span class="stringliteral">&quot;TUQuantidade&quot;</span>, <a class="code hl_variable" href="classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5">estado</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classTUQuantidade.html#abd629bb9db962fb9e0f695513fead902">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTUQuantidade.html#abd629bb9db962fb9e0f695513fead902">TUQuantidade::testarValorInvalido</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="classTUUtils.html#ad4f3b6795a76e93dcbbbe6ca22eeb8c1">TUUtils::assertExcecao</a>([<span class="keyword">this</span>]() { <a class="code hl_variable" href="classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb">valor</a>-&gt;set(<a class="code hl_variable" href="classTUQuantidade.html#aedb1e17f1054e10fc01703f873c6f463">VALOR_INVALIDO</a>); }, <span class="stringliteral">&quot;testarValorInvalido&quot;</span>, <span class="stringliteral">&quot;TUQuantidade&quot;</span>, <a class="code hl_variable" href="classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5">estado</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classTUQuantidade.html#a4a7d8196ee96beb20d82c10a38cbb173">   24</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classTUQuantidade.html#a4a7d8196ee96beb20d82c10a38cbb173">TUQuantidade::run</a>(){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="classTUDominio.html#ab92250b0a4f8e39d7cb9bbd89b9c37de">setUp</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classTUQuantidade.html#ad2b1090314a163049bf1ba95e0b56ee3">testarCenarioValido</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classTUQuantidade.html#ab9649eea665784f84a0926fd47de79e3">testarTamanhoInvalido</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classTUQuantidade.html#abd629bb9db962fb9e0f695513fead902">testarValorInvalido</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classTUDominio.html#a34c9cb994e49299b7952d7ef71aacc0e">tearDown</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5">estado</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="ttc" id="aclassTUDominio_html_a1136ab544c0f749606a4ba34dcd181eb"><div class="ttname"><a href="classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb">TUDominio&lt; Quantidade &gt;::valor</a></div><div class="ttdeci">Quantidade * valor</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00009">dominios_test.hpp:9</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_a214201ea98d2c95c1395a37c85a1dba5"><div class="ttname"><a href="classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5">TUDominio&lt; Quantidade &gt;::estado</a></div><div class="ttdeci">int estado</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00010">dominios_test.hpp:10</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_a34c9cb994e49299b7952d7ef71aacc0e"><div class="ttname"><a href="classTUDominio.html#a34c9cb994e49299b7952d7ef71aacc0e">TUDominio&lt; Quantidade &gt;::tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00016">dominios_test.hpp:16</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_ab92250b0a4f8e39d7cb9bbd89b9c37de"><div class="ttname"><a href="classTUDominio.html#ab92250b0a4f8e39d7cb9bbd89b9c37de">TUDominio&lt; Quantidade &gt;::setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00012">dominios_test.hpp:12</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_a4a7d8196ee96beb20d82c10a38cbb173"><div class="ttname"><a href="classTUQuantidade.html#a4a7d8196ee96beb20d82c10a38cbb173">TUQuantidade::run</a></div><div class="ttdeci">int run() override</div><div class="ttdef"><b>Definição</b> <a href="#l00024">quantidade_test.cpp:24</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_ab9649eea665784f84a0926fd47de79e3"><div class="ttname"><a href="classTUQuantidade.html#ab9649eea665784f84a0926fd47de79e3">TUQuantidade::testarTamanhoInvalido</a></div><div class="ttdeci">void testarTamanhoInvalido()</div><div class="ttdef"><b>Definição</b> <a href="#l00016">quantidade_test.cpp:16</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_abd629bb9db962fb9e0f695513fead902"><div class="ttname"><a href="classTUQuantidade.html#abd629bb9db962fb9e0f695513fead902">TUQuantidade::testarValorInvalido</a></div><div class="ttdeci">void testarValorInvalido()</div><div class="ttdef"><b>Definição</b> <a href="#l00020">quantidade_test.cpp:20</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_ac87045452c8ce8b449203168b945d4cd"><div class="ttname"><a href="classTUQuantidade.html#ac87045452c8ce8b449203168b945d4cd">TUQuantidade::TAMANHO_INVALIDO</a></div><div class="ttdeci">static const int TAMANHO_INVALIDO</div><div class="ttdef"><b>Definição</b> <a href="quantidade__test_8hpp_source.html#l00010">quantidade_test.hpp:10</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_ad2b1090314a163049bf1ba95e0b56ee3"><div class="ttname"><a href="classTUQuantidade.html#ad2b1090314a163049bf1ba95e0b56ee3">TUQuantidade::testarCenarioValido</a></div><div class="ttdeci">void testarCenarioValido() override</div><div class="ttdef"><b>Definição</b> <a href="#l00011">quantidade_test.cpp:11</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_ad7cc40146940e8b64bd7d81744238e7f"><div class="ttname"><a href="classTUQuantidade.html#ad7cc40146940e8b64bd7d81744238e7f">TUQuantidade::VALOR_VALIDO</a></div><div class="ttdeci">static const int VALOR_VALIDO</div><div class="ttdef"><b>Definição</b> <a href="quantidade__test_8hpp_source.html#l00009">quantidade_test.hpp:9</a></div></div>
+<div class="ttc" id="aclassTUQuantidade_html_aedb1e17f1054e10fc01703f873c6f463"><div class="ttname"><a href="classTUQuantidade.html#aedb1e17f1054e10fc01703f873c6f463">TUQuantidade::VALOR_INVALIDO</a></div><div class="ttdeci">static const int VALOR_INVALIDO</div><div class="ttdef"><b>Definição</b> <a href="quantidade__test_8hpp_source.html#l00011">quantidade_test.hpp:11</a></div></div>
+<div class="ttc" id="aclassTUUtils_html_a5dfcf18774a979219d9299d85f3b38fc"><div class="ttname"><a href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a></div><div class="ttdeci">static void assertIgual(const Tipo &amp;valorObtido, const Tipo &amp;valorEsperado, const std::string &amp;nomeMetodo, const std::string &amp;nomeClasse, int &amp;estado)</div><div class="ttdef"><b>Definição</b> <a href="tu__utils_8hpp_source.html#l00013">tu_utils.hpp:13</a></div></div>
+<div class="ttc" id="aclassTUUtils_html_ad4f3b6795a76e93dcbbbe6ca22eeb8c1"><div class="ttname"><a href="classTUUtils.html#ad4f3b6795a76e93dcbbbe6ca22eeb8c1">TUUtils::assertExcecao</a></div><div class="ttdeci">static void assertExcecao(std::function&lt; void()&gt; lambda, const std::string &amp;nomeMetodo, const std::string &amp;nomeClasse, int &amp;estado)</div><div class="ttdef"><b>Definição</b> <a href="tu__utils_8cpp_source.html#l00003">tu_utils.cpp:3</a></div></div>
+<div class="ttc" id="aquantidade__test_8hpp_html"><div class="ttname"><a href="quantidade__test_8hpp.html">quantidade_test.hpp</a></div></div>
+<div class="ttc" id="atu__utils_8hpp_html"><div class="ttname"><a href="tu__utils_8hpp.html">tu_utils.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23095629569aa78ec444c88f65e23989.html">trabalho-1</a></li><li class="navelem"><a class="el" href="dir_5ce3c8b25b8beca0caa2e35800c4fffb.html">tests</a></li><li class="navelem"><a class="el" href="dir_de66afe621ac950c60a1cdc87ad63575.html">dominios</a></li><li class="navelem"><a class="el" href="quantidade__test_8cpp.html">quantidade_test.cpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
