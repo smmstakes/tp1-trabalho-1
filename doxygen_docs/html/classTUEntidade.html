@@ -112,11 +112,15 @@ $(function(){initNavTree('classTUEntidade.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Classe base genérica para testes de entidades.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros públicos</h2></td></tr>
 <tr class="memitem:a86e830f8b42432d95bb539a0572195a5" id="r_a86e830f8b42432d95bb539a0572195a5"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86e830f8b42432d95bb539a0572195a5">run</a> ()=0</td></tr>
+<tr class="memdesc:a86e830f8b42432d95bb539a0572195a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa os testes definidos na subclasse.  <br /></td></tr>
 <tr class="separator:a86e830f8b42432d95bb539a0572195a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1025bb4127bb3e40557e76719c30992" id="r_ab1025bb4127bb3e40557e76719c30992"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1025bb4127bb3e40557e76719c30992">~TUEntidade</a> ()=default</td></tr>
 <tr class="separator:ab1025bb4127bb3e40557e76719c30992"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,10 +135,13 @@ Atributos Públicos Estáticos</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Membros protegidos</h2></td></tr>
 <tr class="memitem:a1466de1070f830c28cbd47091d6b4e7d" id="r_a1466de1070f830c28cbd47091d6b4e7d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1466de1070f830c28cbd47091d6b4e7d">setUp</a> ()=0</td></tr>
+<tr class="memdesc:a1466de1070f830c28cbd47091d6b4e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepara a classe para realizar os testes.  <br /></td></tr>
 <tr class="separator:a1466de1070f830c28cbd47091d6b4e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca4b1c61f9edb32146e739a1c0809e6" id="r_adca4b1c61f9edb32146e739a1c0809e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adca4b1c61f9edb32146e739a1c0809e6">tearDown</a> ()</td></tr>
+<tr class="memdesc:adca4b1c61f9edb32146e739a1c0809e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta a instância da entidade.  <br /></td></tr>
 <tr class="separator:adca4b1c61f9edb32146e739a1c0809e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12df3fafd232bef819b382ad17d7aa83" id="r_a12df3fafd232bef819b382ad17d7aa83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12df3fafd232bef819b382ad17d7aa83">testarCenarioValido</a> ()=0</td></tr>
+<tr class="memdesc:a12df3fafd232bef819b382ad17d7aa83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o cenário de teste com valor válido.  <br /></td></tr>
 <tr class="separator:a12df3fafd232bef819b382ad17d7aa83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -146,8 +153,16 @@ Atributos Protegidos</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Entidade&gt;<br />
-class TUEntidade&lt; Entidade &gt;</div>
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00005">5</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+class TUEntidade&lt; Entidade &gt;</div><p>Classe base genérica para testes de entidades. </p>
+<p>Fornece uma estrutura para configurar, executar e deletar testes unitários das entidades.</p>
+<dl class="tparams"><dt>Parâmetros de template</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Entidade</td><td>Entidade a ser testada. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00027">27</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
 <a id="ab1025bb4127bb3e40557e76719c30992" name="ab1025bb4127bb3e40557e76719c30992"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1025bb4127bb3e40557e76719c30992">&#9670;&#160;</a></span>~TUEntidade()</h2>
@@ -202,6 +217,9 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Executa os testes definidos na subclasse. </p>
+<dl class="section return"><dt>Retorna</dt><dd>int Estado do teste (SUCESSO ou FALHA). </dd></dl>
+
 <p>Implementado em <a class="el" href="classTUCarteira.html#a1888c71540c7f47753b9a8dec72c2394">TUCarteira</a>, <a class="el" href="classTUConta.html#a451e23044a87117102eaccac7c9b5429">TUConta</a> e <a class="el" href="classTUOrdem.html#a142b99363d45884899b1b8008afe0add">TUOrdem</a>.</p>
 
 </div>
@@ -230,6 +248,8 @@ template&lt;typename Entidade&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Prepara a classe para realizar os testes. </p>
 
 <p>Implementado em <a class="el" href="classTUCarteira.html#a5418e23508fe5f148801c2ff4e74f427">TUCarteira</a>, <a class="el" href="classTUConta.html#a0854db35d5d9639ee3bc2f1e3817337d">TUConta</a> e <a class="el" href="classTUOrdem.html#aca4664f47196f7fa6b8308df37b6d5c0">TUOrdem</a>.</p>
 
@@ -260,11 +280,13 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00011">11</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>{<span class="keyword">delete</span> <a class="code hl_variable" href="#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a>;}</div>
-<div class="ttc" id="aclassTUEntidade_html_a52cfe2b8ba4820173e24bf8307ede9b8"><div class="ttname"><a href="#a52cfe2b8ba4820173e24bf8307ede9b8">TUEntidade::entidade</a></div><div class="ttdeci">Entidade * entidade</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00007">entidades_test.hpp:7</a></div></div>
+<p>Deleta a instância da entidade. </p>
+
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00040">40</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{<span class="keyword">delete</span> <a class="code hl_variable" href="#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a>;}</div>
+<div class="ttc" id="aclassTUEntidade_html_a52cfe2b8ba4820173e24bf8307ede9b8"><div class="ttname"><a href="#a52cfe2b8ba4820173e24bf8307ede9b8">TUEntidade::entidade</a></div><div class="ttdeci">Entidade * entidade</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00029">entidades_test.hpp:29</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="entidades__test_8hpp_source.html#l00007">entidade</a>.</p>
+<p class="reference">Referências <a class="el" href="entidades__test_8hpp_source.html#l00029">entidade</a>.</p>
 
 </div>
 </div>
@@ -293,6 +315,8 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Executa o cenário de teste com valor válido. </p>
+
 <p>Implementado em <a class="el" href="classTUCarteira.html#a41b4ad15ff1b4c3e6869877c883cf229">TUCarteira</a>, <a class="el" href="classTUConta.html#ad757c3c1a08b70f760a728e9ba33dd8d">TUConta</a> e <a class="el" href="classTUOrdem.html#a72e3220e3adb4ea5d5baea24d5817b83">TUOrdem</a>.</p>
 
 </div>
@@ -320,9 +344,9 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00007">7</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00029">29</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="entidades__test_8hpp_source.html#l00011">tearDown()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="entidades__test_8hpp_source.html#l00040">tearDown()</a>.</p>
 
 </div>
 </div>
@@ -348,7 +372,7 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00008">8</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00030">30</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +398,7 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00016">16</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00049">49</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
 
 </div>
 </div>
@@ -400,7 +424,7 @@ template&lt;typename Entidade&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00015">15</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="entidades__test_8hpp_source.html#l00048">48</a> do ficheiro <a class="el" href="entidades__test_8hpp_source.html">entidades_test.hpp</a>.</p>
 
 </div>
 </div>

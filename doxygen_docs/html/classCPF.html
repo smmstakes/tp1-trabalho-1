@@ -110,6 +110,9 @@ $(function(){initNavTree('classCPF.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Representa um <a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> no formato XXX.XXX.XXX-XX.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de heranças da classe CPF</div>
@@ -124,6 +127,7 @@ Diagrama de heranças da classe CPF</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Membros privados</h2></td></tr>
 <tr class="memitem:ade7019833dd47198011322a6541f5509" id="r_ade7019833dd47198011322a6541f5509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade7019833dd47198011322a6541f5509">validar</a> (const std::string &amp;cpf) override</td></tr>
+<tr class="memdesc:ade7019833dd47198011322a6541f5509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o formato do <a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> conforme o padrão (XXX.XXX.XXX-XX).  <br /></td></tr>
 <tr class="separator:ade7019833dd47198011322a6541f5509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
@@ -135,15 +139,19 @@ Atributos Privados Estáticos</h2></td></tr>
 Outros membros herdados</h2></td></tr>
 <tr class="inherit_header pub_methods_classDominio"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classDominio')"><img src="closed.png" alt="-"/>&#160;Membros públicos herdados de <a class="el" href="classDominio.html">Dominio&lt; std::string &gt;</a></td></tr>
 <tr class="memitem:a7b9db4b3fb043c04b47d1d341623adfa inherit pub_methods_classDominio" id="r_a7b9db4b3fb043c04b47d1d341623adfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDominio.html#a7b9db4b3fb043c04b47d1d341623adfa">set</a> (const std::string &amp;<a class="el" href="classDominio.html#a90d9c573c768098defd29500c301d572">valor</a>)</td></tr>
+<tr class="memdesc:a7b9db4b3fb043c04b47d1d341623adfa inherit pub_methods_classDominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o valor do domínio após validação.  <br /></td></tr>
 <tr class="separator:a7b9db4b3fb043c04b47d1d341623adfa inherit pub_methods_classDominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0c21348e0777221516006d07ca2f41 inherit pub_methods_classDominio" id="r_a3c0c21348e0777221516006d07ca2f41"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDominio.html#a3c0c21348e0777221516006d07ca2f41">get</a> () const</td></tr>
+<tr class="memdesc:a3c0c21348e0777221516006d07ca2f41 inherit pub_methods_classDominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o valor armazenado no domínio.  <br /></td></tr>
 <tr class="separator:a3c0c21348e0777221516006d07ca2f41 inherit pub_methods_classDominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2fb97c946e506b45b2e1c940da4735f inherit pub_methods_classDominio" id="r_aa2fb97c946e506b45b2e1c940da4735f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDominio.html#aa2fb97c946e506b45b2e1c940da4735f">~Dominio</a> ()=default</td></tr>
 <tr class="separator:aa2fb97c946e506b45b2e1c940da4735f inherit pub_methods_classDominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock">
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00035">35</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="textblock"><p>Representa um <a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> no formato XXX.XXX.XXX-XX. </p>
+<p>Utilizado para identificar o titular da conta. </p>
+
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00112">112</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="ade7019833dd47198011322a6541f5509" name="ade7019833dd47198011322a6541f5509"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade7019833dd47198011322a6541f5509">&#9670;&#160;</a></span>validar()</h2>
@@ -168,6 +176,20 @@ Outros membros herdados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Valida o formato do <a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> conforme o padrão (XXX.XXX.XXX-XX). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpf</td><td><a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> a ser validado.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o <a class="el" href="classCPF.html" title="Representa um CPF no formato XXX.XXX.XXX-XX.">CPF</a> não estiver no formato correto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implementa <a class="el" href="classDominio.html#a488c325c3eb4b06789a1deec579cd056">Dominio&lt; std::string &gt;</a>.</p>
 
 <p class="definition">Definido na linha <a class="el" href="dominios_8cpp_source.html#l00027">27</a> do ficheiro <a class="el" href="dominios_8cpp_source.html">dominios.cpp</a>.</p>
@@ -176,9 +198,9 @@ Outros membros herdados</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;CPF não segue o padrão pedido.&quot;</span>);</div>
 <div class="line"><span class="lineno">   30</span>    }</div>
 <div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="aclassCPF_html_aa0387bcf53e13a6843de9bdc9fa71193"><div class="ttname"><a href="#aa0387bcf53e13a6843de9bdc9fa71193">CPF::PADRAO_CPF</a></div><div class="ttdeci">static const std::regex PADRAO_CPF</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00037">dominios.hpp:37</a></div></div>
+<div class="ttc" id="aclassCPF_html_aa0387bcf53e13a6843de9bdc9fa71193"><div class="ttname"><a href="#aa0387bcf53e13a6843de9bdc9fa71193">CPF::PADRAO_CPF</a></div><div class="ttdeci">static const std::regex PADRAO_CPF</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00114">dominios.hpp:114</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00037">PADRAO_CPF</a>.</p>
+<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00114">PADRAO_CPF</a>.</p>
 
 </div>
 </div>
@@ -203,7 +225,7 @@ Outros membros herdados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00037">37</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00114">114</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="dominios_8cpp_source.html#l00027">validar()</a>.</p>
 
