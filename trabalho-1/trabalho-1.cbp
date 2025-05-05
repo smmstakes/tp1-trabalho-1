@@ -45,8 +45,30 @@
 		<Unit filename="tests/dominios/cpf_test.hpp" />
 		<Unit filename="tests/dominios/data_test.cpp" />
 		<Unit filename="tests/dominios/data_test.hpp" />
+		<Unit filename="tests/dominios/dinheiro_test.cpp" />
+		<Unit filename="tests/dominios/dinheiro_test.hpp" />
+		<Unit filename="tests/dominios/dominios_test.cpp" />
+		<Unit filename="tests/dominios/dominios_test.hpp" />
+		<Unit filename="tests/dominios/nome_test.cpp" />
+		<Unit filename="tests/dominios/nome_test.hpp" />
+		<Unit filename="tests/dominios/perfil_test.cpp" />
+		<Unit filename="tests/dominios/perfil_test.hpp" />
+		<Unit filename="tests/dominios/quantidade_test.cpp" />
+		<Unit filename="tests/dominios/quantidade_test.hpp" />
 		<Unit filename="tests/dominios/senha_test.cpp" />
 		<Unit filename="tests/dominios/senha_test.hpp" />
+		<Unit filename="tests/entidades/carteira_test.cpp" />
+		<Unit filename="tests/entidades/carteira_test.hpp" />
+		<Unit filename="tests/entidades/conta_test.hpp" />
+		<Unit filename="tests/entidades/conta_teste.cpp" />
+		<Unit filename="tests/entidades/entidades_test.cpp" />
+		<Unit filename="tests/entidades/entidades_test.hpp" />
+		<Unit filename="tests/entidades/ordem_test.cpp" />
+		<Unit filename="tests/entidades/ordem_test.hpp" />
+		<Unit filename="tests/utils/executor_de_testes.cpp" />
+		<Unit filename="tests/utils/executor_de_testes.hpp" />
+		<Unit filename="tests/utils/tu_utils.cpp" />
+		<Unit filename="tests/utils/tu_utils.hpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
