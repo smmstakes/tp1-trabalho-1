@@ -86,35 +86,35 @@ class Ordem {
          * 
          * @return Código da ordem como string.
          */
-        std::string getCodigo() const;
+        std::string getCodigo() const {return codigo.get();}
     
         /**
          * @brief Retorna o código de negociação associado à ordem.
          * 
          * @return Código de negociação como string.
          */
-        std::string getCodNegociacao() const;
+        std::string getCodNegociacao() const {return codNegociacao.get();}
     
         /**
          * @brief Retorna a data da ordem.
          * 
          * @return Data no formato AAAAMMDD.
          */
-        std::string getData() const;
+        std::string getData() const {return data.get();}
     
         /**
          * @brief Retorna o valor monetário da ordem.
          * 
          * @return Preço da ordem como número real.
          */
-        double getDinheiro() const;
+        double getDinheiro() const {return preco.get();}
     
         /**
          * @brief Retorna a quantidade de unidades negociadas.
          * 
          * @return Quantidade como número inteiro.
          */
-        int getQuantidade() const;
+        int getQuantidade() const {return quantidade.get();}
     };
 
 #endif  // ENTIDADES_HPP_INCLUDED
