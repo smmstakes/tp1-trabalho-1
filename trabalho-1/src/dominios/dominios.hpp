@@ -81,6 +81,8 @@ class Codigo:public Dominio<std::string> {
          * @throw std::invalid_argument Se o código não tiver exatamente 5 dígitos numéricos.
          */
         void validar(const std::string& cod) override;
+
+// Criado por Matheus Duarte - 211062277
 };
 
 /**
@@ -101,6 +103,8 @@ class CodigoNegociacao:public Dominio<std::string> {
          * @throw std::invalid_argument Se o código não estiver no padrão alfanumérico (até 12 caracteres).
          */
         void validar(const std::string& cod) override;
+
+// Criado por Matheus Duarte - 211062277
 };
 
 /**
@@ -121,6 +125,8 @@ class CPF:public Dominio<std::string> {
          * @throw std::invalid_argument Se o CPF não estiver no formato correto.
          */
         void validar(const std::string& cpf) override;
+
+// Criado por Matheus Duarte - 211062277
 };
 
 class Data:public Dominio<std::string> {
@@ -190,7 +196,7 @@ class Senha:public Dominio<std::string> {
          * @throw std::invalid_argument Se a senha não atender aos critérios pedidos.
          */
         void validar(const std::string& senha) override;
-        
+
 // Criado por Matheus Duarte - 211062277
 };
 
