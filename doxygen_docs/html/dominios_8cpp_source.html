@@ -113,41 +113,34 @@ $(function(){initNavTree('dominios_8cpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="dominios_8hpp.html">dominios.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">Codigo::PADRAO_CODIGO</a>(<span class="stringliteral">&quot;[0-9]{5}&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">const</span> std::regex Codigo::PADRAO_CODIGO(<span class="stringliteral">&quot;[0-9]{5}&quot;</span>);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">Codigo::validar</a>(<span class="keyword">const</span> std::string&amp; cod) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span> (!std::regex_match(cod, <a class="code hl_variable" href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">PADRAO_CODIGO</a>)) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span> Codigo::validar(<span class="keyword">const</span> std::string&amp; cod) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span> (!std::regex_match(cod, PADRAO_CODIGO)) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Código inválido: &quot;</span>);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
-</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO</a>(<span class="stringliteral">&quot;\\w[a-zA-Z0-9 ]{0,11}&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">const</span> std::regex CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO(<span class="stringliteral">&quot;\\w[a-zA-Z0-9 ]{0,11}&quot;</span>);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">CodigoNegociacao::validar</a>(<span class="keyword">const</span> std::string&amp; cod) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!std::regex_match(cod, <a class="code hl_variable" href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">PADRAO_CODIGO_NEGOCIACAO</a>)) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> CodigoNegociacao::validar(<span class="keyword">const</span> std::string&amp; cod) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!std::regex_match(cod, PADRAO_CODIGO_NEGOCIACAO)) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Codigo de Negociação inválido: &quot;</span>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">CPF::PADRAO_CPF</a>(<span class="stringliteral">&quot;[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">const</span> std::regex CPF::PADRAO_CPF(<span class="stringliteral">&quot;[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}&quot;</span>);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classCPF.html#ade7019833dd47198011322a6541f5509">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCPF.html#ade7019833dd47198011322a6541f5509">CPF::validar</a>(<span class="keyword">const</span> std::string&amp; cpf) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!std::regex_match(cpf, <a class="code hl_variable" href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">PADRAO_CPF</a>)) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> CPF::validar(<span class="keyword">const</span> std::string&amp; cpf) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!std::regex_match(cpf, PADRAO_CPF)) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;CPF não segue o padrão pedido.&quot;</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
-</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">Data::PADRAO_DATA</a>(<span class="stringliteral">&quot;^\\d{8}$&quot;</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">const</span> std::regex Data::PADRAO_DATA(<span class="stringliteral">&quot;^\\d{8}$&quot;</span>);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classData.html#a797ef6a26ea9db50f091542f5809006a">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classData.html#a797ef6a26ea9db50f091542f5809006a">Data::validar</a>(<span class="keyword">const</span> std::string&amp; data) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!std::regex_match(data, <a class="code hl_variable" href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">PADRAO_DATA</a>)) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> Data::validar(<span class="keyword">const</span> std::string&amp; data) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!std::regex_match(data, PADRAO_DATA)) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Formato inválido: a data deve ter 8 dígitos numéricos (AAAAMMDD).&quot;</span>);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
@@ -166,25 +159,23 @@ $(function(){initNavTree('dominios_8cpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> diasNoMes[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (mes == 2 &amp;&amp; <a class="code hl_function" href="classData.html#a6cb236c3ad8020c241f130a932d1b7e7">ehAnoBissexto</a>(ano)) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (mes == 2 &amp;&amp; ehAnoBissexto(ano)) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        diasNoMes[2] = 29;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (dia &lt; 1 || dia &gt; diasNoMes[mes])</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Dia inválido para o mês informado.&quot;</span>);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
-</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">Nome::PADRAO_NOME</a>(<span class="stringliteral">&quot;^[A-Za-z0-9 ]+$&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">const</span> std::regex Nome::PADRAO_NOME(<span class="stringliteral">&quot;^[A-Za-z0-9 ]+$&quot;</span>);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">Nome::validar</a>(<span class="keyword">const</span> std::string&amp; nome){</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> Nome::validar(<span class="keyword">const</span> std::string&amp; nome){</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (nome.size() &gt; <a class="code hl_variable" href="classNome.html#a5b8b3f0aaf19279c0379fea89e44505c">TAMANHO_NOME</a>){</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (nome.size() &gt; TAMANHO_NOME){</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;O nome não pode ser maior do que 20 caracteres&quot;</span>);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span>(!std::regex_match(nome, <a class="code hl_variable" href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">PADRAO_NOME</a>)){</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span>(!std::regex_match(nome, PADRAO_NOME)){</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;O nome não pode ter caracteres especiais&quot;</span>);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
@@ -194,42 +185,34 @@ $(function(){initNavTree('dominios_8cpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
-</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">Perfil::PADRAO_PERFIL</a>(<span class="stringliteral">&quot;(Conservador|Moderado|Agressivo)&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">const</span> std::regex Perfil::PADRAO_PERFIL(<span class="stringliteral">&quot;(Conservador|Moderado|Agressivo)&quot;</span>);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">Perfil::validar</a>(<span class="keyword">const</span> std::string&amp; perfil){</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (!std::regex_match(perfil, <a class="code hl_variable" href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">PADRAO_PERFIL</a>)){</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> Perfil::validar(<span class="keyword">const</span> std::string&amp; perfil){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (!std::regex_match(perfil, PADRAO_PERFIL)){</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Perfil inválido.&quot;</span>);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
-</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">Dinheiro::DINHEIRO_MIN</a> = 0.01;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">Dinheiro::DINHEIRO_MAX</a> = 1000000.00;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">const</span> <span class="keywordtype">double</span> Dinheiro::DINHEIRO_MIN = 0.01;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">const</span> <span class="keywordtype">double</span> Dinheiro::DINHEIRO_MAX = 1000000.00;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  </div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">Dinheiro::validar</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; <a class="code hl_variable" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">dinheiro</a>){</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">dinheiro</a> &gt; <a class="code hl_variable" href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">DINHEIRO_MAX</a> || <a class="code hl_variable" href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">dinheiro</a> &lt; <a class="code hl_variable" href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">DINHEIRO_MIN</a>){</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">void</span> Dinheiro::validar(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; dinheiro){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (dinheiro &gt; DINHEIRO_MAX || dinheiro &lt; DINHEIRO_MIN){</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">throw</span> std:: invalid_argument (<span class="stringliteral">&quot;Quantia de Dinheiro Inválida, por favor digite um valor entre 0.01 a 1000000.00.&quot;</span>);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">Quantidade::validar</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_variable" href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">quantidade</a>){</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">quantidade &lt; VALOR_MIN || quantidade &gt;</a> <a class="code hl_variable" href="classQuantidade.html#acc78d7a87a0705de05bb9457c4efc2a8">VALOR_MAX</a>){</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> Quantidade::validar(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; quantidade){</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (quantidade &lt; VALOR_MIN || quantidade &gt; VALOR_MAX){</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Quantidade Inválida, por favor digite um valor entre 1 a 1000000.&quot;</span>);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
-</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">const</span> std::regex <a class="code hl_variable" href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">Senha::PADRAO_SENHA</a>(<span class="stringliteral">&quot;[a-zA-Z0-9#$%&amp;]{6}&quot;</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">const</span> std::regex Senha::PADRAO_SENHA(<span class="stringliteral">&quot;[a-zA-Z0-9#$%&amp;]{6}&quot;</span>);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">Senha::validar</a>(<span class="keyword">const</span> std::string&amp; senha) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (!std::regex_match(senha, <a class="code hl_variable" href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">PADRAO_SENHA</a>)) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> Senha::validar(<span class="keyword">const</span> std::string&amp; senha) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (!std::regex_match(senha, PADRAO_SENHA)) {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Senha inválida deve ter exatamente 6 caracteres válidos.&quot;</span>);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
@@ -254,7 +237,7 @@ $(function(){initNavTree('dominios_8cpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (caracteres.size() != <a class="code hl_variable" href="classSenha.html#a080e1ebdc3ceeea808aa162063cdf7bc">TAMANHO_SENHA</a>) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (caracteres.size() != TAMANHO_SENHA) {</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Senha contém caracteres duplicados.&quot;</span>);</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
@@ -262,31 +245,6 @@ $(function(){initNavTree('dominios_8cpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Senha não contém todos os caracteres necessários.&quot;</span>);</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
-</div>
-<div class="ttc" id="aclassCPF_html_aa0387bcf53e13a6843de9bdc9fa71193"><div class="ttname"><a href="classCPF.html#aa0387bcf53e13a6843de9bdc9fa71193">CPF::PADRAO_CPF</a></div><div class="ttdeci">static const std::regex PADRAO_CPF</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00118">dominios.hpp:118</a></div></div>
-<div class="ttc" id="aclassCPF_html_ade7019833dd47198011322a6541f5509"><div class="ttname"><a href="classCPF.html#ade7019833dd47198011322a6541f5509">CPF::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cpf) override</div><div class="ttdoc">Valida o formato do CPF conforme o padrão (XXX.XXX.XXX-XX).</div><div class="ttdef"><b>Definição</b> <a href="#l00027">dominios.cpp:27</a></div></div>
-<div class="ttc" id="aclassCodigoNegociacao_html_a29abd21ed4e48c47884bdc9c02716388"><div class="ttname"><a href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">CodigoNegociacao::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cod) override</div><div class="ttdoc">Valida o formato do código de negociação.</div><div class="ttdef"><b>Definição</b> <a href="#l00019">dominios.cpp:19</a></div></div>
-<div class="ttc" id="aclassCodigoNegociacao_html_ac6c5c9b4e1ed1fdcdb6d9ac012f42b80"><div class="ttname"><a href="classCodigoNegociacao.html#ac6c5c9b4e1ed1fdcdb6d9ac012f42b80">CodigoNegociacao::PADRAO_CODIGO_NEGOCIACAO</a></div><div class="ttdeci">static const std::regex PADRAO_CODIGO_NEGOCIACAO</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00096">dominios.hpp:96</a></div></div>
-<div class="ttc" id="aclassCodigo_html_a61d47dc449c04fde35c2a71f36d97b86"><div class="ttname"><a href="classCodigo.html#a61d47dc449c04fde35c2a71f36d97b86">Codigo::PADRAO_CODIGO</a></div><div class="ttdeci">static const std::regex PADRAO_CODIGO</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00074">dominios.hpp:74</a></div></div>
-<div class="ttc" id="aclassCodigo_html_ae8d817fd9b20d1ba280339a0fb973b8a"><div class="ttname"><a href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">Codigo::validar</a></div><div class="ttdeci">void validar(const std::string &amp;cod) override</div><div class="ttdoc">Valida o formato do código.</div><div class="ttdef"><b>Definição</b> <a href="#l00011">dominios.cpp:11</a></div></div>
-<div class="ttc" id="aclassData_html_a6cb236c3ad8020c241f130a932d1b7e7"><div class="ttname"><a href="classData.html#a6cb236c3ad8020c241f130a932d1b7e7">Data::ehAnoBissexto</a></div><div class="ttdeci">bool ehAnoBissexto(int ano) const</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00135">dominios.hpp:135</a></div></div>
-<div class="ttc" id="aclassData_html_a797ef6a26ea9db50f091542f5809006a"><div class="ttname"><a href="classData.html#a797ef6a26ea9db50f091542f5809006a">Data::validar</a></div><div class="ttdeci">void validar(const std::string &amp;data) override</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div><div class="ttdef"><b>Definição</b> <a href="#l00035">dominios.cpp:35</a></div></div>
-<div class="ttc" id="aclassData_html_ab4d0bad70ba2547d0ab95d3469498581"><div class="ttname"><a href="classData.html#ab4d0bad70ba2547d0ab95d3469498581">Data::PADRAO_DATA</a></div><div class="ttdeci">static const std::regex PADRAO_DATA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00134">dominios.hpp:134</a></div></div>
-<div class="ttc" id="aclassDinheiro_html_a036d99a4533865dd13fb8398b377e9f4"><div class="ttname"><a href="classDinheiro.html#a036d99a4533865dd13fb8398b377e9f4">Dinheiro::DINHEIRO_MAX</a></div><div class="ttdeci">static const double DINHEIRO_MAX</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00159">dominios.hpp:159</a></div></div>
-<div class="ttc" id="aclassDinheiro_html_a09b3187283cbf3f299883498e69f28e6"><div class="ttname"><a href="classDinheiro.html#a09b3187283cbf3f299883498e69f28e6">Dinheiro::dinheiro</a></div><div class="ttdeci">double dinheiro</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00157">dominios.hpp:157</a></div></div>
-<div class="ttc" id="aclassDinheiro_html_a0fd7eb182aaa915d1bf66cb33659fd91"><div class="ttname"><a href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">Dinheiro::validar</a></div><div class="ttdeci">void validar(const double &amp;dinheiro) override</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div><div class="ttdef"><b>Definição</b> <a href="#l00093">dominios.cpp:93</a></div></div>
-<div class="ttc" id="aclassDinheiro_html_af9ac6ed6ea6817f8050cf8d7cabd5cf4"><div class="ttname"><a href="classDinheiro.html#af9ac6ed6ea6817f8050cf8d7cabd5cf4">Dinheiro::DINHEIRO_MIN</a></div><div class="ttdeci">static const double DINHEIRO_MIN</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00158">dominios.hpp:158</a></div></div>
-<div class="ttc" id="aclassNome_html_a5b8b3f0aaf19279c0379fea89e44505c"><div class="ttname"><a href="classNome.html#a5b8b3f0aaf19279c0379fea89e44505c">Nome::TAMANHO_NOME</a></div><div class="ttdeci">static const int TAMANHO_NOME</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00145">dominios.hpp:145</a></div></div>
-<div class="ttc" id="aclassNome_html_a7f8fcaf9252e27fd79cca43724ce159a"><div class="ttname"><a href="classNome.html#a7f8fcaf9252e27fd79cca43724ce159a">Nome::PADRAO_NOME</a></div><div class="ttdeci">static const std::regex PADRAO_NOME</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00144">dominios.hpp:144</a></div></div>
-<div class="ttc" id="aclassNome_html_ae5b906e0ca844f1318b2e059ef9e4113"><div class="ttname"><a href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">Nome::validar</a></div><div class="ttdeci">void validar(const std::string &amp;nome) override</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div><div class="ttdef"><b>Definição</b> <a href="#l00065">dominios.cpp:65</a></div></div>
-<div class="ttc" id="aclassPerfil_html_a4c4623884d153f5d01e0fc03fb320888"><div class="ttname"><a href="classPerfil.html#a4c4623884d153f5d01e0fc03fb320888">Perfil::PADRAO_PERFIL</a></div><div class="ttdeci">static const std::regex PADRAO_PERFIL</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00151">dominios.hpp:151</a></div></div>
-<div class="ttc" id="aclassPerfil_html_a78a505dd1640da61677ca7da5650e097"><div class="ttname"><a href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">Perfil::validar</a></div><div class="ttdeci">void validar(const std::string &amp;perfil) override</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div><div class="ttdef"><b>Definição</b> <a href="#l00084">dominios.cpp:84</a></div></div>
-<div class="ttc" id="aclassQuantidade_html_ab3fe8a6a797b010a40812661870c42d8"><div class="ttname"><a href="classQuantidade.html#ab3fe8a6a797b010a40812661870c42d8">Quantidade::quantidade</a></div><div class="ttdeci">int quantidade</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00166">dominios.hpp:166</a></div></div>
-<div class="ttc" id="aclassQuantidade_html_acc78d7a87a0705de05bb9457c4efc2a8"><div class="ttname"><a href="classQuantidade.html#acc78d7a87a0705de05bb9457c4efc2a8">Quantidade::VALOR_MAX</a></div><div class="ttdeci">static const int VALOR_MAX</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00168">dominios.hpp:168</a></div></div>
-<div class="ttc" id="aclassQuantidade_html_ae2e425fca28297d3c1608af43030aea4"><div class="ttname"><a href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">Quantidade::validar</a></div><div class="ttdeci">void validar(const int &amp;quantidade) override</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div><div class="ttdef"><b>Definição</b> <a href="#l00099">dominios.cpp:99</a></div></div>
-<div class="ttc" id="aclassSenha_html_a080e1ebdc3ceeea808aa162063cdf7bc"><div class="ttname"><a href="classSenha.html#a080e1ebdc3ceeea808aa162063cdf7bc">Senha::TAMANHO_SENHA</a></div><div class="ttdeci">static const int TAMANHO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00180">dominios.hpp:180</a></div></div>
-<div class="ttc" id="aclassSenha_html_a406080add9a437fbd312c6993eef8d4f"><div class="ttname"><a href="classSenha.html#a406080add9a437fbd312c6993eef8d4f">Senha::PADRAO_SENHA</a></div><div class="ttdeci">static const std::regex PADRAO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00181">dominios.hpp:181</a></div></div>
-<div class="ttc" id="aclassSenha_html_ac582f5254c7a9d2c256c274d89cd93f8"><div class="ttname"><a href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">Senha::validar</a></div><div class="ttdeci">void validar(const std::string &amp;senha) override</div><div class="ttdoc">Valida a senha conforme especificações.</div><div class="ttdef"><b>Definição</b> <a href="#l00107">dominios.cpp:107</a></div></div>
 <div class="ttc" id="adominios_8hpp_html"><div class="ttname"><a href="dominios_8hpp.html">dominios.hpp</a></div><div class="ttdoc">Declaração das classes de domínio.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

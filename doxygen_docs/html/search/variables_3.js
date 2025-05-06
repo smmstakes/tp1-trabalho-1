@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['entidade_0',['entidade',['../classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8',1,'TUEntidade']]],
-  ['espaços_5finvalidos_1',['ESPAÇOS_INVALIDOS',['../classTUNome.html#a9b9de156aa4ad23df6715fb1467dd2ec',1,'TUNome']]],
-  ['estado_2',['estado',['../classTUDominio.html#a214201ea98d2c95c1395a37c85a1dba5',1,'TUDominio::estado'],['../classTUEntidade.html#a8855ba239a775049f9373cc709ee265d',1,'TUEntidade::estado']]]
+  ['valor_0',['valor',['../classTUDominio.html#a1136ab544c0f749606a4ba34dcd181eb',1,'TUDominio']]]
 ];

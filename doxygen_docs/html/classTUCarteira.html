@@ -104,8 +104,6 @@ $(function(){initNavTree('classTUCarteira.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros públicos</a> &#124;
-<a href="#pri-methods">Membros privados</a> &#124;
-<a href="#pri-static-attribs">Atributos Privados Estáticos</a> &#124;
 <a href="classTUCarteira-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle"><div class="title">Referência à classe TUCarteira</div></div>
 </div><!--header-->
@@ -130,24 +128,6 @@ Membros públicos</h2></td></tr>
 <tr class="inherit_header pub_methods_classTUEntidade"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classTUEntidade')"><img src="closed.png" alt="-"/>&#160;Membros públicos herdados de <a class="el" href="classTUEntidade.html">TUEntidade&lt; Carteira &gt;</a></td></tr>
 <tr class="memitem:ab1025bb4127bb3e40557e76719c30992 inherit pub_methods_classTUEntidade" id="r_ab1025bb4127bb3e40557e76719c30992"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTUEntidade.html#ab1025bb4127bb3e40557e76719c30992">~TUEntidade</a> ()=default</td></tr>
 <tr class="separator:ab1025bb4127bb3e40557e76719c30992 inherit pub_methods_classTUEntidade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Membros privados</h2></td></tr>
-<tr class="memitem:a5418e23508fe5f148801c2ff4e74f427" id="r_a5418e23508fe5f148801c2ff4e74f427"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5418e23508fe5f148801c2ff4e74f427">setUp</a> () override</td></tr>
-<tr class="memdesc:a5418e23508fe5f148801c2ff4e74f427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepara a classe para realizar os testes.  <br /></td></tr>
-<tr class="separator:a5418e23508fe5f148801c2ff4e74f427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b4ad15ff1b4c3e6869877c883cf229" id="r_a41b4ad15ff1b4c3e6869877c883cf229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41b4ad15ff1b4c3e6869877c883cf229">testarCenarioValido</a> () override</td></tr>
-<tr class="memdesc:a41b4ad15ff1b4c3e6869877c883cf229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o cenário de teste com valor válido.  <br /></td></tr>
-<tr class="separator:a41b4ad15ff1b4c3e6869877c883cf229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Atributos Privados Estáticos</h2></td></tr>
-<tr class="memitem:a4461e2d1ee8ce1180b5d3b2f0ef14a91" id="r_a4461e2d1ee8ce1180b5d3b2f0ef14a91"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4461e2d1ee8ce1180b5d3b2f0ef14a91">CODIGO_VALIDO</a> = &quot;24680&quot;</td></tr>
-<tr class="separator:a4461e2d1ee8ce1180b5d3b2f0ef14a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4237fc151da9cb3c7c3bdf6d020e040e" id="r_a4237fc151da9cb3c7c3bdf6d020e040e"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4237fc151da9cb3c7c3bdf6d020e040e">NOME_VALIDO</a> = &quot;Felipe Santos 10&quot;</td></tr>
-<tr class="separator:a4237fc151da9cb3c7c3bdf6d020e040e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48f7042db12fd75e2978f661ca1467a4" id="r_a48f7042db12fd75e2978f661ca1467a4"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48f7042db12fd75e2978f661ca1467a4">PERFIL_VALIDO</a> = &quot;Conservador&quot;</td></tr>
-<tr class="separator:a48f7042db12fd75e2978f661ca1467a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Outros membros herdados</h2></td></tr>
@@ -200,181 +180,15 @@ Outros membros herdados</h2></td></tr>
 
 <p class="definition">Definido na linha <a class="el" href="carteira__test_8cpp_source.html#l00023">23</a> do ficheiro <a class="el" href="carteira__test_8cpp_source.html">carteira_test.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   23</span>                    {</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="#a5418e23508fe5f148801c2ff4e74f427">setUp</a>();</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="#a41b4ad15ff1b4c3e6869877c883cf229">testarCenarioValido</a>();</div>
+<div class="line"><span class="lineno">   24</span>    setUp();</div>
+<div class="line"><span class="lineno">   25</span>    testarCenarioValido();</div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classTUEntidade.html#adca4b1c61f9edb32146e739a1c0809e6">tearDown</a>();</div>
 <div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">estado</a>;</div>
 <div class="line"><span class="lineno">   28</span>}</div>
-<div class="ttc" id="aclassTUCarteira_html_a41b4ad15ff1b4c3e6869877c883cf229"><div class="ttname"><a href="#a41b4ad15ff1b4c3e6869877c883cf229">TUCarteira::testarCenarioValido</a></div><div class="ttdeci">void testarCenarioValido() override</div><div class="ttdoc">Executa o cenário de teste com valor válido.</div><div class="ttdef"><b>Definição</b> <a href="carteira__test_8cpp_source.html#l00017">carteira_test.cpp:17</a></div></div>
-<div class="ttc" id="aclassTUCarteira_html_a5418e23508fe5f148801c2ff4e74f427"><div class="ttname"><a href="#a5418e23508fe5f148801c2ff4e74f427">TUCarteira::setUp</a></div><div class="ttdeci">void setUp() override</div><div class="ttdoc">Prepara a classe para realizar os testes.</div><div class="ttdef"><b>Definição</b> <a href="carteira__test_8cpp_source.html#l00012">carteira_test.cpp:12</a></div></div>
 <div class="ttc" id="aclassTUEntidade_html_a8855ba239a775049f9373cc709ee265d"><div class="ttname"><a href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">TUEntidade&lt; Carteira &gt;::estado</a></div><div class="ttdeci">int estado</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00030">entidades_test.hpp:30</a></div></div>
 <div class="ttc" id="aclassTUEntidade_html_adca4b1c61f9edb32146e739a1c0809e6"><div class="ttname"><a href="classTUEntidade.html#adca4b1c61f9edb32146e739a1c0809e6">TUEntidade&lt; Carteira &gt;::tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00040">entidades_test.hpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="entidades__test_8hpp_source.html#l00030">TUEntidade&lt; Carteira &gt;::estado</a>, <a class="el" href="carteira__test_8cpp_source.html#l00012">setUp()</a>, <a class="el" href="entidades__test_8hpp_source.html#l00040">TUEntidade&lt; Carteira &gt;::tearDown()</a> e <a class="el" href="carteira__test_8cpp_source.html#l00017">testarCenarioValido()</a>.</p>
-
-</div>
-</div>
-<a id="a5418e23508fe5f148801c2ff4e74f427" name="a5418e23508fe5f148801c2ff4e74f427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5418e23508fe5f148801c2ff4e74f427">&#9670;&#160;</a></span>setUp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TUCarteira::setUp </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prepara a classe para realizar os testes. </p>
-
-<p>Implementa <a class="el" href="classTUEntidade.html#a1466de1070f830c28cbd47091d6b4e7d">TUEntidade&lt; Carteira &gt;</a>.</p>
-
-<p class="definition">Definido na linha <a class="el" href="carteira__test_8cpp_source.html#l00012">12</a> do ficheiro <a class="el" href="carteira__test_8cpp_source.html">carteira_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                       {</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a> = <span class="keyword">new</span> Carteira(<a class="code hl_variable" href="#a4461e2d1ee8ce1180b5d3b2f0ef14a91">CODIGO_VALIDO</a>, <a class="code hl_variable" href="#a4237fc151da9cb3c7c3bdf6d020e040e">NOME_VALIDO</a>, <a class="code hl_variable" href="#a48f7042db12fd75e2978f661ca1467a4">PERFIL_VALIDO</a>);</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">estado</a> = <a class="code hl_variable" href="classTUEntidade.html#ac551ca58bef726a9424f709be6fed3e0">SUCESSO</a>;</div>
-<div class="line"><span class="lineno">   15</span>}</div>
-<div class="ttc" id="aclassTUCarteira_html_a4237fc151da9cb3c7c3bdf6d020e040e"><div class="ttname"><a href="#a4237fc151da9cb3c7c3bdf6d020e040e">TUCarteira::NOME_VALIDO</a></div><div class="ttdeci">static const std::string NOME_VALIDO</div><div class="ttdef"><b>Definição</b> <a href="carteira__test_8hpp_source.html#l00012">carteira_test.hpp:12</a></div></div>
-<div class="ttc" id="aclassTUCarteira_html_a4461e2d1ee8ce1180b5d3b2f0ef14a91"><div class="ttname"><a href="#a4461e2d1ee8ce1180b5d3b2f0ef14a91">TUCarteira::CODIGO_VALIDO</a></div><div class="ttdeci">static const std::string CODIGO_VALIDO</div><div class="ttdef"><b>Definição</b> <a href="carteira__test_8hpp_source.html#l00011">carteira_test.hpp:11</a></div></div>
-<div class="ttc" id="aclassTUCarteira_html_a48f7042db12fd75e2978f661ca1467a4"><div class="ttname"><a href="#a48f7042db12fd75e2978f661ca1467a4">TUCarteira::PERFIL_VALIDO</a></div><div class="ttdeci">static const std::string PERFIL_VALIDO</div><div class="ttdef"><b>Definição</b> <a href="carteira__test_8hpp_source.html#l00013">carteira_test.hpp:13</a></div></div>
-<div class="ttc" id="aclassTUEntidade_html_a52cfe2b8ba4820173e24bf8307ede9b8"><div class="ttname"><a href="classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8">TUEntidade&lt; Carteira &gt;::entidade</a></div><div class="ttdeci">Carteira * entidade</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00029">entidades_test.hpp:29</a></div></div>
-<div class="ttc" id="aclassTUEntidade_html_ac551ca58bef726a9424f709be6fed3e0"><div class="ttname"><a href="classTUEntidade.html#ac551ca58bef726a9424f709be6fed3e0">TUEntidade&lt; Carteira &gt;::SUCESSO</a></div><div class="ttdeci">static const int SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="entidades__test_8hpp_source.html#l00048">entidades_test.hpp:48</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="carteira__test_8hpp_source.html#l00011">CODIGO_VALIDO</a>, <a class="el" href="entidades__test_8hpp_source.html#l00029">TUEntidade&lt; Carteira &gt;::entidade</a>, <a class="el" href="entidades__test_8hpp_source.html#l00030">TUEntidade&lt; Carteira &gt;::estado</a>, <a class="el" href="carteira__test_8hpp_source.html#l00012">NOME_VALIDO</a>, <a class="el" href="carteira__test_8hpp_source.html#l00013">PERFIL_VALIDO</a> e <a class="el" href="entidades__test_8hpp_source.html#l00048">TUEntidade&lt; Carteira &gt;::SUCESSO</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00023">run()</a>.</p>
-
-</div>
-</div>
-<a id="a41b4ad15ff1b4c3e6869877c883cf229" name="a41b4ad15ff1b4c3e6869877c883cf229"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41b4ad15ff1b4c3e6869877c883cf229">&#9670;&#160;</a></span>testarCenarioValido()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TUCarteira::testarCenarioValido </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Executa o cenário de teste com valor válido. </p>
-
-<p>Implementa <a class="el" href="classTUEntidade.html#a12df3fafd232bef819b382ad17d7aa83">TUEntidade&lt; Carteira &gt;</a>.</p>
-
-<p class="definition">Definido na linha <a class="el" href="carteira__test_8cpp_source.html#l00017">17</a> do ficheiro <a class="el" href="carteira__test_8cpp_source.html">carteira_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                                     {</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_function" href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a>(<a class="code hl_variable" href="classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a>-&gt;getCodigo(), <a class="code hl_variable" href="#a4461e2d1ee8ce1180b5d3b2f0ef14a91">CODIGO_VALIDO</a>, <span class="stringliteral">&quot;testarCenarioValido -&gt; Codigo&quot;</span>, <span class="stringliteral">&quot;TUCarteira&quot;</span>, <a class="code hl_variable" href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">estado</a>);</div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_function" href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a>(<a class="code hl_variable" href="classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a>-&gt;getNome(), <a class="code hl_variable" href="#a4237fc151da9cb3c7c3bdf6d020e040e">NOME_VALIDO</a>, <span class="stringliteral">&quot;testarCenarioValido -&gt; Nome&quot;</span>, <span class="stringliteral">&quot;TUCarteira&quot;</span>, <a class="code hl_variable" href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">estado</a>);</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_function" href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a>(<a class="code hl_variable" href="classTUEntidade.html#a52cfe2b8ba4820173e24bf8307ede9b8">entidade</a>-&gt;getPerfil(), <a class="code hl_variable" href="#a48f7042db12fd75e2978f661ca1467a4">PERFIL_VALIDO</a>, <span class="stringliteral">&quot;testarCenarioValido -&gt; Perfil&quot;</span>, <span class="stringliteral">&quot;TUCarteira&quot;</span>, <a class="code hl_variable" href="classTUEntidade.html#a8855ba239a775049f9373cc709ee265d">estado</a>);</div>
-<div class="line"><span class="lineno">   21</span>}</div>
-<div class="ttc" id="aclassTUUtils_html_a5dfcf18774a979219d9299d85f3b38fc"><div class="ttname"><a href="classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc">TUUtils::assertIgual</a></div><div class="ttdeci">static void assertIgual(const Tipo &amp;valorObtido, const Tipo &amp;valorEsperado, const std::string &amp;nomeMetodo, const std::string &amp;nomeClasse, int &amp;estado)</div><div class="ttdoc">Verifica se dois valores são iguais.</div><div class="ttdef"><b>Definição</b> <a href="tu__utils_8hpp_source.html#l00043">tu_utils.hpp:43</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="tu__utils_8hpp_source.html#l00043">TUUtils::assertIgual()</a>, <a class="el" href="carteira__test_8hpp_source.html#l00011">CODIGO_VALIDO</a>, <a class="el" href="entidades__test_8hpp_source.html#l00029">TUEntidade&lt; Carteira &gt;::entidade</a>, <a class="el" href="entidades__test_8hpp_source.html#l00030">TUEntidade&lt; Carteira &gt;::estado</a>, <a class="el" href="carteira__test_8hpp_source.html#l00012">NOME_VALIDO</a> e <a class="el" href="carteira__test_8hpp_source.html#l00013">PERFIL_VALIDO</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00023">run()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a4461e2d1ee8ce1180b5d3b2f0ef14a91" name="a4461e2d1ee8ce1180b5d3b2f0ef14a91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4461e2d1ee8ce1180b5d3b2f0ef14a91">&#9670;&#160;</a></span>CODIGO_VALIDO</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string TUCarteira::CODIGO_VALIDO = &quot;24680&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="carteira__test_8hpp_source.html#l00011">11</a> do ficheiro <a class="el" href="carteira__test_8hpp_source.html">carteira_test.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00012">setUp()</a> e <a class="el" href="carteira__test_8cpp_source.html#l00017">testarCenarioValido()</a>.</p>
-
-</div>
-</div>
-<a id="a4237fc151da9cb3c7c3bdf6d020e040e" name="a4237fc151da9cb3c7c3bdf6d020e040e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4237fc151da9cb3c7c3bdf6d020e040e">&#9670;&#160;</a></span>NOME_VALIDO</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string TUCarteira::NOME_VALIDO = &quot;Felipe Santos 10&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="carteira__test_8hpp_source.html#l00012">12</a> do ficheiro <a class="el" href="carteira__test_8hpp_source.html">carteira_test.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00012">setUp()</a> e <a class="el" href="carteira__test_8cpp_source.html#l00017">testarCenarioValido()</a>.</p>
-
-</div>
-</div>
-<a id="a48f7042db12fd75e2978f661ca1467a4" name="a48f7042db12fd75e2978f661ca1467a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f7042db12fd75e2978f661ca1467a4">&#9670;&#160;</a></span>PERFIL_VALIDO</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string TUCarteira::PERFIL_VALIDO = &quot;Conservador&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="carteira__test_8hpp_source.html#l00013">13</a> do ficheiro <a class="el" href="carteira__test_8hpp_source.html">carteira_test.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00012">setUp()</a> e <a class="el" href="carteira__test_8cpp_source.html#l00017">testarCenarioValido()</a>.</p>
+<p class="reference">Referências <a class="el" href="entidades__test_8hpp_source.html#l00030">TUEntidade&lt; Carteira &gt;::estado</a> e <a class="el" href="entidades__test_8hpp_source.html#l00040">TUEntidade&lt; Carteira &gt;::tearDown()</a>.</p>
 
 </div>
 </div>

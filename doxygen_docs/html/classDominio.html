@@ -104,8 +104,6 @@ $(function(){initNavTree('classDominio.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros públicos</a> &#124;
-<a href="#pri-methods">Membros privados</a> &#124;
-<a href="#pri-attribs">Atributos Privados</a> &#124;
 <a href="classDominio-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle"><div class="title">Referência à classe Template Dominio&lt; Tipo &gt;<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
@@ -118,7 +116,7 @@ $(function(){initNavTree('classDominio.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros públicos</h2></td></tr>
-<tr class="memitem:a7b9db4b3fb043c04b47d1d341623adfa" id="r_a7b9db4b3fb043c04b47d1d341623adfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9db4b3fb043c04b47d1d341623adfa">set</a> (const Tipo &amp;<a class="el" href="#a90d9c573c768098defd29500c301d572">valor</a>)</td></tr>
+<tr class="memitem:a7b9db4b3fb043c04b47d1d341623adfa" id="r_a7b9db4b3fb043c04b47d1d341623adfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9db4b3fb043c04b47d1d341623adfa">set</a> (const Tipo &amp;valor)</td></tr>
 <tr class="memdesc:a7b9db4b3fb043c04b47d1d341623adfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o valor do domínio após validação.  <br /></td></tr>
 <tr class="separator:a7b9db4b3fb043c04b47d1d341623adfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0c21348e0777221516006d07ca2f41" id="r_a3c0c21348e0777221516006d07ca2f41"><td class="memItemLeft" align="right" valign="top">Tipo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c0c21348e0777221516006d07ca2f41">get</a> () const</td></tr>
@@ -126,17 +124,6 @@ Membros públicos</h2></td></tr>
 <tr class="separator:a3c0c21348e0777221516006d07ca2f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2fb97c946e506b45b2e1c940da4735f" id="r_aa2fb97c946e506b45b2e1c940da4735f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2fb97c946e506b45b2e1c940da4735f">~Dominio</a> ()=default</td></tr>
 <tr class="separator:aa2fb97c946e506b45b2e1c940da4735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Membros privados</h2></td></tr>
-<tr class="memitem:a488c325c3eb4b06789a1deec579cd056" id="r_a488c325c3eb4b06789a1deec579cd056"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a488c325c3eb4b06789a1deec579cd056">validar</a> (const Tipo &amp;<a class="el" href="#a90d9c573c768098defd29500c301d572">valor</a>)=0</td></tr>
-<tr class="memdesc:a488c325c3eb4b06789a1deec579cd056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método abstrato para validar o valor atribuído ao domínio.  <br /></td></tr>
-<tr class="separator:a488c325c3eb4b06789a1deec579cd056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Atributos Privados</h2></td></tr>
-<tr class="memitem:a90d9c573c768098defd29500c301d572" id="r_a90d9c573c768098defd29500c301d572"><td class="memItemLeft" align="right" valign="top">Tipo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90d9c573c768098defd29500c301d572">valor</a></td></tr>
-<tr class="separator:a90d9c573c768098defd29500c301d572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Tipo&gt;<br />
@@ -207,12 +194,9 @@ template&lt;typename Tipo&gt; </div>
 <p>Retorna o valor armazenado no domínio. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Tipo Tipo do domínio. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00063">63</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a90d9c573c768098defd29500c301d572">valor</a>; };</div>
-<div class="ttc" id="aclassDominio_html_a90d9c573c768098defd29500c301d572"><div class="ttname"><a href="#a90d9c573c768098defd29500c301d572">Dominio::valor</a></div><div class="ttdeci">Tipo valor</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00034">dominios.hpp:34</a></div></div>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00055">55</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> valor; };</div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00034">valor</a>.</p>
-
 </div>
 </div>
 <a id="a7b9db4b3fb043c04b47d1d341623adfa" name="a7b9db4b3fb043c04b47d1d341623adfa"></a>
@@ -254,91 +238,12 @@ template&lt;typename Tipo&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00053">53</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                    {</div>
-<div class="line"><span class="lineno">   54</span>            <a class="code hl_function" href="#a488c325c3eb4b06789a1deec579cd056">validar</a>(<a class="code hl_variable" href="#a90d9c573c768098defd29500c301d572">valor</a>);</div>
-<div class="line"><span class="lineno">   55</span>            this-&gt;<a class="code hl_variable" href="#a90d9c573c768098defd29500c301d572">valor</a> = <a class="code hl_variable" href="#a90d9c573c768098defd29500c301d572">valor</a>;</div>
-<div class="line"><span class="lineno">   56</span>        };</div>
-<div class="ttc" id="aclassDominio_html_a488c325c3eb4b06789a1deec579cd056"><div class="ttname"><a href="#a488c325c3eb4b06789a1deec579cd056">Dominio::validar</a></div><div class="ttdeci">virtual void validar(const Tipo &amp;valor)=0</div><div class="ttdoc">Método abstrato para validar o valor atribuído ao domínio.</div></div>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00045">45</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                    {</div>
+<div class="line"><span class="lineno">   46</span>            validar(valor);</div>
+<div class="line"><span class="lineno">   47</span>            this-&gt;valor = valor;</div>
+<div class="line"><span class="lineno">   48</span>        };</div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="#a488c325c3eb4b06789a1deec579cd056">validar()</a> e <a class="el" href="dominios_8hpp_source.html#l00034">valor</a>.</p>
-
-</div>
-</div>
-<a id="a488c325c3eb4b06789a1deec579cd056" name="a488c325c3eb4b06789a1deec579cd056"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a488c325c3eb4b06789a1deec579cd056">&#9670;&#160;</a></span>validar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Tipo&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classDominio.html">Dominio</a>&lt; Tipo &gt;::validar </td>
-          <td>(</td>
-          <td class="paramtype">const Tipo &amp;</td>          <td class="paramname"><span class="paramname"><em>valor</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Método abstrato para validar o valor atribuído ao domínio. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">valor</td><td>Valor a ser validado.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Excepções</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>Se o valor for inválido. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implementado em <a class="el" href="classCodigo.html#ae8d817fd9b20d1ba280339a0fb973b8a">Codigo</a>, <a class="el" href="classCodigoNegociacao.html#a29abd21ed4e48c47884bdc9c02716388">CodigoNegociacao</a>, <a class="el" href="classCPF.html#ade7019833dd47198011322a6541f5509">CPF</a>, <a class="el" href="classData.html#a797ef6a26ea9db50f091542f5809006a">Data</a>, <a class="el" href="classDinheiro.html#a0fd7eb182aaa915d1bf66cb33659fd91">Dinheiro</a>, <a class="el" href="classNome.html#ae5b906e0ca844f1318b2e059ef9e4113">Nome</a>, <a class="el" href="classPerfil.html#a78a505dd1640da61677ca7da5650e097">Perfil</a>, <a class="el" href="classQuantidade.html#ae2e425fca28297d3c1608af43030aea4">Quantidade</a> e <a class="el" href="classSenha.html#ac582f5254c7a9d2c256c274d89cd93f8">Senha</a>.</p>
-
-<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00034">valor</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="dominios_8hpp_source.html#l00053">set()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a90d9c573c768098defd29500c301d572" name="a90d9c573c768098defd29500c301d572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90d9c573c768098defd29500c301d572">&#9670;&#160;</a></span>valor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Tipo&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Tipo <a class="el" href="classDominio.html">Dominio</a>&lt; Tipo &gt;::valor</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00034">34</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="dominios_8hpp_source.html#l00063">get()</a>, <a class="el" href="dominios_8hpp_source.html#l00053">set()</a> e <a class="el" href="#a488c325c3eb4b06789a1deec579cd056">validar()</a>.</p>
-
 </div>
 </div>
 <hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
