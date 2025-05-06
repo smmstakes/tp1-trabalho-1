@@ -48,8 +48,13 @@ jobs:
         cd trabalho-1
         doxygen ../doxygen.txt
 
-    - name: Deploy da documentação no GitHub Pages
-      uses: peaceiris/actions-main@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ../doxygen_docs/html
+    - name: Commitar documentação
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add docs/
+        git commit -m "Atualizar documentação Doxygen" || echo "Sem alterações"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
