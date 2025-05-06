@@ -1,4 +1,4 @@
-name: Build Projeto
+name: CI projeto
 
 on:
   push:
@@ -52,4 +52,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./trabalho-1/docs/html
+        publish_dir: ../doxygen_docs/html
