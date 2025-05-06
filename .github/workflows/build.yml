@@ -31,3 +31,25 @@ jobs:
       run: |
         cd trabalho-1
         ./main
+  deploy_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositório
+      uses: actions/checkout@v3
+
+    - name: Instalar dependências
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y doxygen
+
+    - name: Gerar documentação com Doxygen
+      run: |
+        cd trabalho-1
+        doxygen doxygen.txt
+
+    - name: Deploy da documentação no GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./trabalho-1/docs/html
