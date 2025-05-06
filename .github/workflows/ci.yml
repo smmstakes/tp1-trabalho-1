@@ -46,7 +46,7 @@ jobs:
     - name: Gerar documentação com Doxygen
       run: |
         cd trabalho-1
-        doxygen doxygen.txt
+        doxygen ../doxygen.txt
 
     - name: Deploy da documentação no GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
