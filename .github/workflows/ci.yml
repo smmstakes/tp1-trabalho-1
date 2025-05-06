@@ -47,14 +47,3 @@ jobs:
       run: |
         cd trabalho-1
         doxygen ../doxygen.txt
-
-    - name: Commitar documentação
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add docs/
-        git commit -m "Atualizar documentação Doxygen" || echo "Sem alterações"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
