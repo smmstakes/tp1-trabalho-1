@@ -111,17 +111,22 @@ $(function(){initNavTree('classExecutorDeTestes.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
+<p>Classe responsável por executar todos os testes do projeto.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Membros públicos estáticos</h2></td></tr>
 <tr class="memitem:a5fb4c1df36d26dc881c8322763c30d1c" id="r_a5fb4c1df36d26dc881c8322763c30d1c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fb4c1df36d26dc881c8322763c30d1c">executarTodos</a> ()</td></tr>
+<tr class="memdesc:a5fb4c1df36d26dc881c8322763c30d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa todos os testes definidos no sistema.  <br /></td></tr>
 <tr class="separator:a5fb4c1df36d26dc881c8322763c30d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Membros privados estáticos</h2></td></tr>
 <tr class="memitem:a0610608a0467fea28b837cdcc9e58ac3" id="r_a0610608a0467fea28b837cdcc9e58ac3"><td class="memTemplParams" colspan="2">template&lt;typename Teste&gt; </td></tr>
 <tr class="memitem:a0610608a0467fea28b837cdcc9e58ac3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a> (Teste *teste, const std::string &amp;nomeTipo)</td></tr>
+<tr class="memdesc:a0610608a0467fea28b837cdcc9e58ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa um teste unitário e exibe o resultado.  <br /></td></tr>
 <tr class="separator:a0610608a0467fea28b837cdcc9e58ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
@@ -134,8 +139,9 @@ Atributos Privados Estáticos</h2></td></tr>
 <tr class="separator:a64b8e1bb696b8bba6e5c8de18696b852"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock">
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00005">5</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
+<div class="textblock"><p>Classe responsável por executar todos os testes do projeto. </p>
+
+<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00020">20</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="a5fb4c1df36d26dc881c8322763c30d1c" name="a5fb4c1df36d26dc881c8322763c30d1c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5fb4c1df36d26dc881c8322763c30d1c">&#9670;&#160;</a></span>executarTodos()</h2>
@@ -160,6 +166,9 @@ Atributos Privados Estáticos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Executa todos os testes definidos no sistema. </p>
+<p>Esta função instância e executa os testes de todas as entidades e domínios do projeto. </p>
+
 <p class="definition">Definido na linha <a class="el" href="executor__de__testes_8cpp_source.html#l00031">31</a> do ficheiro <a class="el" href="executor__de__testes_8cpp_source.html">executor_de_testes.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>                                     {</div>
 <div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCPF(), <span class="stringliteral">&quot;TUCPF&quot;</span>);</div>
@@ -176,7 +185,7 @@ Atributos Privados Estáticos</h2></td></tr>
 <div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUConta(), <span class="stringliteral">&quot;TUConta&quot;</span>);</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCarteira(), <span class="stringliteral">&quot;TUCarteira&quot;</span>);</div>
 <div class="line"><span class="lineno">   45</span>}</div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a0610608a0467fea28b837cdcc9e58ac3"><div class="ttname"><a href="#a0610608a0467fea28b837cdcc9e58ac3">ExecutorDeTestes::executarTU</a></div><div class="ttdeci">static void executarTU(Teste *teste, const std::string &amp;nomeTipo)</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8cpp_source.html#l00022">executor_de_testes.cpp:22</a></div></div>
+<div class="ttc" id="aclassExecutorDeTestes_html_a0610608a0467fea28b837cdcc9e58ac3"><div class="ttname"><a href="#a0610608a0467fea28b837cdcc9e58ac3">ExecutorDeTestes::executarTU</a></div><div class="ttdeci">static void executarTU(Teste *teste, const std::string &amp;nomeTipo)</div><div class="ttdoc">Executa um teste unitário e exibe o resultado.</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8cpp_source.html#l00022">executor_de_testes.cpp:22</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referências <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
 
@@ -211,6 +220,21 @@ template&lt;typename Teste&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Executa um teste unitário e exibe o resultado. </p>
+<dl class="tparams"><dt>Parâmetros de template</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Teste</td><td>Tipo do teste a ser executado.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">teste</td><td>Ponteiro para a instância do teste. </td></tr>
+    <tr><td class="paramname">nomeTipo</td><td><a class="el" href="classNome.html">Nome</a> da entidade ou domínio testado, usado para exibir o resultado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definido na linha <a class="el" href="executor__de__testes_8cpp_source.html#l00022">22</a> do ficheiro <a class="el" href="executor__de__testes_8cpp_source.html">executor_de_testes.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                         {</div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordtype">bool</span> sucesso = teste-&gt;run() == Teste::SUCESSO;</div>
@@ -220,11 +244,11 @@ template&lt;typename Teste&gt; </div>
 <div class="line"><span class="lineno">   27</span>            &lt;&lt; <a class="code hl_variable" href="#a64b8e1bb696b8bba6e5c8de18696b852">COR_RESET</a> &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!sucesso) <span class="keywordflow">throw</span> nomeTipo;</div>
 <div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a13c1eba59d8a2d6aff2f82a623959464"><div class="ttname"><a href="#a13c1eba59d8a2d6aff2f82a623959464">ExecutorDeTestes::COR_SUCESSO</a></div><div class="ttdeci">static constexpr const char * COR_SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00007">executor_de_testes.hpp:7</a></div></div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a3ea49a2de8f6e546fc21e322c950b490"><div class="ttname"><a href="#a3ea49a2de8f6e546fc21e322c950b490">ExecutorDeTestes::COR_FALHA</a></div><div class="ttdeci">static constexpr const char * COR_FALHA</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00008">executor_de_testes.hpp:8</a></div></div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a64b8e1bb696b8bba6e5c8de18696b852"><div class="ttname"><a href="#a64b8e1bb696b8bba6e5c8de18696b852">ExecutorDeTestes::COR_RESET</a></div><div class="ttdeci">static constexpr const char * COR_RESET</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00009">executor_de_testes.hpp:9</a></div></div>
+<div class="ttc" id="aclassExecutorDeTestes_html_a13c1eba59d8a2d6aff2f82a623959464"><div class="ttname"><a href="#a13c1eba59d8a2d6aff2f82a623959464">ExecutorDeTestes::COR_SUCESSO</a></div><div class="ttdeci">static constexpr const char * COR_SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00022">executor_de_testes.hpp:22</a></div></div>
+<div class="ttc" id="aclassExecutorDeTestes_html_a3ea49a2de8f6e546fc21e322c950b490"><div class="ttname"><a href="#a3ea49a2de8f6e546fc21e322c950b490">ExecutorDeTestes::COR_FALHA</a></div><div class="ttdeci">static constexpr const char * COR_FALHA</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00023">executor_de_testes.hpp:23</a></div></div>
+<div class="ttc" id="aclassExecutorDeTestes_html_a64b8e1bb696b8bba6e5c8de18696b852"><div class="ttname"><a href="#a64b8e1bb696b8bba6e5c8de18696b852">ExecutorDeTestes::COR_RESET</a></div><div class="ttdeci">static constexpr const char * COR_RESET</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00024">executor_de_testes.hpp:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="executor__de__testes_8hpp_source.html#l00008">COR_FALHA</a>, <a class="el" href="executor__de__testes_8hpp_source.html#l00009">COR_RESET</a> e <a class="el" href="executor__de__testes_8hpp_source.html#l00007">COR_SUCESSO</a>.</p>
+<p class="reference">Referências <a class="el" href="executor__de__testes_8hpp_source.html#l00023">COR_FALHA</a>, <a class="el" href="executor__de__testes_8hpp_source.html#l00024">COR_RESET</a> e <a class="el" href="executor__de__testes_8hpp_source.html#l00022">COR_SUCESSO</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00031">executarTodos()</a>.</p>
 
@@ -251,7 +275,7 @@ template&lt;typename Teste&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00008">8</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00023">23</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
 
@@ -277,7 +301,7 @@ template&lt;typename Teste&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00009">9</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00024">24</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
 
@@ -303,7 +327,7 @@ template&lt;typename Teste&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00007">7</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00022">22</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
 
