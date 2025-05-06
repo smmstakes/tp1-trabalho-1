@@ -32,14 +32,6 @@ template<typename Tipo>
 class Dominio {
     private:
         Tipo valor;
-
-        /**
-         * @brief Método abstrato para validar o valor atribuído ao domínio.
-         * 
-         * @param valor Valor a ser validado.
-         * 
-         * @throw std::invalid_argument Se o valor for inválido.
-         */
         virtual void validar(const Tipo& valor) = 0;
 
     public:
@@ -73,13 +65,6 @@ class Codigo:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_CODIGO;
 
-        /**
-         * @brief Valida o formato do código.
-         * 
-         * @param cod Código a ser validado.
-         * 
-         * @throw std::invalid_argument Se o código não tiver exatamente 5 dígitos numéricos.
-         */
         void validar(const std::string& cod) override;
 
 // Criado por Matheus Duarte - 211062277
@@ -95,13 +80,6 @@ class CodigoNegociacao:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_CODIGO_NEGOCIACAO;
 
-        /**
-         * @brief Valida o formato do código de negociação.
-         * 
-         * @param cod Código de negociação a ser validado.
-         * 
-         * @throw std::invalid_argument Se o código não estiver no padrão alfanumérico (até 12 caracteres).
-         */
         void validar(const std::string& cod) override;
 
 // Criado por Matheus Duarte - 211062277
@@ -117,13 +95,6 @@ class CPF:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_CPF;
 
-        /**
-         * @brief Valida o formato do CPF conforme o padrão (XXX.XXX.XXX-XX).
-         * 
-         * @param cpf CPF a ser validado.
-         * 
-         * @throw std::invalid_argument Se o CPF não estiver no formato correto.
-         */
         void validar(const std::string& cpf) override;
 
 // Criado por Matheus Duarte - 211062277
@@ -132,6 +103,7 @@ class CPF:public Dominio<std::string> {
 class Data:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_DATA;
+
         bool ehAnoBissexto(int ano) const {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
@@ -141,14 +113,16 @@ class Data:public Dominio<std::string> {
 
 class Nome:public Dominio<std::string> {
     private:
-        static const std::regex PADRAO_NOME;
         static const int TAMANHO_NOME = 20;
+        static const std::regex PADRAO_NOME;
+
         void validar(const std::string& nome) override;
 };
 
 class Perfil:public Dominio<std::string>{
     private:
         static const std::regex PADRAO_PERFIL;
+
         void validar(const std::string& perfil) override;
 };
 
@@ -157,6 +131,7 @@ class Dinheiro:public Dominio<double> {
         double dinheiro;
         static const double DINHEIRO_MIN;
         static const double DINHEIRO_MAX;
+
         void validar(const double& dinheiro) override;
 // Criado por Pedro Vale - 231038733
 };
@@ -166,6 +141,7 @@ class Quantidade:public Dominio<int> {
         int quantidade;
         static const int VALOR_MIN = 1;
         static const int VALOR_MAX = 1000000;
+
         void validar(const int& quantidade) override;
 // Criada por Pedro Vale - 231038733
 };
@@ -174,27 +150,19 @@ class Quantidade:public Dominio<int> {
  * @class Senha
  * @brief Representa a senha de uma Conta.
  * 
+ * @details A senha do usuário deve conter os seguintes requisitos:
+ * - Seis caracteres;
+ * - Digitos alfanuméricos e os símbolos: #, $, % e &;
+ * - Nenhum caractere duplicado;
+ * - Pelo menos um dígito;
+ * - Pelo menos uma letra maiúscula e uma minúscula;
+ * - Pelo menos um caractere especial (#, $, % ou &).
  */
 class Senha:public Dominio<std::string> {
     private:
         static const int TAMANHO_SENHA = 6;
         static const std::regex PADRAO_SENHA;
 
-        /**
-         * @brief Valida a senha conforme especificações.
-         * 
-         * @details A senha deve conter:
-         * - Seis caracteres;
-         * - Digitos alfanuméricos e os símbolos: #, $, % e &;
-         * - Nenhum caractere duplicado;
-         * - Pelo menos um dígito;
-         * - Pelo menos uma letra maiúscula e uma minúscula;
-         * - Pelo menos um caractere especial (#, $, % ou &).
-         * 
-         * @param senha Senha a ser validada.
-         * 
-         * @throw std::invalid_argument Se a senha não atender aos critérios pedidos.
-         */
         void validar(const std::string& senha) override;
 
 // Criado por Matheus Duarte - 211062277

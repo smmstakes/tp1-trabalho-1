@@ -23,14 +23,6 @@ class ExecutorDeTestes {
         static constexpr const char* COR_FALHA   = "\033[31m";
         static constexpr const char* COR_RESET   = "\033[0m";
 
-        /**
-         * @brief Executa um teste unitário e exibe o resultado.
-         * 
-         * @tparam Teste Tipo do teste a ser executado.
-         * 
-         * @param teste Ponteiro para a instância do teste.
-         * @param nomeTipo Nome da entidade ou domínio testado, usado para exibir o resultado.
-         */
         template<typename Teste>
         static void executarTU(Teste* teste, const std::string& nomeTipo);
 
