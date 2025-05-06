@@ -104,8 +104,6 @@ $(function(){initNavTree('classExecutorDeTestes.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Membros públicos estáticos</a> &#124;
-<a href="#pri-static-methods">Membros privados estáticos</a> &#124;
-<a href="#pri-static-attribs">Atributos Privados Estáticos</a> &#124;
 <a href="classExecutorDeTestes-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle"><div class="title">Referência à classe ExecutorDeTestes</div></div>
 </div><!--header-->
@@ -121,22 +119,6 @@ Membros públicos estáticos</h2></td></tr>
 <tr class="memitem:a5fb4c1df36d26dc881c8322763c30d1c" id="r_a5fb4c1df36d26dc881c8322763c30d1c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fb4c1df36d26dc881c8322763c30d1c">executarTodos</a> ()</td></tr>
 <tr class="memdesc:a5fb4c1df36d26dc881c8322763c30d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa todos os testes definidos no sistema.  <br /></td></tr>
 <tr class="separator:a5fb4c1df36d26dc881c8322763c30d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-Membros privados estáticos</h2></td></tr>
-<tr class="memitem:a0610608a0467fea28b837cdcc9e58ac3" id="r_a0610608a0467fea28b837cdcc9e58ac3"><td class="memTemplParams" colspan="2">template&lt;typename Teste&gt; </td></tr>
-<tr class="memitem:a0610608a0467fea28b837cdcc9e58ac3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a> (Teste *teste, const std::string &amp;nomeTipo)</td></tr>
-<tr class="memdesc:a0610608a0467fea28b837cdcc9e58ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa um teste unitário e exibe o resultado.  <br /></td></tr>
-<tr class="separator:a0610608a0467fea28b837cdcc9e58ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Atributos Privados Estáticos</h2></td></tr>
-<tr class="memitem:a13c1eba59d8a2d6aff2f82a623959464" id="r_a13c1eba59d8a2d6aff2f82a623959464"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c1eba59d8a2d6aff2f82a623959464">COR_SUCESSO</a> = &quot;\033[32m&quot;</td></tr>
-<tr class="separator:a13c1eba59d8a2d6aff2f82a623959464"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea49a2de8f6e546fc21e322c950b490" id="r_a3ea49a2de8f6e546fc21e322c950b490"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ea49a2de8f6e546fc21e322c950b490">COR_FALHA</a> = &quot;\033[31m&quot;</td></tr>
-<tr class="separator:a3ea49a2de8f6e546fc21e322c950b490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b8e1bb696b8bba6e5c8de18696b852" id="r_a64b8e1bb696b8bba6e5c8de18696b852"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64b8e1bb696b8bba6e5c8de18696b852">COR_RESET</a> = &quot;\033[0m&quot;</td></tr>
-<tr class="separator:a64b8e1bb696b8bba6e5c8de18696b852"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe responsável por executar todos os testes do projeto. </p>
@@ -171,166 +153,21 @@ Atributos Privados Estáticos</h2></td></tr>
 
 <p class="definition">Definido na linha <a class="el" href="executor__de__testes_8cpp_source.html#l00031">31</a> do ficheiro <a class="el" href="executor__de__testes_8cpp_source.html">executor_de_testes.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>                                     {</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCPF(), <span class="stringliteral">&quot;TUCPF&quot;</span>);</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUData(), <span class="stringliteral">&quot;TUData&quot;</span>);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUNome(), <span class="stringliteral">&quot;TUNome&quot;</span>);</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUSenha(), <span class="stringliteral">&quot;TUSenha&quot;</span>);</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUPerfil(), <span class="stringliteral">&quot;TUPerfil&quot;</span>);</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCodigo(), <span class="stringliteral">&quot;TUCodigo&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUDinheiro(), <span class="stringliteral">&quot;TUDinheiro&quot;</span>);</div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUQuantidade(), <span class="stringliteral">&quot;TUQuantidade&quot;</span>);</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCodigoNegociacao(), <span class="stringliteral">&quot;TUCodigoNegociacao&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span>    executarTU(<span class="keyword">new</span> TUCPF(), <span class="stringliteral">&quot;TUCPF&quot;</span>);</div>
+<div class="line"><span class="lineno">   33</span>    executarTU(<span class="keyword">new</span> TUData(), <span class="stringliteral">&quot;TUData&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    executarTU(<span class="keyword">new</span> TUNome(), <span class="stringliteral">&quot;TUNome&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>    executarTU(<span class="keyword">new</span> TUSenha(), <span class="stringliteral">&quot;TUSenha&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>    executarTU(<span class="keyword">new</span> TUPerfil(), <span class="stringliteral">&quot;TUPerfil&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>    executarTU(<span class="keyword">new</span> TUCodigo(), <span class="stringliteral">&quot;TUCodigo&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>    executarTU(<span class="keyword">new</span> TUDinheiro(), <span class="stringliteral">&quot;TUDinheiro&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    executarTU(<span class="keyword">new</span> TUQuantidade(), <span class="stringliteral">&quot;TUQuantidade&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>    executarTU(<span class="keyword">new</span> TUCodigoNegociacao(), <span class="stringliteral">&quot;TUCodigoNegociacao&quot;</span>);</div>
 <div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUOrdem(), <span class="stringliteral">&quot;TUOrdem&quot;</span>);</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUConta(), <span class="stringliteral">&quot;TUConta&quot;</span>);</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="#a0610608a0467fea28b837cdcc9e58ac3">executarTU</a>(<span class="keyword">new</span> TUCarteira(), <span class="stringliteral">&quot;TUCarteira&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    executarTU(<span class="keyword">new</span> TUOrdem(), <span class="stringliteral">&quot;TUOrdem&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>    executarTU(<span class="keyword">new</span> TUConta(), <span class="stringliteral">&quot;TUConta&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    executarTU(<span class="keyword">new</span> TUCarteira(), <span class="stringliteral">&quot;TUCarteira&quot;</span>);</div>
 <div class="line"><span class="lineno">   45</span>}</div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a0610608a0467fea28b837cdcc9e58ac3"><div class="ttname"><a href="#a0610608a0467fea28b837cdcc9e58ac3">ExecutorDeTestes::executarTU</a></div><div class="ttdeci">static void executarTU(Teste *teste, const std::string &amp;nomeTipo)</div><div class="ttdoc">Executa um teste unitário e exibe o resultado.</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8cpp_source.html#l00022">executor_de_testes.cpp:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
-
-</div>
-</div>
-<a id="a0610608a0467fea28b837cdcc9e58ac3" name="a0610608a0467fea28b837cdcc9e58ac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0610608a0467fea28b837cdcc9e58ac3">&#9670;&#160;</a></span>executarTU()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Teste&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ExecutorDeTestes::executarTU </td>
-          <td>(</td>
-          <td class="paramtype">Teste *</td>          <td class="paramname"><span class="paramname"><em>teste</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nomeTipo</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Executa um teste unitário e exibe o resultado. </p>
-<dl class="tparams"><dt>Parâmetros de template</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Teste</td><td>Tipo do teste a ser executado.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">teste</td><td>Ponteiro para a instância do teste. </td></tr>
-    <tr><td class="paramname">nomeTipo</td><td><a class="el" href="classNome.html">Nome</a> da entidade ou domínio testado, usado para exibir o resultado. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8cpp_source.html#l00022">22</a> do ficheiro <a class="el" href="executor__de__testes_8cpp_source.html">executor_de_testes.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                         {</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">bool</span> sucesso = teste-&gt;run() == Teste::SUCESSO;</div>
-<div class="line"><span class="lineno">   24</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;---------- &quot;</span> &lt;&lt; nomeTipo &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span></div>
-<div class="line"><span class="lineno">   25</span>            &lt;&lt; (sucesso ? <a class="code hl_variable" href="#a13c1eba59d8a2d6aff2f82a623959464">COR_SUCESSO</a> : <a class="code hl_variable" href="#a3ea49a2de8f6e546fc21e322c950b490">COR_FALHA</a>)</div>
-<div class="line"><span class="lineno">   26</span>            &lt;&lt; (sucesso ? <span class="stringliteral">&quot;SUCESSO&quot;</span> : <span class="stringliteral">&quot;FALHA&quot;</span>) </div>
-<div class="line"><span class="lineno">   27</span>            &lt;&lt; <a class="code hl_variable" href="#a64b8e1bb696b8bba6e5c8de18696b852">COR_RESET</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!sucesso) <span class="keywordflow">throw</span> nomeTipo;</div>
-<div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a13c1eba59d8a2d6aff2f82a623959464"><div class="ttname"><a href="#a13c1eba59d8a2d6aff2f82a623959464">ExecutorDeTestes::COR_SUCESSO</a></div><div class="ttdeci">static constexpr const char * COR_SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00022">executor_de_testes.hpp:22</a></div></div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a3ea49a2de8f6e546fc21e322c950b490"><div class="ttname"><a href="#a3ea49a2de8f6e546fc21e322c950b490">ExecutorDeTestes::COR_FALHA</a></div><div class="ttdeci">static constexpr const char * COR_FALHA</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00023">executor_de_testes.hpp:23</a></div></div>
-<div class="ttc" id="aclassExecutorDeTestes_html_a64b8e1bb696b8bba6e5c8de18696b852"><div class="ttname"><a href="#a64b8e1bb696b8bba6e5c8de18696b852">ExecutorDeTestes::COR_RESET</a></div><div class="ttdeci">static constexpr const char * COR_RESET</div><div class="ttdef"><b>Definição</b> <a href="executor__de__testes_8hpp_source.html#l00024">executor_de_testes.hpp:24</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="executor__de__testes_8hpp_source.html#l00023">COR_FALHA</a>, <a class="el" href="executor__de__testes_8hpp_source.html#l00024">COR_RESET</a> e <a class="el" href="executor__de__testes_8hpp_source.html#l00022">COR_SUCESSO</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00031">executarTodos()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a3ea49a2de8f6e546fc21e322c950b490" name="a3ea49a2de8f6e546fc21e322c950b490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ea49a2de8f6e546fc21e322c950b490">&#9670;&#160;</a></span>COR_FALHA</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* ExecutorDeTestes::COR_FALHA = &quot;\033[31m&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00023">23</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
-
-</div>
-</div>
-<a id="a64b8e1bb696b8bba6e5c8de18696b852" name="a64b8e1bb696b8bba6e5c8de18696b852"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64b8e1bb696b8bba6e5c8de18696b852">&#9670;&#160;</a></span>COR_RESET</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* ExecutorDeTestes::COR_RESET = &quot;\033[0m&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00024">24</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
-
-</div>
-</div>
-<a id="a13c1eba59d8a2d6aff2f82a623959464" name="a13c1eba59d8a2d6aff2f82a623959464"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13c1eba59d8a2d6aff2f82a623959464">&#9670;&#160;</a></span>COR_SUCESSO</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* ExecutorDeTestes::COR_SUCESSO = &quot;\033[32m&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="executor__de__testes_8hpp_source.html#l00022">22</a> do ficheiro <a class="el" href="executor__de__testes_8hpp_source.html">executor_de_testes.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="executor__de__testes_8cpp_source.html#l00022">executarTU()</a>.</p>
-
 </div>
 </div>
 <hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>

@@ -1,4 +1,4 @@
 var tu__utils_8hpp =
 [
-    [ "TUUtils", "classTUUtils.html", "classTUUtils" ]
+    [ "TUUtils", "classTUUtils.html", null ]
 ];

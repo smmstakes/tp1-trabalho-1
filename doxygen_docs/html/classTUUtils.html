@@ -104,7 +104,6 @@ $(function(){initNavTree('classTUUtils.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Membros públicos estáticos</a> &#124;
-<a href="#pri-static-attribs">Atributos Privados Estáticos</a> &#124;
 <a href="classTUUtils-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle"><div class="title">Referência à classe TUUtils</div></div>
 </div><!--header-->
@@ -124,11 +123,6 @@ Membros públicos estáticos</h2></td></tr>
 <tr class="memitem:ad4f3b6795a76e93dcbbbe6ca22eeb8c1" id="r_ad4f3b6795a76e93dcbbbe6ca22eeb8c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4f3b6795a76e93dcbbbe6ca22eeb8c1">assertExcecao</a> (std::function&lt; void()&gt; lambda, const std::string &amp;nomeMetodo, const std::string &amp;nomeClasse, int &amp;estado)</td></tr>
 <tr class="memdesc:ad4f3b6795a76e93dcbbbe6ca22eeb8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se uma exceção é corretamente lançada por uma função.  <br /></td></tr>
 <tr class="separator:ad4f3b6795a76e93dcbbbe6ca22eeb8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Atributos Privados Estáticos</h2></td></tr>
-<tr class="memitem:ab97677da1c3b29f6328d7666decc4f56" id="r_ab97677da1c3b29f6328d7666decc4f56"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab97677da1c3b29f6328d7666decc4f56">FALHA</a> = -1</td></tr>
-<tr class="separator:ab97677da1c3b29f6328d7666decc4f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe utilitária para facilitar a validação dos testes unitários. </p>
@@ -188,17 +182,12 @@ Atributos Privados Estáticos</h2></td></tr>
 <div class="line"><span class="lineno">    4</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">    5</span>        lambda();</div>
 <div class="line"><span class="lineno">    6</span>        std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; FALHA\n&quot;</span>;</div>
-<div class="line"><span class="lineno">    7</span>        estado = <a class="code hl_variable" href="#ab97677da1c3b29f6328d7666decc4f56">FALHA</a>;</div>
+<div class="line"><span class="lineno">    7</span>        estado = FALHA;</div>
 <div class="line"><span class="lineno">    8</span>    } <span class="keywordflow">catch</span> (std::invalid_argument&amp;) {</div>
 <div class="line"><span class="lineno">    9</span>        std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; SUCESSO\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   10</span>    }</div>
 <div class="line"><span class="lineno">   11</span>}</div>
-<div class="ttc" id="aclassTUUtils_html_ab97677da1c3b29f6328d7666decc4f56"><div class="ttname"><a href="#ab97677da1c3b29f6328d7666decc4f56">TUUtils::FALHA</a></div><div class="ttdeci">static const int FALHA</div><div class="ttdef"><b>Definição</b> <a href="tu__utils_8hpp_source.html#l00028">tu_utils.hpp:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="tu__utils_8hpp_source.html#l00028">FALHA</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="data__test_8cpp_source.html#l00026">TUData::testarAnoInvalido()</a>, <a class="el" href="senha__test_8cpp_source.html#l00030">TUSenha::testarCaracterDuplicadoInvalido()</a>, <a class="el" href="perfil__test_8cpp_source.html#l00015">TUPerfil::testarCenarioInvalido()</a>, <a class="el" href="senha__test_8cpp_source.html#l00026">TUSenha::testarCriterioMinimoInvalido()</a>, <a class="el" href="data__test_8cpp_source.html#l00018">TUData::testarDiaInvalido()</a>, <a class="el" href="codigo__test_8cpp_source.html#l00016">TUCodigo::testarDigitoInvalido()</a>, <a class="el" href="codigo__negociacao__test_8cpp_source.html#l00017">TUCodigoNegociacao::testarDigitoInvalido()</a>, <a class="el" href="cpf__test_8cpp_source.html#l00017">TUCPF::testarDigitoInvalido()</a>, <a class="el" href="nome__test_8cpp_source.html#l00017">TUNome::testarDigitoInvalido()</a>, <a class="el" href="senha__test_8cpp_source.html#l00018">TUSenha::testarDigitoInvalido()</a>, <a class="el" href="cpf__test_8cpp_source.html#l00025">TUCPF::testarFormatacaoInvalida()</a>, <a class="el" href="nome__test_8cpp_source.html#l00025">TUNome::testarFormatacaoInvalida()</a>, <a class="el" href="data__test_8cpp_source.html#l00030">TUData::testarFormatoInvalido()</a>, <a class="el" href="data__test_8cpp_source.html#l00022">TUData::testarMesInvalido()</a>, <a class="el" href="codigo__test_8cpp_source.html#l00020">TUCodigo::testarTamanhoInvalido()</a>, <a class="el" href="codigo__negociacao__test_8cpp_source.html#l00021">TUCodigoNegociacao::testarTamanhoInvalido()</a>, <a class="el" href="cpf__test_8cpp_source.html#l00021">TUCPF::testarTamanhoInvalido()</a>, <a class="el" href="dinheiro__test_8cpp_source.html#l00016">TUDinheiro::testarTamanhoInvalido()</a>, <a class="el" href="nome__test_8cpp_source.html#l00021">TUNome::testarTamanhoInvalido()</a>, <a class="el" href="quantidade__test_8cpp_source.html#l00016">TUQuantidade::testarTamanhoInvalido()</a>, <a class="el" href="senha__test_8cpp_source.html#l00022">TUSenha::testarTamanhoInvalido()</a>, <a class="el" href="dinheiro__test_8cpp_source.html#l00020">TUDinheiro::testarValorInvalido()</a> e <a class="el" href="quantidade__test_8cpp_source.html#l00020">TUQuantidade::testarValorInvalido()</a>.</p>
-
 </div>
 </div>
 <a id="a5dfcf18774a979219d9299d85f3b38fc" name="a5dfcf18774a979219d9299d85f3b38fc"></a>
@@ -270,40 +259,9 @@ template&lt;typename Tipo&gt; </div>
 <div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   47</span>            }</div>
 <div class="line"><span class="lineno">   48</span>            std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; FALHA\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   49</span>            estado = <a class="code hl_variable" href="#ab97677da1c3b29f6328d7666decc4f56">FALHA</a>;</div>
+<div class="line"><span class="lineno">   49</span>            estado = FALHA;</div>
 <div class="line"><span class="lineno">   50</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="tu__utils_8hpp_source.html#l00028">FALHA</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="carteira__test_8cpp_source.html#l00017">TUCarteira::testarCenarioValido()</a>, <a class="el" href="codigo__test_8cpp_source.html#l00011">TUCodigo::testarCenarioValido()</a>, <a class="el" href="codigo__negociacao__test_8cpp_source.html#l00012">TUCodigoNegociacao::testarCenarioValido()</a>, <a class="el" href="conta__teste_8cpp_source.html#l00017">TUConta::testarCenarioValido()</a>, <a class="el" href="cpf__test_8cpp_source.html#l00012">TUCPF::testarCenarioValido()</a>, <a class="el" href="data__test_8cpp_source.html#l00013">TUData::testarCenarioValido()</a>, <a class="el" href="dinheiro__test_8cpp_source.html#l00011">TUDinheiro::testarCenarioValido()</a>, <a class="el" href="nome__test_8cpp_source.html#l00012">TUNome::testarCenarioValido()</a>, <a class="el" href="ordem__test_8cpp_source.html#l00019">TUOrdem::testarCenarioValido()</a>, <a class="el" href="perfil__test_8cpp_source.html#l00010">TUPerfil::testarCenarioValido()</a>, <a class="el" href="quantidade__test_8cpp_source.html#l00011">TUQuantidade::testarCenarioValido()</a> e <a class="el" href="senha__test_8cpp_source.html#l00013">TUSenha::testarCenarioValido()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="ab97677da1c3b29f6328d7666decc4f56" name="ab97677da1c3b29f6328d7666decc4f56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab97677da1c3b29f6328d7666decc4f56">&#9670;&#160;</a></span>FALHA</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int TUUtils::FALHA = -1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="tu__utils_8hpp_source.html#l00028">28</a> do ficheiro <a class="el" href="tu__utils_8hpp_source.html">tu_utils.hpp</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="tu__utils_8cpp_source.html#l00003">assertExcecao()</a> e <a class="el" href="tu__utils_8hpp_source.html#l00043">assertIgual()</a>.</p>
-
 </div>
 </div>
 <hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
