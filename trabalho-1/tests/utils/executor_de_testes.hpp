@@ -43,5 +43,7 @@ class ExecutorDeTestes {
          * todas as entidades e domínios do projeto.
          */
         static void executarTodos();
+
+// Criado por Suyanne Miranda - 222006445
 };
 #endif // EXECUTOR_DE_TESTES_HPP_INCLUDED

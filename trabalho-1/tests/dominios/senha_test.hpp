@@ -22,6 +22,8 @@ class TUSenha:public TUDominio<Senha> {
 
     public:
         int run() override;
+
+// Criado por Matheus Duarte - 211062277
 };
 
 #endif // SENHA_TEST_HPP_INCLUDED
