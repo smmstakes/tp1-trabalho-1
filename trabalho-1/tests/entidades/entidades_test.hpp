@@ -55,6 +55,8 @@ class TUEntidade {
          */
         virtual int run() = 0;
         virtual ~TUEntidade() = default;
+
+// Criado por Matheus Duarte - 211062277
 };
 
 #endif // ENTIDADES_TEST_HPP_INCLUDED

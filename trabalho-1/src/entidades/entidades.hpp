@@ -115,6 +115,8 @@ class Ordem {
          * @return Quantidade como número inteiro.
          */
         int getQuantidade() const {return quantidade.get();}
-    };
+        
+// Criado por Matheus Duarte - 211062277
+};
 
 #endif  // ENTIDADES_HPP_INCLUDED

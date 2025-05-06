@@ -110,6 +110,9 @@ $(function(){initNavTree('classSenha.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Representa a senha de uma <a class="el" href="classConta.html">Conta</a>.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de heranças da classe Senha</div>
@@ -124,7 +127,7 @@ Diagrama de heranças da classe Senha</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Membros privados</h2></td></tr>
 <tr class="memitem:ac582f5254c7a9d2c256c274d89cd93f8" id="r_ac582f5254c7a9d2c256c274d89cd93f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac582f5254c7a9d2c256c274d89cd93f8">validar</a> (const std::string &amp;senha) override</td></tr>
-<tr class="memdesc:ac582f5254c7a9d2c256c274d89cd93f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método abstrato para validar o valor atribuído ao domínio.  <br /></td></tr>
+<tr class="memdesc:ac582f5254c7a9d2c256c274d89cd93f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a senha conforme especificações.  <br /></td></tr>
 <tr class="separator:ac582f5254c7a9d2c256c274d89cd93f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
@@ -147,8 +150,9 @@ Outros membros herdados</h2></td></tr>
 <tr class="separator:aa2fb97c946e506b45b2e1c940da4735f inherit pub_methods_classDominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock">
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00167">167</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="textblock"><p>Representa a senha de uma <a class="el" href="classConta.html">Conta</a>. </p>
+
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00178">178</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="ac582f5254c7a9d2c256c274d89cd93f8" name="ac582f5254c7a9d2c256c274d89cd93f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac582f5254c7a9d2c256c274d89cd93f8">&#9670;&#160;</a></span>validar()</h2>
@@ -162,7 +166,7 @@ Outros membros herdados</h2></td></tr>
         <tr>
           <td class="memname">void Senha::validar </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>valor</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>senha</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -173,16 +177,24 @@ Outros membros herdados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Método abstrato para validar o valor atribuído ao domínio. </p>
+<p>Valida a senha conforme especificações. </p>
+<p>A senha deve conter:</p><ul>
+<li>Seis caracteres;</li>
+<li>Digitos alfanuméricos e os símbolos: #, $, % e &amp;;</li>
+<li>Nenhum caractere duplicado;</li>
+<li>Pelo menos um dígito;</li>
+<li>Pelo menos uma letra maiúscula e uma minúscula;</li>
+<li>Pelo menos um caractere especial (#, $, % ou &amp;).</li>
+</ul>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">valor</td><td>Valor a ser validado.</td></tr>
+    <tr><td class="paramname">senha</td><td><a class="el" href="classSenha.html" title="Representa a senha de uma Conta.">Senha</a> a ser validada.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Excepções</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>Se o valor for inválido. </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a senha não atender aos critérios pedidos. </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,10 +236,10 @@ Outros membros herdados</h2></td></tr>
 <div class="line"><span class="lineno">  138</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Senha não contém todos os caracteres necessários.&quot;</span>);</div>
 <div class="line"><span class="lineno">  139</span>    }</div>
 <div class="line"><span class="lineno">  140</span>}</div>
-<div class="ttc" id="aclassSenha_html_a080e1ebdc3ceeea808aa162063cdf7bc"><div class="ttname"><a href="#a080e1ebdc3ceeea808aa162063cdf7bc">Senha::TAMANHO_SENHA</a></div><div class="ttdeci">static const int TAMANHO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00169">dominios.hpp:169</a></div></div>
-<div class="ttc" id="aclassSenha_html_a406080add9a437fbd312c6993eef8d4f"><div class="ttname"><a href="#a406080add9a437fbd312c6993eef8d4f">Senha::PADRAO_SENHA</a></div><div class="ttdeci">static const std::regex PADRAO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00170">dominios.hpp:170</a></div></div>
+<div class="ttc" id="aclassSenha_html_a080e1ebdc3ceeea808aa162063cdf7bc"><div class="ttname"><a href="#a080e1ebdc3ceeea808aa162063cdf7bc">Senha::TAMANHO_SENHA</a></div><div class="ttdeci">static const int TAMANHO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00180">dominios.hpp:180</a></div></div>
+<div class="ttc" id="aclassSenha_html_a406080add9a437fbd312c6993eef8d4f"><div class="ttname"><a href="#a406080add9a437fbd312c6993eef8d4f">Senha::PADRAO_SENHA</a></div><div class="ttdeci">static const std::regex PADRAO_SENHA</div><div class="ttdef"><b>Definição</b> <a href="dominios_8hpp_source.html#l00181">dominios.hpp:181</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00170">PADRAO_SENHA</a> e <a class="el" href="dominios_8hpp_source.html#l00169">TAMANHO_SENHA</a>.</p>
+<p class="reference">Referências <a class="el" href="dominios_8hpp_source.html#l00181">PADRAO_SENHA</a> e <a class="el" href="dominios_8hpp_source.html#l00180">TAMANHO_SENHA</a>.</p>
 
 </div>
 </div>
@@ -252,7 +264,7 @@ Outros membros herdados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00170">170</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00181">181</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="dominios_8cpp_source.html#l00107">validar()</a>.</p>
 
@@ -278,7 +290,7 @@ Outros membros herdados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00169">169</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00180">180</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="dominios_8cpp_source.html#l00107">validar()</a>.</p>
 

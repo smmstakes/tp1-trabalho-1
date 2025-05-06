@@ -58,6 +58,8 @@ class TUUtils {
          * @param estado Estado geral do teste.
          */
         static void assertExcecao(std::function<void()> lambda, const std::string& nomeMetodo, const std::string& nomeClasse, int& estado);
+
+// Criado por Suyanne Miranda - 222006445
 };
 
 #endif // TU_UTILS_HPP_INCLUDED

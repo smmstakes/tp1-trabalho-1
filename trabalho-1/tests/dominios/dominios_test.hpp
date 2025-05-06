@@ -61,6 +61,8 @@ class TUDominio {
          */
         virtual int run() = 0;
         virtual ~TUDominio() = default;
+
+// Criado por Suyanne Miranda - 222006445
 };
 
 #endif // DOMINIO_TEST_HPP_INCLUDED
