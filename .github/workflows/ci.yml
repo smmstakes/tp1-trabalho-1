@@ -49,7 +49,7 @@ jobs:
         doxygen ../doxygen.txt
 
     - name: Deploy da documentação no GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-main@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ../doxygen_docs/html
