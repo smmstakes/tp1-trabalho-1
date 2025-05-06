@@ -164,11 +164,34 @@ class Quantidade:public Dominio<int> {
 // Criada por Pedro Vale - 231038733
 };
 
+/**
+ * @class Senha
+ * @brief Representa a senha de uma Conta.
+ * 
+ */
 class Senha:public Dominio<std::string> {
     private:
         static const int TAMANHO_SENHA = 6;
         static const std::regex PADRAO_SENHA;
+
+        /**
+         * @brief Valida a senha conforme especificações.
+         * 
+         * @details A senha deve conter:
+         * - Seis caracteres;
+         * - Digitos alfanuméricos e os símbolos: #, $, % e &;
+         * - Nenhum caractere duplicado;
+         * - Pelo menos um dígito;
+         * - Pelo menos uma letra maiúscula e uma minúscula;
+         * - Pelo menos um caractere especial (#, $, % ou &).
+         * 
+         * @param senha Senha a ser validada.
+         * 
+         * @throw std::invalid_argument Se a senha não atender aos critérios pedidos.
+         */
         void validar(const std::string& senha) override;
+        
+// Criado por Matheus Duarte - 211062277
 };
 
 #endif // DOMINIOS_HPP_INCLUDED
