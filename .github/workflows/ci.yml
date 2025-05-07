@@ -26,8 +26,7 @@ jobs:
       run: |
         rm -rf docs
         mkdir docs
-        ls
-        cp -r ./trabalho-1/doxygen_docs/html/. ./docs
+        cp -r ./doxygen_docs/html/. ./docs
 
 
   deploy_docs:
