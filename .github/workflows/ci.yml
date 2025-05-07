@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Clonar repositório
       uses: actions/checkout@v3
@@ -21,17 +20,17 @@ jobs:
 
     - name: Gerar documentação com Doxygen
       run: |
-        cd trabalho-1
-        doxygen ../doxygen.txt
+        doxygen ./doxygen.txt
 
     - name: Mover documentação para a pasta docs/
       run: |
         rm -rf docs
-        mv trabalho-1/doxygen_docs/html docs
+        mkdir docs
+        cp -r trabalho-1/doxygen_docs/html/* docs
 
   deploy_docs:
     runs-on: ubuntu-latest
-    needs: build  # Garante que a geração da documentação aconteça antes do deploy
+    needs: build 
 
     steps:
     - name: Clonar repositório
