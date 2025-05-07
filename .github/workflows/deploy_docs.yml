@@ -1,0 +1,35 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clonar repositório
+      uses: actions/checkout@v3
+
+    - name: Instalar dependências
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y doxygen
+
+    - name: Gerar documentação com Doxygen
+      run: |
+        doxygen ./doxygen.txt
+
+    - name: Mover documentação para a pasta docs/
+      run: |
+        rm -rf docs
+        mkdir docs
+        cp -r ./doxygen_docs/html/. ./docs
+
+    - name: Commit e push da documentação para a branch main
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add docs
+        git commit -m "Atualizar documentação [auto]" || echo "Nada para commitar"
+        git push origin main
