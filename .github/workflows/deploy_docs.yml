@@ -3,6 +3,8 @@ name: Deploy Docs
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -26,10 +28,9 @@ jobs:
         mkdir docs
         cp -r ./doxygen_docs/html/. ./docs
 
-    - name: Commit e push da documentação para a branch main
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add docs
-        git commit -m "Atualizar documentação [auto]" || echo "Nada para commitar"
-        git push origin main
+    - name: Deploy para gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        target_branch: gh-pages
+        source_dir: ./docs
+        commit_message: "Deploy documentação gerada"
