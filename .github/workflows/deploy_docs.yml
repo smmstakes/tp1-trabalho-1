@@ -1,13 +1,11 @@
-name: Build e Deploy Docs
+name: Deploy Docs
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Clonar repositório
