@@ -33,4 +33,5 @@ jobs:
       with:
         target_branch: gh-pages
         source_dir: ./docs
-        commit_message: "Deploy documentação gerada"
+        destination_dir: docs
+
