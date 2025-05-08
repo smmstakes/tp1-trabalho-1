@@ -7,6 +7,7 @@
  * 
  * @details Este arquivo define a classe genérica TUEntidade, utilizada como base
  * para a criação de testes unitários dos tipos de entidades do sistema.
+ * 
  * Define métodos de configuração, execução e liberação
  * de recursos, além do cenário de teste com dados válidos.
  * 
@@ -30,7 +31,7 @@ class TUEntidade {
         int estado;
 
          /**
-         * @brief Prepara a classe para realizar os testes.
+         * @brief Método virtual para preparar a classe para realizar os testes.
          */
         virtual void setUp() = 0;
 
@@ -40,7 +41,7 @@ class TUEntidade {
         void tearDown() {delete entidade;}
 
         /**
-         * @brief Executa o cenário de teste com valor válido.
+         * @brief Método virtual para executar o cenário de teste com valor válido.
          */
         virtual void testarCenarioValido() = 0;
 

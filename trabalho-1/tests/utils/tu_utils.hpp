@@ -52,7 +52,7 @@ class TUUtils {
         /**
          * @brief Verifica se uma exceção é corretamente lançada por uma função.
          * 
-         * @param lambda Função ou expressão lambda que deve lançar uma exceção.
+         * @param lambda Função que deve lançar uma exceção.
          * @param nomeMetodo Nome do método testado.
          * @param nomeClasse Nome da classe do teste.
          * @param estado Estado geral do teste.

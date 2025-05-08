@@ -23,8 +23,8 @@
  * @class Dominio
  * @brief Classe base genérica para domínios.
  * 
- * @details Essa classe define a classe genérica Dominio, utilizada como base
- * para a criação dos outros domínios, garantindo um padrão.
+ * @details Essa classe serve como modelo a ser seguido pelas outras classes
+ * domínios, evitando repetição de código e padronizando o projeto.
  * 
  * @tparam Tipo Tipo do domínio.
  */
@@ -38,9 +38,10 @@ class Dominio {
         /**
          * @brief Define o valor do domínio após validação.
          * 
-         * @param valor Valor a ser atribuído.
+         * @param valor Valor a ser atribuído ao domínio.
          * 
-         * @throw std::invalid_argument Se o valor for inválido.
+         * @throw std::invalid_argument Exceção caso o valor informado não esteja 
+         * de acordo com as especificações.
          */
         void set(const Tipo& valor) {
             validar(valor);
@@ -59,7 +60,9 @@ class Dominio {
 
 /**
  * @class Codigo
- * @brief Representa um código de 5 dígitos numéricos.
+ * @brief Sequência de caracteres para identificar de entidades.
+ * 
+ * @details Deve conter uma sequência de 5 caracteres numéricos.
  */
 class Codigo:public Dominio<std::string> {
     private:
@@ -72,9 +75,9 @@ class Codigo:public Dominio<std::string> {
 
 /**
  * @class CodigoNegociacao
- * @brief Representa um código de negociação para ordens de compra.
+ * @brief Identificador das ações negociadas no sistema financeiro.
  * 
- * @details Código alfanumérico com até 12 caracteres, incluindo espaços.
+ * @details Deve conter um conjunto de 12 caracteres alfanuméricos, incluindo espaços.
  */
 class CodigoNegociacao:public Dominio<std::string> {
     private:
@@ -87,9 +90,10 @@ class CodigoNegociacao:public Dominio<std::string> {
 
 /**
  * @class CPF
- * @brief Representa um CPF no formato XXX.XXX.XXX-XX.
+ * @brief Documento de identificação, ou o número do Cadastro de Pessoa Física.
  * 
- * @details Utilizado para identificar o titular da conta.
+ * @details Deve conter 11 caracteres numéricos, formatados da seguinte forma:
+ * XXX.XXX.XXX-XX.
  */
 class CPF:public Dominio<std::string> {
     private:
@@ -148,9 +152,11 @@ class Quantidade:public Dominio<int> {
 
 /**
  * @class Senha
- * @brief Representa a senha de uma Conta.
+ * @brief Conjunto de caracteres que fornece acesso à conta.
  * 
- * @details A senha do usuário deve conter os seguintes requisitos:
+ * @details Método de autenticação para permitir acesso ao sistema.
+ * 
+ * Deve conter os seguintes requisitos:
  * - Seis caracteres;
  * - Digitos alfanuméricos e os símbolos: #, $, % e &;
  * - Nenhum caractere duplicado;

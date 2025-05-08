@@ -7,6 +7,7 @@
  * 
  * @details Este arquivo define a classe genérica TUDominio, utilizada como base
  * para a criação de testes unitários dos tipos de domínio do sistema.
+ * 
  * Define métodos de configuração, execução e liberação
  * de recursos, além do cenário de teste com dados válidos.
  * 
@@ -46,7 +47,7 @@ class TUDominio {
         void tearDown() { delete valor ;};
 
         /**
-         * @brief Executa o cenário de teste com valor válido.
+         * @brief Metodo virtual para executar o cenário de teste com valor válido.
          */
         virtual void testarCenarioValido() = 0;
 
@@ -60,6 +61,10 @@ class TUDominio {
          * @return int Estado do teste (SUCESSO ou FALHA).
          */
         virtual int run() = 0;
+
+        /**
+         * @brief Destrutor padrão para o classe e suas derivadas.
+         */
         virtual ~TUDominio() = default;
 
 // Criado por Suyanne Miranda - 222006445
