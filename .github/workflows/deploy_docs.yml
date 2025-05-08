@@ -22,7 +22,7 @@ jobs:
       run: |
         doxygen ./doxygen.txt
 
-    - name: Mover documentação para a pasta docs/
+    - name: Copiar documentação para a pasta docs/
       run: |
         rm -rf docs
         mkdir docs
@@ -34,4 +34,5 @@ jobs:
         target_branch: gh-pages
         source_dir: ./docs
         destination_dir: docs
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
