@@ -3,7 +3,7 @@
 
 /**
  * @file executor_de_testes.hpp
- * @brief Classe auxiliar para execução de testes
+ * @brief Classe auxiliar para execução de testes.
  * 
  * @details Esse arquivo define a classe que servirá como principal
  * meio de executar os testes definidos no projeto de forma automática

@@ -5,8 +5,7 @@
  * @file entidades.hpp
  * @brief Declaração das classes de entidades.
  * 
- * @details Este arquivo contém as definições das classes 
- * que representam as entidades do sistema.
+ * @details Este arquivo contém as definições das entidades presentes no sistema.
  * 
  * @author Gabriel Castro
  * @author José Artur
@@ -50,13 +49,12 @@ class Carteira {
 
 /**
  * @class Ordem
- * @brief Representa uma ordem de negociação no sistema.
+ * @brief Documento comercial que tem o papel de oficializar a compra da ação.
  * 
  * @details A ordem contém informações como código identificador, código de negociação,
  * data da operação, preço e quantidade negociada.
  * 
- * Esta é uma entidade imutável após a criação, ou seja, suas operações
- * são limitadas a visualização e exclusão.
+ * Essa entidade não pode ser modificada após sua criação, mas pode ser excluída ou visualizada.
  */
 class Ordem {
     private:
@@ -72,11 +70,12 @@ class Ordem {
          * 
          * @param cod Código identificador da ordem (5 dígitos).
          * @param codNeg Código de negociação (até 12 caracteres alfanuméricos).
-         * @param data Data da ordem no formato AAAAMMDD.
+         * @param data Data de compra da ordem (AAAAMMDD).
          * @param preco Valor da negociação (entre 0.01 e 1.000.000,00).
          * @param qtd Quantidade negociada (entre 1 e 1.000.000).
          * 
-         * @throw std::invalid_argument Se algum dos parâmetros não for válido.
+         * @throw std::invalid_argument Exceção caso algum valor informado 
+         * não esteja de acordo com as especificações.
          */
         Ordem(const std::string& cod, const std::string& codNeg, const std::string& data,
               double preco, int qtd);
@@ -96,16 +95,16 @@ class Ordem {
         std::string getCodNegociacao() const {return codNegociacao.get();}
     
         /**
-         * @brief Retorna a data da ordem.
+         * @brief Retorna a data de compra da ordem.
          * 
-         * @return Data no formato AAAAMMDD.
+         * @return Data da compra como string.
          */
         std::string getData() const {return data.get();}
     
         /**
          * @brief Retorna o valor monetário da ordem.
          * 
-         * @return Preço da ordem como número real.
+         * @return Preço da ordem como número de precisão dupla.
          */
         double getDinheiro() const {return preco.get();}
     
