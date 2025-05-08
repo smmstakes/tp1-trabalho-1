@@ -31,7 +31,7 @@ class ExecutorDeTestes {
         /**
          * @brief Executa todos os testes definidos no sistema.
          * 
-         * @details Esta função instância e executa os testes de 
+         * @details Método que instância e executa os testes de 
          * todas as entidades e domínios do projeto.
          */
         static void executarTodos();
