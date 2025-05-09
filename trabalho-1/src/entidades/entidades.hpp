@@ -19,18 +19,58 @@
 
 #include "../dominios/dominios.hpp"
 
-class Conta{
+/**
+ * @class Conta
+ * @brief Representa os dados de acesso de um usuário ao sistema.
+ * 
+ * @details A conta é composta por CPF, nome completo e senha.
+ *
+ * Essa entidade pode ser modificada após sua criação, excluída ou visualizada.
+ */
+class Conta {
     private:
         CPF cpf; 
         Nome nome;
         Senha senha;
 
     public:
+        /**
+         * @brief Constrói uma nova instância de Conta setando os atributos de CPF, Nome e Senha.
+         * 
+         * @param cpf CPF do usuário (formato XXX.XXX.XXX-XX).
+         * @param nome Nome completo do usuário (até 40 caracteres).
+         * @param senha Senha de acesso (6 caracteres alfauméricos e especiais).
+         * 
+        /**
+         * @throw std::invalid_argument Se o CPF, o nome ou a senha não estiverem de acordo com as especificações.
+         */
+
         Conta(const std::string& cpf, const std::string& nome, const std::string& senha);
-        std::string getCpf() const {return cpf.get();}
-        std::string getNome() const {return nome.get();}
-        std::string getSenha() const {return senha.get();}                
+
+        /**
+         * @brief Provêm CPF associado à conta.
+         * 
+         * @return CPF como string.
+         */
+        std::string getCpf() const { return cpf.get(); }
+
+        /**
+         * @brief Provêm nome do titular da conta.
+         * 
+         * @return Nome como string.
+         */
+        std::string getNome() const { return nome.get(); }
+
+        /**
+         * @brief Provêm a senha da conta.
+         * 
+         * @return Senha como string.
+         */
+        std::string getSenha() const { return senha.get(); }
+
+// Criado por Gabriel Castro - 202066571             
 };
+
 
 class Carteira {
     private:
@@ -66,7 +106,7 @@ class Ordem {
     
     public:
         /**
-         * @brief Constrói uma nova instância de Ordem.
+         * @brief Constrói uma nova instância de Ordem setando o código, código de negociação, data, preço e quantidade.
          * 
          * @param cod Código identificador da ordem (5 dígitos).
          * @param codNeg Código de negociação (até 12 caracteres alfanuméricos).
@@ -74,28 +114,27 @@ class Ordem {
          * @param preco Valor da negociação (entre 0.01 e 1.000.000,00).
          * @param qtd Quantidade negociada (entre 1 e 1.000.000).
          * 
-         * @throw std::invalid_argument Exceção caso algum valor informado 
-         * não esteja de acordo com as especificações.
+         * @throw std::invalid_argument Se o código, código de cegociação, cata, preço e quantidade não estiverem de acordo com as especificações.
          */
         Ordem(const std::string& cod, const std::string& codNeg, const std::string& data,
               double preco, int qtd);
     
         /**
-         * @brief Retorna o código identificador da ordem.
+         * @brief Provêm o código identificador da ordem.
          * 
          * @return Código da ordem como string.
          */
         std::string getCodigo() const {return codigo.get();}
     
         /**
-         * @brief Retorna o código de negociação associado à ordem.
+         * @brief Provêm o código de negociação associado à ordem.
          * 
          * @return Código de negociação como string.
          */
         std::string getCodNegociacao() const {return codNegociacao.get();}
     
         /**
-         * @brief Retorna a data de compra da ordem.
+         * @brief Provêm a data de compra da ordem.
          * 
          * @return Data da compra como string.
          */

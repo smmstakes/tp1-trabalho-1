@@ -104,6 +104,13 @@ class CPF:public Dominio<std::string> {
 // Criado por Matheus Duarte - 211062277
 };
 
+/**
+ * @class Data
+ * @brief Ano, mês e dia para datação de ordens financeiras.
+ * 
+ * @details Deve conter 8 números representados como string no formato AAAAMMDD, considerando anos bissextos.
+ */
+
 class Data:public Dominio<std::string> {
     private:
         static const std::regex PADRAO_DATA;

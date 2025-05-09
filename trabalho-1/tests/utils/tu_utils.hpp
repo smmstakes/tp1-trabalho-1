@@ -31,9 +31,9 @@ class TUUtils {
         /**
          * @brief Verifica se dois valores são iguais.
          * 
-         * @tparam Tipo Tipo dos valores comparados.
+         * @tparam Tipo Tipo dos valores comparados. Pode ser uma das classes de teste definidas no sistema.
          * 
-         * @param valorObtido Valor retornado pela função testada.
+         * @param valorObtido Valor retornado pelo método testado.
          * @param valorEsperado Valor que era esperado.
          * @param nomeMetodo Nome do método testado.
          * @param nomeClasse Nome da classe do teste.
@@ -52,10 +52,10 @@ class TUUtils {
         /**
          * @brief Verifica se uma exceção é corretamente lançada por uma função.
          * 
-         * @param lambda Função que deve lançar uma exceção.
+         * @param lambda Função lambda que encapsula o método da classe que deve lançar uma exceção.
          * @param nomeMetodo Nome do método testado.
          * @param nomeClasse Nome da classe do teste.
-         * @param estado Estado geral do teste.
+         * @param estado Estado de sucesso ou falha do teste.
          */
         static void assertExcecao(std::function<void()> lambda, const std::string& nomeMetodo, const std::string& nomeClasse, int& estado);
 
