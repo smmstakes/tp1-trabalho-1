@@ -141,7 +141,7 @@ class Perfil:public Dominio<std::string>{
  * @class Dinheiro
  * @brief Quantia Númerica Econômica referente à identificação de precificação de uma ação financeira. 
  * 
- * @details A Quantia Numérica deve conter um número inteiro ou decimal entre 0,01 a 1000000,00.
+ * @details A Quantia Numérica deve conter um número decimal entre 0,01 a 1000000,00.
  * 
 */
 
@@ -157,7 +157,7 @@ class Dinheiro:public Dominio<double> {
 
 /**
  * @class Quantidade
- * @brief Valor Numérico medido para realizar uma quantidade de números de ações financeiras desejada.
+ * @brief Valor Numérico medido para realizar uma contagem de números de ações financeiras desejada.
  * 
  * @details A Quantia Númerica deve conter apenas números inteiros positivos entre 1 a 1000000.
  * 

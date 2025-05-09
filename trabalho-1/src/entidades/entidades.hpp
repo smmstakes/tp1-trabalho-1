@@ -89,43 +89,43 @@ class Carteira {
     /**
      * @brief Constroi uma instância Carteira com atributos de codigo, nome e perfil.
      * @param codigo Código identificador da ordem (5 dígitos).
-     * @param Nome Nome completo do usuário (até 40 caracteres).
+     * @param Nome Nome completo do usuário (até 20 caracteres).
      * @param Perfil Caracteristica financeira do usuário (Conservador/Moderado/Agressivo).
      * 
-     * @throw std::invalid_argument para caso os atributos código,nome e perfil, não estejam de acordo com as especificações.
+     * @throw std::invalid_argument Para caso os atributos código,nome e perfil, não estejam de acordo com as especificações.
      * 
      */
         Carteira (const std::string& codigo,const std::string& nome, const std::string& perfil);
 
         /**
          * @brief Provem o Código de Identificação da Carteira.
-         * @return Resgata o Código da Carteira como string.
+         * @return Código da Carteira como string.
          */
         std::string getCodigo() const{return codigo.get();}
         
         /**
          * @brief Provem o Nome do Usuário da Carteira.
-         * @return Resgata o Nome da Carteira como string.
+         * @return Nome da Carteira como string.
          */
         std::string getNome() const {return nome.get();}
 
         /**
          * @brief Provem o Perfil Financeiro do Usuário da Carteira.
-         * @return Resgata o Perfil da Carteira como string.
+         * @return Perfil da Carteira como string.
          */
         std::string getPerfil() const {return perfil.get();}
 
         /**
          * @brief Define ou Edita o Nome de Usuário.
          * 
-         * @throw std::invalid_argument caso o Nome não esteja de acordo com as especificações.
+         * @throw std::invalid_argument Caso o Nome não esteja de acordo com as especificações.
          */
         void setNome(std::string nome);
 
         /**
          * @brief Define ou Edita o Perfil Financeiro do Usuário.
          * 
-         * @throw std::invalid_argument caso o Perfil não esteja de acordo com as especificações.
+         * @throw std::invalid_argument Caso o Perfil não esteja de acordo com as especificações.
          */
         void setPerfil(std::string perfil);
     // Criado por Pedro Vale - 231038733
