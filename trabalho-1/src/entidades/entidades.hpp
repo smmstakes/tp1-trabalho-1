@@ -114,7 +114,7 @@ class Ordem {
          * @param preco Valor da negociação (entre 0.01 e 1.000.000,00).
          * @param qtd Quantidade negociada (entre 1 e 1.000.000).
          * 
-         * @throw std::invalid_argument Se o código, código de cegociação, cata, preço e quantidade não estiverem de acordo com as especificações.
+         * @throw std::invalid_argument Se o código, código de negociação, data, preço e quantidade não estiverem de acordo com as especificações.
          */
         Ordem(const std::string& cod, const std::string& codNeg, const std::string& data,
               double preco, int qtd);
