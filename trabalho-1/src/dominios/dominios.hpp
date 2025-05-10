@@ -129,12 +129,23 @@ class Nome:public Dominio<std::string> {
 
         void validar(const std::string& nome) override;
 };
+/**
+ * @class Perfil
+ * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de ações, as categorias são:
+ * - Conservador (evita riscos);
+ * - Moderado (equilibra risco e retorno);
+ * - Agressivo (assume altos riscos em busca de maiores ganhos).
+ * 
+ * @details O perfil do investidor deve obrigatoriamente se enquadrar em umas das três categorias: Conservador, Moderado ou Agressivo.
+ * 
+*/
 
 class Perfil:public Dominio<std::string>{
     private:
         static const std::regex PADRAO_PERFIL;
 
         void validar(const std::string& perfil) override;
+// Criado por Gabriel Castro - 202066571
 };
 
 /**
