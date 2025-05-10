@@ -129,6 +129,7 @@ class Nome:public Dominio<std::string> {
 
         void validar(const std::string& nome) override;
 };
+
 /**
  * @class Perfil
  * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de ações, as categorias são:
