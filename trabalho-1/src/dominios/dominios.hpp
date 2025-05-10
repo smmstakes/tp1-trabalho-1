@@ -132,10 +132,7 @@ class Nome:public Dominio<std::string> {
 
 /**
  * @class Perfil
- * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de ações, as categorias são:
- * - Conservador (evita riscos);
- * - Moderado (equilibra risco e retorno);
- * - Agressivo (assume altos riscos em busca de maiores ganhos).
+ * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de papéis.
  * 
  * @details O perfil do investidor deve obrigatoriamente se enquadrar em umas das três categorias: Conservador, Moderado ou Agressivo.
  * 
