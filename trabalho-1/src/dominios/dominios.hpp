@@ -122,12 +122,19 @@ class Data:public Dominio<std::string> {
 // Criada por Suyanne Miranda - 222006445
 };
 
+/**
+ * @class Nome
+ * @brief O nome completo do usuário da conta.
+ * @details Deve conter até 20 caracteres, não pode ter dois ou mais espaços em branco, pode conter números mas não caracteres especiais.
+*/
+
 class Nome:public Dominio<std::string> {
     private:
         static const int TAMANHO_NOME = 20;
         static const std::regex PADRAO_NOME;
 
         void validar(const std::string& nome) override;
+//Criada por Jose Artur Nordestino - 180020439
 };
 
 class Perfil:public Dominio<std::string>{
