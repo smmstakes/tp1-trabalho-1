@@ -137,11 +137,20 @@ class Nome:public Dominio<std::string> {
 //Criada por Jose Artur Nordestino - 180020439
 };
 
+/**
+ * @class Perfil
+ * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de papéis.
+ * 
+ * @details O perfil do investidor deve obrigatoriamente se enquadrar em umas das três categorias: Conservador, Moderado ou Agressivo.
+ * 
+*/
+
 class Perfil:public Dominio<std::string>{
     private:
         static const std::regex PADRAO_PERFIL;
 
         void validar(const std::string& perfil) override;
+// Criado por Gabriel Castro - 202066571
 };
 
 /**
