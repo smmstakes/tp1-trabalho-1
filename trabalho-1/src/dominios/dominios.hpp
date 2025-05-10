@@ -124,7 +124,7 @@ class Data:public Dominio<std::string> {
 
 /**
  * @class Nome
- * @brief O nome completodo usuário da conta.
+ * @brief O nome completo do usuário da conta.
  * @details Deve conter até 20 caracteres, não pode ter dois ou mais espaços em branco, pode conter números mas não caracteres especiais.
 */
 
