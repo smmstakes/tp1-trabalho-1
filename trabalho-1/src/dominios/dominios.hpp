@@ -40,7 +40,7 @@ class Dominio {
          * 
          * @param valor Valor a ser atribuído ao domínio.
          * 
-         * @throw std::invalid_argument Exceção caso o valor informado não esteja 
+         * @throw std::invalid_argument Caso o valor informado não esteja 
          * de acordo com as especificações.
          */
         void set(const Tipo& valor) {
@@ -60,7 +60,7 @@ class Dominio {
 
 /**
  * @class Codigo
- * @brief Sequência de caracteres para identificar de entidades.
+ * @brief Sequência de caracteres para identificar as entidades.
  * 
  * @details Deve conter uma sequência de 5 caracteres numéricos.
  */
@@ -108,7 +108,8 @@ class CPF:public Dominio<std::string> {
  * @class Data
  * @brief Ano, mês e dia para datação de ordens financeiras.
  * 
- * @details Deve conter 8 números representados como string no formato AAAAMMDD, considerando anos bissextos.
+ * @details Deve conter 8 números representados como string no formato AAAAMMDD, 
+ * considerando anos bissextos.
  */
 
 class Data:public Dominio<std::string> {
@@ -125,7 +126,9 @@ class Data:public Dominio<std::string> {
 /**
  * @class Nome
  * @brief O nome completo do usuário da conta.
- * @details Deve conter até 20 caracteres, não pode ter dois ou mais espaços em branco, pode conter números mas não caracteres especiais.
+ * 
+ * @details Deve conter até 20 caracteres, não pode ter dois ou mais espaços em branco em sequência, 
+ * pode conter números mas não caracteres especiais.
 */
 
 class Nome:public Dominio<std::string> {
@@ -141,7 +144,8 @@ class Nome:public Dominio<std::string> {
  * @class Perfil
  * @brief Classificação que define o quanto um investidor tolera riscos em busca de retorno financeiro na compra de papéis.
  * 
- * @details O perfil do investidor deve obrigatoriamente se enquadrar em umas das três categorias: Conservador, Moderado ou Agressivo.
+ * @details O perfil do investidor deve ser umas das três categorias: 
+ * Conservador, Moderado ou Agressivo.
  * 
 */
 
@@ -155,7 +159,7 @@ class Perfil:public Dominio<std::string>{
 
 /**
  * @class Dinheiro
- * @brief Quantia Númerica Econômica referente à identificação de precificação de uma ação financeira. 
+ * @brief Quantia númerica econômica referente à identificação de precificação de uma ação financeira. 
  * 
  * @details A Quantia Numérica deve conter um número decimal entre 0,01 a 1000000,00.
  * 
@@ -173,7 +177,7 @@ class Dinheiro:public Dominio<double> {
 
 /**
  * @class Quantidade
- * @brief Valor Numérico medido para realizar uma contagem de números de ações financeiras desejada.
+ * @brief Valor numérico medido para realizar uma contagem de números de ações financeiras desejada.
  * 
  * @details A Quantia Númerica deve conter apenas números inteiros positivos entre 1 a 1000000.
  * 
@@ -193,7 +197,7 @@ class Quantidade:public Dominio<int> {
  * @brief Conjunto de caracteres que fornece acesso à conta.
  * 
  * @details Método de autenticação para permitir acesso ao sistema.
- * 
+ *
  * Deve conter os seguintes requisitos:
  * - Seis caracteres;
  * - Digitos alfanuméricos e os símbolos: #, $, % e &;
