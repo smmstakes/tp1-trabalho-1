@@ -16,6 +16,8 @@ class TUCarteira: public TUEntidade <Carteira>{
         void testarCenarioValido() override;
     public:
         int run() override;
+
+// Criado por Pedro Vale - 231038733
 };
 
 #endif //CARTEIRA_TEST_HPP
