@@ -109,7 +109,7 @@ $(function(){initNavTree('classOrdem.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Representa uma ordem de negociação no sistema.  
+<p>Documento comercial que tem o papel de oficializar a compra da ação.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>&gt;</code></p>
@@ -117,16 +117,16 @@ $(function(){initNavTree('classOrdem.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros públicos</h2></td></tr>
 <tr class="memitem:ac4f2df853fc98eee3f71a9462b3dab4a" id="r_ac4f2df853fc98eee3f71a9462b3dab4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4f2df853fc98eee3f71a9462b3dab4a">Ordem</a> (const std::string &amp;cod, const std::string &amp;codNeg, const std::string &amp;data, double preco, int qtd)</td></tr>
-<tr class="memdesc:ac4f2df853fc98eee3f71a9462b3dab4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói uma nova instância de <a class="el" href="classOrdem.html" title="Representa uma ordem de negociação no sistema.">Ordem</a>.  <br /></td></tr>
+<tr class="memdesc:ac4f2df853fc98eee3f71a9462b3dab4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói uma nova instância de <a class="el" href="classOrdem.html" title="Documento comercial que tem o papel de oficializar a compra da ação.">Ordem</a> setando o código, código de negociação, data, preço e quantidade.  <br /></td></tr>
 <tr class="separator:ac4f2df853fc98eee3f71a9462b3dab4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca9134433b8b7a335932222a58190c42" id="r_aca9134433b8b7a335932222a58190c42"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca9134433b8b7a335932222a58190c42">getCodigo</a> () const</td></tr>
-<tr class="memdesc:aca9134433b8b7a335932222a58190c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o código identificador da ordem.  <br /></td></tr>
+<tr class="memdesc:aca9134433b8b7a335932222a58190c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm o código identificador da ordem.  <br /></td></tr>
 <tr class="separator:aca9134433b8b7a335932222a58190c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d7d6c1155012dcaca307e466262dcc8" id="r_a6d7d6c1155012dcaca307e466262dcc8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d7d6c1155012dcaca307e466262dcc8">getCodNegociacao</a> () const</td></tr>
-<tr class="memdesc:a6d7d6c1155012dcaca307e466262dcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o código de negociação associado à ordem.  <br /></td></tr>
+<tr class="memdesc:a6d7d6c1155012dcaca307e466262dcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm o código de negociação associado à ordem.  <br /></td></tr>
 <tr class="separator:a6d7d6c1155012dcaca307e466262dcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a995f73d7ac04a168c2c03724e44432c0" id="r_a995f73d7ac04a168c2c03724e44432c0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a995f73d7ac04a168c2c03724e44432c0">getData</a> () const</td></tr>
-<tr class="memdesc:a995f73d7ac04a168c2c03724e44432c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a data da ordem.  <br /></td></tr>
+<tr class="memdesc:a995f73d7ac04a168c2c03724e44432c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm a data de compra da ordem.  <br /></td></tr>
 <tr class="separator:a995f73d7ac04a168c2c03724e44432c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae002c85236b2a2505011704830d3868c" id="r_ae002c85236b2a2505011704830d3868c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae002c85236b2a2505011704830d3868c">getDinheiro</a> () const</td></tr>
 <tr class="memdesc:ae002c85236b2a2505011704830d3868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o valor monetário da ordem.  <br /></td></tr>
@@ -136,11 +136,11 @@ Membros públicos</h2></td></tr>
 <tr class="separator:afdcd55f98dea4307e3623916ca18f389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Representa uma ordem de negociação no sistema. </p>
+<div class="textblock"><p>Documento comercial que tem o papel de oficializar a compra da ação. </p>
 <p>A ordem contém informações como código identificador, código de negociação, data da operação, preço e quantidade negociada.</p>
-<p>Esta é uma entidade imutável após a criação, ou seja, suas operações são limitadas a visualização e exclusão. </p>
+<p>Essa entidade não pode ser modificada após sua criação, mas pode ser excluída ou visualizada. </p>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00061">61</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00144">144</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
 <a id="ac4f2df853fc98eee3f71a9462b3dab4a" name="ac4f2df853fc98eee3f71a9462b3dab4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4f2df853fc98eee3f71a9462b3dab4a">&#9670;&#160;</a></span>Ordem()</h2>
@@ -176,20 +176,20 @@ Membros públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constrói uma nova instância de <a class="el" href="classOrdem.html" title="Representa uma ordem de negociação no sistema.">Ordem</a>. </p>
+<p>Constrói uma nova instância de <a class="el" href="classOrdem.html" title="Documento comercial que tem o papel de oficializar a compra da ação.">Ordem</a> setando o código, código de negociação, data, preço e quantidade. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">cod</td><td>Código identificador da ordem (5 dígitos). </td></tr>
     <tr><td class="paramname">codNeg</td><td>Código de negociação (até 12 caracteres alfanuméricos). </td></tr>
-    <tr><td class="paramname">data</td><td><a class="el" href="classData.html">Data</a> da ordem no formato AAAAMMDD. </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="classData.html" title="Ano, mês e dia para datação de ordens financeiras.">Data</a> de compra da ordem (AAAAMMDD). </td></tr>
     <tr><td class="paramname">preco</td><td>Valor da negociação (entre 0.01 e 1.000.000,00). </td></tr>
-    <tr><td class="paramname">qtd</td><td><a class="el" href="classQuantidade.html">Quantidade</a> negociada (entre 1 e 1.000.000).</td></tr>
+    <tr><td class="paramname">qtd</td><td><a class="el" href="classQuantidade.html" title="Valor numérico medido para realizar uma contagem de números de ações financeiras desejada.">Quantidade</a> negociada (entre 1 e 1.000.000).</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Excepções</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>Se algum dos parâmetros não for válido. </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o código, código de negociação, data, preço e quantidade não estiverem de acordo com as especificações. </td></tr>
   </table>
   </dd>
 </dl>
@@ -229,11 +229,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retorna o código identificador da ordem. </p>
+<p>Provêm o código identificador da ordem. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Código da ordem como string. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00089">89</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{<span class="keywordflow">return</span> codigo.get();}</div>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00172">172</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{<span class="keywordflow">return</span> codigo.get();}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,11 +260,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retorna o código de negociação associado à ordem. </p>
+<p>Provêm o código de negociação associado à ordem. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Código de negociação como string. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00096">96</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{<span class="keywordflow">return</span> codNegociacao.get();}</div>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00179">179</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{<span class="keywordflow">return</span> codNegociacao.get();}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,11 +291,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retorna a data da ordem. </p>
-<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classData.html">Data</a> no formato AAAAMMDD. </dd></dl>
+<p>Provêm a data de compra da ordem. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classData.html" title="Ano, mês e dia para datação de ordens financeiras.">Data</a> da compra como string. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00103">103</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>{<span class="keywordflow">return</span> data.get();}</div>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00186">186</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>{<span class="keywordflow">return</span> data.get();}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,10 +323,10 @@ Membros públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna o valor monetário da ordem. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Preço da ordem como número real. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Preço da ordem como número de precisão dupla. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00110">110</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>{<span class="keywordflow">return</span> preco.get();}</div>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00193">193</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>{<span class="keywordflow">return</span> preco.get();}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -354,10 +354,10 @@ Membros públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna a quantidade de unidades negociadas. </p>
-<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classQuantidade.html">Quantidade</a> como número inteiro. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classQuantidade.html" title="Valor numérico medido para realizar uma contagem de números de ações financeiras desejada.">Quantidade</a> como número inteiro. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00117">117</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>{<span class="keywordflow">return</span> quantidade.get();}</div>
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00200">200</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{<span class="keywordflow">return</span> quantidade.get();}</div>
 </div><!-- fragment -->
 </div>
 </div>

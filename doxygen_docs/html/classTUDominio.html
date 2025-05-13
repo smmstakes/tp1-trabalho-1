@@ -123,6 +123,7 @@ Membros públicos</h2></td></tr>
 <tr class="memdesc:a038966e0ec751658eb7b2784e523f3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa os testes definidos na subclasse.  <br /></td></tr>
 <tr class="separator:a038966e0ec751658eb7b2784e523f3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96f57695b76a7b130b57e4cabfa65550" id="r_a96f57695b76a7b130b57e4cabfa65550"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96f57695b76a7b130b57e4cabfa65550">~TUDominio</a> ()=default</td></tr>
+<tr class="memdesc:a96f57695b76a7b130b57e4cabfa65550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor padrão para o classe e suas derivadas.  <br /></td></tr>
 <tr class="separator:a96f57695b76a7b130b57e4cabfa65550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -141,7 +142,7 @@ Membros protegidos</h2></td></tr>
 <tr class="memdesc:a34c9cb994e49299b7952d7ef71aacc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta a instância do domínio.  <br /></td></tr>
 <tr class="separator:a34c9cb994e49299b7952d7ef71aacc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a9c15e84d3731f845112cabcd595ef" id="r_a99a9c15e84d3731f845112cabcd595ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99a9c15e84d3731f845112cabcd595ef">testarCenarioValido</a> ()=0</td></tr>
-<tr class="memdesc:a99a9c15e84d3731f845112cabcd595ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o cenário de teste com valor válido.  <br /></td></tr>
+<tr class="memdesc:a99a9c15e84d3731f845112cabcd595ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo virtual para executar o cenário de teste com valor válido.  <br /></td></tr>
 <tr class="separator:a99a9c15e84d3731f845112cabcd595ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -162,7 +163,7 @@ class TUDominio&lt; Dominio &gt;</div><p>Classe base genérica para testes de do
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00030">30</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00031">31</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
 <a id="a96f57695b76a7b130b57e4cabfa65550" name="a96f57695b76a7b130b57e4cabfa65550"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96f57695b76a7b130b57e4cabfa65550">&#9670;&#160;</a></span>~TUDominio()</h2>
@@ -188,6 +189,8 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destrutor padrão para o classe e suas derivadas. </p>
 
 </div>
 </div>
@@ -251,17 +254,17 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 
 <p>Inicializa o domínio e define o estado inicial do teste. </p>
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00038">38</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                     {</div>
-<div class="line"><span class="lineno">   39</span>            <a class="code hl_variable" href="#a1136ab544c0f749606a4ba34dcd181eb">valor</a> = <span class="keyword">new</span> <a class="code hl_class" href="classTUDominio.html">Dominio</a>();</div>
-<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="#a214201ea98d2c95c1395a37c85a1dba5">estado</a> = <a class="code hl_variable" href="#a310e3abb0f0d0d7a892fef791d1a840d">SUCESSO</a>;</div>
-<div class="line"><span class="lineno">   41</span>        };</div>
-<div class="ttc" id="aclassTUDominio_html"><div class="ttname"><a href="classTUDominio.html">TUDominio</a></div><div class="ttdoc">Classe base genérica para testes de domínios.</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00030">dominios_test.hpp:30</a></div></div>
-<div class="ttc" id="aclassTUDominio_html_a1136ab544c0f749606a4ba34dcd181eb"><div class="ttname"><a href="#a1136ab544c0f749606a4ba34dcd181eb">TUDominio::valor</a></div><div class="ttdeci">Dominio * valor</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00032">dominios_test.hpp:32</a></div></div>
-<div class="ttc" id="aclassTUDominio_html_a214201ea98d2c95c1395a37c85a1dba5"><div class="ttname"><a href="#a214201ea98d2c95c1395a37c85a1dba5">TUDominio::estado</a></div><div class="ttdeci">int estado</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00033">dominios_test.hpp:33</a></div></div>
-<div class="ttc" id="aclassTUDominio_html_a310e3abb0f0d0d7a892fef791d1a840d"><div class="ttname"><a href="#a310e3abb0f0d0d7a892fef791d1a840d">TUDominio::SUCESSO</a></div><div class="ttdeci">static const int SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00054">dominios_test.hpp:54</a></div></div>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00039">39</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                     {</div>
+<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="#a1136ab544c0f749606a4ba34dcd181eb">valor</a> = <span class="keyword">new</span> <a class="code hl_class" href="classTUDominio.html">Dominio</a>();</div>
+<div class="line"><span class="lineno">   41</span>            <a class="code hl_variable" href="#a214201ea98d2c95c1395a37c85a1dba5">estado</a> = <a class="code hl_variable" href="#a310e3abb0f0d0d7a892fef791d1a840d">SUCESSO</a>;</div>
+<div class="line"><span class="lineno">   42</span>        };</div>
+<div class="ttc" id="aclassTUDominio_html"><div class="ttname"><a href="classTUDominio.html">TUDominio</a></div><div class="ttdoc">Classe base genérica para testes de domínios.</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00031">dominios_test.hpp:31</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_a1136ab544c0f749606a4ba34dcd181eb"><div class="ttname"><a href="#a1136ab544c0f749606a4ba34dcd181eb">TUDominio::valor</a></div><div class="ttdeci">Dominio * valor</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00033">dominios_test.hpp:33</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_a214201ea98d2c95c1395a37c85a1dba5"><div class="ttname"><a href="#a214201ea98d2c95c1395a37c85a1dba5">TUDominio::estado</a></div><div class="ttdeci">int estado</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00034">dominios_test.hpp:34</a></div></div>
+<div class="ttc" id="aclassTUDominio_html_a310e3abb0f0d0d7a892fef791d1a840d"><div class="ttname"><a href="#a310e3abb0f0d0d7a892fef791d1a840d">TUDominio::SUCESSO</a></div><div class="ttdeci">static const int SUCESSO</div><div class="ttdef"><b>Definição</b> <a href="dominios__test_8hpp_source.html#l00055">dominios_test.hpp:55</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="dominios__test_8hpp_source.html#l00033">estado</a>, <a class="el" href="dominios__test_8hpp_source.html#l00054">SUCESSO</a> e <a class="el" href="dominios__test_8hpp_source.html#l00032">valor</a>.</p>
+<p class="reference">Referências <a class="el" href="dominios__test_8hpp_source.html#l00034">estado</a>, <a class="el" href="dominios__test_8hpp_source.html#l00055">SUCESSO</a> e <a class="el" href="dominios__test_8hpp_source.html#l00033">valor</a>.</p>
 
 </div>
 </div>
@@ -292,10 +295,10 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 
 <p>Deleta a instância do domínio. </p>
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00046">46</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keyword">delete</span> <a class="code hl_variable" href="#a1136ab544c0f749606a4ba34dcd181eb">valor</a> ;};</div>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00047">47</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keyword">delete</span> <a class="code hl_variable" href="#a1136ab544c0f749606a4ba34dcd181eb">valor</a> ;};</div>
 </div><!-- fragment -->
-<p class="reference">Referências <a class="el" href="dominios__test_8hpp_source.html#l00032">valor</a>.</p>
+<p class="reference">Referências <a class="el" href="dominios__test_8hpp_source.html#l00033">valor</a>.</p>
 
 </div>
 </div>
@@ -324,7 +327,7 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p>Executa o cenário de teste com valor válido. </p>
+<p>Metodo virtual para executar o cenário de teste com valor válido. </p>
 
 </div>
 </div>
@@ -351,9 +354,9 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00033">33</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00034">34</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00038">setUp()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00039">setUp()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +382,7 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00055">55</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00056">56</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
 
 </div>
 </div>
@@ -405,9 +408,9 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00054">54</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00055">55</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00038">setUp()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00039">setUp()</a>.</p>
 
 </div>
 </div>
@@ -433,9 +436,9 @@ template&lt;typename <a class="el" href="classDominio.html">Dominio</a>&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00032">32</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="dominios__test_8hpp_source.html#l00033">33</a> do ficheiro <a class="el" href="dominios__test_8hpp_source.html">dominios_test.hpp</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00038">setUp()</a> e <a class="el" href="dominios__test_8hpp_source.html#l00046">tearDown()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="dominios__test_8hpp_source.html#l00039">setUp()</a> e <a class="el" href="dominios__test_8hpp_source.html#l00047">tearDown()</a>.</p>
 
 </div>
 </div>

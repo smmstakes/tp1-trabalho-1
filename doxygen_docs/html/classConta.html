@@ -109,22 +109,32 @@ $(function(){initNavTree('classConta.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Representa os dados de acesso de um usuário ao sistema.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros públicos</h2></td></tr>
 <tr class="memitem:a8c5073f6089b2b5ef686a89aef95c223" id="r_a8c5073f6089b2b5ef686a89aef95c223"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c5073f6089b2b5ef686a89aef95c223">Conta</a> (const std::string &amp;cpf, const std::string &amp;nome, const std::string &amp;senha)</td></tr>
+<tr class="memdesc:a8c5073f6089b2b5ef686a89aef95c223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói uma nova instância de <a class="el" href="classConta.html" title="Representa os dados de acesso de um usuário ao sistema.">Conta</a> setando os atributos de <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a>, <a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> e <a class="el" href="classSenha.html" title="Conjunto de caracteres que fornece acesso à conta.">Senha</a>.  <br /></td></tr>
 <tr class="separator:a8c5073f6089b2b5ef686a89aef95c223"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c0571311c16cf7dad72635c80b52014" id="r_a0c0571311c16cf7dad72635c80b52014"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c0571311c16cf7dad72635c80b52014">getCpf</a> () const</td></tr>
+<tr class="memdesc:a0c0571311c16cf7dad72635c80b52014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a> associado à conta.  <br /></td></tr>
 <tr class="separator:a0c0571311c16cf7dad72635c80b52014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87cd1df69c12e0dfdb6ab70a4aa2fd4b" id="r_a87cd1df69c12e0dfdb6ab70a4aa2fd4b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87cd1df69c12e0dfdb6ab70a4aa2fd4b">getNome</a> () const</td></tr>
+<tr class="memdesc:a87cd1df69c12e0dfdb6ab70a4aa2fd4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm nome do titular da conta.  <br /></td></tr>
 <tr class="separator:a87cd1df69c12e0dfdb6ab70a4aa2fd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aace6d48702efd2d146db2e97ba1efba1" id="r_aace6d48702efd2d146db2e97ba1efba1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aace6d48702efd2d146db2e97ba1efba1">getSenha</a> () const</td></tr>
+<tr class="memdesc:aace6d48702efd2d146db2e97ba1efba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provêm a senha da conta.  <br /></td></tr>
 <tr class="separator:aace6d48702efd2d146db2e97ba1efba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock">
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00023">23</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="textblock"><p>Representa os dados de acesso de um usuário ao sistema. </p>
+<p>A conta é composta por <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a>, nome completo e senha.</p>
+<p>Essa entidade pode ser modificada após sua criação, excluída ou visualizada. </p>
+
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00030">30</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
 <a id="a8c5073f6089b2b5ef686a89aef95c223" name="a8c5073f6089b2b5ef686a89aef95c223"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c5073f6089b2b5ef686a89aef95c223">&#9670;&#160;</a></span>Conta()</h2>
@@ -149,6 +159,22 @@ Membros públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constrói uma nova instância de <a class="el" href="classConta.html" title="Representa os dados de acesso de um usuário ao sistema.">Conta</a> setando os atributos de <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a>, <a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> e <a class="el" href="classSenha.html" title="Conjunto de caracteres que fornece acesso à conta.">Senha</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpf</td><td><a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a> do usuário (formato XXX.XXX.XXX-XX). </td></tr>
+    <tr><td class="paramname">nome</td><td><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> completo do usuário (até 20 caracteres). </td></tr>
+    <tr><td class="paramname">senha</td><td><a class="el" href="classSenha.html" title="Conjunto de caracteres que fornece acesso à conta.">Senha</a> de acesso (6 caracteres alfauméricos e especiais).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>/** </p><dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a>, o nome ou a senha não estiverem de acordo com as especificações. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definido na linha <a class="el" href="entidades_8cpp_source.html#l00005">5</a> do ficheiro <a class="el" href="entidades_8cpp_source.html">entidades.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    6</span>    : cpf{}, nome{}, senha{} {</div>
@@ -183,8 +209,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00031">31</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{<span class="keywordflow">return</span> cpf.get();}</div>
+<p>Provêm <a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a> associado à conta. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classCPF.html" title="Documento de identificação, ou o número do Cadastro de Pessoa Física.">CPF</a> como string. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00055">55</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> cpf.get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,8 +240,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00032">32</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{<span class="keywordflow">return</span> nome.get();}</div>
+<p>Provêm nome do titular da conta. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> como string. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00062">62</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <span class="keywordflow">return</span> nome.get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,8 +271,11 @@ Membros públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00033">33</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{<span class="keywordflow">return</span> senha.get();}                </div>
+<p>Provêm a senha da conta. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classSenha.html" title="Conjunto de caracteres que fornece acesso à conta.">Senha</a> como string. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="entidades_8hpp_source.html#l00069">69</a> do ficheiro <a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{ <span class="keywordflow">return</span> senha.get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
