@@ -38,4 +38,5 @@ class ExecutorDeTestes {
 
 // Criado por Suyanne Miranda - 222006445
 };
+
 #endif // EXECUTOR_DE_TESTES_HPP_INCLUDED
