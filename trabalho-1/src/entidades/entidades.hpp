@@ -38,7 +38,7 @@ class Conta {
          * @brief Constrói uma nova instância de Conta setando os atributos de CPF, Nome e Senha.
          * 
          * @param cpf CPF do usuário (formato XXX.XXX.XXX-XX).
-         * @param nome Nome completo do usuário (até 40 caracteres).
+         * @param nome Nome completo do usuário (até 20 caracteres).
          * @param senha Senha de acesso (6 caracteres alfauméricos e especiais).
          * 
         /**
@@ -75,7 +75,7 @@ class Conta {
  * @class Carteira
  * @brief Identificação de Ativos Financeiros pertencentes à uma Pessoa Física.
  * 
- * @details Possui elementos de Código, Nome e Perfil, para identificar a Pessoa Pertencentes a Carteira.
+ * @details Possui elementos de Código, Nome e Perfil, para identificar a pessoa dona da Carteira.
  * 
  */
 
