@@ -32,4 +32,3 @@ int TUOrdem::run() {
     tearDown();
     return estado;
 }
-
