@@ -17,6 +17,8 @@ class TUConta : public TUEntidade<Conta>{
 
     public:
         int run() override;
+
+// Criado por Gabriel Castro - 202066571
 };
 
 #endif //CONTA_TESTE_HPP_INCLUDED

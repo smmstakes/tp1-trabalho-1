@@ -30,7 +30,7 @@ class TUEntidade {
         Entidade *entidade;
         int estado;
 
-         /**
+        /**
          * @brief Método virtual para preparar a classe para realizar os testes.
          */
         virtual void setUp() = 0;

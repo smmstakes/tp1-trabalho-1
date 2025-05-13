@@ -16,6 +16,8 @@ class TUDinheiro: public TUDominio<Dinheiro>{
 
     public:
         int run() override;
+
+// Criado por Pedro Vale - 231038733
 };
 
 #endif //DINHEIRO_TEST_HPP_INCLUDED
