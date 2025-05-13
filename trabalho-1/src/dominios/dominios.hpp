@@ -56,6 +56,8 @@ class Dominio {
         Tipo get() const { return valor; };
 
         virtual ~Dominio() = default;
+
+// Criado por Suyanne Miranda - 222006445
 };
 
 /**
@@ -120,7 +122,8 @@ class Data:public Dominio<std::string> {
             return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         };
         void validar(const std::string& data) override;
-// Criada por Suyanne Miranda - 222006445
+
+// Criado por Suyanne Miranda - 222006445
 };
 
 /**
@@ -137,7 +140,8 @@ class Nome:public Dominio<std::string> {
         static const std::regex PADRAO_NOME;
 
         void validar(const std::string& nome) override;
-//Criada por Jose Artur Nordestino - 180020439
+
+//Criado por Jose Artur Nordestino - 180020439
 };
 
 /**
@@ -146,7 +150,6 @@ class Nome:public Dominio<std::string> {
  * 
  * @details O perfil do investidor deve ser umas das três categorias: 
  * Conservador, Moderado ou Agressivo.
- * 
 */
 
 class Perfil:public Dominio<std::string>{
@@ -154,6 +157,7 @@ class Perfil:public Dominio<std::string>{
         static const std::regex PADRAO_PERFIL;
 
         void validar(const std::string& perfil) override;
+
 // Criado por Gabriel Castro - 202066571
 };
 
@@ -172,6 +176,7 @@ class Dinheiro:public Dominio<double> {
         static const double DINHEIRO_MAX;
 
         void validar(const double& dinheiro) override;
+
 // Criado por Pedro Vale - 231038733
 };
 
@@ -189,7 +194,8 @@ class Quantidade:public Dominio<int> {
         static const int VALOR_MAX = 1000000;
 
         void validar(const int& quantidade) override;
-// Criada por Pedro Vale - 231038733
+
+// Criado por Pedro Vale - 231038733
 };
 
 /**

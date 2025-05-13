@@ -128,8 +128,9 @@ class Carteira {
          * @throw std::invalid_argument Caso o Perfil não esteja de acordo com as especificações.
          */
         void setPerfil(std::string perfil);
-    // Criado por Pedro Vale - 231038733
-    };
+        
+// Criado por Pedro Vale - 231038733
+};
 
 /**
  * @class Ordem
