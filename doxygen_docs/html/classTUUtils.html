@@ -127,7 +127,7 @@ Membros públicos estáticos</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe utilitária para facilitar a validação dos testes unitários. </p>
 
-<p class="definition">Definido na linha <a class="el" href="tu__utils_8hpp_source.html#l00026">26</a> do ficheiro <a class="el" href="tu__utils_8hpp_source.html">tu_utils.hpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="tu__utils_8hpp_source.html#l00025">25</a> do ficheiro <a class="el" href="tu__utils_8hpp_source.html">tu_utils.hpp</a>.</p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="ad4f3b6795a76e93dcbbbe6ca22eeb8c1" name="ad4f3b6795a76e93dcbbbe6ca22eeb8c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4f3b6795a76e93dcbbbe6ca22eeb8c1">&#9670;&#160;</a></span>assertExcecao()</h2>
@@ -169,10 +169,10 @@ Membros públicos estáticos</h2></td></tr>
 <p>Verifica se uma exceção é corretamente lançada por uma função. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lambda</td><td>Função ou expressão lambda que deve lançar uma exceção. </td></tr>
-    <tr><td class="paramname">nomeMetodo</td><td><a class="el" href="classNome.html">Nome</a> do método testado. </td></tr>
-    <tr><td class="paramname">nomeClasse</td><td><a class="el" href="classNome.html">Nome</a> da classe do teste. </td></tr>
-    <tr><td class="paramname">estado</td><td>Estado geral do teste. </td></tr>
+    <tr><td class="paramname">lambda</td><td>Função lambda que encapsula o método da classe que deve lançar uma exceção. </td></tr>
+    <tr><td class="paramname">nomeMetodo</td><td><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> do método testado. </td></tr>
+    <tr><td class="paramname">nomeClasse</td><td><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> da classe do teste. </td></tr>
+    <tr><td class="paramname">estado</td><td>Estado de sucesso ou falha do teste. </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,30 +237,30 @@ template&lt;typename Tipo&gt; </div>
 <p>Verifica se dois valores são iguais. </p>
 <dl class="tparams"><dt>Parâmetros de template</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tipo</td><td>Tipo dos valores comparados.</td></tr>
+    <tr><td class="paramname">Tipo</td><td>Tipo dos valores comparados. Pode ser uma das classes de teste definidas no sistema.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">valorObtido</td><td>Valor retornado pela função testada. </td></tr>
+    <tr><td class="paramname">valorObtido</td><td>Valor retornado pelo método testado. </td></tr>
     <tr><td class="paramname">valorEsperado</td><td>Valor que era esperado. </td></tr>
-    <tr><td class="paramname">nomeMetodo</td><td><a class="el" href="classNome.html">Nome</a> do método testado. </td></tr>
-    <tr><td class="paramname">nomeClasse</td><td><a class="el" href="classNome.html">Nome</a> da classe do teste. </td></tr>
+    <tr><td class="paramname">nomeMetodo</td><td><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> do método testado. </td></tr>
+    <tr><td class="paramname">nomeClasse</td><td><a class="el" href="classNome.html" title="O nome completo do usuário da conta.">Nome</a> da classe do teste. </td></tr>
     <tr><td class="paramname">estado</td><td>Estado geral do teste. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="tu__utils_8hpp_source.html#l00043">43</a> do ficheiro <a class="el" href="tu__utils_8hpp_source.html">tu_utils.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                                                                                                           {</div>
-<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span> (valorObtido == valorEsperado) {</div>
-<div class="line"><span class="lineno">   45</span>                std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; SUCESSO\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   47</span>            }</div>
-<div class="line"><span class="lineno">   48</span>            std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; FALHA\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   49</span>            estado = FALHA;</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
+<p class="definition">Definido na linha <a class="el" href="tu__utils_8hpp_source.html#l00042">42</a> do ficheiro <a class="el" href="tu__utils_8hpp_source.html">tu_utils.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                                                                                                           {</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">if</span> (valorObtido == valorEsperado) {</div>
+<div class="line"><span class="lineno">   44</span>                std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; SUCESSO\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   45</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   46</span>            }</div>
+<div class="line"><span class="lineno">   47</span>            std::cout &lt;&lt; nomeClasse &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; nomeMetodo &lt;&lt; <span class="stringliteral">&quot; -&gt; FALHA\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   48</span>            estado = FALHA;</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

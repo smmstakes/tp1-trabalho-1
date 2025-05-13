@@ -128,7 +128,7 @@ Membros públicos</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Tipo&gt;<br />
 class Dominio&lt; Tipo &gt;</div><p>Classe base genérica para domínios. </p>
-<p>Essa classe define a classe genérica <a class="el" href="classDominio.html" title="Classe base genérica para domínios.">Dominio</a>, utilizada como base para a criação dos outros domínios, garantindo um padrão.</p>
+<p>Essa classe serve como modelo a ser seguido pelas outras classes domínios, evitando repetição de código e padronizando o projeto.</p>
 <dl class="tparams"><dt>Parâmetros de template</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Tipo</td><td>Tipo do domínio. </td></tr>
@@ -194,8 +194,8 @@ template&lt;typename Tipo&gt; </div>
 <p>Retorna o valor armazenado no domínio. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Tipo Tipo do domínio. </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00055">55</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> valor; };</div>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00056">56</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{ <span class="keywordflow">return</span> valor; };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,22 +227,22 @@ template&lt;typename Tipo&gt; </div>
 <p>Define o valor do domínio após validação. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">valor</td><td>Valor a ser atribuído.</td></tr>
+    <tr><td class="paramname">valor</td><td>Valor a ser atribuído ao domínio.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Excepções</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>Se o valor for inválido. </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>Caso o valor informado não esteja de acordo com as especificações. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00045">45</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                    {</div>
-<div class="line"><span class="lineno">   46</span>            validar(valor);</div>
-<div class="line"><span class="lineno">   47</span>            this-&gt;valor = valor;</div>
-<div class="line"><span class="lineno">   48</span>        };</div>
+<p class="definition">Definido na linha <a class="el" href="dominios_8hpp_source.html#l00046">46</a> do ficheiro <a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                    {</div>
+<div class="line"><span class="lineno">   47</span>            validar(valor);</div>
+<div class="line"><span class="lineno">   48</span>            this-&gt;valor = valor;</div>
+<div class="line"><span class="lineno">   49</span>        };</div>
 </div><!-- fragment -->
 </div>
 </div>
