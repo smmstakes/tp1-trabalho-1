@@ -59,8 +59,8 @@
 		<Unit filename="tests/dominios/senha_test.hpp" />
 		<Unit filename="tests/entidades/carteira_test.cpp" />
 		<Unit filename="tests/entidades/carteira_test.hpp" />
+		<Unit filename="tests/entidades/conta_test.cpp" />
 		<Unit filename="tests/entidades/conta_test.hpp" />
-		<Unit filename="tests/entidades/conta_teste.cpp" />
 		<Unit filename="tests/entidades/entidades_test.cpp" />
 		<Unit filename="tests/entidades/entidades_test.hpp" />
 		<Unit filename="tests/entidades/ordem_test.cpp" />
