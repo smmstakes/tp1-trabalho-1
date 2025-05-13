@@ -11,7 +11,6 @@
  * 
  * @author Suyanne Miranda
  * @date 05/05/2025
- * 
  */
 
 #include <functional>
