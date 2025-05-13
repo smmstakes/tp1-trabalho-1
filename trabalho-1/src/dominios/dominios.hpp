@@ -141,7 +141,7 @@ class Nome:public Dominio<std::string> {
 
         void validar(const std::string& nome) override;
 
-//Criado por Jose Artur Nordestino - 180020439
+// Criado por Jose Artur Nordestino - 180020439
 };
 
 /**
