@@ -38,3 +38,6 @@
 
 # Folders
 .vscode/
+
+# Compressed files
+*.zip
