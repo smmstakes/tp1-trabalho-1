@@ -1,0 +1,6 @@
+#ifndef ICONTA_HPP_INCLUDED
+#define ICONTA_HPP_INCLUDED
+
+
+
+#endif // ICONTA_HPP_INCLUDED
