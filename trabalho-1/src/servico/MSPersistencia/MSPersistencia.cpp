@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
-const char* MSPersistencia::NOME_DB = "investimentos.db";
+const char* MSPersistencia::NOME_DB = "../../../db/investimentos.db";
 
 MSPersistencia& MSPersistencia::getInstancia() {
     static MSPersistencia instancia;
