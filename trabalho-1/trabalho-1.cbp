@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/apresentacao/AMenuInicial.cpp" />
+		<Unit filename="src/apresentacao/AMenuInicial.hpp" />
 		<Unit filename="src/apresentacao/IAutenticacao.cpp" />
 		<Unit filename="src/apresentacao/IAutenticacao.hpp" />
 		<Unit filename="src/apresentacao/IConta.cpp" />
@@ -41,6 +43,16 @@
 		<Unit filename="src/apresentacao/IInvestimento.hpp" />
 		<Unit filename="src/apresentacao/IMenuInicial.cpp" />
 		<Unit filename="src/apresentacao/IMenuInicial.hpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAAutenticacao.cpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAAutenticacao.hpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAConta.cpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAConta.hpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAInvestimento.cpp" />
+		<Unit filename="src/apresentacao/controlador/CntrlIAInvestimento.hpp" />
+		<Unit filename="src/apresentacao/interface/IAAutenticacao.hpp" />
+		<Unit filename="src/apresentacao/interface/IAConta.hpp" />
+		<Unit filename="src/apresentacao/interface/IAInvestimento.hpp" />
+		<Unit filename="src/apresentacao/interface/IAMenuInicial.hpp" />
 		<Unit filename="src/dominios/dominios.cpp" />
 		<Unit filename="src/dominios/dominios.hpp" />
 		<Unit filename="src/entidades/entidades.cpp" />
@@ -51,6 +63,15 @@
 		<Unit filename="src/servico/IConta.hpp" />
 		<Unit filename="src/servico/IInvestimento.cpp" />
 		<Unit filename="src/servico/IInvestimento.hpp" />
+		<Unit filename="src/servico/controlador/CntrlISAutenticacao.cpp" />
+		<Unit filename="src/servico/controlador/CntrlISAutenticacao.hpp" />
+		<Unit filename="src/servico/controlador/CntrlISConta.cpp" />
+		<Unit filename="src/servico/controlador/CntrlISConta.hpp" />
+		<Unit filename="src/servico/controlador/CntrlISInvestimento.cpp" />
+		<Unit filename="src/servico/controlador/CntrlISInvestimento.hpp" />
+		<Unit filename="src/servico/interface/ISAutenticacao.hpp" />
+		<Unit filename="src/servico/interface/ISConta.hpp" />
+		<Unit filename="src/servico/interface/ISInvestimento.hpp" />
 		<Unit filename="src/servicos/IAutenticacao.cpp" />
 		<Unit filename="src/servicos/IAutenticacao.hpp" />
 		<Unit filename="src/servicos/IConta.cpp" />
