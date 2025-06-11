@@ -1,22 +1,26 @@
 #include <iostream>
 #include "tests/utils/executor_de_testes.hpp"
-
-#include "db/banco_de_dados.hpp"
+#include <iostream>
+#include "./src/servico/MSInvestimentos/MSInvestimentos.hpp"  // Classe de serviço que implementa a lógica de negócios
+#include "./src/apresentacao/MAInvestimentos/CntrlIAInvestimentos.hpp"  // Controlador de interface de usuário para investimentos
 
 int main() {
-    BancoDeDados bd;
+    MSInvestimentos servicoInvestimentos;
 
-    if (bd.conectar("./db/sistema.db")) {
-        if (bd.criarTabelas()) {
-            std::cout << "Tabelas criadas com sucesso!" << std::endl;
-        } else {
-            std::cerr << "Erro ao criar tabelas." << std::endl;
-        }
-        bd.desconectar();
+    std::string codigo = "00001";
+    std::string nome = "Carteira T2";
+    std::string perfil = "Moderado";
+
+    try {
+        CntrlIAInvestimentos controladorInvestimentos;
+        controladorInvestimentos.executar();
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;
 }
+
 
 // int main() {
 //     try {

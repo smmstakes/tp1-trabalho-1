@@ -7,6 +7,11 @@ BancoDeDados::~BancoDeDados() {
     desconectar();
 }
 
+BancoDeDados& BancoDeDados::getInstance() {
+    static BancoDeDados instancia;
+    return instancia;
+}
+
 bool BancoDeDados::conectar(const std::string& nome_arquivo) {
     int rc = sqlite3_open(nome_arquivo.c_str(), &db);
     if (rc) {

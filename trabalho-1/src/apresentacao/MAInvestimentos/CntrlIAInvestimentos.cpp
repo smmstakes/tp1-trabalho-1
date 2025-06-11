@@ -1,6 +1,8 @@
-#include "CntrlIAInvestimento.hpp"
+#include "CntrlIAInvestimentos.hpp"
+#include "../../dominios/dominios.hpp"
+#include "../../servico/MSInvestimentos/MSInvestimentos.hpp"
 
-void CntrlIAInvestimento::mostrarOpcoes() {
+void CntrlIAInvestimentos::mostrarOpcoes() {
     std::cout << "----------- Menu de Investimentos -----------\n";
     std::cout << "Selecione uma opção: \n";
 
@@ -21,12 +23,23 @@ void CntrlIAInvestimento::mostrarOpcoes() {
     std::cout << "Sua escolha: ";
 }
 
-bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
+bool CntrlIAInvestimentos::escolherOpcao(int entrada) {
+    // TODO: CUIDADO AO CRIAR MULTIPLAS instancias disso, talvez aplicar singleton seja prudente depois
+    servicoInvestimentos = new MSInvestimentos;
+
     switch (entrada) {
-        case CRIAR_CARTEIRA:
-            // cntrlISInvestimento->criarCarteira(cpf);
+        case CRIAR_CARTEIRA: {
+            Perfil perfil;
+            Nome nome;
+
+            // TODO: Aqui tem que ser alterado para pegar o input do user
+            perfil.set("Agressivo");
+            nome.set("Carteira de Suyanne");
+
+            servicoInvestimentos->criarCarteira(nome, perfil);
             break;
-        
+        } 
+
         case LER_CARTEIRA:
             // cntrlISInvestimento->lerCarteira(cpf);
             break;
@@ -40,7 +53,7 @@ bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
             break;
 
         case LISTAR_CARTEIRA:
-            // cntrlISInvestimento->listarCarteira(cpf);
+            // cntrlISInvestimento->listarCarteiras(cpf);
             break;
         
         case CRIAR_ORDEM:
@@ -56,7 +69,7 @@ bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
             break;
 
         case LISTAR_ORDEM:
-            // cntrlISInvestimento->listarOrdem(cpf);
+            // cntrlISInvestimento->listarOrdens(cpf);
             break;
 
         case VOLTAR: 
@@ -70,7 +83,7 @@ bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
     return true;
 }
 
-void CntrlIAInvestimento::executar(const CPF& cpf) {
+void CntrlIAInvestimentos::executar() {
     int entrada;
 
     while (true) {
@@ -90,7 +103,7 @@ void CntrlIAInvestimento::executar(const CPF& cpf) {
             continue; 
         }
 
-        if (!escolherOpcao(entrada, cpf))
+        if (!escolherOpcao(entrada))
             break;  // Sai do menu caso tenha escolhido VOLTAR
 
         // Pausa para o usuário poder ler a saída antes de limpar a tela novamente.

@@ -1,14 +1,14 @@
-#ifndef CNTRLIAINVESTIMENTO_HPP_INCLUDED
-#define CNTRLIAINVESTIMENTO_HPP_INCLUDED
+#ifndef CNTRLIAINVESTIMENTOS_HPP_INCLUDED
+#define CNTRLIAINVESTIMENTOS_HPP_INCLUDED
 
 #include <ios>
 #include <limits>
 #include <iostream>
 #include <stdexcept>
 
-#include "../interface/IAInvestimento.hpp"
+#include "IAInvestimentos.hpp"
 
-class CntrlIAInvestimento:public IAInvestimento {
+class CntrlIAInvestimentos:public IAInvestimentos {
     private:
         // Códigos de serviços
         const static int VOLTAR = 0;
@@ -24,16 +24,16 @@ class CntrlIAInvestimento:public IAInvestimento {
         const static int EXCLUIR_ORDEM = 8;
         const static int LISTAR_ORDEM = 9;
 
-        ISInvestimento *cntrlISInvestimento;
+        ISInvestimentos *servicoInvestimentos;
 
-        void mostrarOpcoes();
-        bool escolherOpcao(int, const CPF&);
+        void mostrarOpcoes() override;
+        bool escolherOpcao(int) override;
 
     public:
-        void executar(const CPF&);
-        void setCntrlISInvestimento(ISInvestimento* cntrlISInvestimento) {
-            this->cntrlISInvestimento = cntrlISInvestimento;
+        void executar() override;
+        void setCntrlISInvestimentos(ISInvestimentos* servicoInvestimentos) override {
+            this->servicoInvestimentos = servicoInvestimentos;
         };
 };
 
-#endif  // CNTRLIAINVESTIMENTO_HPP_INCLUDED
+#endif  // CNTRLIAINVESTIMENTOS_HPP_INCLUDED
