@@ -3,6 +3,8 @@
 # COMPILAR
 ``` 
 g++ main.cpp $(find ./src/ -name "*.cpp") db/sqlite/sqlite3.c -o main -lsqlite3
+
+g++ tests.cpp $(find ./tests/ -name "*.cpp") $(find ./src/ -name "*.cpp") db/sqlite/sqlite3.c -o tests -lsqlite3
 ```
 
 # COMO RODAR O DB

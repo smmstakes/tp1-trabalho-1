@@ -17,16 +17,24 @@ jobs:
     - name: Instalar g++
       run: sudo apt-get update && sudo apt-get install -y g++
 
+    - name: Compilar testes
+      run: |
+        cd trabalho-1
+        g++ tests.cpp \
+        $(find ./tests/ -name "*.cpp") \
+        $(find ./src/ -name "*.cpp") \
+        db/sqlite/sqlite3.c -o tests_exe -lsqlite3 \
+        -std=c++17
+
     - name: Compilar projeto
       run: |
         cd trabalho-1
         g++ main.cpp \
-        $(find ./tests -name "*.cpp") \
-        $(find ./src -name "*.cpp") \
-        -o main \
+        $(find ./src/ -name "*.cpp") \
+        db/sqlite/sqlite3.c -o main -lsqlite3 \
         -std=c++17
 
     - name: Executar testes
       run: |
         cd trabalho-1
-        ./main
+        ./tests_exe
