@@ -1,5 +1,10 @@
 # tp1-trabalho-1
 
+# COMPILAR
+``` 
+g++ main.cpp $(find ./src/ -name "*.cpp") db/sqlite/sqlite3.c -o main -lsqlite3
+```
+
 # COMO RODAR O DB
 1. Ter o sqlite instalado no seu pc
 2. Rode no seu terminal:

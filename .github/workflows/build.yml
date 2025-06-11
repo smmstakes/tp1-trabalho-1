@@ -22,8 +22,7 @@ jobs:
         cd trabalho-1
         g++ main.cpp \
         $(find ./tests -name "*.cpp") \
-        $(find ./src/dominios -name "*.cpp") \
-        $(find ./src/entidades -name "*.cpp") \
+        $(find ./src -name "*.cpp") \
         -o main \
         -std=c++17
 
