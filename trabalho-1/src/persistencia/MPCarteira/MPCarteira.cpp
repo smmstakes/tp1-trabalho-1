@@ -26,7 +26,7 @@ std::string MPCarteira::obterUltimoCodigoCarteiraInserido() {
     auto resultados = comandoSQL.getResultado();
 
     if (resultados.empty()) {
-        throw EErroPersistencia("Nenhum código encontrado na tabela Carteira.");
+        return "";
     }
 
     return resultados.front().getValorColuna();

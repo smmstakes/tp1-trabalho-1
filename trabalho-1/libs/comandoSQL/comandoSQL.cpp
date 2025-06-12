@@ -2,15 +2,6 @@
 
 list<ElementoResultado> ComandoSQL::listaResultado;
 
-
-EErroPersistencia::EErroPersistencia(string mensagem){
-        this->mensagem = mensagem;
-}
-
-string EErroPersistencia::what() {
-        return mensagem;
-}
-
 void ElementoResultado::setNomeColuna(const string& nomeColuna) {
         this->nomeColuna = nomeColuna;
 }
@@ -26,10 +17,6 @@ string ElementoResultado::getNomeColuna() const {
 string ElementoResultado::getValorColuna() const {
     return valorColuna;
 }
-
-// list<ElementoResultado> ComandoSQL::getResultado() const {
-//     return listaResultado;
-// }
 
 
 void ComandoSQL::conectar() {
@@ -54,6 +41,26 @@ void ComandoSQL::executar() {
         }
         desconectar();
 }
+
+void ComandoSQL::inicializarBanco() {
+    const char* sqls[] = {
+        "CREATE TABLE IF NOT EXISTS Conta (cpf TEXT PRIMARY KEY, nome TEXT NOT NULL, senha TEXT NOT NULL);",
+        "CREATE TABLE IF NOT EXISTS Carteira (codigo TEXT PRIMARY KEY, nome TEXT NOT NULL, perfil TEXT NOT NULL);",
+        "CREATE TABLE IF NOT EXISTS Ordem (codigo TEXT PRIMARY KEY, codNegociacao TEXT, data TEXT, preco REAL, quantidade INTEGER);"
+    };
+
+    conectar();
+    for (auto& sql : sqls) {
+        rc = sqlite3_exec(bd, sql, nullptr, nullptr, &mensagem);
+        if (rc != SQLITE_OK) {
+            sqlite3_free(mensagem);
+            desconectar();
+            throw EErroPersistencia("Erro ao criar tabela no banco de dados");
+        }
+    }
+    desconectar();
+};
+
 
 int ComandoSQL::callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna){
       NotUsed=0;

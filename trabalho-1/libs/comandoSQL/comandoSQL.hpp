@@ -11,12 +11,14 @@
 
 using namespace std;
 
-class EErroPersistencia {
-private:
-        string mensagem;
-public:
-        EErroPersistencia(string);
-        string what();
+class EErroPersistencia : public std::exception {
+        private:
+        std::string mensagem;
+        public:
+        explicit EErroPersistencia(const std::string& mensagem) : mensagem(mensagem) {}
+        const char* what() const noexcept override {
+                return mensagem.c_str();
+        }
 };
 
 class ElementoResultado {
@@ -44,8 +46,10 @@ protected:
         static list<ElementoResultado> listaResultado;
         string comandoSQL;
 public:
+        void inicializarBanco();
+
         ComandoSQL() {
-            nomeBancoDados = "../../db/sistema.db";
+            nomeBancoDados = "sistema.db";
         }
         void setComandoSQL(const string& comando);
         void executar();
