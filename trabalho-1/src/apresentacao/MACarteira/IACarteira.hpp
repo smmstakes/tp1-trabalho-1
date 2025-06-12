@@ -1,5 +1,5 @@
-#ifndef IAINVESTIMENTOS_HPP_INCLUDED
-#define IAINVESTIMENTOS_HPP_INCLUDED
+#ifndef IACARTEIRA_HPP_INCLUDED
+#define IACARTEIRA_HPP_INCLUDED
 
 #ifdef _WIN32
     // Se o sistema for Windows
@@ -11,10 +11,9 @@
 
 #include <cstdlib>
 #include "../../entidades/entidades.hpp"
+#include "../../servico/MSCarteira/ISCarteira.hpp"
 
-class ISInvestimentos;
-
-class IAInvestimentos {
+class IACarteira {
     // TODO: isso se torna protected, porque as filhas precisam ter acesso
     protected:
         virtual void mostrarOpcoes() = 0;
@@ -25,10 +24,10 @@ class IAInvestimentos {
         virtual void executar() = 0;
 
         // Método para estabelecer ligação (link) com a controladora
-        virtual void setCntrlISInvestimentos(ISInvestimentos*) = 0;
+        virtual void setCntrlISCarteira(ISCarteira*) = 0;
 
         // Método destrutor virtual
-        virtual ~IAInvestimentos() {};
+        virtual ~IACarteira() {};
 };
 
-#endif // IAINVESTIMENTOS_HPP_INCLUDED
+#endif // IACARTEIRA_HPP_INCLUDED

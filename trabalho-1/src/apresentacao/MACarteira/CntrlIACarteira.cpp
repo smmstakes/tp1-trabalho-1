@@ -1,8 +1,8 @@
-#include "CntrlIAInvestimentos.hpp"
+#include "CntrlIACarteira.hpp"
 #include "../../dominios/dominios.hpp"
-#include "../../servico/MSInvestimentos/MSInvestimentos.hpp"
+#include "../../servico/MSCarteira/MSCarteira.hpp"
 
-void CntrlIAInvestimentos::mostrarOpcoes() {
+void CntrlIACarteira::mostrarOpcoes() {
     std::cout << "----------- Menu de Investimentos -----------\n";
     std::cout << "Selecione uma opção: \n";
 
@@ -23,20 +23,17 @@ void CntrlIAInvestimentos::mostrarOpcoes() {
     std::cout << "Sua escolha: ";
 }
 
-bool CntrlIAInvestimentos::escolherOpcao(int entrada) {
-    // TODO: CUIDADO AO CRIAR MULTIPLAS instancias disso, talvez aplicar singleton seja prudente depois
-    servicoInvestimentos = new MSInvestimentos;
+bool CntrlIACarteira::escolherOpcao(int entrada) {
+    MSCarteira* servicoCarteira = MSCarteira::getInstancia();
 
     switch (entrada) {
         case CRIAR_CARTEIRA: {
-            Perfil perfil;
-            Nome nome;
-
             // TODO: Aqui tem que ser alterado para pegar o input do user
-            perfil.set("Agressivo");
-            nome.set("Carteira de Suyanne");
+            std::string perfil = "Agressivo";
+            std::string nome = "Carteira de Suyanne";
 
-            servicoInvestimentos->criarCarteira(nome, perfil);
+            servicoCarteira->criarCarteira(nome, perfil);
+
             break;
         } 
 
@@ -83,7 +80,7 @@ bool CntrlIAInvestimentos::escolherOpcao(int entrada) {
     return true;
 }
 
-void CntrlIAInvestimentos::executar() {
+void CntrlIACarteira::executar() {
     int entrada;
 
     while (true) {

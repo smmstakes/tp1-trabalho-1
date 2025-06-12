@@ -1,14 +1,14 @@
-#ifndef CNTRLIAINVESTIMENTOS_HPP_INCLUDED
-#define CNTRLIAINVESTIMENTOS_HPP_INCLUDED
+#ifndef CNTRLIACARTEIRA_HPP_INCLUDED
+#define CNTRLIACARTEIRA_HPP_INCLUDED
 
 #include <ios>
 #include <limits>
 #include <iostream>
 #include <stdexcept>
 
-#include "IAInvestimentos.hpp"
+#include "IACarteira.hpp"
 
-class CntrlIAInvestimentos:public IAInvestimentos {
+class CntrlIACarteira:public IACarteira {
     private:
         // Códigos de serviços
         const static int VOLTAR = 0;
@@ -24,16 +24,16 @@ class CntrlIAInvestimentos:public IAInvestimentos {
         const static int EXCLUIR_ORDEM = 8;
         const static int LISTAR_ORDEM = 9;
 
-        ISInvestimentos *servicoInvestimentos;
+        ISCarteira *servicoCarteira;
 
         void mostrarOpcoes() override;
         bool escolherOpcao(int) override;
 
     public:
         void executar() override;
-        void setCntrlISInvestimentos(ISInvestimentos* servicoInvestimentos) override {
-            this->servicoInvestimentos = servicoInvestimentos;
+        void setCntrlISCarteira(ISCarteira* servicoCarteira) override {
+            this->servicoCarteira = servicoCarteira;
         };
 };
 
-#endif  // CNTRLIAINVESTIMENTOS_HPP_INCLUDED
+#endif  // CNTRLIACARTEIRA_HPP_INCLUDED

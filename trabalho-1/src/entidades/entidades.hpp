@@ -96,6 +96,7 @@ class Carteira {
      * 
      */
         Carteira (const std::string& codigo,const std::string& nome, const std::string& perfil);
+        Carteira() = default;
 
         /**
          * @brief Provem o Código de Identificação da Carteira.
@@ -128,6 +129,8 @@ class Carteira {
          * @throw std::invalid_argument Caso o Perfil não esteja de acordo com as especificações.
          */
         void setPerfil(std::string perfil);
+
+        void setCodigo(std::string codigo);
         
 // Criado por Pedro Vale - 231038733
 };

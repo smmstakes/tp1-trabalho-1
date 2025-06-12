@@ -23,6 +23,10 @@ void Carteira::setNome(std::string nome) {
     this->nome.set(nome);
 };
 
+void Carteira::setCodigo(std::string codigo) {
+    this->codigo.set(codigo);
+};  
+
 Ordem::Ordem(const std::string& cod, const std::string& codNeg, const std::string& data,
     double preco, int qtd) : codigo {}, codNegociacao {}, data {}, preco {}, quantidade {} {
     codigo.set(cod);
