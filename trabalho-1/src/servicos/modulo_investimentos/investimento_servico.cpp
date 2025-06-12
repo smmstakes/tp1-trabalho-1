@@ -1,11 +1,12 @@
-#include "MSInvestimentos.hpp"
-#include "../MSPersistencia/MSPersistencia.hpp"
-#include "../../dominios/dominios.hpp"
 #include <iomanip>
 #include <sstream>
 
-void MSInvestimentos::criarCarteira(const Nome& nome, const Perfil& perfil) {
-    auto& persistencia = MSPersistencia::getInstancia();
+#include "investimento_servico.hpp"
+#include "../../libs/dominios/dominios.hpp"
+#include "../../persistencia/investimentos/investimento_repositorio.hpp"
+
+void ServicoIInvestimentos::criarCarteira(const Nome& nome, const Perfil& perfil) {
+    auto& persistencia = RepositorioIPInvestimento::getInstancia();
     std::string ultimoCodigoStr = persistencia.obterUltimoCodigoCarteiraInserido();
     Codigo codigo;
 

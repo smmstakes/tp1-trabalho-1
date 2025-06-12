@@ -1,12 +1,12 @@
-#ifndef CNTRLIAINVESTIMENTOS_HPP_INCLUDED
-#define CNTRLIAINVESTIMENTOS_HPP_INCLUDED
+#ifndef INVESTIMENTO_CONTROLADOR_HPP_INCLUDED
+#define INVESTIMENTO_CONTROLADOR_HPP_INCLUDED
 
 #include <ios>
 #include <limits>
 #include <iostream>
 #include <stdexcept>
 
-#include "IAInvestimentos.hpp"
+#include "interface_apresentacao_investimento.hpp"
 
 class CntrlIAInvestimentos:public IAInvestimentos {
     private:
@@ -36,4 +36,4 @@ class CntrlIAInvestimentos:public IAInvestimentos {
         };
 };
 
-#endif  // CNTRLIAINVESTIMENTOS_HPP_INCLUDED
+#endif  // INVESTIMENTO_CONTROLADOR_HPP_INCLUDED

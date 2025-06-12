@@ -1,6 +1,6 @@
-#include "CntrlIAInvestimentos.hpp"
-#include "../../dominios/dominios.hpp"
-#include "../../servico/MSInvestimentos/MSInvestimentos.hpp"
+#include "investimento_controlador.hpp"
+#include "../../../libs/dominios/dominios.hpp"
+#include "../../servicos/modulo_investimentos/investimento_servico.hpp"
 
 void CntrlIAInvestimentos::mostrarOpcoes() {
     std::cout << "----------- Menu de Investimentos -----------\n";

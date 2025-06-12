@@ -1,15 +1,16 @@
-#include "MSPersistencia.hpp"
 #include <iostream>
 #include <stdexcept>
 
-const char* MSPersistencia::NOME_DB = "../../../db/investimentos.db";
+#include "investimento_repositorio.hpp"
 
-MSPersistencia& MSPersistencia::getInstancia() {
-    static MSPersistencia instancia;
+const char* RepositorioIPInvestimento::NOME_DB = "../../../db/investimentos.db";
+
+RepositorioIPInvestimento& RepositorioIPInvestimento::getInstancia() {
+    static RepositorioIPInvestimento instancia;
     return instancia;
 }
 
-MSPersistencia::MSPersistencia() {
+RepositorioIPInvestimento::RepositorioIPInvestimento() {
     conectar();
     if (conectado) {
         std::cout << "[INFO] Conexão com banco de dados estabelecida com sucesso\n";
@@ -17,11 +18,11 @@ MSPersistencia::MSPersistencia() {
     }
 }
 
-MSPersistencia::~MSPersistencia() {
+RepositorioIPInvestimento::~RepositorioIPInvestimento() {
     desconectar();
 }
 
-void MSPersistencia::conectar() {
+void RepositorioIPInvestimento::conectar() {
     if (sqlite3_open(NOME_DB, &db) == SQLITE_OK) {
         conectado = true;
     } else {
@@ -30,14 +31,14 @@ void MSPersistencia::conectar() {
     }
 }
 
-void MSPersistencia::desconectar() {
+void RepositorioIPInvestimento::desconectar() {
     if (conectado) {
         sqlite3_close(db);
         std::cout << "[INFO] Conexão com o banco encerrada\n";
     }
 }
 
-bool MSPersistencia::criarTabelas() {
+bool RepositorioIPInvestimento::criarTabelas() {
     if (!conectado)
         throw std::runtime_error("Tentativa de criar tabelas sem conexão com banco.");
 
@@ -61,7 +62,7 @@ bool MSPersistencia::criarTabelas() {
     return true;
 }
 
-void MSPersistencia::salvarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil) {
+void RepositorioIPInvestimento::salvarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil) {
     if (!conectado) {
         throw std::runtime_error("Banco de dados não está conectado.");
     }
@@ -81,7 +82,7 @@ void MSPersistencia::salvarCarteira(const std::string& codigo, const std::string
 }
 
 
-std::string MSPersistencia::obterUltimoCodigoCarteiraInserido() {
+std::string RepositorioIPInvestimento::obterUltimoCodigoCarteiraInserido() {
     if (!conectado) {
         throw std::runtime_error("Banco de dados não está conectado.");
     }

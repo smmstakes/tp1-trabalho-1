@@ -1,5 +1,5 @@
-#ifndef IAINVESTIMENTOS_HPP_INCLUDED
-#define IAINVESTIMENTOS_HPP_INCLUDED
+#ifndef INTERFACE_APRESENTACAO_INVESTIMENTO_HPP_INCLUDED
+#define INTERFACE_APRESENTACAO_INVESTIMENTO_HPP_INCLUDED
 
 #ifdef _WIN32
     // Se o sistema for Windows
@@ -10,7 +10,8 @@
 #endif
 
 #include <cstdlib>
-#include "../../entidades/entidades.hpp"
+
+#include "../../../libs/entidades/entidades.hpp"
 
 class ISInvestimentos;
 
@@ -31,4 +32,4 @@ class IAInvestimentos {
         virtual ~IAInvestimentos() {};
 };
 
-#endif // IAINVESTIMENTOS_HPP_INCLUDED
+#endif // INTERFACE_APRESENTACAO_INVESTIMENTO_HPP_INCLUDED

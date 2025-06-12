@@ -4,7 +4,7 @@
 #include <string>
 
 #include "dominios_test.hpp"
-#include "../../src/dominios/dominios.hpp"
+#include "../../libs/dominios/dominios.hpp"
 
 class TUPerfil:public TUDominio<Perfil>{
     private:

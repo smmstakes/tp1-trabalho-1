@@ -1,18 +1,19 @@
-#include "banco_de_dados.hpp"
 #include <iostream>
 
-BancoDeDados::BancoDeDados() : db(nullptr), conectado(false) {}
+#include "gerenciador_bd.hpp"
 
-BancoDeDados::~BancoDeDados() {
+GerenciadorBD::GerenciadorBD() : db(nullptr), conectado(false) {}
+
+GerenciadorBD::~GerenciadorBD() {
     desconectar();
 }
 
-BancoDeDados& BancoDeDados::getInstance() {
-    static BancoDeDados instancia;
+GerenciadorBD& GerenciadorBD::getInstance() {
+    static GerenciadorBD instancia;
     return instancia;
 }
 
-bool BancoDeDados::conectar(const std::string& nome_arquivo) {
+bool GerenciadorBD::conectar(const std::string& nome_arquivo) {
     int rc = sqlite3_open(nome_arquivo.c_str(), &db);
     if (rc) {
         std::cerr << "Erro ao abrir o banco de dados: " << sqlite3_errmsg(db) << std::endl;
@@ -22,14 +23,14 @@ bool BancoDeDados::conectar(const std::string& nome_arquivo) {
     return true;
 }
 
-void BancoDeDados::desconectar() {
+void GerenciadorBD::desconectar() {
     if (conectado) {
         sqlite3_close(db);
         conectado = false;
     }
 }
 
-bool BancoDeDados::criarTabelas() {
+bool GerenciadorBD::criarTabelas() {
     if (!conectado) return false;
 
     const char* sqls[] = {
