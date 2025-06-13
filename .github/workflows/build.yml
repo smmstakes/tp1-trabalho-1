@@ -22,7 +22,7 @@ jobs:
     - name: 3. Compilar a aplicação principal
       run: |
         # Compila todos os fontes do projeto principal
-            cd trabalho-1
+        cd trabalho-1
             g++ main.cpp \
             $(find ./src -name "*.cpp") \
             $(find ./libs -name "*.cpp") \
@@ -34,6 +34,7 @@ jobs:
     - name: 4. Compilar os testes
       run: |
         # Compila os fontes de teste junto com os fontes do projeto
+        cd trabalho-1
             g++ $(find ./tests -name "*.cpp") \
             $(find ./src -name "*.cpp") \
             $(find ./libs -name "*.cpp") \
