@@ -3,7 +3,9 @@
 
 #include <string>
 
-#include "../../libs/sqlite/sqlite3.h"
+extern "C" {
+    #include "../../libs/sqlite/sqlite3.h"
+}
 
 class GerenciadorBD {
 private:

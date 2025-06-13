@@ -2,7 +2,7 @@
 #include <sstream>
 
 #include "carteira_servico.hpp"
-#include "../../libs/dominios/dominios.hpp"
+#include "../../../libs/dominios/dominios.hpp"
 #include "../../persistencia/carteira/carteira_repositorio.hpp"
 
 ServicoICarteira::ServicoICarteira() {

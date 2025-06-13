@@ -1,8 +1,8 @@
 #include <iostream>
-#include "tests/utils/executor_de_testes.hpp"
-#include <iostream>
 
-int main() {
+#include "./utils/executor_de_testes.hpp"
+
+int test_main() {
     try {
         ExecutorDeTestes::executarTodos();
     } catch (const std::string& nomeTipo) {

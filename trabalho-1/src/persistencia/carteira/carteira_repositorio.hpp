@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "interface_repositorio_carteira.hpp"
 #include "../gerenciador_bd.hpp"
+#include "interface_repositorio_carteira.hpp"
 
 
 class RepositorioIPCarteira : public IPCarteira {

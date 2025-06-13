@@ -7,7 +7,9 @@
 #include <stdio.h>
 #include <iostream>
 
-#include "../sqlite/sqlite3.h"
+extern "C" {
+    #include "../../libs/sqlite/sqlite3.h"
+}
 
 class EErroPersistencia : public std::exception {
 private:
