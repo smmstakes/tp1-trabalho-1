@@ -10,7 +10,7 @@ private:
     sqlite3* db;
     bool conectado;
 
-    GerenciadorBD();  // Construtor privado
+    GerenciadorBD();
     ~GerenciadorBD();
 
 public:
@@ -22,8 +22,7 @@ public:
     bool conectar(const std::string& nome_arquivo);
     void desconectar();
     bool criarTabelas();
-    sqlite3* getDB() const { return db; };
+    sqlite3* getDB() const { return db; }
 };
-
 
 #endif  // GERENCIADOR_BD_HPP_INCLUDED

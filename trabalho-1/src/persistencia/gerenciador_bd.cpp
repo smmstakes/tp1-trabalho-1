@@ -15,7 +15,7 @@ GerenciadorBD& GerenciadorBD::getInstance() {
 
 bool GerenciadorBD::conectar(const std::string& nome_arquivo) {
     int rc = sqlite3_open(nome_arquivo.c_str(), &db);
-    if (rc) {
+    if(rc) {
         std::cerr << "Erro ao abrir o banco de dados: " << sqlite3_errmsg(db) << std::endl;
         return false;
     }
@@ -24,14 +24,14 @@ bool GerenciadorBD::conectar(const std::string& nome_arquivo) {
 }
 
 void GerenciadorBD::desconectar() {
-    if (conectado) {
+    if(conectado) {
         sqlite3_close(db);
         conectado = false;
     }
 }
 
 bool GerenciadorBD::criarTabelas() {
-    if (!conectado) return false;
+    if(!conectado) return false;
 
     const char* sqls[] = {
         "CREATE TABLE IF NOT EXISTS Conta (cpf TEXT PRIMARY KEY, nome TEXT NOT NULL, senha TEXT NOT NULL);",
@@ -40,9 +40,9 @@ bool GerenciadorBD::criarTabelas() {
     };
 
     char* errMsg = nullptr;
-    for (auto sql : sqls) {
+    for(auto sql : sqls) {
         int rc = sqlite3_exec(db, sql, 0, 0, &errMsg);
-        if (rc != SQLITE_OK) {
+        if(rc != SQLITE_OK) {
             std::cerr << "Erro SQL: " << errMsg << std::endl;
             sqlite3_free(errMsg);
             return false;
