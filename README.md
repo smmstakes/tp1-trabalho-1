@@ -2,9 +2,22 @@
 
 # COMPILAR
 ``` 
-g++ main.cpp $(find ./src/ -name "*.cpp") db/sqlite/sqlite3.c -o main -lsqlite3
+g++ main.cpp \
+    $(find ./src -name "*.cpp") \
+    $(find ./libs -name "*.cpp") \
+    -I./src \
+    -I./libs \
+    -o main \
+    -lsqlite3 -lpthread -ldl
 
-g++ tests.cpp $(find ./tests/ -name "*.cpp") $(find ./src/ -name "*.cpp") db/sqlite/sqlite3.c -o tests -lsqlite3
+g++ $(find ./tests -name "*.cpp") \
+    $(find ./src -name "*.cpp") \
+    $(find ./libs -name "*.cpp") \
+    -I./tests \
+    -I./src \
+    -I./libs \
+    -o tests \
+    -lsqlite3 -lpthread -ldl
 ```
 
 # COMO RODAR O DB

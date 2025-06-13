@@ -30,14 +30,11 @@ jobs:
             -I./libs \
             -o main \
             -lsqlite3 -lpthread -ldl
-      # O executável se chamará 'main'
 
     - name: 4. Compilar os testes
       run: |
         # Compila os fontes de teste junto com os fontes do projeto
-            cd trabalho-1
-            g++ tests/test_main.cpp \
-            $(find ./tests -name "*.cpp") \
+            g++ $(find ./tests -name "*.cpp") \
             $(find ./src -name "*.cpp") \
             $(find ./libs -name "*.cpp") \
             -I./src \
@@ -45,7 +42,6 @@ jobs:
             -I./tests \
             -o tests_exe \
             -lsqlite3 -lpthread -ldl
-      # O executável de testes se chamará 'tests_exe'
 
     - name: 5. Executar testes
       run: |
