@@ -47,4 +47,6 @@ jobs:
     - name: 5. Executar testes
       run: |
         # Executa o arquivo gerado no passo anterior
+        cd trabalho-1
+        chmod +x tests_exe
         ./tests_exe
