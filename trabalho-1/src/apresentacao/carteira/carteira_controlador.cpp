@@ -1,7 +1,9 @@
-#include "CntrlIAInvestimento.hpp"
+#include "carteira_controlador.hpp"
+#include "../../../libs/dominios/dominios.hpp"
+#include "../../servicos/carteira/carteira_servico.hpp"
 
-void CntrlIAInvestimento::mostrarOpcoes() {
-    std::cout << "----------- Menu de Investimentos -----------\n";
+void CntrlIACarteira::mostrarOpcoes() {
+    std::cout << "----------- Menu de Carteiras -----------\n";
     std::cout << "Selecione uma opção: \n";
 
     std::cout << CRIAR_CARTEIRA << ". Criar nova carteira de investimentos\n";
@@ -10,23 +12,22 @@ void CntrlIAInvestimento::mostrarOpcoes() {
     std::cout << EXCLUIR_CARTEIRA << ". Excluir uma carteira de investimentos\n";
     std::cout << LISTAR_CARTEIRA << ". Listar carteiras de investimentos\n";
 
-    std::cout << CRIAR_ORDEM << ". Criar nova ordem de investimento\n";
-    std::cout << LER_ORDEM << ". Ler uma ordem de investimentos\n";
-    std::cout << EXCLUIR_ORDEM << ". Excluir uma ordem de investimentos\n";
-    std::cout << LISTAR_ORDEM << ". Listar ordens de investimentos\n";
-
-
     std::cout << VOLTAR << ". Voltar ao menu principal\n";
     std::cout << "-------------------------------------------\n";
     std::cout << "Sua escolha: ";
 }
 
-bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
+bool CntrlIACarteira::escolherOpcao(int entrada) {
     switch (entrada) {
-        case CRIAR_CARTEIRA:
-            // cntrlISInvestimento->criarCarteira(cpf);
+        case CRIAR_CARTEIRA: {
+            // TODO
+            Perfil perfil;
+            Nome nome;
+
+            this->servicoCarteira->criarCarteira(nome, perfil);
             break;
-        
+        } 
+
         case LER_CARTEIRA:
             // cntrlISInvestimento->lerCarteira(cpf);
             break;
@@ -40,23 +41,7 @@ bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
             break;
 
         case LISTAR_CARTEIRA:
-            // cntrlISInvestimento->listarCarteira(cpf);
-            break;
-        
-        case CRIAR_ORDEM:
-            // cntrlISInvestimento->criarOrdem(cpf);
-            break;
-        
-        case LER_ORDEM:
-            // cntrlISInvestimento->lerOrdem(cpf);
-            break;
-        
-        case EXCLUIR_ORDEM:
-            // cntrlISInvestimento->excluirOrdem(cpf);
-            break;
-
-        case LISTAR_ORDEM:
-            // cntrlISInvestimento->listarOrdem(cpf);
+            // cntrlISInvestimento->listarCarteiras(cpf);
             break;
 
         case VOLTAR: 
@@ -70,7 +55,7 @@ bool CntrlIAInvestimento::escolherOpcao(int entrada, const CPF& cpf) {
     return true;
 }
 
-void CntrlIAInvestimento::executar(const CPF& cpf) {
+void CntrlIACarteira::executar() {
     int entrada;
 
     while (true) {
@@ -90,7 +75,7 @@ void CntrlIAInvestimento::executar(const CPF& cpf) {
             continue; 
         }
 
-        if (!escolherOpcao(entrada, cpf))
+        if (!escolherOpcao(entrada))
             break;  // Sai do menu caso tenha escolhido VOLTAR
 
         // Pausa para o usuário poder ler a saída antes de limpar a tela novamente.

@@ -2,7 +2,7 @@
 #define CARTEIRA_TEST_HPP_INCLUDED
 
 #include "entidades_test.hpp"
-#include "../../src/entidades/entidades.hpp"
+#include "../../libs/entidades/entidades.hpp"
 
 #include <string>
 

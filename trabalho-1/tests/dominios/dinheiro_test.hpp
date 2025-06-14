@@ -2,7 +2,7 @@
 #define DINHEIRO_TEST_HPP_INCLUDED
 
 #include "dominios_test.hpp"
-#include "../../src/dominios/dominios.hpp"
+#include "../../libs/dominios/dominios.hpp"
 
 class TUDinheiro: public TUDominio<Dinheiro>{
     private:

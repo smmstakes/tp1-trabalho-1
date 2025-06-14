@@ -1,4 +1,4 @@
-name: Build Projeto
+name: Build e Teste do Projeto
 
 on:
   push:
@@ -7,27 +7,46 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clonar repositório
-      uses: actions/checkout@v3
+    - name: 1. Clonar repositório
+      uses: actions/checkout@v4
 
-    - name: Instalar g++
-      run: sudo apt-get update && sudo apt-get install -y g++
-
-    - name: Compilar projeto
+    - name: 2. Instalar dependências (g++ e SQLite3)
       run: |
-        cd trabalho-1
-        g++ main.cpp \
-        $(find ./tests -name "*.cpp") \
-        $(find ./src/dominios -name "*.cpp") \
-        $(find ./src/entidades -name "*.cpp") \
-        -o main \
-        -std=c++17
+        sudo apt-get update
+        sudo apt-get install -y g++ libsqlite3-dev
 
-    - name: Executar testes
+    - name: 3. Compilar a aplicação principal
       run: |
+        # Compila todos os fontes do projeto principal
         cd trabalho-1
-        ./main
+            g++ main.cpp \
+            $(find ./src -name "*.cpp") \
+            $(find ./libs -name "*.cpp") \
+            -I./src \
+            -I./libs \
+            -o main \
+            -lsqlite3 -lpthread -ldl
+
+    - name: 4. Compilar os testes
+      run: |
+        # Compila os fontes de teste junto com os fontes do projeto
+        cd trabalho-1
+            g++ $(find ./tests -name "*.cpp") \
+            $(find ./src -name "*.cpp") \
+            $(find ./libs -name "*.cpp") \
+            -I./src \
+            -I./libs \
+            -I./tests \
+            -o tests_exe \
+            -lsqlite3 -lpthread -ldl
+
+    - name: 5. Executar testes
+      run: |
+        # Executa o arquivo gerado no passo anterior
+        cd trabalho-1
+        chmod +x tests_exe
+        ./tests_exe

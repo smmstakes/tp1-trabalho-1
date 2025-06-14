@@ -4,7 +4,7 @@
 #include <string>
 
 #include "entidades_test.hpp"
-#include "../../src/entidades/entidades.hpp"
+#include "../../libs/entidades/entidades.hpp"
 
 class TUConta : public TUEntidade<Conta>{
     private:
