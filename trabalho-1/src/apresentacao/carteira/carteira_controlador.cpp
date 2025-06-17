@@ -39,7 +39,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             break;
 
         case LISTAR_CARTEIRAS:
-            listarCarteira();
+            listarCarteiras();
             // cntrlISInvestimento->listarCarteiras(cpf);
             break;
 
@@ -96,7 +96,7 @@ bool CntrlIACarteira::criarCarteira() {
     std::cout << "Perfis de Investidor: Conservador, Moderado, Agressivo\n";
     std::cout << "Informe o seu perfil de investidor: ";
     std::cin >> perfil_inpt;
-    
+
     try {
         Nome nome;
         nome.set(nome_inpt);
@@ -110,4 +110,20 @@ bool CntrlIACarteira::criarCarteira() {
         std::cout << "\nErro de validação: " << e.what() << std::endl;
         std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
     }
+}
+
+bool CntrlIACarteira::lerCarteira() {
+    // TODO
+}
+
+bool CntrlIACarteira::editarCarteira() {
+    // TODO
+}
+
+bool CntrlIACarteira::excluirCarteira() {
+    // TODO
+}
+
+bool CntrlIACarteira::listarCarteiras() {
+    // TODO
 }

@@ -22,12 +22,12 @@ private:
 
     void mostrarOpcoes() override;
     bool escolherOpcao(int) override;
-    
+
     bool criarCarteira() override;
     bool lerCarteira() override;
     bool editarCarteira() override;
     bool excluirCarteira() override;
-    bool listarCarteira() override;
+    bool listarCarteiras() override;
 
 public:
     void executar() override;
