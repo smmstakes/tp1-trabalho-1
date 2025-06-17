@@ -1,9 +1,4 @@
-#include <iomanip>
-#include <sstream>
-
 #include "carteira_servico.hpp"
-#include "../../../libs/dominios/dominios.hpp"
-#include "../../persistencia/carteira/carteira_repositorio.hpp"
 
 ServicoICarteira::ServicoICarteira() {
     this->persistencia = &RepositorioIPCarteira::getInstancia();
@@ -29,4 +24,18 @@ void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
     codigo.set(oss.str());
 
     this->persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get());
+}
+
+std::vector<Carteira> ServicoICarteira::listarCarteiras() {
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+
+    // Sempre verificar se o usuário está logado
+    if (!sessao.estaLogado()) {
+        throw std::runtime_error("Usuário não está logado.");
+    }
+
+    Conta contaLogada = sessao.getContaLogada();
+    std::string cpf = contaLogada.getCpf();
+
+    return this->persistencia->listarCarteiras(cpf);
 }

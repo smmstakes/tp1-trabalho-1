@@ -1,10 +1,6 @@
 #ifndef INTERFACE_APRESENTACAO_CARTEIRA_HPP_INCLUDED
 #define INTERFACE_APRESENTACAO_CARTEIRA_HPP_INCLUDED
 
-#include <cstdlib>
-
-#include "../../../libs/entidades/entidades.hpp"
-#include "../../../libs/apresentacao_utils/apresentacao_utils.hpp"
 #include "../../servicos/carteira/interface_servico_carteira.hpp"
 
 class IACarteira {

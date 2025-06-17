@@ -1,10 +1,4 @@
-#include <memory>
-#include <iostream>
-#include <stdexcept>
-
 #include "carteira_repositorio.hpp"
-#include "../../../libs/sqlite/sqlite3.h"
-#include "../../../libs/comandoSQL/comandoSQL.hpp"
 
 RepositorioIPCarteira::RepositorioIPCarteira() : gerenciadorBD(GerenciadorBD::getInstance()) {}
 
@@ -44,4 +38,28 @@ std::string RepositorioIPCarteira::obterUltimoCodigoCarteiraInserido() {
     
     // Se não, retorna vazio. A limpeza é automática.
     return "";
+}
+
+std::vector<Carteira> RepositorioIPCarteira::listarCarteiras(const std::string& cpf) {
+    int id = 0;
+    sqlite3* db = gerenciadorBD.getDB();
+    std::string sql = "SELECT codigo, nome, perfil FROM Carteira WHERE cpf_conta = ?;";
+
+    ComandoSQL comando(db, sql);
+
+    comando.bind(1, cpf);
+
+    std::vector<Carteira> carteiras;
+
+    while (comando.step()) {
+        std::string codigo = comando.getColumnString(0);
+        std::string nome = comando.getColumnString(1);
+        std::string perfil = comando.getColumnString(2);
+
+        Carteira carteira(codigo, nome, perfil);
+
+        carteiras.push_back(carteira);
+    }
+
+    return carteiras;
 }

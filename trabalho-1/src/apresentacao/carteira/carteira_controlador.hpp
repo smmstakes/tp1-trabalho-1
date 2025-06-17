@@ -3,8 +3,16 @@
 
 #include <ios>
 #include <limits>
+#include <cstdlib>
 #include <iostream>
 #include <stdexcept>
+
+#include "../../../libs/dominios/dominios.hpp"
+#include "../../../libs/entidades/entidades.hpp"
+#include "../../../libs/sessao_usuario/sessao_usuario.hpp"
+#include "../../../libs/apresentacao_utils/apresentacao_utils.hpp"
+
+#include "../../servicos/carteira/carteira_servico.hpp"
 
 #include "interface_apresentacao_carteira.hpp"
 

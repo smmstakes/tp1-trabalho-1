@@ -1,6 +1,4 @@
 #include "carteira_controlador.hpp"
-#include "../../../libs/dominios/dominios.hpp"
-#include "../../servicos/carteira/carteira_servico.hpp"
 
 void CntrlIACarteira::mostrarOpcoes() {
     std::cout << "----------- Menu de Carteiras -----------\n";
@@ -40,7 +38,6 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
 
         case LISTAR_CARTEIRAS:
             listarCarteiras();
-            // cntrlISInvestimento->listarCarteiras(cpf);
             break;
 
         case VOLTAR: 
@@ -125,5 +122,30 @@ bool CntrlIACarteira::excluirCarteira() {
 }
 
 bool CntrlIACarteira::listarCarteiras() {
-    // TODO
+    // Para fim de teste
+    Conta contaUsuario = Conta("123.456.789-10", "Matheus Duarte", "123456");
+    SessaoUsuario::getInstance().login(contaUsuario);
+
+    std::vector<Carteira> carteiras;
+
+    try {
+        carteiras = servicoCarteira->listarCarteiras();
+
+        std::cout << "\n----------- Suas Carteiras de Investimento -----------\n";
+        
+        if (carteiras.empty()) {
+            std::cout << "Você ainda não possui carteiras cadastradas.\n";
+        } else {
+            for(const auto& carteira : carteiras) {
+                std::cout << "Código: " << carteira.getCodigo() 
+                          << ", Nome: " << carteira.getNome() 
+                          << ", Perfil: " << carteira.getPerfil() << "\n";
+            }
+        }
+
+        std::cout << "-----------------------------------------------------\n";
+
+    } catch (const std::exception& e) {
+        std::cerr << "Ocorreu um erro ao buscar suas carteiras: " << e.what() << '\n';
+    }
 }
