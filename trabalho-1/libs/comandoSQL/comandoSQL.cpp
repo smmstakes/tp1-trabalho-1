@@ -20,7 +20,7 @@ void ComandoSQL::bind(int index, double value) {
 }
 
 void ComandoSQL::bind(int index, const std::string& value) {
-    sqlite3_bind_text(stmt_ptr.get(), index, value.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt_ptr.get(), index, value.c_str(), -1, SQLITE_TRANSIENT);
 }
 
 bool ComandoSQL::step() {
@@ -38,13 +38,11 @@ bool ComandoSQL::step() {
 }
 
 void ComandoSQL::execute() {
-    // Apenas executa, ignora o resultado (espera SQLITE_DONE)
     if (step()) {
-        throw EErroPersistencia("O comando execute() retornou uma linha inesperadamente.");
+        // Retornou uma linha (SELECT)
     }
-     // Se step() retornou false, a execução foi completada com sucesso (SQLITE_DONE).
+     // Ação completa com sucesso (INSERT, DROP, UPDATE)
 }
-
 
 std::string ComandoSQL::getColumnString(int index) {
     return reinterpret_cast<const char*>(sqlite3_column_text(stmt_ptr.get(), index));

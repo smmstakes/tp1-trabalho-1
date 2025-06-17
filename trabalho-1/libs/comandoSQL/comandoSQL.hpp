@@ -11,6 +11,7 @@ extern "C" {
     #include "../../libs/sqlite/sqlite3.h"
 }
 
+// Biblioteca de Erros?
 class EErroPersistencia : public std::exception {
 private:
     std::string mensagem;
@@ -25,8 +26,6 @@ private:
     std::unique_ptr<sqlite3_stmt, decltype(&sqlite3_finalize)> stmt_ptr;
 
 public:
-    void inicializarBanco();
-
     // O construtor prepara o comando. Ele assume a responsabilidade.
     ComandoSQL(sqlite3* db, const std::string& sql);
 
