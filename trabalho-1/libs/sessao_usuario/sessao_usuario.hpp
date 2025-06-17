@@ -9,7 +9,7 @@ class SessaoUsuario {
 private:
     std::optional<Conta> contaLogada;
 
-    SessaoUsuario();
+    SessaoUsuario() = default;
 
 public:
     SessaoUsuario(const SessaoUsuario&) = delete;
