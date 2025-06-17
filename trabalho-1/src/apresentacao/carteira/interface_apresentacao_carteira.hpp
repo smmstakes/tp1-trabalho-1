@@ -12,6 +12,12 @@ protected:
     virtual void mostrarOpcoes() = 0;
     virtual bool escolherOpcao(int) = 0;
 
+    virtual bool criarCarteira() = 0;
+    virtual bool lerCarteira() = 0;
+    virtual bool editarCarteira() = 0;
+    virtual bool excluirCarteira() = 0;
+    virtual bool listarCarteira() = 0;
+
 public:
     virtual void executar() = 0;
 

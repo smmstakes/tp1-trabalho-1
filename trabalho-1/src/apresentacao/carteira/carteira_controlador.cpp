@@ -10,7 +10,7 @@ void CntrlIACarteira::mostrarOpcoes() {
     std::cout << LER_CARTEIRA << ". Ler uma carteira de investimentos\n";
     std::cout << EDITAR_CARTEIRA << ". Editar uma carteira de investimentos\n";
     std::cout << EXCLUIR_CARTEIRA << ". Excluir uma carteira de investimentos\n";
-    std::cout << LISTAR_CARTEIRA << ". Listar carteiras de investimentos\n";
+    std::cout << LISTAR_CARTEIRAS << ". Listar carteiras de investimentos\n";
 
     std::cout << VOLTAR << ". Voltar ao menu principal\n";
     std::cout << "-------------------------------------------\n";
@@ -19,28 +19,27 @@ void CntrlIACarteira::mostrarOpcoes() {
 
 bool CntrlIACarteira::escolherOpcao(int entrada) {
     switch (entrada) {
-        case CRIAR_CARTEIRA: {
-            // TODO
-            Perfil perfil;
-            Nome nome;
-
-            this->servicoCarteira->criarCarteira(nome, perfil);
+        case CRIAR_CARTEIRA:
+            criarCarteira();
             break;
-        } 
 
         case LER_CARTEIRA:
+            lerCarteira();
             // cntrlISInvestimento->lerCarteira(cpf);
             break;
         
         case EDITAR_CARTEIRA:
+            editarCarteira();
             // cntrlISInvestimento->editarCarteira(cpf);
             break;
 
         case EXCLUIR_CARTEIRA:
+            excluirCarteira();
             // cntrlISInvestimento->excluirCarteira(cpf);
             break;
 
-        case LISTAR_CARTEIRA:
+        case LISTAR_CARTEIRAS:
+            listarCarteira();
             // cntrlISInvestimento->listarCarteiras(cpf);
             break;
 
@@ -52,6 +51,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             std::cout << "Opção inválida. Tente novamente." << std::endl;
             break;
     }
+
     return true;
 }
 
@@ -82,5 +82,32 @@ void CntrlIACarteira::executar() {
         std::cout << "\nPressione Enter para continuar...\n";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');     // Limpa buffer 
         std::cin.get();
+    }
+}
+
+bool CntrlIACarteira::criarCarteira() {
+    std::string nome_inpt;
+    std::string perfil_inpt;
+
+    std::cout << "----------- Criar uma Carteira de Investimento -----------\n";
+    std::cout << "Informe o nome da carteira: ";
+    std::cin >> nome_inpt;
+
+    std::cout << "Perfis de Investidor: Conservador, Moderado, Agressivo\n";
+    std::cout << "Informe o seu perfil de investidor: ";
+    std::cin >> perfil_inpt;
+    
+    try {
+        Nome nome;
+        nome.set(nome_inpt);
+
+        Perfil perfil;
+        perfil.set(perfil_inpt);
+
+        servicoCarteira->criarCarteira(nome, perfil);
+    
+    } catch (const std::invalid_argument &e) {
+        std::cout << "\nErro de validação: " << e.what() << std::endl;
+        std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
     }
 }
