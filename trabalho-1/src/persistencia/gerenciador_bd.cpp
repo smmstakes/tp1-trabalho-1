@@ -17,10 +17,10 @@ bool GerenciadorBD::conectar(const std::string& nome_arquivo) {
     int rc = sqlite3_open(nome_arquivo.c_str(), &db);
     if(rc) {
         std::cerr << "Erro ao abrir o banco de dados: " << sqlite3_errmsg(db) << std::endl;
-        return false;
+        return conectado;
     }
     conectado = true;
-    return true;
+    return conectado;
 }
 
 void GerenciadorBD::desconectar() {
@@ -50,4 +50,26 @@ bool GerenciadorBD::criarTabelas() {
     }
 
     return true;
+}
+
+bool GerenciadorBD::inicializarBanco() {
+    try {
+        GerenciadorBD& gerenciadorBD = GerenciadorBD::getInstance();
+
+        if (!gerenciadorBD.conectar("sistema_de_investimentos.db")) {
+            std::cerr << "Falha ao conectar ao banco de dados.\n";
+            return false;
+        }
+
+        if (!gerenciadorBD.criarTabelas()) {
+            std::cerr << "Não foi possível criar as tabelas do banco de dados.\n";
+            return false;
+        }
+
+        return true;
+
+    } catch (const std::exception& excp) {
+        std::cerr << "Ocorreu um erro durante a inicialização: " << excp.what() << "\n";
+        return false;
+    }
 }

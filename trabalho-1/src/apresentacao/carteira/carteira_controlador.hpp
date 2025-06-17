@@ -8,26 +8,32 @@
 
 #include "interface_apresentacao_carteira.hpp"
 
-class CntrlIACarteira:public IACarteira {
-    private:
-        // Códigos de serviços
-        const static int VOLTAR = 0;
-        const static int CRIAR_CARTEIRA = 1;
-        const static int LER_CARTEIRA = 2;
-        const static int EDITAR_CARTEIRA = 3;
-        const static int EXCLUIR_CARTEIRA = 4;
-        const static int LISTAR_CARTEIRA = 5;
+class CntrlIACarteira : public IACarteira {
+private:
+    // Códigos de serviços
+    const static int VOLTAR = 0;
+    const static int CRIAR_CARTEIRA = 1;
+    const static int LER_CARTEIRA = 2;
+    const static int EDITAR_CARTEIRA = 3;
+    const static int EXCLUIR_CARTEIRA = 4;
+    const static int LISTAR_CARTEIRAS = 5;
 
-        ISCarteira *servicoCarteira;
+    ISCarteira *servicoCarteira;
 
-        void mostrarOpcoes() override;
-        bool escolherOpcao(int) override;
+    void mostrarOpcoes() override;
+    bool escolherOpcao(int) override;
 
-    public:
-        void executar() override;
-        void setCntrlISCarteira(ISCarteira* servicoCarteira) override {
-            this->servicoCarteira = servicoCarteira;
-        };
+    bool criarCarteira() override;
+    bool lerCarteira() override;
+    bool editarCarteira() override;
+    bool excluirCarteira() override;
+    bool listarCarteiras() override;
+
+public:
+    void executar() override;
+    void setCntrlISCarteira(ISCarteira* servicoCarteira) override {
+        this->servicoCarteira = servicoCarteira;
+    };
 };
 
 #endif  // CARTEIRA_CONTROLADOR_HPP_INCLUDED

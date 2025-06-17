@@ -21,6 +21,7 @@ public:
 
     static GerenciadorBD& getInstance();
 
+    bool inicializarBanco();
     bool conectar(const std::string& nome_arquivo);
     void desconectar();
     bool criarTabelas();
