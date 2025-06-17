@@ -1,5 +1,3 @@
-#include <string>
-
 #include "entidades.hpp"
 
 Conta::Conta(const std::string& cpf, const std::string& nome, const std::string& senha)

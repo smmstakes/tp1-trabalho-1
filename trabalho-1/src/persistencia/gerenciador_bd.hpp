@@ -2,6 +2,7 @@
 #define GERENCIADOR_BD_HPP_INCLUDED
 
 #include <string>
+#include <iostream>
 
 extern "C" {
     #include "../../libs/sqlite/sqlite3.h"

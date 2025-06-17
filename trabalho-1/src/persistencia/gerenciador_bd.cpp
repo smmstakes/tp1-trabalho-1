@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "gerenciador_bd.hpp"
 
 GerenciadorBD::GerenciadorBD() : db(nullptr), conectado(false) {}

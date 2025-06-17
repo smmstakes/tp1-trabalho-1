@@ -18,6 +18,9 @@
 
 #include <regex>
 #include <string>
+#include <iostream>
+#include <stdexcept>
+#include <unordered_set>
 
 /**
  * @class Dominio
