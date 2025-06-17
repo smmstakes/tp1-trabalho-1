@@ -16,7 +16,7 @@ protected:
     virtual bool lerCarteira() = 0;
     virtual bool editarCarteira() = 0;
     virtual bool excluirCarteira() = 0;
-    virtual bool listarCarteira() = 0;
+    virtual bool listarCarteiras() = 0;
 
 public:
     virtual void executar() = 0;
