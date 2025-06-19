@@ -31,11 +31,11 @@ private:
     void mostrarOpcoes() override;
     bool escolherOpcao(int) override;
 
-    bool criarCarteira() override;
-    bool lerCarteira() override;
-    bool editarCarteira() override;
-    bool excluirCarteira() override;
-    bool listarCarteiras() override;
+    void criarCarteira() override;
+    void lerCarteira() override;
+    void editarCarteira() override;
+    void excluirCarteira() override;
+    void listarCarteiras() override;
 
 public:
     void executar() override;

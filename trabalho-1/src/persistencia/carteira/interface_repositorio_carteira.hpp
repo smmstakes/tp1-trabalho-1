@@ -13,6 +13,8 @@ class IPCarteira {
         virtual void criarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil) = 0;
         virtual std::string obterUltimoCodigoCarteiraInserido() = 0;
         
+        virtual bool excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) = 0;
+
         virtual std::vector<Carteira> listarCarteiras(const std::string& cpf) = 0;
 };
 

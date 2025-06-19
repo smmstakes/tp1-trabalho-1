@@ -82,7 +82,7 @@ void CntrlIACarteira::executar() {
     }
 }
 
-bool CntrlIACarteira::criarCarteira() {
+void CntrlIACarteira::criarCarteira() {
     std::string nome_inpt;
     std::string perfil_inpt;
 
@@ -109,23 +109,49 @@ bool CntrlIACarteira::criarCarteira() {
     }
 }
 
-bool CntrlIACarteira::lerCarteira() {
+void CntrlIACarteira::lerCarteira() {
     // TODO
 }
 
-bool CntrlIACarteira::editarCarteira() {
+void CntrlIACarteira::editarCarteira() {
     // TODO
 }
 
-bool CntrlIACarteira::excluirCarteira() {
-    // TODO
+void CntrlIACarteira::excluirCarteira() {
+    std::string codigo_inpt;
+    Codigo codigo;
+
+    CntrlIACarteira::listarCarteiras();
+
+    std::cout << "Informe o código da carteira a ser excluida (ou 0 para voltar): ";
+    std::cin >> codigo_inpt;
+
+    if (codigo_inpt == "0") {
+        std::cout << "Voltando para o menu de carteiras.\n";
+        return;
+    }
+
+    try {
+        codigo.set(codigo_inpt);
+
+        char confirmacao;
+        std::cout << "Você tem certeza que deseja excluir a carteira de código " 
+                  << codigo.get() << "? (S/N): ";
+        std::cin >> confirmacao;
+
+        if (toupper(confirmacao) == 'S') {
+            servicoCarteira->excluirCarteira(codigo.get());
+            std::cout << "Sua carteira foi excluída com sucesso.\n";
+        } else {
+            std::cout << "Exclusão cancelada pelo usuário.\n";
+        }
+        
+    } catch(const std::exception& e) {
+        std::cerr << "Ocorreu um erro ao excluir a carteira: " << e.what() << '\n';
+    }
 }
 
-bool CntrlIACarteira::listarCarteiras() {
-    // Para fim de teste
-    Conta contaUsuario = Conta("123.456.789-10", "Matheus Duarte", "123456");
-    SessaoUsuario::getInstance().login(contaUsuario);
-
+void CntrlIACarteira::listarCarteiras() {
     std::vector<Carteira> carteiras;
 
     try {

@@ -1,11 +1,8 @@
 #ifndef CARTEIRA_SERVICO_HPP_INCLUDED
 #define CARTEIRA_SERVICO_HPP_INCLUDED
 
-#include <string>
 #include <sstream>
 #include <iomanip>
-
-#include "../../../libs/sessao_usuario/sessao_usuario.hpp"
 
 #include "../../persistencia/carteira/carteira_repositorio.hpp"
 
@@ -21,7 +18,10 @@ public:
     ServicoICarteira& operator=(const ServicoICarteira&) = delete;
 
     static ServicoICarteira& getInstancia();
+    void verificarSessao(SessaoUsuario& sessao) override;
+
     void criarCarteira(const Nome& nome, const Perfil& perfil) override;
+    void excluirCarteira(const std::string& codigo) override;
     std::vector<Carteira> listarCarteiras() override;
 };
 

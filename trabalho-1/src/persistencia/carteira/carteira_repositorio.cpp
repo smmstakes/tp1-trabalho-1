@@ -31,22 +31,31 @@ std::string RepositorioIPCarteira::obterUltimoCodigoCarteiraInserido() {
     
     ComandoSQL comando(db, sql);
     
-    // Se houver um resultado (step() retorna true)
     if (comando.step()) {
         return comando.getColumnString(0); // Pega o resultado da coluna 0
     }
-    
-    // Se não, retorna vazio. A limpeza é automática.
+
     return "";
 }
 
+bool RepositorioIPCarteira::excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) {
+    sqlite3* db = gerenciadorBD.getDB();
+    std::string sql = "DELETE FROM Carteira WHERE codigo = ? AND cpf_conta = ?;";
+
+    ComandoSQL comando(db, sql);
+    comando.bind(1, codigo);
+    comando.bind(2, cpfUsuario);
+    
+    comando.execute();
+
+    return sqlite3_changes(db) > 0;
+}
+
 std::vector<Carteira> RepositorioIPCarteira::listarCarteiras(const std::string& cpf) {
-    int id = 0;
     sqlite3* db = gerenciadorBD.getDB();
     std::string sql = "SELECT codigo, nome, perfil FROM Carteira WHERE cpf_conta = ?;";
 
     ComandoSQL comando(db, sql);
-
     comando.bind(1, cpf);
 
     std::vector<Carteira> carteiras;

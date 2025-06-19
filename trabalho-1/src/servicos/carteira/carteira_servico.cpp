@@ -10,6 +10,12 @@ ServicoICarteira& ServicoICarteira::getInstancia() {
     return instancia;
 }
 
+void ServicoICarteira::verificarSessao(SessaoUsuario& sessao) {
+    if (!sessao.estaLogado()) {
+        throw std::runtime_error("Usuário não está logado.");
+    }
+}
+
 void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
     std::string ultimoCodigoStr = this->persistencia->obterUltimoCodigoCarteiraInserido();
     Codigo codigo;
@@ -26,16 +32,21 @@ void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
     this->persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get());
 }
 
+void ServicoICarteira::excluirCarteira(const std::string& codigo) {
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    verificarSessao(sessao);
+
+    std::string cpfUsuario = sessao.getContaLogada().getCpf();
+
+    if(!persistencia->excluirCarteira(codigo, cpfUsuario))
+        throw std::invalid_argument("O código informado não corresponde aos das carteiras.");    
+}
+
 std::vector<Carteira> ServicoICarteira::listarCarteiras() {
     SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    verificarSessao(sessao);
 
-    // Sempre verificar se o usuário está logado
-    if (!sessao.estaLogado()) {
-        throw std::runtime_error("Usuário não está logado.");
-    }
+    std::string cpfUsuario = sessao.getContaLogada().getCpf();
 
-    Conta contaLogada = sessao.getContaLogada();
-    std::string cpf = contaLogada.getCpf();
-
-    return this->persistencia->listarCarteiras(cpf);
+    return persistencia->listarCarteiras(cpfUsuario);
 }

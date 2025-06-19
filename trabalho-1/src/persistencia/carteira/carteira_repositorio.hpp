@@ -29,6 +29,8 @@ public:
     void criarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil) override;
     std::string obterUltimoCodigoCarteiraInserido() override;
 
+    bool excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) override;
+
     std::vector<Carteira> listarCarteiras(const std::string& cpf) override;
 };
 
