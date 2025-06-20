@@ -16,7 +16,28 @@ void ServicoICarteira::verificarSessao(SessaoUsuario& sessao) {
     }
 }
 
+std::string ServicoICarteira::getCPFSessao() {
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    verificarSessao(sessao);
+
+    return sessao.getContaLogada().getCpf();
+}
+
+std::vector<Ordem> ServicoICarteira::getOrdensCarteira(const std::string codCarteira) {
+    verificarSessao(SessaoUsuario::getInstance());
+
+    return persistencia->getOrdensCarteira(codCarteira);
+}
+
 void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
+    std::string cpfUsuario = getCPFSessao();
+
+    int qtdCarteirasUsuario = persistencia->contarCarteirasUsuario(cpfUsuario);
+
+    if(qtdCarteirasUsuario >= 5) {
+        throw std::runtime_error("Limite de 5 carteiras por conta atingido.");
+    }
+    
     std::string ultimoCodigoStr = this->persistencia->obterUltimoCodigoCarteiraInserido();
     Codigo codigo;
     int novoCodigoInt = 1;
@@ -29,24 +50,18 @@ void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
     oss << std::setw(5) << std::setfill('0') << novoCodigoInt;
     codigo.set(oss.str());
 
-    this->persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get());
+    this->persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get(), cpfUsuario);
 }
 
 void ServicoICarteira::excluirCarteira(const std::string& codigo) {
-    SessaoUsuario& sessao = SessaoUsuario::getInstance();
-    verificarSessao(sessao);
-
-    std::string cpfUsuario = sessao.getContaLogada().getCpf();
+    std::string cpfUsuario = getCPFSessao();
 
     if(!persistencia->excluirCarteira(codigo, cpfUsuario))
         throw std::invalid_argument("O código informado não corresponde aos das carteiras.");    
 }
 
 std::vector<Carteira> ServicoICarteira::listarCarteiras() {
-    SessaoUsuario& sessao = SessaoUsuario::getInstance();
-    verificarSessao(sessao);
-
-    std::string cpfUsuario = sessao.getContaLogada().getCpf();
+    std::string cpfUsuario = getCPFSessao();
 
     return persistencia->listarCarteiras(cpfUsuario);
 }

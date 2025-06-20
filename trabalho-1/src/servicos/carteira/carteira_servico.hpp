@@ -16,9 +16,11 @@ private:
 public:
     ServicoICarteira(const ServicoICarteira&) = delete;
     ServicoICarteira& operator=(const ServicoICarteira&) = delete;
-
     static ServicoICarteira& getInstancia();
+
     void verificarSessao(SessaoUsuario& sessao) override;
+    std::string getCPFSessao() override;
+    std::vector<Ordem> getOrdensCarteira(const std::string codCarteira) override;
 
     void criarCarteira(const Nome& nome, const Perfil& perfil) override;
     void excluirCarteira(const std::string& codigo) override;

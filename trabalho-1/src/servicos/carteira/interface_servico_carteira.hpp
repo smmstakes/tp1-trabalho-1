@@ -9,6 +9,8 @@
 class ISCarteira {
 public:
     virtual void verificarSessao(SessaoUsuario& sessao) = 0;
+    virtual std::string getCPFSessao() = 0;
+    virtual std::vector<Ordem> getOrdensCarteira(const std::string codCarteira) = 0;
 
     virtual void criarCarteira(const Nome& nome, const Perfil& perfil) = 0;
     virtual void excluirCarteira(const std::string& codigo) = 0;

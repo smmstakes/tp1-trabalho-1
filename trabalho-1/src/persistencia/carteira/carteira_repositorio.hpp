@@ -26,11 +26,12 @@ public:
 
     static RepositorioIPCarteira& getInstancia();
     
-    void criarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil) override;
+    int contarCarteirasUsuario(const std::string& cpfUsuario) override;
     std::string obterUltimoCodigoCarteiraInserido() override;
+    std::vector<Ordem> getOrdensCarteira(const std::string codCarteira) override;
 
+    void criarCarteira(const std::string& codigo, const std::string& nome, const std::string& perfil, const std::string& cpfUsuario) override;
     bool excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) override;
-
     std::vector<Carteira> listarCarteiras(const std::string& cpf) override;
 };
 
