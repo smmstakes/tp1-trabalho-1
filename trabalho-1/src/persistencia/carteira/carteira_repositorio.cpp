@@ -87,23 +87,26 @@ bool RepositorioIPCarteira::excluirCarteira(const std::string& codigo, const std
     return sqlite3_changes(db) > 0;
 }
 
-std::vector<Carteira> RepositorioIPCarteira::listarCarteiras(const std::string& cpf) {
+std::vector<CarteiraComValor> RepositorioIPCarteira::getCarteiras(const std::string& cpf) {
     sqlite3* db = gerenciadorBD.getDB();
-    std::string sql = "SELECT codigo, nome, perfil FROM Carteira WHERE cpf_conta = ?;";
+    std::string sql = "SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco * o.quantidade), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;";
 
     ComandoSQL comando(db, sql);
     comando.bind(1, cpf);
 
-    std::vector<Carteira> carteiras;
+    std::vector<CarteiraComValor> carteiras;
 
     while (comando.step()) {
         std::string codigo = comando.getColumnString(0);
         std::string nome = comando.getColumnString(1);
         std::string perfil = comando.getColumnString(2);
+        double valorTotal = comando.getColumnDouble(3);
 
         Carteira carteira(codigo, nome, perfil);
 
-        carteiras.push_back(carteira);
+        CarteiraComValor item = {carteira, valorTotal};
+
+        carteiras.push_back(item);
     }
 
     return carteiras;

@@ -60,8 +60,8 @@ void ServicoICarteira::excluirCarteira(const std::string& codigo) {
         throw std::invalid_argument("O código informado não corresponde aos das carteiras.");    
 }
 
-std::vector<Carteira> ServicoICarteira::listarCarteiras() {
+std::vector<CarteiraComValor> ServicoICarteira::getCarteiras() {
     std::string cpfUsuario = getCPFSessao();
 
-    return persistencia->listarCarteiras(cpfUsuario);
+    return persistencia->getCarteiras(cpfUsuario);
 }

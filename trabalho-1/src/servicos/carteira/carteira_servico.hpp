@@ -13,18 +13,19 @@ private:
     IPCarteira* persistencia;
     ServicoICarteira();
 
+    void verificarSessao(SessaoUsuario& sessao);
+    std::string getCPFSessao();
+    std::vector<Ordem> getOrdensCarteira(const std::string codCarteira);
+
 public:
     ServicoICarteira(const ServicoICarteira&) = delete;
     ServicoICarteira& operator=(const ServicoICarteira&) = delete;
     static ServicoICarteira& getInstancia();
 
-    void verificarSessao(SessaoUsuario& sessao) override;
-    std::string getCPFSessao() override;
-    std::vector<Ordem> getOrdensCarteira(const std::string codCarteira) override;
-
     void criarCarteira(const Nome& nome, const Perfil& perfil) override;
+    void editarCarteira() override;
     void excluirCarteira(const std::string& codigo) override;
-    std::vector<Carteira> listarCarteiras() override;
+    std::vector<CarteiraComValor> getCarteiras() override;
 };
 
 #endif  // CARTEIRA_SERVICO_HPP_INCLUDED

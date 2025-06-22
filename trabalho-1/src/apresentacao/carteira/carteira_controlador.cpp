@@ -34,7 +34,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             break;
 
         case LISTAR_CARTEIRAS:
-            listarCarteiras();
+            // listarCarteiras();
             break;
 
         case VOLTAR: 
@@ -112,9 +112,9 @@ void CntrlIACarteira::criarCarteira() {
 }
 
 void CntrlIACarteira::lerCarteira() {
-    std::vector<Carteira> carteiras;
+    std::vector<CarteiraComValor> carteiras;
     try {
-        carteiras = servicoCarteira->listarCarteiras();
+        carteiras = servicoCarteira->getCarteiras();
     } catch (const std::exception& e) {
         std::cerr << "Ocorreu um erro ao buscar suas carteiras: " << e.what() << '\n';
         return; 
@@ -128,7 +128,7 @@ void CntrlIACarteira::lerCarteira() {
     } else {
         int id = 1;
         for(const auto& carteira : carteiras) {
-            std::cout << id++ << ". Nome: " << carteira.getNome() << " (Código: " << carteira.getCodigo() << ")\n";
+            std::cout << id++ << ". Nome: " << carteira.carteira.getNome() << " (Código: " << carteira.carteira.getCodigo() << ")\n";
         }
     }
     std::cout << "-----------------------------------------------------\n";
@@ -147,23 +147,12 @@ void CntrlIACarteira::lerCarteira() {
             throw std::invalid_argument("Número de carteira inválido.");
         }
 
-        const Carteira& carteiraEscolhida = carteiras[num_carteira - 1];      
-        
-        std::vector<Ordem> ordens = servicoCarteira->getOrdensCarteira(carteiraEscolhida.getCodigo());
+        const CarteiraComValor& carteiraEscolhida = carteiras[num_carteira - 1];      
 
-        std::cout << "\n------ Detalhes da Carteira '" << carteiraEscolhida.getNome() << "' ------\n";
-        std::cout << "Código de Identificação: " << carteiraEscolhida.getCodigo() << "\n";
-        std::cout << "Perfil da Carteira: " << carteiraEscolhida.getPerfil() << "\n";
-        std::cout << "Quantidade de Ordens: " << ordens.size() << "\n";
-        
-        if (!ordens.empty()) {
-            std::cout << "----- Ordens Registradas -----\n";
-            for (const auto& ordem : ordens) {
-                std::cout << "  - Cód. Ordem: " << ordem.getCodigo()
-                          << ", Cód. de Negociação: " << ordem.getCodNegociacao()
-                          << ", Data: " << ordem.getData() << "\n";
-            }
-        }
+        std::cout << "\n------ Detalhes da Carteira '" << carteiraEscolhida.carteira.getNome() << "' ------\n";
+        std::cout << "Código de Identificação: " << carteiraEscolhida.carteira.getCodigo() << "\n";
+        std::cout << "Perfil da Carteira: " << carteiraEscolhida.carteira.getPerfil() << "\n";
+        std::cout << "Valor Total: R$ " << std::fixed << std::setprecision(2) << carteiraEscolhida.valorTotal << "\n";
         std::cout << "-----------------------------------------------------\n";
 
     } catch (const std::exception& e) {
@@ -171,8 +160,28 @@ void CntrlIACarteira::lerCarteira() {
     }
 }
 
+// TODO
 void CntrlIACarteira::editarCarteira() {
-    // TODO
+    std::string codigo_inpt;
+    Codigo codigo;
+
+    CntrlIACarteira::listarCarteiras();
+
+    std::cout << "Informe o código da carteira a ser editada (ou 0 para voltar): ";
+    std::cin >> codigo_inpt;
+
+    if (codigo_inpt == "0") {
+        std::cout << "Voltando para o menu de carteiras.\n";
+        return;
+    }
+
+    try {
+        std::string entrada;
+        std::cout << "Escolha";
+
+    } catch (const std::exception& e) {
+        std::cerr << "Ocorreu um erro ao editar a carteira: " << e.what() << '\n';
+    }
 }
 
 void CntrlIACarteira::excluirCarteira() {
@@ -211,20 +220,21 @@ void CntrlIACarteira::excluirCarteira() {
 
 void CntrlIACarteira::listarCarteiras() {
     int id = 1;
-    std::vector<Carteira> carteiras;
+    std::vector<CarteiraComValor> carteiras;
 
     try {
-        carteiras = servicoCarteira->listarCarteiras();
+        carteiras = servicoCarteira->getCarteiras();
 
         std::cout << "\n----------- Suas Carteiras de Investimento -----------\n";
         
         if (carteiras.empty()) {
             std::cout << "Você ainda não possui carteiras cadastradas.\n";
         } else {
-            for(const auto& carteira : carteiras) {
-                std::cout << id << ". Código: " << carteira.getCodigo() 
-                          << ", Nome: " << carteira.getNome() 
-                          << ", Perfil: " << carteira.getPerfil() << "\n";
+            for(const auto& item : carteiras) {
+                std::cout << id << ". Nome: " << item.carteira.getNome() 
+                          << ", Código: " << item.carteira.getCodigo() 
+                          << ", Perfil: " << item.carteira.getPerfil() 
+                          << "Valor Total: R$ " << item.valorTotal << "\n";
                 ++id;
             }
         }
