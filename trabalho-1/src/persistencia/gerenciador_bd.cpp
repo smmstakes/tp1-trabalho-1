@@ -54,7 +54,7 @@ bool GerenciadorBD::inicializarBanco() {
     try {
         GerenciadorBD& gerenciadorBD = GerenciadorBD::getInstance();
 
-        if (!gerenciadorBD.conectar("sistema_de_investimentos.db")) {
+        if (!gerenciadorBD.conectar("data/sistema_de_investimentos.db")) {
             std::cerr << "Falha ao conectar ao banco de dados.\n";
             return false;
         }

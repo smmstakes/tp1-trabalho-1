@@ -1,14 +1,6 @@
 #include "carteira_servico.hpp"
 
-ServicoICarteira::ServicoICarteira() {
-    this->persistencia = &RepositorioIPCarteira::getInstancia();
-}
-
-// Meyers' Singleton: A instância é criada na primeira chamada e destruída automaticamente.
-ServicoICarteira& ServicoICarteira::getInstancia() {
-    static ServicoICarteira instancia;
-    return instancia;
-}
+ServicoICarteira::ServicoICarteira(IPCarteira* persistencia) : persistencia(persistencia) {}
 
 void ServicoICarteira::verificarSessao(SessaoUsuario& sessao) {
     if (!sessao.estaLogado()) {

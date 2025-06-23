@@ -18,13 +18,9 @@
 class RepositorioIPCarteira : public IPCarteira {
 private:
     GerenciadorBD& gerenciadorBD;
-    RepositorioIPCarteira();    
-
+      
 public:
-    RepositorioIPCarteira(const RepositorioIPCarteira&) = delete;
-    RepositorioIPCarteira& operator=(const RepositorioIPCarteira&) = delete;
-
-    static RepositorioIPCarteira& getInstancia();
+    RepositorioIPCarteira();  
 
     int contarCarteirasUsuario(const std::string& cpfUsuario) override;
     std::string obterUltimoCodigoCarteiraInserido() override;

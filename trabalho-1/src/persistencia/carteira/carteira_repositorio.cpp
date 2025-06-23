@@ -2,11 +2,6 @@
 
 RepositorioIPCarteira::RepositorioIPCarteira() : gerenciadorBD(GerenciadorBD::getInstance()) {}
 
-RepositorioIPCarteira& RepositorioIPCarteira::getInstancia() {
-    static RepositorioIPCarteira instancia;
-    return instancia;
-}
-
 std::string RepositorioIPCarteira::obterUltimoCodigoCarteiraInserido() {
     sqlite3* db = gerenciadorBD.getDB();
     std::string sql = "SELECT codigo FROM Carteira ORDER BY codigo DESC LIMIT 1;";
