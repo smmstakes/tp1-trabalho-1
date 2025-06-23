@@ -38,7 +38,7 @@ void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
         throw std::runtime_error("Limite de 5 carteiras por conta atingido.");
     }
     
-    std::string ultimoCodigoStr = this->persistencia->obterUltimoCodigoCarteiraInserido();
+    std::string ultimoCodigoStr = persistencia->obterUltimoCodigoCarteiraInserido();
     Codigo codigo;
     int novoCodigoInt = 1;
 
@@ -50,7 +50,29 @@ void ServicoICarteira::criarCarteira(const Nome& nome, const Perfil& perfil) {
     oss << std::setw(5) << std::setfill('0') << novoCodigoInt;
     codigo.set(oss.str());
 
-    this->persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get(), cpfUsuario);
+    persistencia->criarCarteira(codigo.get(), nome.get(), perfil.get(), cpfUsuario);
+}
+
+void ServicoICarteira::editarNomeCarteira(const std::string& codigo, const Nome& novoNome) {
+    std::string cpfUsuario = getCPFSessao();
+
+    bool sucesso = persistencia->editarNomeCarteira(codigo, cpfUsuario, novoNome.get());
+
+    // Se o repositório não alterou nenhuma linha, significa que a carteira
+    // não foi encontrada ou não pertence ao usuário logado.
+    if (!sucesso) {
+        throw std::runtime_error("Carteira não encontrada ou não pertence a você.");
+    }
+}
+
+void ServicoICarteira::editarPerfilCarteira(const std::string& codigo, const Perfil& novoPerfil) {
+    std::string cpfUsuario = getCPFSessao();
+
+    bool sucesso = persistencia->editarPerfilCarteira(codigo, cpfUsuario, novoPerfil.get());
+
+    if (!sucesso) {
+        throw std::runtime_error("Carteira não encontrada ou não pertence a você.");
+    }
 }
 
 void ServicoICarteira::excluirCarteira(const std::string& codigo) {

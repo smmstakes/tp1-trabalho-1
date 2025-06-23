@@ -160,27 +160,90 @@ void CntrlIACarteira::lerCarteira() {
     }
 }
 
-// TODO
 void CntrlIACarteira::editarCarteira() {
-    std::string codigo_inpt;
-    Codigo codigo;
+    std::vector<CarteiraComValor> carteiras;
+    try {
+        carteiras = servicoCarteira->getCarteiras();
 
-    CntrlIACarteira::listarCarteiras();
+        if (carteiras.empty()) {
+            std::cout << "Você não possui carteiras para editar.\n";
+            return;
+        }
+        listarCarteiras();
 
-    std::cout << "Informe o código da carteira a ser editada (ou 0 para voltar): ";
-    std::cin >> codigo_inpt;
-
-    if (codigo_inpt == "0") {
-        std::cout << "Voltando para o menu de carteiras.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Ocorreu um erro ao buscar suas carteiras: " << e.what() << '\n';
         return;
     }
 
-    try {
-        std::string entrada;
-        std::cout << "Escolha";
+    std::string codigo_inpt;
+    std::cout << "Informe o código da carteira a ser editada (ou 0 para voltar): ";
+    std::cin >> codigo_inpt;
 
-    } catch (const std::exception& e) {
-        std::cerr << "Ocorreu um erro ao editar a carteira: " << e.what() << '\n';
+    if (codigo_inpt == "0") return;
+
+    try {
+        Codigo codigo_valido;
+        codigo_valido.set(codigo_inpt);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Formato de código inválido: " << e.what() << '\n';
+        return;
+    }
+
+    int escolha = -1;
+    while (escolha != 0) {
+        std::cout << "\n--- Editando Carteira: " << codigo_inpt << " ---\n";
+        std::cout << "1. Editar Nome\n";
+        std::cout << "2. Editar Perfil\n";
+        std::cout << "0. Voltar ao menu de carteiras\n";
+        std::cout << "Sua escolha: ";
+        std::cin >> escolha;
+
+        try {
+            switch (escolha) {
+                case 1: { // Editar Nome
+                    std::string novo_nome_inpt;
+                    std::cout << "Digite o novo nome para a carteira: ";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::getline(std::cin, novo_nome_inpt);
+
+                    Nome nome_valido;
+                    nome_valido.set(novo_nome_inpt);
+
+                    servicoCarteira->editarNomeCarteira(codigo_inpt, nome_valido);
+                    std::cout << "Nome da carteira atualizado com sucesso!\n";
+                    break;
+                }
+
+                case 2: { // Editar Perfil
+                    std::string novo_perfil_inpt;
+                    std::cout << "Perfis: Conservador, Moderado, Agressivo\n";
+                    std::cout << "Digite o novo perfil da carteira: ";
+                    std::cin >> novo_perfil_inpt;
+
+                    Perfil perfil_valido;
+                    perfil_valido.set(novo_perfil_inpt);
+
+                    servicoCarteira->editarPerfilCarteira(codigo_inpt, perfil_valido);
+                    std::cout << "Perfil da carteira atualizado com sucesso!\n";
+                    break;
+                }
+
+                case 0:
+                    std::cout << "Voltando...\n";
+                    break;
+
+                default:
+                    std::cout << "Opção inválida. Tente novamente.\n";
+                    break;
+            }
+
+        } catch (const std::exception& e) {
+            std::cerr << "Ocorreu um erro ao editar a carteira: " << e.what() << '\n';
+
+            std::cout << "Pressione Enter para continuar...";
+            std::cin.get();
+        }
     }
 }
 

@@ -23,7 +23,8 @@ public:
     static ServicoICarteira& getInstancia();
 
     void criarCarteira(const Nome& nome, const Perfil& perfil) override;
-    void editarCarteira() override;
+    void editarNomeCarteira(const std::string& codigo, const Nome& novoNome) override;
+    void editarPerfilCarteira(const std::string& codigo, const Perfil& novoPerfil) override;
     void excluirCarteira(const std::string& codigo) override;
     std::vector<CarteiraComValor> getCarteiras() override;
 };

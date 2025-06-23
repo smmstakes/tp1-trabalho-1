@@ -74,6 +74,36 @@ void RepositorioIPCarteira::criarCarteira(const std::string& codigo, const std::
     comando.execute(); 
 }
 
+bool RepositorioIPCarteira::editarNomeCarteira(const std::string& codigo, const std::string& cpfUsuario, const std::string& novoNome) {
+    sqlite3* db = gerenciadorBD.getDB();
+    std::string sql = "UPDATE Carteira SET nome = ? WHERE codigo = ? AND cpf_conta = ?;";
+
+    ComandoSQL comando(db, sql);
+    comando.bind(1, novoNome);
+    comando.bind(2, codigo);
+    comando.bind(3, cpfUsuario);
+
+    comando.execute();
+
+    // Retorna true se uma linha foi afetada, indicando que a edição ocorreu.
+    return sqlite3_changes(db) > 0;
+}
+
+
+bool RepositorioIPCarteira::editarPerfilCarteira(const std::string& codigo, const std::string& cpfUsuario, const std::string& novoPerfil) {
+    sqlite3* db = gerenciadorBD.getDB();
+    std::string sql = "UPDATE Carteira SET perfil = ? WHERE codigo = ? AND cpf_conta = ?;";
+
+    ComandoSQL comando(db, sql);
+    comando.bind(1, novoPerfil);
+    comando.bind(2, codigo);
+    comando.bind(3, cpfUsuario);
+
+    comando.execute();
+
+    return sqlite3_changes(db) > 0;
+}
+
 bool RepositorioIPCarteira::excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) {
     sqlite3* db = gerenciadorBD.getDB();
     std::string sql = "DELETE FROM Carteira WHERE codigo = ? AND cpf_conta = ?;";
