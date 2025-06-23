@@ -18,31 +18,36 @@ void CntrlIACarteira::mostrarOpcoes() {
 bool CntrlIACarteira::escolherOpcao(int entrada) {
     switch (entrada) {
         case CRIAR_CARTEIRA:
+            CLR_SCR();
             criarCarteira();
             break;
 
         case LER_CARTEIRA:
+            CLR_SCR();
             lerCarteira();
             break;
         
         case EDITAR_CARTEIRA:
+            CLR_SCR();
             editarCarteira();
             break;
 
         case EXCLUIR_CARTEIRA:
+            CLR_SCR();
             excluirCarteira();
             break;
 
         case LISTAR_CARTEIRAS:
+            CLR_SCR();
             listarCarteiras();
             break;
 
         case VOLTAR: 
-            std::cout << "Voltando ao menu principal..." << std::endl;
+            std::cout << "\nVoltando ao menu principal..." << std::endl;
             return false;
 
         default:
-            std::cout << "Opção inválida. Tente novamente." << std::endl;
+            std::cout << "\nOpção inválida. Tente novamente." << std::endl;
             break;
     }
 
@@ -203,6 +208,7 @@ void CntrlIACarteira::editarCarteira() {
         try {
             switch (escolha) {
                 case 1: { // Editar Nome
+                    CLR_SCR();
                     std::string novo_nome_inpt;
                     std::cout << "Digite o novo nome para a carteira: ";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -217,6 +223,7 @@ void CntrlIACarteira::editarCarteira() {
                 }
 
                 case 2: { // Editar Perfil
+                    CLR_SCR();
                     std::string novo_perfil_inpt;
                     std::cout << "Perfis: Conservador, Moderado, Agressivo\n";
                     std::cout << "Digite o novo perfil da carteira: ";
@@ -298,7 +305,7 @@ void CntrlIACarteira::listarCarteiras() {
                 std::cout << id << ". Nome: " << item.carteira.getNome() 
                           << ", Código: " << item.carteira.getCodigo() 
                           << ", Perfil: " << item.carteira.getPerfil() 
-                          << "Valor Total: R$ " << item.valorTotal << "\n";
+                          << ", Valor Total: R$ " << item.valorTotal << "\n";
                 ++id;
             }
         }
