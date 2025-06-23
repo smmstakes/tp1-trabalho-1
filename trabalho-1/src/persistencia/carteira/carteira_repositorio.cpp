@@ -46,7 +46,7 @@ std::vector<Ordem> RepositorioIPCarteira::getOrdensCarteira(const std::string co
 
 int RepositorioIPCarteira::contarCarteirasUsuario(const std::string& cpfUsuario) {
     sqlite3* db = gerenciadorBD.getDB();
-    std::string sql = "SELECT COUNT(*) AS qtd_carteiras FROM Carteiras WHERE cpf_conta= ?;";
+    std::string sql = "SELECT COUNT(*) AS qtd_carteiras FROM Carteira WHERE cpf_conta= ?;";
 
     ComandoSQL comando(db, sql);
     comando.bind(1, cpfUsuario);
