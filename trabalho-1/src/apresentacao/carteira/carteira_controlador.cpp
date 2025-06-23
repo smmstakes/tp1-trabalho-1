@@ -34,7 +34,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             break;
 
         case LISTAR_CARTEIRAS:
-            // listarCarteiras();
+            listarCarteiras();
             break;
 
         case VOLTAR: 
@@ -85,7 +85,8 @@ void CntrlIACarteira::criarCarteira() {
 
     std::cout << "----------- Criar uma Carteira de Investimento -----------\n";
     std::cout << "Informe o nome da carteira (ou 0 para voltar): ";
-    std::cin >> nome_inpt;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
+    std::getline(std::cin, nome_inpt);
 
     std::cout << "Perfis de Investidor: Conservador, Moderado, Agressivo\n";
     std::cout << "Informe o seu perfil de investidor: ";
