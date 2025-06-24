@@ -1,9 +1,3 @@
-#include <regex>
-#include <string>
-#include <iostream>
-#include <stdexcept>
-#include <unordered_set>
-
 #include "dominios.hpp"
 
 const std::regex Codigo::PADRAO_CODIGO("[0-9]{5}");

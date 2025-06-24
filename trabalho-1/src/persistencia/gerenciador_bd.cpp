@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "gerenciador_bd.hpp"
 
 GerenciadorBD::GerenciadorBD() : db(nullptr), conectado(false) {}
@@ -35,8 +33,8 @@ bool GerenciadorBD::criarTabelas() {
 
     const char* sqls[] = {
         "CREATE TABLE IF NOT EXISTS Conta (cpf TEXT PRIMARY KEY, nome TEXT NOT NULL, senha TEXT NOT NULL);",
-        "CREATE TABLE IF NOT EXISTS Carteira (codigo TEXT PRIMARY KEY, nome TEXT NOT NULL, perfil TEXT NOT NULL);",
-        "CREATE TABLE IF NOT EXISTS Ordem (codigo TEXT PRIMARY KEY, codNegociacao TEXT, data TEXT, preco REAL, quantidade INTEGER);"
+        "CREATE TABLE IF NOT EXISTS Carteira (codigo TEXT PRIMARY KEY, nome TEXT NOT NULL, perfil TEXT NOT NULL, cpf_conta TEXT, FOREIGN KEY (cpf_conta) REFERENCES Conta (cpf));",
+        "CREATE TABLE IF NOT EXISTS Ordem (codigo TEXT PRIMARY KEY, codNegociacao TEXT, data TEXT, preco REAL, quantidade INTEGER, cod_carteira TEXT, FOREIGN KEY (cod_carteira) REFERENCES Carteira (codigo));"
     };
 
     char* errMsg = nullptr;
@@ -56,7 +54,7 @@ bool GerenciadorBD::inicializarBanco() {
     try {
         GerenciadorBD& gerenciadorBD = GerenciadorBD::getInstance();
 
-        if (!gerenciadorBD.conectar("sistema_de_investimentos.db")) {
+        if (!gerenciadorBD.conectar("data/sistema_de_investimentos.db")) {
             std::cerr << "Falha ao conectar ao banco de dados.\n";
             return false;
         }
