@@ -25,7 +25,7 @@ void GerenciadorSistema::inicializar() {
     simularLogin(); // TODO: Trocar isso pela autenticação real do usuário
 
     inicializarCarteira();
-    // inicializarConta();
+    inicializarOrdem();
 };
 
 void GerenciadorSistema::inicializarCarteira() {
@@ -40,12 +40,24 @@ void GerenciadorSistema::inicializarCarteira() {
     std::cout << "Controlador de Carteira criado e injetado.\n";
 };
 
+void GerenciadorSistema::inicializarOrdem() {
+    repoOrdem = std::make_unique<RepositorioIPOrdem>();
+    std::cout << "Repositorio de Ordem criado.\n";
+
+    servicoOrdem = std::make_unique<ServicoIOrdem>(repoOrdem.get(), repoCarteira.get(), servicoDadosHistoricos.get());
+    std::cout << "Servico de Ordem criado e injetado.\n";
+
+    ctrlOrdem =std::make_unique<CntrlIAOrdem>();
+    ctrlOrdem->setCntrlISOrdem(servicoOrdem.get());
+    std::cout << "Controlador de Ordem criado e injetado.\n";
+};
+
 void GerenciadorSistema::executar() {
     int opcao = 0;
     do {
         std::cout << "\n=== MENU PRINCIPAL ===\n";
         std::cout << "1. Carteiras\n";
-        std::cout << "2. Contas\n";
+        std::cout << "2. Ordens\n";
         std::cout << "3. Sair\n";
         std::cout << "Escolha uma opção: ";
         std::cin >> opcao;
@@ -55,7 +67,7 @@ void GerenciadorSistema::executar() {
                 ctrlCarteira->executar();
                 break;
             case 2:
-                // ctrlConta->executar();
+                ctrlOrdem->executar();
                 break;
             case 3:
                 std::cout << "Saindo...\n";

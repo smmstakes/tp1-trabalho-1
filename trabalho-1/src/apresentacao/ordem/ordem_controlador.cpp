@@ -38,8 +38,29 @@ bool CntrlIAOrdem::escolherOpcao(int entrada) {
     return true;
 }
 
-void CntrlIAOrdem::executar(const Codigo& codigoCarteira) {
-    this->codigoCarteira = codigoCarteira;
+void CntrlIAOrdem::solicitarCodigoCarteira() {
+    while (true) {
+        try {
+            std::string entrada;
+            std::cout << "Digite o código da carteira para acessar as ordens: ";
+            std::cin >> entrada;
+
+            // Domínio sendo usado para validar o código
+            Codigo codigo;
+            codigo.set(entrada);
+
+            this->codigoCarteira = codigo;
+            break;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << "Tente novamente.\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+}
+
+void CntrlIAOrdem::executar() {
+    solicitarCodigoCarteira();
     int entrada;
 
     while (true) {

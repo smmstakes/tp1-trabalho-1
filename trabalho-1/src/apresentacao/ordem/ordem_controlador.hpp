@@ -31,9 +31,10 @@ private:
     void criarOrdem() override;
     void excluirOrdem() override;
     void listarOrdens() override;
+    void solicitarCodigoCarteira();
 
 public:
-    void executar(const Codigo& codigoCarteira) override;
+    void executar() override;
     void setCntrlISOrdem(ISOrdem* servicoOrdem) override {
         this->servicoOrdem = servicoOrdem;
     };

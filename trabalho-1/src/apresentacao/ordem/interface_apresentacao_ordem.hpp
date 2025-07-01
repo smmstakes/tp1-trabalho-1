@@ -13,7 +13,7 @@ protected:
     virtual void listarOrdens() = 0;
 
 public:
-    virtual void executar(const Codigo& codigoCarteira) = 0;
+    virtual void executar() = 0;
 
     virtual void setCntrlISOrdem(ISOrdem*) = 0;
     
