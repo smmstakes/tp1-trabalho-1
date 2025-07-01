@@ -25,7 +25,7 @@ public:
     bool editarNomeConta(const std::string& cpf, const std::string& nomeNome) override;
     bool editarSenhaConta(const std::string& cpf ,const std::string& novaSenha) override;
     bool excluirConta(const std::string& cpf ) override;
-    bool getConta(const::string& cpf) override;
+    std::string getConta(const std::string& cpf) override;
 
 };
 

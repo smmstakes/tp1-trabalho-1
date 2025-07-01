@@ -14,7 +14,7 @@ public:
     
     virtual void editarNomeConta(const Nome& novoNome) = 0;
     virtual void editarSenhaConta(const Senha& novaSenha) = 0;
-    virtual void excluirConta() = 0;
+    virtual void excluirConta(const CPF& cpf) = 0;
     virtual void getConta()=0;
 
 };

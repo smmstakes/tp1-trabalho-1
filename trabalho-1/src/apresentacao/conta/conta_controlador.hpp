@@ -14,7 +14,7 @@
 
 #include "../../servicos/conta/conta_servico.hpp"
 
-#include "interface_apresentacao_carteira.hpp"
+#include "interface_apresentacao_conta.hpp"
 
 class CntrlIAConta : public IAConta {
 private:

@@ -25,7 +25,7 @@ void ServicoIConta::editarNomeConta(const Nome& novoNome) {
     }
 }
 
-void ServicoIConta::editarSenhaConta(cons Senha& novaSenha){
+void ServicoIConta::editarSenhaConta(const Senha& novaSenha){
     std::string cpfUsuario = getCPFSessao();
 
     bool sucesso = persistencia->editarSenhaConta(cpfUsuario, novaSenha.get());
