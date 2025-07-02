@@ -4,7 +4,7 @@
 #include <sstream>
 #include <iomanip>
 
-#include "../../persistencia/carteira/interface_repositorio_conta.hpp"
+#include "../../persistencia/conta/interface_repositorio_conta.hpp"
 
 #include "interface_servico_conta.hpp"
 
