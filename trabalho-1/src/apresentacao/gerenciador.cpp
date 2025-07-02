@@ -1,20 +1,5 @@
 #include "gerenciador.hpp"
 
-void GerenciadorSistema::simularLogin() {
-    SessaoUsuario& sessao = SessaoUsuario::getInstance();
-    if (!sessao.estaLogado()) {
-        try {
-            // Crie uma conta de teste para que as operações possam ser realizadas
-            Conta contaTeste("123.456.789-00", "Usuario Teste", "A1b2#c");
-            sessao.login(contaTeste);
-            std::cout << "Login simulado com sucesso para o CPF: " << contaTeste.getCpf() << std::endl;
-
-        } catch (const std::invalid_argument& e) {
-            std::cerr << "Erro ao criar conta de teste para login: " << e.what() << std::endl;
-            throw;
-        }
-    }
-}
 
 void GerenciadorSistema::inicializar() {
     if (!GerenciadorBD::getInstance().inicializarBanco()) {
@@ -22,12 +7,21 @@ void GerenciadorSistema::inicializar() {
     };
    std::cout << "Banco de dados inicializado.\n";
 
-    simularLogin(); // TODO: Trocar isso pela autenticação real do usuário
-
     inicializarDadosHistoricos();
+    inicializarAutenticacao();
     inicializarCarteira();
     inicializarOrdem();
 };
+
+void GerenciadorSistema::inicializarAutenticacao() {
+    repoAutenticacao = std::make_unique<RepositorioIPAutenticacao>();
+
+    servicoAutenticacao = std::make_unique<ServicoIAutenticacao>(repoAutenticacao.get());
+
+    ctrlAutenticacao =std::make_unique<CntrlIAAutenticacao>();
+    ctrlAutenticacao->setCntrlISAutenticacao(servicoAutenticacao.get());
+};
+
 
 void GerenciadorSistema::inicializarCarteira() {
     repoCarteira = std::make_unique<RepositorioIPCarteira>();
@@ -63,12 +57,17 @@ void GerenciadorSistema::inicializarOrdem() {
 };
 
 void GerenciadorSistema::executar() {
+    std::string usuario, senha;
+
+    ctrlAutenticacao->executar();
+    std::cout << "Autenticacao bem-sucedida.\n";
+
     int opcao = 0;
     do {
         std::cout << "\n=== MENU PRINCIPAL ===\n";
         std::cout << "1. Carteiras\n";
         std::cout << "2. Ordens\n";
-        std::cout << "3. Sair\n";
+        std::cout << "0. Sair\n";
         std::cout << "Escolha uma opção: ";
         std::cin >> opcao;
 
@@ -79,7 +78,7 @@ void GerenciadorSistema::executar() {
             case 2:
                 ctrlOrdem->executar();
                 break;
-            case 3:
+            case 0:
                 std::cout << "Saindo...\n";
                 break;
             default:
@@ -87,4 +86,5 @@ void GerenciadorSistema::executar() {
         }
     } while (opcao != 3);
 }
+
 

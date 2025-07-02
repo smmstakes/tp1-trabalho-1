@@ -105,7 +105,6 @@ void CntrlIAOrdem::criarOrdem() {
 
         std::cout << "Informe a data da operação (formato AAAAMMDD): ";
         std::cin >> data_inpt;
-        std::cout << data_inpt << std::endl;
         Data data;
         data.set(data_inpt);
 

@@ -32,6 +32,9 @@ bool RepositorioIPAutenticacao::getCPF(const std::string& cpf) {
     
     if (comando.step()) {
         return true;
+    }
+
+    return false;
 }
 
 bool RepositorioIPAutenticacao::getSenha(const std::string& cpf, const std::string& senha) {
@@ -46,4 +49,7 @@ bool RepositorioIPAutenticacao::getSenha(const std::string& cpf, const std::stri
     
     if (comando.step()) {
         return true;
+    }
+
+    return false;
 }

@@ -16,7 +16,7 @@
 
 #include "interface_apresentacao_autenticacao.hpp"
 
-class CntrlIAautenticacao : public IAAutenticacao {
+class CntrlIAAutenticacao : public IAAutenticacao {
 private:
     // Códigos de serviços
     const static int SAIR = 0;
@@ -28,7 +28,7 @@ private:
     void mostrarOpcoes() override;
     bool escolherOpcao(int) override;
 
-    void acessarConta() override;
+    bool acessarConta() override;
     void registrarConta() override;
 
 public:

@@ -19,18 +19,26 @@
 #include "../servicos/ordem/ordem_servico.hpp"
 #include "./ordem/ordem_controlador.hpp"
 
+// Importações de autenticacao
+#include "../persistencia/autenticacao/autenticacao_repositorio.hpp"
+#include "../servicos/autenticacao/autenticacao_servico.hpp"
+#include "./autenticacao/autenticacao_controlador.hpp"
+
 // Importações de dados históricos
 #include "../servicos/dados_historicos/dados_historicos_servico.hpp"
 
 
 class GerenciadorSistema {
     private:
-        void simularLogin();
-
+        void inicializarAutenticacao();
         void inicializarCarteira();
         void inicializarOrdem();
         void inicializarConta();
         void inicializarDadosHistoricos();
+
+        std::unique_ptr<RepositorioIPAutenticacao> repoAutenticacao;
+        std::unique_ptr<ServicoIAutenticacao> servicoAutenticacao;
+        std::unique_ptr<CntrlIAAutenticacao> ctrlAutenticacao;
 
         std::unique_ptr<RepositorioIPCarteira> repoCarteira;
         std::unique_ptr<ServicoICarteira> servicoCarteira;

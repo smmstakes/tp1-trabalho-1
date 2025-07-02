@@ -13,18 +13,18 @@
 
 #include "../gerenciador_bd.hpp"
 
-#include "interface_repositorio_Autenticacao.hpp"
+#include "interface_repositorio_autenticacao.hpp"
 
 class RepositorioIPAutenticacao : public IPAutenticacao {
-private:
-    GerenciadorBD& gerenciadorBD;
-      
-public:
-    RepositorioIPAutenticacao();  
+    private:
+        GerenciadorBD& gerenciadorBD;
+        
+    public:
+        RepositorioIPAutenticacao();  
 
-    void registrarContaUsuario(const CPF& cpf, const Nome& nome, const Senha& senha);
-    bool getCPF(const CPF& cpf);
-    bool getSenha(const CPF& cpf, const Senha& senha);
+        void registrarContaUsuario(const std::string& cpf, const std::string& nome, const std::string& senha) override;
+        bool getCPF(const std::string& cpf) override;
+        bool getSenha(const std::string& cpf, const std::string& senha) override;
 
 };
 

@@ -11,12 +11,11 @@ class IPAutenticacao {
 public:
     virtual ~IPAutenticacao() = default;
 
-    virtual void acessarConta(const std::string& cpf, const std::string& senha) = 0;
-    virtual bool registrarConta(const std::string& cpf, const std::string& nome, const std::string& senha) = 0;
-    virtual bool getCPF(const CPF& cpf) = 0;
-    virtual bool getSenha(const CPF& cpf, const Senha& senha) = 0;
+    virtual void registrarContaUsuario(const std::string& cpf, const std::string& nome, const std::string& senha) = 0;
+    virtual bool getCPF(const std::string& cpf) = 0;
+    virtual bool getSenha(const std::string& cpf, const std::string& senha) = 0;
 
-    virtual std::vector<CarteiraComValor> getCarteiras(const std::string& cpf) = 0;
+    // virtual std::vector<CarteiraComValor> getCarteiras(const std::string& cpf) = 0;
     //ver do que se trata
 
 };

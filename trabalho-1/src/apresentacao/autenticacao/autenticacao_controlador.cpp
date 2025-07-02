@@ -1,6 +1,6 @@
 #include "autenticacao_controlador.hpp"
 
-void CntrlIAautenticacao::mostrarOpcoes() {
+void CntrlIAAutenticacao::mostrarOpcoes() {
     std::cout << "----------- Menu inicial -----------\n";
     std::cout << "Selecione uma opção: \n";
 
@@ -12,11 +12,13 @@ void CntrlIAautenticacao::mostrarOpcoes() {
     std::cout << "Sua escolha: ";
 }
 
-bool CntrlIAautenticacao::escolherOpcao(int entrada) {
+bool CntrlIAAutenticacao::escolherOpcao(int entrada) {
     switch (entrada) {
         case ACESSAR_CONTA:
             CLR_SCR();
-            acessarConta();
+            if (acessarConta()) {
+                return false; // Login deu certo, sair do menu de autenticação
+            }
             break;
 
         case REGISTRAR_CONTA:
@@ -36,7 +38,8 @@ bool CntrlIAautenticacao::escolherOpcao(int entrada) {
     return true;
 }
 
-void CntrlIAautenticacao::executar() {
+
+void CntrlIAAutenticacao::executar() {
     int entrada;
 
     while (true) {
@@ -61,79 +64,85 @@ void CntrlIAautenticacao::executar() {
 
         // Pausa para o usuário poder ler a saída antes de limpar a tela novamente.
         std::cout << "\nPressione Enter para continuar...\n";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');     // Limpa buffer 
         std::cin.get();
     }
 }
 
-void CntrlIAautenticacao::registrarConta() {
+void CntrlIAAutenticacao::registrarConta() {
     std::string cpf_inpt;
     std::string nome_inpt;
     std::string senha_inpt;
 
-    while(true) {
+    // Limpa um \n pendente de entrada anterior (ex: std::cin >> algo)
+    if (std::cin.peek() == '\n') std::cin.ignore();
+
+    while (true) {
         std::cout << "----------- Criar uma Conta -----------\n";
-        std::cout << "Informe o seu CPF (ou 0 para voltar): \n";
-        std::cout << "**insira apenas numeros, sem pontos e hifens**";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
-        std::getline(std::cin, cpf_inpt);
-
-        //funcao pra buscar o cpf no banco de dados e ver se ja existe
-        //se ja existir avisar que ja existe e pedir pra dar enter pra ir pra tela de login
-
-        std::cout << "----------- Criar uma Conta -----------\n";
-        std::cout << "Informe o seu nome (ou 0 para voltar): ";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
-        std::getline(std::cin, nome_inpt);
-
-        std::cout << "----------- Criar uma Conta -----------\n";
-        std::cout << "Informe a sua senha (ou 0 para voltar): ";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
-        std::getline(std::cin, senha_inpt);
-
-
-        if (cpf_inpt == "0" || nome_inpt == "0" || senha_inpt == "0"){
-            std::cout << "Voltando para o menu inicial.\n";
-            return;
-        }
-
         try {
+            std::cout << "Informe o seu CPF com pontos e traço (ou 0 para voltar): \n";
+            std::getline(std::cin, cpf_inpt);
+
+            if (cpf_inpt == "0") return;
+            if (cpf_inpt.empty()) {
+                std::cout << "CPF não pode ser vazio.\n";
+                continue;
+            }
+
             CPF cpf;
             cpf.set(cpf_inpt);
 
+            std::cout << "Informe o seu nome (ou 0 para voltar): ";
+            std::getline(std::cin, nome_inpt);
+
+            if (nome_inpt == "0") return;
+            if (nome_inpt.empty()) {
+                std::cout << "Nome não pode ser vazio.\n";
+                continue;
+            }
+
             Nome nome;
-            nome.set(nome_inpt);
+            nome.set(nome_inpt); 
+
+            std::cout << "Informe a sua senha (ou 0 para voltar): ";
+            std::getline(std::cin, senha_inpt);
+
+            if (senha_inpt == "0") return;
+            if (senha_inpt.empty()) {
+                std::cout << "Senha não pode ser vazia.\n";
+                continue;
+            }
 
             Senha senha;
             senha.set(senha_inpt);
 
             servicoAutenticacao->registrarConta(cpf, nome, senha);
-        
-        } catch (const std::exception &e) { 
+
+            std::cout << "Conta criada com sucesso!\n";
+            return;
+            
+        } catch (const std::exception& e) {
             std::cout << "\nErro ao criar conta: " << e.what() << std::endl;
-            std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
+            std::cout << "Por favor, tente novamente com dados válidos.\n\n";
         }
-        return;
     }
 }
 
-void CntrlIAautenticacao::acessarConta() {
+bool CntrlIAAutenticacao::acessarConta() {
     std::string cpf_inpt;
     std::string senha_inpt;
 
     std::cout << "----------- Acessar a conta -----------\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     std::cout << "Informe o seu CPF (ou 0 para voltar): ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
     std::getline(std::cin, cpf_inpt);
 
-    std::cout << "----------- Criar uma Conta -----------\n";
     std::cout << "Informe a sua senha (ou 0 para voltar): ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer antes de ler a linha
     std::getline(std::cin, senha_inpt);
 
-    if (cpf_inpt == "0" || senha_inpt == "0"){
+    if (cpf_inpt == "0" || senha_inpt == "0") {
         std::cout << "Voltando para o menu inicial.\n";
-        return;
+        return false;
     }
 
     try {
@@ -144,10 +153,14 @@ void CntrlIAautenticacao::acessarConta() {
         senha.set(senha_inpt);
 
         servicoAutenticacao->acessarConta(cpf, senha);
-    
+
+        std::cout << "Login realizado com sucesso!" << std::endl;
+        return true;
+
     } catch (const std::exception &e) { 
         std::cout << "\nErro ao acessar conta: " << e.what() << std::endl;
         std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
+        return false;
     }
-
 }
+

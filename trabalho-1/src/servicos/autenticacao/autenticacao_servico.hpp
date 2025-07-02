@@ -5,6 +5,7 @@
 #include <iomanip>
 
 #include "../../persistencia/autenticacao/interface_repositorio_autenticacao.hpp"
+#include "../../../libs/sessao_usuario/sessao_usuario.hpp"
 
 #include "interface_servico_autenticacao.hpp"
 
@@ -14,7 +15,6 @@ private:
 
     void verificarSessao(SessaoUsuario& sessao);
     std::string getCPFSessao();
-    //como vou criar o retorno de estar logado?
 
 public:
     ServicoIAutenticacao(IPAutenticacao* persistencia);
