@@ -28,8 +28,9 @@ class GerenciadorSistema {
         void simularLogin();
 
         void inicializarCarteira();
-        void inicializarConta();
         void inicializarOrdem();
+        void inicializarConta();
+        void inicializarDadosHistoricos();
 
         std::unique_ptr<RepositorioIPCarteira> repoCarteira;
         std::unique_ptr<ServicoICarteira> servicoCarteira;
@@ -39,7 +40,7 @@ class GerenciadorSistema {
         std::unique_ptr<ServicoIOrdem> servicoOrdem;
         std::unique_ptr<CntrlIAOrdem> ctrlOrdem;
 
-        std::unique_ptr<IServicoDadosHistoricos> servicoDadosHistoricos;
+        std::unique_ptr<ServicoDadosHistoricos> servicoDadosHistoricos;
     public:
         void inicializar();
         void executar();

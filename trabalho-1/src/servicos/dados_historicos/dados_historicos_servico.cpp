@@ -20,7 +20,7 @@ void ServicoDadosHistoricos::carregarDados() {
     const int TAMANHO_MINIMO_LINHA = 126; // Posição final do preço médio
 
     std::string linha;
-    std::ifstream arquivo("../DADOS_HISTORICOS.TXT");
+    std::ifstream arquivo("./data/DADOS_HISTORICOS.txt");
 
     if (!arquivo.is_open()) {
         throw std::runtime_error("FALHA AO ABRIR DADOS_HISTORICOS.TXT");
@@ -52,9 +52,26 @@ void ServicoDadosHistoricos::carregarDados() {
 
 double ServicoDadosHistoricos::getPrecoMedioNaData(const CodigoNegociacao& codNegociacao, const Data& data) {
     try {
-        return cacheDePrecos.at(codNegociacao.get()).at(data.get());
+        // Obtenha as chaves
+        auto codKey = codNegociacao.get();
+        auto dataKey = data.get();
+
+        // Verifique se a chave do código existe
+        auto itCod = cacheDePrecos.find(codKey);
+        if (itCod == cacheDePrecos.end()) {
+            throw std::invalid_argument("Codigo de negociacao nao encontrado no cache.");
+        }
+
+        // Verifique se a chave da data existe
+        auto itData = itCod->second.find(dataKey);
+        if (itData == itCod->second.end()) {
+            throw std::invalid_argument("Preco para o ativo na data informada nao foi encontrado.");
+        }
+
+        // Retorne o preço encontrado
+        return itData->second;
     }
     catch (const std::out_of_range& oor) {
-        throw std::invalid_argument("Preco para o ativo na data informada nao foi encontrado.");
+        throw std::invalid_argument("Erro ao acessar o cache de precos.");
     }
 }

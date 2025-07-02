@@ -24,32 +24,42 @@ void GerenciadorSistema::inicializar() {
 
     simularLogin(); // TODO: Trocar isso pela autenticação real do usuário
 
+    inicializarDadosHistoricos();
     inicializarCarteira();
     inicializarOrdem();
 };
 
 void GerenciadorSistema::inicializarCarteira() {
     repoCarteira = std::make_unique<RepositorioIPCarteira>();
-    std::cout << "Repositorio de Carteira criado.\n";
+    // DEBUG: std::cout << "Repositorio de Carteira criado.\n";
 
     servicoCarteira = std::make_unique<ServicoICarteira>(repoCarteira.get());
-    std::cout << "Servico de Carteira criado e injetado.\n";
+    // DEBUG: std::cout << "Servico de Carteira criado e injetado.\n";
 
     ctrlCarteira =std::make_unique<CntrlIACarteira>();
     ctrlCarteira->setCntrlISCarteira(servicoCarteira.get());
-    std::cout << "Controlador de Carteira criado e injetado.\n";
+    // DEBUG: std::cout << "Controlador de Carteira criado e injetado.\n";
 };
+
+void GerenciadorSistema::inicializarDadosHistoricos() {
+    servicoDadosHistoricos = std::make_unique<ServicoDadosHistoricos>();
+    // DEBUG: std::cout << "Serviço de Dados Históricos criado.\n";
+}
 
 void GerenciadorSistema::inicializarOrdem() {
     repoOrdem = std::make_unique<RepositorioIPOrdem>();
-    std::cout << "Repositorio de Ordem criado.\n";
+    // DEBUG: std::cout << "Repositorio de Ordem criado.\n";
 
-    servicoOrdem = std::make_unique<ServicoIOrdem>(repoOrdem.get(), repoCarteira.get(), servicoDadosHistoricos.get());
-    std::cout << "Servico de Ordem criado e injetado.\n";
+    servicoOrdem = std::make_unique<ServicoIOrdem>(
+        repoOrdem.get(),
+        repoCarteira.get(),
+        servicoDadosHistoricos.get()
+    );
+    // DEBUG: std::cout << "Servico de Ordem criado e injetado.\n";
 
     ctrlOrdem =std::make_unique<CntrlIAOrdem>();
     ctrlOrdem->setCntrlISOrdem(servicoOrdem.get());
-    std::cout << "Controlador de Ordem criado e injetado.\n";
+    // DEBUG: std::cout << "Controlador de Ordem criado e injetado.\n";
 };
 
 void GerenciadorSistema::executar() {

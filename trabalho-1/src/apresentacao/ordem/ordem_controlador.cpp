@@ -92,20 +92,20 @@ void CntrlIAOrdem::criarOrdem() {
     int qtd_inpt;
 
     std::cout << "----------- Criar uma Nova Ordem -----------\n";
-    std::cout << "Informe o código de negociação (ex: PETR4): ";
-    std::cin >> cod_neg_inpt;
-
-    std::cout << "Informe a quantidade de papéis: ";
-    std::cin >> qtd_inpt;
-
-    std::cout << "Informe a data da operação (formato AAAAMMDD): ";
-    std::cin >> data_inpt;
-
     try {
+        std::cout << "Informe o código de negociação (ex: PETR4): ";
+        std::cin >> cod_neg_inpt;
         CodigoNegociacao codNegociacao;
         codNegociacao.set(cod_neg_inpt);
+
+        std::cout << "Informe a quantidade de papéis: ";
+        std::cin >> qtd_inpt;
         Quantidade quantidade;
         quantidade.set(qtd_inpt);
+
+        std::cout << "Informe a data da operação (formato AAAAMMDD): ";
+        std::cin >> data_inpt;
+        std::cout << data_inpt << std::endl;
         Data data;
         data.set(data_inpt);
 
