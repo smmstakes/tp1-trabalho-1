@@ -31,18 +31,18 @@ void ServicoIOrdem::criarOrdem(const CodigoNegociacao& codNegociacao, const Quan
     }
 
     std::string ultimoCodigoStr = persistenciaOrdem->obterUltimoCodigoOrdemInserido();
-    
-    Codigo novoCodigoDominio;
     int novoCodigoInt = 1;
 
-    if (!ultimoCodigoStr.empty() && ultimoCodigoStr.rfind('O', 0) == 0) {
-        novoCodigoInt = std::stoi(ultimoCodigoStr.substr(1)) + 1;
+    if (!ultimoCodigoStr.empty()) {
+        novoCodigoInt = std::stoi(ultimoCodigoStr) + 1;
     }
 
     std::ostringstream oss;
-    oss << "O" << std::setw(4) << std::setfill('0') << novoCodigoInt;
+    oss << std::setw(5) << std::setfill('0') << novoCodigoInt;
+    
+    Codigo novoCodigoDominio;
     novoCodigoDominio.set(oss.str());
-
+    
     double precoMedio = servicoDados->getPrecoMedioNaData(codNegociacao, data);
     double precoFinal = precoMedio * quantidade.get();
 
