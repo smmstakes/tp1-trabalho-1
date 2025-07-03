@@ -1,4 +1,5 @@
 #include "ordem_controlador.hpp"
+bool acessoLiberado = false;
 
 void CntrlIAOrdem::mostrarOpcoes() {
     std::cout << "----------- Menu de Ordens da Carteira " << this->codigoCarteira.get() << " -----------\n";
@@ -7,7 +8,7 @@ void CntrlIAOrdem::mostrarOpcoes() {
     std::cout << CRIAR_ORDEM << ". Criar nova ordem\n";
     std::cout << EXCLUIR_ORDEM << ". Excluir uma ordem\n";
     std::cout << LISTAR_ORDENS << ". Listar todas as ordens\n";
-    std::cout << VOLTAR << ". Voltar ao menu de carteiras\n";
+    std::cout << VOLTAR << ". Voltar ao menu de menu principal\n";
     std::cout << "--------------------------------------------------------\n";
     std::cout << "Sua escolha: ";
 }
@@ -28,7 +29,7 @@ bool CntrlIAOrdem::escolherOpcao(int entrada) {
             break;
 
         case VOLTAR: 
-            std::cout << "\nVoltando ao menu de carteiras..." << std::endl;
+            std::cout << "\nVoltando ao menu principal..." << std::endl;
             return false;
 
         default:
@@ -42,27 +43,46 @@ void CntrlIAOrdem::solicitarCodigoCarteira() {
     while (true) {
         try {
             std::string entrada;
-            std::cout << "Digite o código da carteira para acessar as ordens: ";
+            std::cout << "Digite o código da carteira para acessar as ordens (ou 0 para voltar): ";
             std::cin >> entrada;
 
-            // Domínio sendo usado para validar o código
+            if (entrada == "0") {
+                std::cout << "Voltando ao menu principal...\n";
+                acessoLiberado = false;
+                return;
+            }
+
             Codigo codigo;
             codigo.set(entrada);
 
+            servicoOrdem->listarOrdens(codigo); // lança erro se não for do usuário
+
             this->codigoCarteira = codigo;
-            break;
+            acessoLiberado = true;
+            return;
+
         } catch (const std::invalid_argument& e) {
-            std::cout << e.what() << "Tente novamente.\n";
+            std::cout << "Código inválido: " << e.what() << "\nTente novamente.\n";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        } catch (const std::exception& e) {
+            std::cout << "Erro: " << e.what() << "\nVoltando ao menu principal...\n";
+            acessoLiberado = false;
+            return;
         }
     }
 }
 
 void CntrlIAOrdem::executar() {
+    acessoLiberado = false;
     solicitarCodigoCarteira();
-    int entrada;
 
+    if (!acessoLiberado) {
+        return; 
+    }
+
+    int entrada;
     while (true) {
         CLR_SCR();
         mostrarOpcoes(); 
