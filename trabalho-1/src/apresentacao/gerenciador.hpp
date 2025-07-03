@@ -14,18 +14,33 @@
 #include "../servicos/carteira/carteira_servico.hpp"
 #include "./carteira/carteira_controlador.hpp"
 
+// Importações de ordem
+#include "../persistencia/ordem/ordem_repositorio.hpp"
+#include "../servicos/ordem/ordem_servico.hpp"
+#include "./ordem/ordem_controlador.hpp"
+
+// Importações de dados históricos
+#include "../servicos/dados_historicos/dados_historicos_servico.hpp"
+
 
 class GerenciadorSistema {
     private:
         void simularLogin();
 
         void inicializarCarteira();
+        void inicializarOrdem();
         void inicializarConta();
+        void inicializarDadosHistoricos();
 
         std::unique_ptr<RepositorioIPCarteira> repoCarteira;
         std::unique_ptr<ServicoICarteira> servicoCarteira;
         std::unique_ptr<CntrlIACarteira> ctrlCarteira;
 
+        std::unique_ptr<RepositorioIPOrdem> repoOrdem;
+        std::unique_ptr<ServicoIOrdem> servicoOrdem;
+        std::unique_ptr<CntrlIAOrdem> ctrlOrdem;
+
+        std::unique_ptr<ServicoDadosHistoricos> servicoDadosHistoricos;
     public:
         void inicializar();
         void executar();
