@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./apresentacao/gerenciador.hpp" // ou o nome correto do seu arquivo .hpp
+#include "./apresentacao/gerenciador.hpp"
 
 int main() {
     std::cout << "Inicializando sistema..." << std::endl;

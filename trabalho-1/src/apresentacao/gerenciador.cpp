@@ -1,20 +1,5 @@
 #include "gerenciador.hpp"
 
-void GerenciadorSistema::simularLogin() {
-    SessaoUsuario& sessao = SessaoUsuario::getInstance();
-    if (!sessao.estaLogado()) {
-        try {
-            // Crie uma conta de teste para que as operações possam ser realizadas
-            Conta contaTeste("123.456.789-00", "Usuario Teste", "A1b2#c");
-            sessao.login(contaTeste);
-            std::cout << "Login simulado com sucesso para o CPF: " << contaTeste.getCpf() << std::endl;
-
-        } catch (const std::invalid_argument& e) {
-            std::cerr << "Erro ao criar conta de teste para login: " << e.what() << std::endl;
-            throw;
-        }
-    }
-}
 
 void GerenciadorSistema::inicializar() {
     if (!GerenciadorBD::getInstance().inicializarBanco()) {
@@ -22,53 +7,71 @@ void GerenciadorSistema::inicializar() {
     };
    std::cout << "Banco de dados inicializado.\n";
 
-    simularLogin(); // TODO: Trocar isso pela autenticação real do usuário
-
     inicializarDadosHistoricos();
+    inicializarAutenticacao();
     inicializarCarteira();
     inicializarOrdem();
+    inicializarConta();
 };
+
+void GerenciadorSistema::inicializarAutenticacao() {
+    repoAutenticacao = std::make_unique<RepositorioIPAutenticacao>();
+
+    servicoAutenticacao = std::make_unique<ServicoIAutenticacao>(repoAutenticacao.get());
+
+    ctrlAutenticacao =std::make_unique<CntrlIAAutenticacao>();
+    ctrlAutenticacao->setCntrlISAutenticacao(servicoAutenticacao.get());
+};
+
 
 void GerenciadorSistema::inicializarCarteira() {
     repoCarteira = std::make_unique<RepositorioIPCarteira>();
-    // DEBUG: std::cout << "Repositorio de Carteira criado.\n";
 
     servicoCarteira = std::make_unique<ServicoICarteira>(repoCarteira.get());
-    // DEBUG: std::cout << "Servico de Carteira criado e injetado.\n";
 
     ctrlCarteira =std::make_unique<CntrlIACarteira>();
     ctrlCarteira->setCntrlISCarteira(servicoCarteira.get());
-    // DEBUG: std::cout << "Controlador de Carteira criado e injetado.\n";
 };
 
 void GerenciadorSistema::inicializarDadosHistoricos() {
     servicoDadosHistoricos = std::make_unique<ServicoDadosHistoricos>();
-    // DEBUG: std::cout << "Serviço de Dados Históricos criado.\n";
 }
 
 void GerenciadorSistema::inicializarOrdem() {
     repoOrdem = std::make_unique<RepositorioIPOrdem>();
-    // DEBUG: std::cout << "Repositorio de Ordem criado.\n";
 
     servicoOrdem = std::make_unique<ServicoIOrdem>(
         repoOrdem.get(),
         repoCarteira.get(),
         servicoDadosHistoricos.get()
     );
-    // DEBUG: std::cout << "Servico de Ordem criado e injetado.\n";
 
     ctrlOrdem =std::make_unique<CntrlIAOrdem>();
     ctrlOrdem->setCntrlISOrdem(servicoOrdem.get());
-    // DEBUG: std::cout << "Controlador de Ordem criado e injetado.\n";
+};
+
+void GerenciadorSistema::inicializarConta() {
+    repoConta = std::make_unique<RepositorioIPConta>();
+
+    servicoConta = std::make_unique<ServicoIConta>(repoConta.get());
+
+    ctrlConta =std::make_unique<CntrlIAConta>();
+    ctrlConta->setCntrlISConta(servicoConta.get());
 };
 
 void GerenciadorSistema::executar() {
+    std::string usuario, senha;
+
+    ctrlAutenticacao->executar();
+    std::cout << "Autenticacao bem-sucedida.\n";
+
     int opcao = 0;
     do {
         std::cout << "\n=== MENU PRINCIPAL ===\n";
         std::cout << "1. Carteiras\n";
         std::cout << "2. Ordens\n";
-        std::cout << "3. Sair\n";
+        std::cout << "3. Conta\n";
+        std::cout << "0. Sair\n";
         std::cout << "Escolha uma opção: ";
         std::cin >> opcao;
 
@@ -80,6 +83,9 @@ void GerenciadorSistema::executar() {
                 ctrlOrdem->executar();
                 break;
             case 3:
+                ctrlConta->executar();
+                break;
+            case 0:
                 std::cout << "Saindo...\n";
                 break;
             default:
@@ -87,4 +93,5 @@ void GerenciadorSistema::executar() {
         }
     } while (opcao != 3);
 }
+
 

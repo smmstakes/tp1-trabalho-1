@@ -7,6 +7,12 @@ Conta::Conta(const std::string& cpf, const std::string& nome, const std::string&
     this->senha.set(senha);
 }
 
+Conta::Conta(const std::string& cpf, const std::string& senha)
+    : cpf{}, senha{} {
+    this->cpf.set(cpf);
+    this->senha.set(senha);
+}
+
 Carteira::Carteira (const std::string& codigo, const std::string& nome, 
     const std::string& perfil) : codigo{}, nome{}, perfil {} {
         this->codigo.set(codigo);
