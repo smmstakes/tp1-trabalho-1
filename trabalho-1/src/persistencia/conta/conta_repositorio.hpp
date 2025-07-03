@@ -6,6 +6,7 @@
 #include <memory>
 #include <iostream>
 #include <stdexcept>
+#include <optional>
 
 #include "../../../libs/sqlite/sqlite3.h"
 #include "../../../libs/comandoSQL/comandoSQL.hpp"
@@ -25,7 +26,7 @@ public:
     bool editarNomeConta(const std::string& cpf, const std::string& nomeNome) override;
     bool editarSenhaConta(const std::string& cpf ,const std::string& novaSenha) override;
     bool excluirConta(const std::string& cpf ) override;
-    std::string getConta(const std::string& cpf) override;
+    std::optional<Conta> getConta(const std::string& cpfUsuario) override;
 
 };
 

@@ -15,7 +15,7 @@ std::string ServicoIConta::getCPFSessao() {
     return sessao.getContaLogada().getCpf();
 }
 
-void ServicoIConta::editarNomeConta(const Nome& novoNome) {
+void ServicoIConta::editarNomeConta(Nome& novoNome) {
     std::string cpfUsuario= getCPFSessao();
 
     bool sucesso = persistencia->editarNomeConta(cpfUsuario, novoNome.get());
@@ -25,7 +25,7 @@ void ServicoIConta::editarNomeConta(const Nome& novoNome) {
     }
 }
 
-void ServicoIConta::editarSenhaConta(const Senha& novaSenha){
+void ServicoIConta::editarSenhaConta(Senha& novaSenha){
     std::string cpfUsuario = getCPFSessao();
 
     bool sucesso = persistencia->editarSenhaConta(cpfUsuario, novaSenha.get());
@@ -35,14 +35,20 @@ void ServicoIConta::editarSenhaConta(const Senha& novaSenha){
     }
 }
 
-void ServicoIConta::excluirConta(const CPF& cpfUsuario) {
+void ServicoIConta::excluirContaLogada() {
+    std::string cpfUsuario= getCPFSessao();
 
     if(!persistencia->excluirConta(cpfUsuario))
         throw std::invalid_argument("Não foi possível realizar a ação");
 }
 
-void ServicoIConta::getConta() {
+Conta ServicoIConta::lerConta() {
     std::string cpfUsuario = getCPFSessao();
+    auto contaOpt = persistencia->getConta(cpfUsuario);
 
-    return persistencia->getConta(cpfUsuario);
+    if (!contaOpt.has_value()) {
+        throw std::runtime_error("Conta não encontrada no banco.");
+    }
+
+    return contaOpt.value();
 }

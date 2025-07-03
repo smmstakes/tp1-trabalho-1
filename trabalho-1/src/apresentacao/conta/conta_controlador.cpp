@@ -73,8 +73,7 @@ void CntrlIAConta::executar() {
 }
 
 void CntrlIAConta::lerConta(){
-        Conta conta;
-        conta = servicoConta->getConta();
+    Conta conta = servicoConta->lerConta();
 
     std::cout << "-----------------------------------------------------\n";
     std::cout << "\n------ Detalhes da Conta  ------\n";
@@ -148,16 +147,16 @@ int escolha = -1;
 
 
 void CntrlIAConta::excluirConta() {
-        Conta conta;
-        conta = servicoConta -> getConta();
+    Conta conta = servicoConta->lerConta();
+
     try {
         char confirmacao;
         std::cout << "Você tem certeza que deseja excluir a conta do CPF: " 
-                  << cpf.get() << "? (S/N): ";
+                  << conta.getCpf() << "? (S/N): ";
         std::cin >> confirmacao;
 
         if (toupper(confirmacao) == 'S') {
-            servicoConta->excluirConta(conta.getCpf());
+            servicoConta->excluirContaLogada();
             std::cout << "Sua conta foi excluída com sucesso.\n";
         } 
         else if (toupper(confirmacao) == 'N'){

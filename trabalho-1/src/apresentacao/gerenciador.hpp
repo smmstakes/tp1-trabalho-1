@@ -24,6 +24,11 @@
 #include "../servicos/autenticacao/autenticacao_servico.hpp"
 #include "./autenticacao/autenticacao_controlador.hpp"
 
+// Importações de conta
+#include "../persistencia/conta/conta_repositorio.hpp"
+#include "../servicos/conta/conta_servico.hpp"
+#include "./conta/conta_controlador.hpp"
+
 // Importações de dados históricos
 #include "../servicos/dados_historicos/dados_historicos_servico.hpp"
 
@@ -47,6 +52,10 @@ class GerenciadorSistema {
         std::unique_ptr<RepositorioIPOrdem> repoOrdem;
         std::unique_ptr<ServicoIOrdem> servicoOrdem;
         std::unique_ptr<CntrlIAOrdem> ctrlOrdem;
+
+        std::unique_ptr<RepositorioIPConta> repoConta;
+        std::unique_ptr<ServicoIConta> servicoConta;
+        std::unique_ptr<CntrlIAConta> ctrlConta;
 
         std::unique_ptr<ServicoDadosHistoricos> servicoDadosHistoricos;
     public:

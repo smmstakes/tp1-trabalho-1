@@ -53,3 +53,18 @@ bool RepositorioIPAutenticacao::getSenha(const std::string& cpf, const std::stri
 
     return false;
 }
+
+std::string RepositorioIPAutenticacao::getNome(const std::string& cpf) {
+    sqlite3* db = gerenciadorBD.getDB();
+
+    std::string sql = "SELECT nome FROM Conta WHERE cpf = ?;";
+    
+    ComandoSQL comando(db, sql);
+    comando.bind(1, cpf);
+    
+    if (comando.step()) {
+        return comando.getColumnString(0);
+    }
+
+    return "";
+}

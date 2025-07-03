@@ -2,19 +2,21 @@
 
 RepositorioIPConta::RepositorioIPConta() : gerenciadorBD(GerenciadorBD::getInstance()) {}
 
-// Nao sei se precisa dessa funcao...
-std::string RepositorioIPConta::getConta(const std::string& cpfUsuario) {
+std::optional<Conta> RepositorioIPConta::getConta(const std::string& cpfUsuario) {
     sqlite3* db = gerenciadorBD.getDB();
-    std::string sql = "SELECT cpf FROM Conta WHERE cpf = ?;";
+    std::string sql = "SELECT nome, senha FROM Conta WHERE cpf = ?;";
     
     ComandoSQL comando(db, sql);
     comando.bind(1, cpfUsuario);
 
     if (comando.step()) {
-        return comando.getColumnString(0); // Pega o resultado da coluna 0
+        std::string nome = comando.getColumnString(0);
+        std::string senha = comando.getColumnString(1);
+        Conta conta(cpfUsuario, nome, senha);
+        return conta;
     }
 
-    return "";
+    return std::nullopt;
 }
 
 bool RepositorioIPConta::editarNomeConta(const std::string& cpfUsuario ,const std::string& novoNome) {

@@ -11,7 +11,9 @@ void ServicoIAutenticacao::acessarConta(const CPF& cpf, const Senha& senha) {
         throw std::runtime_error("Senha incorreta.");
     }
 
-    Conta conta(cpf.get(), senha.get());
+    std::string nome = persistencia->getNome(cpf.get());
+
+    Conta conta(cpf.get(), nome, senha.get());
     SessaoUsuario& sessao = SessaoUsuario::getInstance();
     sessao.login(conta);
     return;

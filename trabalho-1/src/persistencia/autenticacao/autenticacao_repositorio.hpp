@@ -25,6 +25,7 @@ class RepositorioIPAutenticacao : public IPAutenticacao {
         void registrarContaUsuario(const std::string& cpf, const std::string& nome, const std::string& senha) override;
         bool getCPF(const std::string& cpf) override;
         bool getSenha(const std::string& cpf, const std::string& senha) override;
+        std::string getNome(const std::string& cpf) override;
 
 };
 

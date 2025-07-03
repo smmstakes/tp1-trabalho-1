@@ -12,10 +12,10 @@ class ISConta {
 public:
     virtual ~ISConta() = default;
     
-    virtual void editarNomeConta(const Nome& novoNome) = 0;
-    virtual void editarSenhaConta(const Senha& novaSenha) = 0;
-    virtual void excluirConta(const CPF& cpf) = 0;
-    virtual void getConta()=0;
+    virtual void editarNomeConta(Nome& novoNome) = 0;
+    virtual void editarSenhaConta(Senha& novaSenha) = 0;
+    virtual void excluirContaLogada() = 0;
+    virtual Conta lerConta()= 0;
 
 };
 
