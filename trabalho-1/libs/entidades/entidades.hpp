@@ -46,6 +46,7 @@ class Conta {
          */
 
         Conta(const std::string& cpf, const std::string& nome, const std::string& senha);
+        Conta(const std::string& cpf, const std::string& senha);
 
         /**
          * @brief Provêm CPF associado à conta.
