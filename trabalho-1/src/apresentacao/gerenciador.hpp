@@ -32,6 +32,23 @@
 // Importações de dados históricos
 #include "../servicos/dados_historicos/dados_historicos_servico.hpp"
 
+/**
+ * @file gerenciador.hpp
+ * @brief Declaração do gerenciador principal do sistema.
+ * 
+ * @details Define a classe responsável por iniciar e coordenar os módulos do sistema.
+ * 
+ * @author Suyanne Miranda
+ * @date 04/07/2025
+ */
+
+/**
+ * @class GerenciadorSistema
+ * @brief Coordena a inicialização e execução dos módulos da aplicação.
+ * 
+ * @details Responsável por instanciar repositórios, serviços e controladores,
+ * e por gerenciar o fluxo principal entre autenticação, carteiras, ordens, contas e dados históricos.
+ */
 
 class GerenciadorSistema {
     private:
@@ -59,9 +76,19 @@ class GerenciadorSistema {
 
         std::unique_ptr<ServicoDadosHistoricos> servicoDadosHistoricos;
     public:
+        /**
+         * @brief Inicializa todos os módulos do sistema.
+         * 
+         * @details Cria as instâncias de repositórios, serviços e controladores.
+         */
         void inicializar();
-        void executar();
 
+        /**
+         * @brief Executa o fluxo principal do sistema.
+         * 
+         * @details Inicia pelo menu de autenticação e segue para os menus das funcionalidades.
+         */
+        void executar();
 };
 
 
