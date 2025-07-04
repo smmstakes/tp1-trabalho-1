@@ -152,7 +152,7 @@ void CntrlIAConta::excluirConta() {
     try {
         char confirmacao;
         std::cout << "Você tem certeza que deseja excluir a conta do CPF: " 
-                  << conta.getCpf() << "? (S/N): ";
+                  << conta.getCpf() << "? (S/N):\n ";
         std::cin >> confirmacao;
 
         if (toupper(confirmacao) == 'S') {

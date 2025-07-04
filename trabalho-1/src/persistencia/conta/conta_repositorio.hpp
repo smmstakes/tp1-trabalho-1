@@ -1,6 +1,18 @@
 #ifndef CONTA_REPOSITORIO_HPP_INCLUDED
 #define CONTA_REPOSITORIO_HPP_INCLUDED
 
+/**
+ * @file conta_repositorio.hpp
+ * @brief Implementação do repositório de Conta para o banco de dados SQLite.
+ *
+ * @details Este arquivo define a classe `RepositorioIPConta`, que implementa
+ * a interface `IPConta` e é responsável por gerenciar a persistência dos dados da
+ * entidade `Conta`.
+ *
+ * @author Pedro Vale
+ * @date 03/07/2025
+ */
+
 #include <string>
 #include <vector>
 #include <memory>
@@ -16,13 +28,26 @@
 
 #include "interface_repositorio_conta.hpp"
 
+/**
+ * @class RepositorioIPConta
+ * @brief Implementação concreta do repositório de Conta para SQLite.
+ *
+ * @details Esta classe implementa os métodos definidos na interface `IPConta`,
+ * utilizando a classe `ComandoSQL` para interagir com o banco de dados SQLite.
+ */
+
 class RepositorioIPConta : public IPConta {
 private:
     GerenciadorBD& gerenciadorBD;
       
 public:
+    /**
+     * @brief Construtor padrão. Obtém a instância do gerenciador de banco de dados.
+     */
+
     RepositorioIPConta();  
     
+    // Implementação dos métodos já documentados na Interface
     bool editarNomeConta(const std::string& cpf, const std::string& nomeNome) override;
     bool editarSenhaConta(const std::string& cpf ,const std::string& novaSenha) override;
     bool excluirConta(const std::string& cpf ) override;
