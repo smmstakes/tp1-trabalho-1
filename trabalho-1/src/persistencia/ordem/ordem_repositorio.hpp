@@ -1,6 +1,17 @@
 #ifndef ORDEM_REPOSITORIO_HPP_INCLUDED
 #define ORDEM_REPOSITORIO_HPP_INCLUDED
 
+/**
+ * @file ordem_repositorio.hpp
+ * @brief Implementação do repositório de Ordem para o banco de dados SQLite.
+ * 
+ * @details Este arquivo define a classe `RepositorioIPOrdem`, que implementa
+ * a interface `IPOrdem` para gerenciar a persistência dos dados da entidade `Ordem`.
+ * 
+ * @author Gabriel Castro
+ * @date 04/07/2025
+ */
+
 #include <string>
 #include <vector>
 #include <memory>
@@ -15,13 +26,24 @@
 
 #include "interface_repositorio_ordem.hpp"
 
+/**
+ * @class RepositorioIPOrdem
+ * @brief Implementação concreta do repositório de Ordem para SQLite.
+ * 
+ * @details Esta classe implementa os métodos definidos na interface `IPOrdem`,
+ * utilizando a classe `ComandoSQL` para interagir com o banco de dados.
+ */
 class RepositorioIPOrdem : public IPOrdem {
 private:
     GerenciadorBD& gerenciadorBD;
 
 public:
+    /**
+     * @brief Construtor padrão. Obtém a instância do gerenciador de banco de dados.
+     */
     RepositorioIPOrdem();
 
+     // A documentação detalhada dos métodos está na classe de interface (IPOrdem)
     int contarOrdensUsuario(const std::string& cpfUsuario) override;
     std::string obterUltimoCodigoOrdemInserido() override;
     std::vector<Ordem> getOrdensPorCarteira(const std::string& codCarteira) override;

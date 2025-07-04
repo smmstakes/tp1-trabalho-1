@@ -1,6 +1,17 @@
 #ifndef ORDEM_CONTROLADOR_HPP_INCLUDED
 #define ORDEM_CONTROLADOR_HPP_INCLUDED
 
+/**
+ * @file ordem_controlador.hpp
+ * @brief Implementação do controlador de apresentação de Ordem para console.
+ * 
+ * @details Este arquivo define a classe `CntrlIAOrdem`, que implementa a interface
+ * `IAOrdem` para fornecer uma interação com o usuário baseada em linha de comando.
+ * 
+ * @author Gabriel Castro
+ * @date 04/07/2025
+ */
+
 #include <ios>
 #include <limits>
 #include <iomanip>
@@ -15,6 +26,12 @@
 
 #include "interface_apresentacao_ordem.hpp"
 
+/**
+ * @class CntrlIAOrdem
+ * @brief Controlador de Apresentação de Ordem para Interface de Console.
+ * 
+ * @details Implementa a interface `IAOrdem` para gerenciar ordens através de um menu de texto.
+ */
 class CntrlIAOrdem : public IAOrdem {
 private:
     const static int VOLTAR = 0;
@@ -34,7 +51,16 @@ private:
     void solicitarCodigoCarteira();
 
 public:
+    /**
+     * @brief Inicia o loop de interação do menu de carteiras no console.
+     */
     void executar() override;
+
+    /**
+     * @brief Define a dependência da camada de serviço.
+     * 
+     * @param servicoOrdem Ponteiro para o serviço de ordem.
+     */
     void setCntrlISOrdem(ISOrdem* servicoOrdem) override {
         this->servicoOrdem = servicoOrdem;
     };
