@@ -27,7 +27,7 @@ bool CntrlIAConta::escolherOpcao(int entrada) {
 
         case EXCLUIR_CONTA:
             CLR_SCR();
-            excluirConta();
+            solicitarExclusaoConta();
             break;
 
         case VOLTAR: 
@@ -143,7 +143,7 @@ int escolha = -1;
     }
 }
 
-void CntrlIAConta::excluirConta() {
+void CntrlIAConta::solicitarExclusaoConta() {
     Conta conta = servicoConta->lerConta();
     std::string confirmacao;
 
@@ -155,18 +155,19 @@ void CntrlIAConta::excluirConta() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if (confirmacao == "s" || confirmacao == "S") {
-        servicoConta->excluirContaLogada();
-
-        std::cout << "Conta excluída com sucesso.\n";
-
-        std::cout << "Pressione Enter para continuar...\n";
-        std::cin.get();
-
-        throw ContaExcluida();
+        throw ExcecaoSolicitacaoExclusaoConta();
     } else {
         std::cout << "Operação cancelada.\n";
-
         std::cout << "Pressione Enter para continuar...\n";
         std::cin.get();
+    }
+}
+
+void CntrlIAConta::excluirConta() {
+    try {
+        servicoConta->excluirContaLogada();
+        std::cout << "Conta excluída com sucesso.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao excluir conta: " << e.what() << '\n';
     }
 }

@@ -81,3 +81,18 @@ bool RepositorioIPOrdem::excluirOrdem(const std::string& codOrdem, const std::st
 
     return sqlite3_changes(db) > 0;
 }
+
+void RepositorioIPOrdem::excluirOrdensUsuario(const std::string& cpf) {
+    sqlite3* db = gerenciadorBD.getDB();
+
+    std::string sql = R"(
+        DELETE FROM Ordem
+        WHERE cod_carteira IN (
+            SELECT codigo FROM Carteira WHERE cpf_conta = ?
+        );
+    )";
+
+    ComandoSQL comando(db, sql);
+    comando.bind(1, cpf);
+    comando.execute();
+}

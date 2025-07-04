@@ -10,7 +10,7 @@
  * e a recuperação de dados da entidade `Carteira`. 
  * Ele desacopla a camada de serviço dos detalhes de implementação do banco de dados.
  *
- * @author Matheus Duarte
+ * @author Matheus Duarte, Suyanne Miranda
  * @date 03/07/2025
  */
 
@@ -103,6 +103,16 @@ public:
      * @return `false` se a carteira não foi encontrada ou não pertence ao usuário.
      */
     virtual bool excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) = 0;
+
+    /**
+     * @brief Exclui todas as carteiras associadas a um usuário.
+     * 
+     * @param cpfUsuario O CPF do usuário cujas carteiras devem ser removidas.
+     * 
+     * @details Remove do banco de dados todas as carteiras pertencentes ao CPF informado.
+     */
+    virtual void excluirCarteirasPorCPF(const std::string& cpfUsuario) = 0;
+    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Recupera todas as carteiras de um usuário, incluindo o valor total de cada uma.

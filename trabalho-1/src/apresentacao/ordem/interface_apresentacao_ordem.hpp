@@ -9,7 +9,7 @@
  * um contrato para qualquer controlador de apresentação que gerencie a
  * interação do usuário com as ordens de uma carteira.
  * 
- * @author Gabriel Castro
+ * @author Gabriel Castro, Suyanne Miranda
  * @date 04/07/2025
  */
 
@@ -31,6 +31,14 @@ protected:
     virtual void listarOrdens() = 0;
 
 public:
+    /**
+     * @brief Solicita a exclusão de todos os registros de ordem relacionados ao usuario.
+     * 
+     * @details Este método deve ser chamado previamente a efetivação da exclusão de conta.
+     */
+    virtual void excluirOrdensUsuario() = 0;
+    // Criado por Suyanne Miranda - 222006445
+
     /**
      * @brief Ponto de entrada para iniciar a execução do módulo de apresentação de ordens.
      * 

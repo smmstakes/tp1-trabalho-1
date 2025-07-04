@@ -52,9 +52,14 @@ private:
 
     void lerConta() override;
     void editarConta() override;
-    void excluirConta() override;
+    void solicitarExclusaoConta() override;
 
 public:
+    /**
+     * @brief Exclui a conta do usuário logado.
+     */
+    void excluirConta() override;
+
     /**
      * @brief Iniciar a execução do menu de conta 
      * pelo módulo de apresentação.
@@ -73,10 +78,6 @@ public:
     };
 };
 
-struct ContaExcluida : public std::exception {
-    const char* what() const noexcept override {
-        return "Conta excluída. Retornando ao menu de autenticação.";
-    }
-};
+
 
 #endif  // CONTA_CONTROLADOR_HPP_INCLUDED

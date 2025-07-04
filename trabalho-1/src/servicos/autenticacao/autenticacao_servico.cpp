@@ -27,4 +27,7 @@ void ServicoIAutenticacao::registrarConta(const CPF& cpf, const Nome& nome, cons
     else{
         persistencia->registrarContaUsuario(cpf.get(), nome.get(), senha.get());
     }
+
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    sessao.login(Conta(cpf.get(), nome.get(), senha.get()));
 };

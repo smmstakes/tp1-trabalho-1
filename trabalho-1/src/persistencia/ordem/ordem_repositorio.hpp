@@ -51,6 +51,8 @@ public:
     void criarOrdem(const std::string& cod, const std::string& codNeg, const std::string& data, double preco, 
     int qtd, const std::string& codigoCarteira) override;
     bool excluirOrdem(const std::string& codOrdem, const std::string& codCarteira) override;
+    void excluirOrdensUsuario(const std::string& cpf) override;
+
 };
 
 #endif  // ORDEM_REPOSITORIO_HPP_INCLUDED

@@ -9,7 +9,7 @@
  * um contrato para as classes que implementam as regras de negócio relacionadas
  * à entidade `Ordem`.
  * 
- * @author Gabriel Castro
+ * @author Gabriel Castro, Suyanne Miranda
  * @date 04/07/2025
  */
 
@@ -55,6 +55,12 @@ public:
      * @param codigoCarteira Código da carteira para validação.
      */
     virtual void excluirOrdem(const Codigo& codigoOrdem, const Codigo& codigoCarteira) = 0;
+
+    /**
+     * @brief Exclui todas as ordens das carterias do usuário logado.
+     */
+    virtual void excluirOrdensUsuario() = 0;
+    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Lista todas as ordens de uma carteira específica.

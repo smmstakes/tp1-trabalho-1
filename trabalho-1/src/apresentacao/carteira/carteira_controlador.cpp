@@ -316,3 +316,15 @@ void CntrlIACarteira::listarCarteiras() {
         std::cerr << "Ocorreu um erro ao buscar suas carteiras: " << e.what() << '\n';
     }
 }
+
+void CntrlIACarteira::excluirCarteirasUsuario() {
+    std::cout << "Excluindo suas carteiras...\n";
+
+    try {
+        servicoCarteira->excluirCarteirasUsuario();
+        std::cout << "Todas as suas carteiras foram excluídas com sucesso.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao excluir carteiras: " << e.what() << '\n';
+    }
+}
+

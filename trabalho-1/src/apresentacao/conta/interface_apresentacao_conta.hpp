@@ -8,7 +8,7 @@
  * um contrato para qualquer controlador de apresentação que gerencie a
  * interação do usuário com suas contas de investimento. 
  *
- * @author Pedro Vale
+ * @author Pedro Vale, Suyanne Miranda
  * @date 03/07/2025
  */
 #include "../../servicos/conta/interface_servico_conta.hpp"
@@ -30,9 +30,18 @@ protected:
 
     virtual void lerConta() = 0;
     virtual void editarConta() = 0;
-    virtual void excluirConta() = 0;
-
+    virtual void solicitarExclusaoConta() = 0;
+    
 public:
+    /**
+     * @brief Exclui a conta do usuário logado.
+     * 
+     * @details Este método deve ser implementado para permitir que o usuário
+     * exclua sua conta. Precisa ser público para que o controlador da aplicação
+     * possa acessa-lo por meio do uso de sua interface.
+     */
+    virtual void excluirConta() = 0;
+    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Iniciar a execução do módulo de apresentação.

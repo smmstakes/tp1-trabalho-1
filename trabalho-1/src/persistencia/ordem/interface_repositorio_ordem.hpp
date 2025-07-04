@@ -80,6 +80,14 @@ public:
      */
     virtual bool excluirOrdem(const std::string& codOrdem, const std::string& codCarteira) = 0;
 
+    /**
+     * @brief Exclui todas as ordens de cada carteira de um usuário.
+     * 
+     * @param cpf CPF do usuário cujas ordens serão excluídas.
+     */
+    virtual void excluirOrdensUsuario(const std::string& cpf) = 0;
+    // Criado por Suyanne Miranda - 222006445
+
 };
 
 #endif  // INTERFACE_REPOSITORIO_ORDEM_HPP_INCLUDED
