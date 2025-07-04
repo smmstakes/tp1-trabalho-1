@@ -91,7 +91,7 @@ void GerenciadorSistema::executar() {
             default:
                 std::cout << "Opção inválida.\n";
         }
-    } while (opcao != 3);
+    } while (opcao != 0);
 }
 
 
