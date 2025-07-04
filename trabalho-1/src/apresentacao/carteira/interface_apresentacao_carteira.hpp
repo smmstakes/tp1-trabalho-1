@@ -9,7 +9,7 @@
  * um contrato para qualquer controlador de apresentação que gerencie a
  * interação do usuário com as carteiras de investimento. 
  *
- * @author Matheus Duarte
+ * @author Matheus Duarte, Suyanne Miranda
  * @date 03/07/2025
  */
 
@@ -37,6 +37,16 @@ protected:
     virtual void listarCarteiras() = 0;
 
 public:
+    /**
+     * @brief Ponto de partida para excluir todas as carteiras do usuário.
+     * 
+     * @details Este método é responsável por chamar o serviço de exclusão de carteiras
+     * e deve ser implementado para garantir que todas as carteiras sejam removidas
+     * antes de excluir a conta do usuário. Precisa ser público pois ControladorApresentacao
+     * usa esse método direto por meio da interface.
+     */
+    virtual void excluirCarteirasUsuario() = 0;
+
     /**
      * @brief Ponto de entrada principal para iniciar a execução do módulo de apresentação.
      * 

@@ -136,3 +136,13 @@ std::vector<CarteiraComValor> RepositorioIPCarteira::getCarteiras(const std::str
 
     return carteiras;
 }
+
+void RepositorioIPCarteira::excluirCarteirasPorCPF(const std::string& cpfUsuario) {
+    sqlite3* db = gerenciadorBD.getDB();
+    std::string sql = "DELETE FROM Carteira WHERE cpf_conta = ?;";
+
+    ComandoSQL comando(db, sql);
+    comando.bind(1, cpfUsuario);
+
+    comando.execute();
+}

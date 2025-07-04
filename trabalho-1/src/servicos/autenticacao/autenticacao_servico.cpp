@@ -4,7 +4,7 @@ ServicoIAutenticacao::ServicoIAutenticacao(IPAutenticacao* persistencia) : persi
 
 void ServicoIAutenticacao::acessarConta(const CPF& cpf, const Senha& senha) {
     if (!persistencia->getCPF(cpf.get())) {
-        throw std::runtime_error("CPF não registrado. Pressione 0 para retornar ao menu inicial.");
+        throw std::runtime_error("CPF não registrado.");
     }
 
     if (!persistencia->getSenha(cpf.get(), senha.get())) {
@@ -22,9 +22,12 @@ void ServicoIAutenticacao::acessarConta(const CPF& cpf, const Senha& senha) {
 
 void ServicoIAutenticacao::registrarConta(const CPF& cpf, const Nome& nome, const Senha& senha) {
     if (persistencia->getCPF(cpf.get())) {
-        throw std::runtime_error("CPF já registrado. Entre 0 para retornar ao menu inicial.");
+        throw std::runtime_error("CPF já utilizado em outra conta.");
     }
     else{
         persistencia->registrarContaUsuario(cpf.get(), nome.get(), senha.get());
     }
+
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    sessao.login(Conta(cpf.get(), nome.get(), senha.get()));
 };

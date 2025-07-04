@@ -54,6 +54,7 @@ public:
     bool editarNomeCarteira(const std::string& codigo, const std::string& cpfUsuario, const std::string& novoNome) override;
     bool editarPerfilCarteira(const std::string& codigo, const std::string& cpfUsuario, const std::string& novoPerfil) override;
     bool excluirCarteira(const std::string& codigo, const std::string& cpfUsuario) override;
+    void excluirCarteirasPorCPF(const std::string& cpfUsuario);
     std::vector<CarteiraComValor> getCarteiras(const std::string& cpf) override;
 };
 

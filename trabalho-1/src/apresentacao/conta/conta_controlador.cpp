@@ -27,7 +27,7 @@ bool CntrlIAConta::escolherOpcao(int entrada) {
 
         case EXCLUIR_CONTA:
             CLR_SCR();
-            excluirConta();
+            solicitarExclusaoConta();
             break;
 
         case VOLTAR: 
@@ -53,9 +53,8 @@ void CntrlIAConta::executar() {
 
         if (std::cin.fail()) {
             std::cout << "Erro: Entrada inválida. Por favor, digite um número!\n";
-            std::cin.clear();   // Limpa o estado de erro do cin.
+            std::cin.clear();
 
-            // Remove entradas indesejadas do buffer
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Pressione Enter para continuar...\n";
             std::cin.get();
@@ -144,29 +143,31 @@ int escolha = -1;
     }
 }
 
+void CntrlIAConta::solicitarExclusaoConta() {
+    Conta conta = servicoConta->lerConta();
+    std::string confirmacao;
 
+    std::cout << "Você tem certeza que deseja excluir a conta do CPF: " 
+              << conta.getCpf() << "? (S/N):\n"
+              << "Se prosseguir, você será automaticamente deslogado do sistema e perderá todos os dados.\n";
+
+    std::cin >> confirmacao;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    if (confirmacao == "s" || confirmacao == "S") {
+        throw ExcecaoSolicitacaoExclusaoConta();
+    } else {
+        std::cout << "Operação cancelada.\n";
+        std::cout << "Pressione Enter para continuar...\n";
+        std::cin.get();
+    }
+}
 
 void CntrlIAConta::excluirConta() {
-    Conta conta = servicoConta->lerConta();
-
     try {
-        char confirmacao;
-        std::cout << "Você tem certeza que deseja excluir a conta do CPF: " 
-                  << conta.getCpf() << "? (S/N):\n ";
-        std::cin >> confirmacao;
-
-        if (toupper(confirmacao) == 'S') {
-            servicoConta->excluirContaLogada();
-            std::cout << "Sua conta foi excluída com sucesso.\n";
-        } 
-        else if (toupper(confirmacao) == 'N'){
-            std::cout << "Exclusão cancelada pelo usuário.\n";
-        }
-        else{
-            std::cout << "Termo Inválido. \n";
-        }
-        
-    } catch(const std::exception& e) {
-        std::cerr << "Ocorreu um erro ao excluir a conta: " << e.what() << '\n';
+        servicoConta->excluirContaLogada();
+        std::cout << "Conta excluída com sucesso.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao excluir conta: " << e.what() << '\n';
     }
 }

@@ -11,7 +11,7 @@
  * Ele desacopla a camada de apresentação da lógica de
  * negócio, definindo os casos de uso de alto nível.
  *
- * @author Matheus Duarte
+ * @author Matheus Duarte, Suyanne Miranda
  * @date 03/07/2025
  */
 
@@ -78,6 +78,14 @@ public:
      * @throw runtime_error Se a carteira não for encontrada ou não pertencer ao usuário.
      */
     virtual void excluirCarteira(const std::string& codigo) = 0;
+
+    /**
+     * @brief Exclui todas as carteiras do usuário logado.
+     * 
+     * @details Remove da base de dados todas as carteiras associadas ao CPF da conta
+     * atualmente em sessão.
+     */
+    virtual void excluirCarteirasUsuario() = 0;
 
     /**
      * @brief Recupera todas as carteiras do usuário logado.

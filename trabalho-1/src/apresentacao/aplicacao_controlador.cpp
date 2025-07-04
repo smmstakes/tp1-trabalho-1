@@ -1,7 +1,6 @@
-#include "gerenciador.hpp"
+#include "aplicacao_controlador.hpp"
 
-
-void GerenciadorSistema::inicializar() {
+void CntrlIAAplicacao::inicializar() {
     if (!GerenciadorBD::getInstance().inicializarBanco()) {
         throw std::runtime_error("Falha ao inicializar banco de dados.");
     };
@@ -14,7 +13,7 @@ void GerenciadorSistema::inicializar() {
     inicializarConta();
 };
 
-void GerenciadorSistema::inicializarAutenticacao() {
+void CntrlIAAplicacao::inicializarAutenticacao() {
     repoAutenticacao = std::make_unique<RepositorioIPAutenticacao>();
 
     servicoAutenticacao = std::make_unique<ServicoIAutenticacao>(repoAutenticacao.get());
@@ -24,7 +23,7 @@ void GerenciadorSistema::inicializarAutenticacao() {
 };
 
 
-void GerenciadorSistema::inicializarCarteira() {
+void CntrlIAAplicacao::inicializarCarteira() {
     repoCarteira = std::make_unique<RepositorioIPCarteira>();
 
     servicoCarteira = std::make_unique<ServicoICarteira>(repoCarteira.get());
@@ -33,11 +32,11 @@ void GerenciadorSistema::inicializarCarteira() {
     ctrlCarteira->setCntrlISCarteira(servicoCarteira.get());
 };
 
-void GerenciadorSistema::inicializarDadosHistoricos() {
+void CntrlIAAplicacao::inicializarDadosHistoricos() {
     servicoDadosHistoricos = std::make_unique<ServicoDadosHistoricos>();
 }
 
-void GerenciadorSistema::inicializarOrdem() {
+void CntrlIAAplicacao::inicializarOrdem() {
     repoOrdem = std::make_unique<RepositorioIPOrdem>();
 
     servicoOrdem = std::make_unique<ServicoIOrdem>(
@@ -50,7 +49,7 @@ void GerenciadorSistema::inicializarOrdem() {
     ctrlOrdem->setCntrlISOrdem(servicoOrdem.get());
 };
 
-void GerenciadorSistema::inicializarConta() {
+void CntrlIAAplicacao::inicializarConta() {
     repoConta = std::make_unique<RepositorioIPConta>();
 
     servicoConta = std::make_unique<ServicoIConta>(repoConta.get());
@@ -59,11 +58,10 @@ void GerenciadorSistema::inicializarConta() {
     ctrlConta->setCntrlISConta(servicoConta.get());
 };
 
-void GerenciadorSistema::executar() {
-    std::string usuario, senha;
-
-    ctrlAutenticacao->executar();
-    std::cout << "Autenticacao bem-sucedida.\n";
+void CntrlIAAplicacao::executar() {
+    if (!ctrlAutenticacao->executar()) {
+        return;
+    }
 
     int opcao = 0;
     do {
@@ -83,15 +81,32 @@ void GerenciadorSistema::executar() {
                 ctrlOrdem->executar();
                 break;
             case 3:
-                ctrlConta->executar();
+                try {
+                    ctrlConta->executar();
+                } catch (const ExcecaoSolicitacaoExclusaoConta& e) {
+                    std::cout << "\n" << e.what() << "\n";
+
+                    ctrlOrdem->excluirOrdensUsuario();
+                    ctrlCarteira->excluirCarteirasUsuario();
+                    ctrlConta->excluirConta();
+
+                    std::cout << "Pressione Enter para continuar...\n";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cin.get();
+
+                    ctrlAutenticacao->executar();
+                }
                 break;
+
             case 0:
                 std::cout << "Saindo...\n";
                 break;
             default:
                 std::cout << "Opção inválida.\n";
         }
+
     } while (opcao != 0);
 }
+
 
 

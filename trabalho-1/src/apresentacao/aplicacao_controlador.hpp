@@ -1,13 +1,11 @@
-#ifndef GERENCIADOR_SISTEMA_HPP_INCLUDED
-#define GERENCIADOR_SISTEMA_HPP_INCLUDED
+#ifndef APLICACAO_CONTROLADOR_HPP_INCLUDED
+#define APLICACAO_CONTROLADOR_HPP_INCLUDED
 
 #include <memory>
 #include <iostream>
 
 #include "../persistencia/gerenciador_bd.hpp"
-#include "../servicos/carteira/carteira_servico.hpp"
-#include "../apresentacao/carteira/carteira_controlador.hpp"
-#include "../persistencia/carteira/carteira_repositorio.hpp"
+#include "../../libs/tipos/estruturas.hpp"
 
 // Importações de carteira
 #include "../persistencia/carteira/carteira_repositorio.hpp"
@@ -43,14 +41,14 @@
  */
 
 /**
- * @class GerenciadorSistema
+ * @class CntrlAAplicacao
  * @brief Coordena a inicialização e execução dos módulos da aplicação.
  * 
  * @details Responsável por instanciar repositórios, serviços e controladores,
  * e por gerenciar o fluxo principal entre autenticação, carteiras, ordens, contas e dados históricos.
  */
 
-class GerenciadorSistema {
+class CntrlIAAplicacao {
     private:
         void inicializarAutenticacao();
         void inicializarCarteira();
@@ -92,4 +90,4 @@ class GerenciadorSistema {
 };
 
 
-#endif // GERENCIADOR_SISTEMA_HPP_INCLUDED
+#endif // APLICACAO_CONTROLADOR_HPP_INCLUDED

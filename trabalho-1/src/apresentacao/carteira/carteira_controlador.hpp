@@ -60,6 +60,11 @@ private:
 
 public:
     /**
+     * @brief Solicita a exclusão de todas as carteiras de um usuário.
+     */
+    void excluirCarteirasUsuario() override;
+    
+    /**
      * @brief Inicia o loop de interação do menu de carteiras no console.
      */
     void executar() override;
@@ -72,6 +77,7 @@ public:
     void setCntrlISCarteira(ISCarteira* servicoCarteira) override {
         this->servicoCarteira = servicoCarteira;
     };
+
 };
 
 #endif  // CARTEIRA_CONTROLADOR_HPP_INCLUDED
