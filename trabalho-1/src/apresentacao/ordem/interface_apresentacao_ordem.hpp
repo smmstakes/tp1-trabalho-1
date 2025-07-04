@@ -1,58 +1,56 @@
 #ifndef INTERFACE_APRESENTACAO_ORDEM_HPP_INCLUDED
 #define INTERFACE_APRESENTACAO_ORDEM_HPP_INCLUDED
 
+/**
+ * @file interface_apresentacao_ordem.hpp
+ * @brief Define a interface para a camada de apresentação de Ordem.
+ * 
+ * @details Este arquivo declara a classe abstrata `IAOrdem`, que serve como
+ * um contrato para qualquer controlador de apresentação que gerencie a
+ * interação do usuário com as ordens de uma carteira.
+ * 
+ * @author Gabriel Castro
+ * @date 04/07/2025
+ */
+
 #include "../../servicos/ordem/interface_servico_ordem.hpp"
 
 /**
- * @file interface_apresentacao_ordem.hpp
- * @brief Especificação para a controladora de apresentação da entidade Ordem.
- * @author Gabriel Castro
- */
-
-/**
  * @class IAOrdem
- * @brief Interface que define o fluxo de interação do usuário para gerenciar ordens.
+ * @brief Interface Abstrata para o Controlador de Apresentação de Ordem.
+ * 
+ * @details Define as operações que uma interface de usuário para ordens deve realizar.
  */
 class IAOrdem {
 protected:
-    /**
-     * @brief Mostra as opções do menu de ordens para o usuário.
-     */
     virtual void mostrarOpcoes() = 0;
-
-    /**
-     * @brief Processa a opção escolhida pelo usuário.
-     * @param opcao Número da opção digitada pelo usuário.
-     * @return false se o usuário escolher a opção de voltar, true caso contrário.
-     */
     virtual bool escolherOpcao(int) = 0;
 
-    /**
-     * @brief Conduz o fluxo para a criação de uma nova ordem.
-     */
     virtual void criarOrdem() = 0;
-
-    /**
-     * @brief Conduz o fluxo para a exclusão de uma ordem existente.
-     */
     virtual void excluirOrdem() = 0;
-
-    /**
-     * @brief Apresenta a lista de todas as ordens da carteira selecionada.
-     */
     virtual void listarOrdens() = 0;
 
 public:
     /**
-     * @brief Inicia e controla o loop do menu de gerenciamento de ordens.
+     * @brief Ponto de entrada para iniciar a execução do módulo de apresentação de ordens.
+     * 
+     * @param codigoCarteira O código da carteira específica cujas ordens serão gerenciadas.
      */
     virtual void executar() = 0;
 
     /**
-     * @brief Injeta a dependência do serviço de negócio de Ordem.
+     * @brief Injeta a dependência da camada de serviço no controlador.
+     * 
+     * @param servicoOrdem Ponteiro para uma implementação da interface `ISOrdem`.
      */
     virtual void setCntrlISOrdem(ISOrdem*) = 0;
     
+    /**
+     * @brief Destrutor virtual.
+     * 
+     * @details Garante que o destrutor da classe derivada seja chamado corretamente
+     * quando um objeto é deletado através de um ponteiro para a classe base.
+     */
     virtual ~IAOrdem() {};
 };
 

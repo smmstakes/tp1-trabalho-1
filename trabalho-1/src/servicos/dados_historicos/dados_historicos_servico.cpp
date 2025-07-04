@@ -17,7 +17,7 @@ void ServicoDadosHistoricos::carregarDados() {
     const int LEN_DATA_PREGAO = 8;
     const int LEN_CODIGO_NEGOCIACAO = 12;
     const int LEN_PRECO_MEDIO = 13;
-    const int TAMANHO_MINIMO_LINHA = 126; // Posição final do preço médio
+    const int TAMANHO_MINIMO_LINHA = 126;
 
     std::string linha;
     std::ifstream arquivo("./data/DADOS_HISTORICOS.txt");
@@ -52,23 +52,19 @@ void ServicoDadosHistoricos::carregarDados() {
 
 double ServicoDadosHistoricos::getPrecoMedioNaData(const CodigoNegociacao& codNegociacao, const Data& data) {
     try {
-        // Obtenha as chaves
         auto codKey = codNegociacao.get();
         auto dataKey = data.get();
 
-        // Verifique se a chave do código existe
         auto itCod = cacheDePrecos.find(codKey);
         if (itCod == cacheDePrecos.end()) {
             throw std::invalid_argument("Codigo de negociacao nao encontrado no cache.");
         }
 
-        // Verifique se a chave da data existe
         auto itData = itCod->second.find(dataKey);
         if (itData == itCod->second.end()) {
             throw std::invalid_argument("Preco para o ativo na data informada nao foi encontrado.");
         }
 
-        // Retorne o preço encontrado
         return itData->second;
     }
     catch (const std::out_of_range& oor) {
