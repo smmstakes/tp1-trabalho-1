@@ -37,7 +37,6 @@ public:
      * @details Este método deve ser chamado previamente a efetivação da exclusão de conta.
      */
     virtual void excluirOrdensUsuario() = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Ponto de entrada para iniciar a execução do módulo de apresentação de ordens.

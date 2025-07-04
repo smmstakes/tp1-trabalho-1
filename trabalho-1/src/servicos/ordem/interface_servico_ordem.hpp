@@ -60,7 +60,6 @@ public:
      * @brief Exclui todas as ordens das carterias do usuário logado.
      */
     virtual void excluirOrdensUsuario() = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Lista todas as ordens de uma carteira específica.

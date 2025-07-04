@@ -41,7 +41,6 @@ public:
      * possa acessa-lo por meio do uso de sua interface.
      */
     virtual void excluirConta() = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Iniciar a execução do módulo de apresentação.

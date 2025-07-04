@@ -86,7 +86,6 @@ public:
      * atualmente em sessão.
      */
     virtual void excluirCarteirasUsuario() = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Recupera todas as carteiras do usuário logado.

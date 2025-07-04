@@ -9,7 +9,7 @@
  * um contrato para qualquer classe de repositório que gerencie o armazenamento
  * e a recuperação de dados da entidade `Ordem`.
  * 
- * @author Gabriel Castro
+ * @author Gabriel Castro, Suyanne Miranda
  * @date 04/07/2025
  */
 
@@ -86,7 +86,6 @@ public:
      * @param cpf CPF do usuário cujas ordens serão excluídas.
      */
     virtual void excluirOrdensUsuario(const std::string& cpf) = 0;
-    // Criado por Suyanne Miranda - 222006445
 
 };
 

@@ -112,7 +112,6 @@ public:
      * @details Remove do banco de dados todas as carteiras pertencentes ao CPF informado.
      */
     virtual void excluirCarteirasPorCPF(const std::string& cpfUsuario) = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Recupera todas as carteiras de um usuário, incluindo o valor total de cada uma.

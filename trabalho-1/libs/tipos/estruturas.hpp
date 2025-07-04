@@ -38,8 +38,6 @@ struct CarteiraComValor {
      * @brief O valor monetário total calculado de todos os ativos contidos na carteira.
      */
     double valorTotal;
-    
-// Criado por Matheus Duarte - 211062277
 };
 
 /**
@@ -53,8 +51,6 @@ struct ExcecaoSolicitacaoExclusaoConta : public std::exception {
     const char* what() const noexcept override {
         return "Solicitação de exclusão de conta confirmada.";
     }
-
-// Criado por Suyanne Miranda - 222006445
 };
 
 

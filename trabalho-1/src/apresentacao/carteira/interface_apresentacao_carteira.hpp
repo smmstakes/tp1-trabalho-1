@@ -46,7 +46,6 @@ public:
      * usa esse método direto por meio da interface.
      */
     virtual void excluirCarteirasUsuario() = 0;
-    // Criado por Suyanne Miranda - 222006445
 
     /**
      * @brief Ponto de entrada principal para iniciar a execução do módulo de apresentação.
