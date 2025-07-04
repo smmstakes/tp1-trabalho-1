@@ -29,10 +29,10 @@ private:
     bool escolherOpcao(int) override;
 
     bool acessarConta() override;
-    void registrarConta() override;
+    bool registrarConta() override;
 
 public:
-    void executar() override;
+    bool executar() override;
     void setCntrlISAutenticacao(ISAutenticacao* servicoAutenticacao) override {
         this->servicoAutenticacao = servicoAutenticacao;
     };

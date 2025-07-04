@@ -60,10 +60,9 @@ void GerenciadorSistema::inicializarConta() {
 };
 
 void GerenciadorSistema::executar() {
-    std::string usuario, senha;
-
-    ctrlAutenticacao->executar();
-    std::cout << "Autenticacao bem-sucedida.\n";
+    if (!ctrlAutenticacao->executar()) {
+        return;
+    }
 
     int opcao = 0;
     do {
@@ -83,7 +82,12 @@ void GerenciadorSistema::executar() {
                 ctrlOrdem->executar();
                 break;
             case 3:
-                ctrlConta->executar();
+                try {
+                    ctrlConta->executar();
+                } catch (const ContaExcluida& e) {
+                    std::cout << "\n" << e.what() << "\n";
+                    ctrlAutenticacao->executar(); 
+                }
                 break;
             case 0:
                 std::cout << "Saindo...\n";
@@ -91,7 +95,9 @@ void GerenciadorSistema::executar() {
             default:
                 std::cout << "Opção inválida.\n";
         }
+
     } while (opcao != 0);
 }
+
 
 

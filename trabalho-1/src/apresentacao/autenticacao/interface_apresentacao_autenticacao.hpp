@@ -10,10 +10,10 @@ protected:
     virtual bool escolherOpcao(int) = 0;
 
     virtual bool acessarConta() = 0;
-    virtual void registrarConta() = 0;
+    virtual bool registrarConta() = 0;
 
 public:
-    virtual void executar() = 0;
+    virtual bool executar() = 0;
 
     virtual void setCntrlISAutenticacao(ISAutenticacao*) = 0;
 

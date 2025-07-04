@@ -73,4 +73,10 @@ public:
     };
 };
 
+struct ContaExcluida : public std::exception {
+    const char* what() const noexcept override {
+        return "Conta excluída. Retornando ao menu de autenticação.";
+    }
+};
+
 #endif  // CONTA_CONTROLADOR_HPP_INCLUDED

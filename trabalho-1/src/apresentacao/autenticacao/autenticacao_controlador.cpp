@@ -16,30 +16,23 @@ bool CntrlIAAutenticacao::escolherOpcao(int entrada) {
     switch (entrada) {
         case ACESSAR_CONTA:
             CLR_SCR();
-            if (acessarConta()) {
-                return false; // Login deu certo, sair do menu de autenticação
-            }
-            break;
+            return acessarConta();
 
         case REGISTRAR_CONTA:
             CLR_SCR();
-            registrarConta();
-            break;
+            return registrarConta();
 
-        case SAIR: 
-            std::cout << "\nVoltando ao menu principal..." << std::endl;
-            return false;
+        case SAIR:
+            std::exit(0);
 
         default:
-            std::cout << "\nOpção inválida. Tente novamente." << std::endl;
-            break;
+            std::cout << "\nOpção inválida. Tente novamente.\n";
+            return false;
     }
-
-    return true;
 }
 
 
-void CntrlIAAutenticacao::executar() {
+bool CntrlIAAutenticacao::executar() {
     int entrada;
 
     while (true) {
@@ -50,67 +43,56 @@ void CntrlIAAutenticacao::executar() {
 
         if (std::cin.fail()) {
             std::cout << "Erro: Entrada inválida. Por favor, digite um número!\n";
-            std::cin.clear();   // Limpa o estado de erro do cin.
-
-            // Remove entradas indesejadas do buffer
+            std::cin.clear(); 
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Pressione Enter para continuar...\n";
             std::cin.get();
             continue; 
         }
 
-        if (!escolherOpcao(entrada))
-            break;  // Sai do menu caso tenha escolhido VOLTAR
+        if (escolherOpcao(entrada)) {
+            std::cout << "\nPressione Enter para continuar...\n";
+            std::cin.get();
+            return true;
+        }
 
-        // Pausa para o usuário poder ler a saída antes de limpar a tela novamente.
-        std::cout << "\nPressione Enter para continuar...\n";
+        if (entrada == SAIR) {
+            return false;
+        }
+
+        std::cout << "\nPressione Enter para voltar ao menu inicial\n";
         std::cin.get();
     }
 }
 
-void CntrlIAAutenticacao::registrarConta() {
-    std::string cpf_inpt;
-    std::string nome_inpt;
-    std::string senha_inpt;
 
-    // Limpa um \n pendente de entrada anterior (ex: std::cin >> algo)
+bool CntrlIAAutenticacao::registrarConta() {
+    std::string cpf_inpt, nome_inpt, senha_inpt;
     if (std::cin.peek() == '\n') std::cin.ignore();
 
     while (true) {
         std::cout << "----------- Criar uma Conta -----------\n";
         try {
-            std::cout << "Informe o seu CPF com pontos e traço (ou 0 para voltar): \n";
+            std::cout << "Informe o seu CPF (ou 0 para voltar): ";
             std::getline(std::cin, cpf_inpt);
-
-            if (cpf_inpt == "0") return;
-            if (cpf_inpt.empty()) {
-                std::cout << "CPF não pode ser vazio.\n";
-                continue;
-            }
+            if (cpf_inpt == "0") return false;
+            if (cpf_inpt.empty()) continue;
 
             CPF cpf;
             cpf.set(cpf_inpt);
 
             std::cout << "Informe o seu nome (ou 0 para voltar): ";
             std::getline(std::cin, nome_inpt);
-
-            if (nome_inpt == "0") return;
-            if (nome_inpt.empty()) {
-                std::cout << "Nome não pode ser vazio.\n";
-                continue;
-            }
+            if (nome_inpt == "0") return false;
+            if (nome_inpt.empty()) continue;
 
             Nome nome;
-            nome.set(nome_inpt); 
+            nome.set(nome_inpt);
 
             std::cout << "Informe a sua senha (ou 0 para voltar): ";
             std::getline(std::cin, senha_inpt);
-
-            if (senha_inpt == "0") return;
-            if (senha_inpt.empty()) {
-                std::cout << "Senha não pode ser vazia.\n";
-                continue;
-            }
+            if (senha_inpt == "0") return false;
+            if (senha_inpt.empty()) continue;
 
             Senha senha;
             senha.set(senha_inpt);
@@ -118,32 +100,29 @@ void CntrlIAAutenticacao::registrarConta() {
             servicoAutenticacao->registrarConta(cpf, nome, senha);
 
             std::cout << "Conta criada com sucesso!\n";
-            return;
-            
+            return true;
+
         } catch (const std::exception& e) {
-            std::cout << "\nErro ao criar conta: " << e.what() << std::endl;
-            std::cout << "Por favor, tente novamente com dados válidos.\n\n";
+            std::cout << "Erro: " << e.what() << "\n";
+            return false;
         }
     }
 }
 
+
 bool CntrlIAAutenticacao::acessarConta() {
-    std::string cpf_inpt;
-    std::string senha_inpt;
+    std::string cpf_inpt, senha_inpt;
 
     std::cout << "----------- Acessar a conta -----------\n";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "Informe o seu CPF (ou 0 para voltar): ";
     std::getline(std::cin, cpf_inpt);
+    if (cpf_inpt == "0") return false;
 
     std::cout << "Informe a sua senha (ou 0 para voltar): ";
     std::getline(std::cin, senha_inpt);
-
-    if (cpf_inpt == "0" || senha_inpt == "0") {
-        std::cout << "Voltando para o menu inicial.\n";
-        return false;
-    }
+    if (senha_inpt == "0") return false;
 
     try {
         CPF cpf;
@@ -154,12 +133,11 @@ bool CntrlIAAutenticacao::acessarConta() {
 
         servicoAutenticacao->acessarConta(cpf, senha);
 
-        std::cout << "Login realizado com sucesso!" << std::endl;
+        std::cout << "Login realizado com sucesso!\n";
         return true;
 
-    } catch (const std::exception &e) { 
-        std::cout << "\nErro ao acessar conta: " << e.what() << std::endl;
-        std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << "Erro ao acessar conta: " << e.what() << "\n";
         return false;
     }
 }
