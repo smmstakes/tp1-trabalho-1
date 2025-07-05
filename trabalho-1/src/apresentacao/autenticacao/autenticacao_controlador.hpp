@@ -52,13 +52,12 @@ private:
     bool escolherOpcao(int) override;
 
     bool acessarConta() override;
-    void registrarConta() override;
+    bool registrarConta() override;
 
 public:
     /**
      * @brief iniciar a execução do menu inicial pelo módulo de apresentação.
      */
-
     void executar() override;
 
     /**

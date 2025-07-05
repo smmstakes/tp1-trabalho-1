@@ -95,3 +95,9 @@ std::vector<Ordem> ServicoIOrdem::listarOrdens(const Codigo& codigoCarteira) {
 
     return persistenciaOrdem->getOrdensPorCarteira(codigoCarteira.get());
 }
+
+void ServicoIOrdem::excluirOrdensUsuario() {
+    std::string cpfUsuario = getCPFSessao();
+
+    persistenciaOrdem->excluirOrdensUsuario(cpfUsuario);
+}

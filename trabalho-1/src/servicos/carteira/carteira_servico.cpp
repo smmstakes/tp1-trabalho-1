@@ -79,3 +79,9 @@ std::vector<CarteiraComValor> ServicoICarteira::getCarteiras() {
 
     return persistencia->getCarteiras(cpfUsuario);
 }
+
+void ServicoICarteira::excluirCarteirasUsuario() {
+    std::string cpfUsuario = getCPFSessao();
+
+    persistencia->excluirCarteirasPorCPF(cpfUsuario);
+}

@@ -199,3 +199,14 @@ void CntrlIAOrdem::listarOrdens() {
         std::cerr << "Ocorreu um erro ao buscar as ordens: " << e.what() << '\n';
     }
 }
+
+void CntrlIAOrdem::excluirOrdensUsuario() {
+    std::cout << "Excluindo os registros de ordens ...\n";
+
+    try {
+        servicoOrdem->excluirOrdensUsuario();
+        std::cout << "Todas os registros de ordens feitas por você foram excluídos.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao excluir ordens: " << e.what() << '\n';
+    }
+}

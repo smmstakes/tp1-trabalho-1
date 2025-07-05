@@ -50,6 +50,7 @@ public:
     void editarNomeCarteira(const std::string& codigo, const Nome& novoNome) override;
     void editarPerfilCarteira(const std::string& codigo, const Perfil& novoPerfil) override;
     void excluirCarteira(const std::string& codigo) override;
+    void excluirCarteirasUsuario() override;
     std::vector<CarteiraComValor> getCarteiras() override;
 };
 

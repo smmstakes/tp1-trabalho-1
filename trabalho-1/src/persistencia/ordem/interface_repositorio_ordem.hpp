@@ -9,7 +9,7 @@
  * um contrato para qualquer classe de repositório que gerencie o armazenamento
  * e a recuperação de dados da entidade `Ordem`.
  * 
- * @author Gabriel Castro
+ * @author Gabriel Castro, Suyanne Miranda
  * @date 04/07/2025
  */
 
@@ -79,6 +79,13 @@ public:
      * @return true se a exclusão foi bem-sucedida.
      */
     virtual bool excluirOrdem(const std::string& codOrdem, const std::string& codCarteira) = 0;
+
+    /**
+     * @brief Exclui todas as ordens de cada carteira de um usuário.
+     * 
+     * @param cpf CPF do usuário cujas ordens serão excluídas.
+     */
+    virtual void excluirOrdensUsuario(const std::string& cpf) = 0;
 
 };
 

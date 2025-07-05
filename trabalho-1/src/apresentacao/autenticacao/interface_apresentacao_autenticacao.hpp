@@ -32,16 +32,14 @@ protected:
     virtual bool escolherOpcao(int) = 0;
 
     virtual bool acessarConta() = 0;
-    virtual void registrarConta() = 0;
+    virtual bool registrarConta() = 0;
 
 public:
-
 /**
  * @brief Iniciar a execução do módulo de apresentação.
  * 
  * @details Este método deve conter o loop principal de interação com o usuário
  */
-
     virtual void executar() = 0;
 
 /**

@@ -53,6 +53,7 @@ public:
     // Documentação já apresentada na interface
     void criarOrdem(const CodigoNegociacao& codNegociacao, const Quantidade& quantidade, const Data& data, const Codigo& codigoCarteira) override;
     void excluirOrdem(const Codigo& codigoOrdem, const Codigo& codigoCarteira) override;
+    void excluirOrdensUsuario() override;
     std::vector<Ordem> listarOrdens(const Codigo& codigoCarteira) override;
 };
 

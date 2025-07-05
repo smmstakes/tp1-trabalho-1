@@ -40,6 +40,9 @@ void ServicoIConta::excluirContaLogada() {
 
     if(!persistencia->excluirConta(cpfUsuario))
         throw std::invalid_argument("Não foi possível realizar a ação");
+
+    SessaoUsuario& sessao = SessaoUsuario::getInstance();
+    sessao.logout();
 }
 
 Conta ServicoIConta::lerConta() {

@@ -52,6 +52,11 @@ private:
 
 public:
     /**
+     * @brief Solicita a exclusão de todas as ordens do usuário quando da exclusão de conta.
+     */
+    void excluirOrdensUsuario() override;
+    
+    /**
      * @brief Inicia o loop de interação do menu de carteiras no console.
      */
     void executar() override;

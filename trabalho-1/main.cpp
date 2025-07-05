@@ -1,11 +1,11 @@
 #include <iostream>
-#include "./apresentacao/gerenciador.hpp"
+#include "./apresentacao/aplicacao_controlador.hpp"
 
 int main() {
     std::cout << "Inicializando sistema..." << std::endl;
 
     try {
-        GerenciadorSistema sistema;
+        CntrlIAAplicacao sistema;
         sistema.inicializar();
         sistema.executar();
     } catch (const std::exception& e) {
