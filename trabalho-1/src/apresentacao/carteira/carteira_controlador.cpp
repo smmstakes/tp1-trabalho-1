@@ -26,7 +26,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             CLR_SCR();
             lerCarteira();
             break;
-        
+
         case EDITAR_CARTEIRA:
             CLR_SCR();
             editarCarteira();
@@ -42,7 +42,7 @@ bool CntrlIACarteira::escolherOpcao(int entrada) {
             listarCarteiras();
             break;
 
-        case VOLTAR: 
+        case VOLTAR:
             std::cout << "\nVoltando ao menu principal..." << std::endl;
             return false;
 
@@ -59,7 +59,7 @@ void CntrlIACarteira::executar() {
 
     while (true) {
         CLR_SCR();
-        mostrarOpcoes(); 
+        mostrarOpcoes();
 
         std::cin >> entrada;
 
@@ -71,7 +71,7 @@ void CntrlIACarteira::executar() {
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Pressione Enter para continuar...\n";
             std::cin.get();
-            continue; 
+            continue;
         }
 
         if (!escolherOpcao(entrada))
@@ -79,7 +79,7 @@ void CntrlIACarteira::executar() {
 
         // Pausa para o usuário poder ler a saída antes de limpar a tela novamente.
         std::cout << "\nPressione Enter para continuar...\n";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');     // Limpa buffer 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');     // Limpa buffer
         std::cin.get();
     }
 }
@@ -110,8 +110,8 @@ void CntrlIACarteira::criarCarteira() {
         perfil.set(perfil_inpt);
 
         servicoCarteira->criarCarteira(nome, perfil);
-    
-    } catch (const std::exception &e) { 
+
+    } catch (const std::exception &e) {
         std::cout << "\nErro ao criar carteira: " << e.what() << std::endl;
         std::cout << "Por favor, tente novamente com dados válidos." << std::endl;
     }
@@ -123,7 +123,7 @@ void CntrlIACarteira::lerCarteira() {
         carteiras = servicoCarteira->getCarteiras();
     } catch (const std::exception& e) {
         std::cerr << "Ocorreu um erro ao buscar suas carteiras: " << e.what() << '\n';
-        return; 
+        return;
     }
 
     std::cout << "\n----------- Suas Carteiras de Investimento -----------\n";
@@ -139,22 +139,23 @@ void CntrlIACarteira::lerCarteira() {
     }
     std::cout << "-----------------------------------------------------\n";
 
-    int num_carteira;
+    size_t num_carteira;
     std::cout << "Informe o número da carteira que deseja ver (ou 0 para voltar): ";
     std::cin >> num_carteira;
 
     if (num_carteira == 0) {
         std::cout << "Voltando para o menu de carteiras.\n";
         return;
-    }   
+    }
 
     try {
         if (num_carteira < 1 || num_carteira > carteiras.size()) {
             throw std::invalid_argument("Número de carteira inválido.");
         }
 
-        const CarteiraComValor& carteiraEscolhida = carteiras[num_carteira - 1];      
+        const CarteiraComValor& carteiraEscolhida = carteiras[num_carteira - 1];
 
+        CLR_SCR();
         std::cout << "\n------ Detalhes da Carteira '" << carteiraEscolhida.carteira.getNome() << "' ------\n";
         std::cout << "Código de Identificação: " << carteiraEscolhida.carteira.getCodigo() << "\n";
         std::cout << "Perfil da Carteira: " << carteiraEscolhida.carteira.getPerfil() << "\n";
@@ -198,6 +199,7 @@ void CntrlIACarteira::editarCarteira() {
 
     int escolha = -1;
     while (escolha != 0) {
+        CLR_SCR();
         std::cout << "\n--- Editando Carteira: " << codigo_inpt << " ---\n";
         std::cout << "1. Editar Nome\n";
         std::cout << "2. Editar Perfil\n";
@@ -273,7 +275,7 @@ void CntrlIACarteira::excluirCarteira() {
         codigo.set(codigo_inpt);
 
         char confirmacao;
-        std::cout << "Você tem certeza que deseja excluir a carteira de código " 
+        std::cout << "Você tem certeza que deseja excluir a carteira de código "
                   << codigo.get() << "? (S/N): ";
         std::cin >> confirmacao;
 
@@ -283,7 +285,7 @@ void CntrlIACarteira::excluirCarteira() {
         } else {
             std::cout << "Exclusão cancelada pelo usuário.\n";
         }
-        
+
     } catch(const std::exception& e) {
         std::cerr << "Ocorreu um erro ao excluir a carteira: " << e.what() << '\n';
     }
@@ -297,14 +299,14 @@ void CntrlIACarteira::listarCarteiras() {
         carteiras = servicoCarteira->getCarteiras();
 
         std::cout << "\n----------- Suas Carteiras de Investimento -----------\n";
-        
+
         if (carteiras.empty()) {
             std::cout << "Você ainda não possui carteiras cadastradas.\n";
         } else {
             for(const auto& item : carteiras) {
-                std::cout << id << ". Nome: " << item.carteira.getNome() 
-                          << ", Código: " << item.carteira.getCodigo() 
-                          << ", Perfil: " << item.carteira.getPerfil() 
+                std::cout << id << ". Nome: " << item.carteira.getNome()
+                          << ", Código: " << item.carteira.getCodigo()
+                          << ", Perfil: " << item.carteira.getPerfil()
                           << ", Valor Total: R$ " << item.valorTotal << "\n";
                 ++id;
             }

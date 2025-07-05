@@ -3,7 +3,7 @@
 ComandoSQL::ComandoSQL(sqlite3* db, const std::string& sql) : stmt_ptr(nullptr, &sqlite3_finalize) {
     sqlite3_stmt* raw_stmt = nullptr;
     int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &raw_stmt, nullptr);
-    
+
     if (rc != SQLITE_OK) {
         throw EErroPersistencia("Erro ao preparar comando: " + std::string(sqlite3_errmsg(db)));
     }

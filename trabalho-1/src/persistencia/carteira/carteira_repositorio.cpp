@@ -114,7 +114,7 @@ bool RepositorioIPCarteira::excluirCarteira(const std::string& codigo, const std
 
 std::vector<CarteiraComValor> RepositorioIPCarteira::getCarteiras(const std::string& cpf) {
     sqlite3* db = gerenciadorBD.getDB();
-    std::string sql = "SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco * o.quantidade), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;";
+    std::string sql = "SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;";
 
     ComandoSQL comando(db, sql);
     comando.bind(1, cpf);
