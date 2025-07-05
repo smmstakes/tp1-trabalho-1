@@ -15,7 +15,6 @@ void RepositorioIPAutenticacao::registrarContaUsuario(const std::string& cpf, co
     comando.bind(1, cpf);
     comando.bind(2, nome);
     comando.bind(3, senha);
-    //ver o que eh esse cpfusuario
     
     // Executa o comando
     comando.execute(); 
