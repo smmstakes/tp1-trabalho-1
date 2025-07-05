@@ -1,6 +1,21 @@
 #ifndef AUTENTICACAO_CONTROLADOR_HPP_INCLUDED
 #define AUTENTICACAO_CONTROLADOR_HPP_INCLUDED
 
+
+/**
+ * @file autenticacao_controlador.hpp
+ * @brief Implementação do controlador de apresentação da autenticação de conta para uso de interface com usuário.
+ *
+ * @details Este arquivo define a classe `CntrlIAAutenticacao`, que implementa a interface
+ * `IAAutenticacao` para fornecer uma interação com o usuário baseada em linha de comando (CLI).
+ * É responsável por exibir o menu inicial onde o usuário opta por acessar sua conta ou registrar uma conta chamando os respectivos métodos
+ * da camada de serviço.
+ *
+ * @author Jose Artur Nordestino
+ * @date 04/07/2025
+ */
+
+
 #include <ios>
 #include <limits>
 #include <cstdlib>
@@ -15,6 +30,14 @@
 #include "../../servicos/autenticacao/autenticacao_servico.hpp"
 
 #include "interface_apresentacao_autenticacao.hpp"
+
+/** 
+ * @class CntrlIAAutenticacao
+ * @brief Controlador de Apresentação da Autenticação de Conta para Interface de Console
+ * 
+ * @details Implementa a interface `IAAutenticacao` para fazer a interação
+ * entre o usuário e a camada de serviço (`ISAutenticacao`).
+ */
 
 class CntrlIAAutenticacao : public IAAutenticacao {
 private:
@@ -32,7 +55,16 @@ private:
     bool registrarConta() override;
 
 public:
-    bool executar() override;
+    /**
+     * @brief iniciar a execução do menu inicial pelo módulo de apresentação.
+     */
+    void executar() override;
+
+    /**
+     * @brief Define a dependência da camada de serviço.
+     * 
+     * @param servicoAutenticacao Ponteiro para o serviço de autenticação.
+     */
     void setCntrlISAutenticacao(ISAutenticacao* servicoAutenticacao) override {
         this->servicoAutenticacao = servicoAutenticacao;
     };
