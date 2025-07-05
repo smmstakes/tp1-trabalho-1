@@ -45,6 +45,8 @@ O software foi construído seguindo um estilo de **arquitetura em camadas**, vis
 - **Módulos de Persistência:** Responsáveis por armazenar e recuperar os dados de Contas, Carteiras e Ordens em um banco de dados **SQLite**.
 - **Interfaces e Domínios:** A comunicação entre os módulos é feita por meio de interfaces (classes abstratas com métodos virtuais puros), garantindo o desacoplamento. Classes de Domínio asseguram a integridade dos dados, validando formatos de CPF, senhas, códigos, etc..
 
+> **OBS:** O diagrama de módulos e as suas especificações estão disponíveis em `diagrama/`.
+
 ## Tecnologias e Dependências
 
   * **Linguagem:** C++ (padrão C++17)
@@ -90,7 +92,11 @@ g++ $(find ./tests -name "*.cpp") \
 Após a compilação, o executável estará na pasta `trabalho-1`. Para rodar:
 
 ```bash
+# Para compilação manual
 ./main
+
+# Para compilação via Code::Blocks
+./bin/Debug/trabalho-1
 ```
 
 ## Interagindo com o Banco de Dados
@@ -116,3 +122,10 @@ O projeto utiliza um banco de dados SQLite chamado `sistema_de_investimentos.db`
     -- Sai do cliente SQLite
     .quit
     ```
+
+##### Palavras-chave
+- C++
+- SQLite
+- Arquitetura em Camadas
+- Universidade de Brasília (UnB)
+- Técnicas de Programação 1 (TP1)
