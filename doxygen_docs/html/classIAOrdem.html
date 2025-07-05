@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Referência à classe IAOrdem</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classIAOrdem.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pro-methods">Membros protegidos</a> &#124;
+<a href="classIAOrdem-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe IAOrdem<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface Abstrata para o Controlador de Apresentação de Ordem.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="interface__apresentacao__ordem_8hpp_source.html">interface_apresentacao_ordem.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de heranças da classe IAOrdem</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classIAOrdem.png" usemap="#IAOrdem_map" alt=""/>
+  <map id="IAOrdem_map" name="IAOrdem_map">
+<area href="classCntrlIAOrdem.html" title="Controlador de Apresentação de Ordem para Interface de Console." alt="CntrlIAOrdem" shape="rect" coords="0,56,89,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:acb04cf00e6ff551fbf8e7b6e444406bf" id="r_acb04cf00e6ff551fbf8e7b6e444406bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb04cf00e6ff551fbf8e7b6e444406bf">excluirOrdensUsuario</a> ()=0</td></tr>
+<tr class="memdesc:acb04cf00e6ff551fbf8e7b6e444406bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solicita a exclusão de todos os registros de ordem relacionados ao usuario.  <br /></td></tr>
+<tr class="separator:acb04cf00e6ff551fbf8e7b6e444406bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0c61fec25ed01907585ceccccc1b7f" id="r_afa0c61fec25ed01907585ceccccc1b7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa0c61fec25ed01907585ceccccc1b7f">executar</a> ()=0</td></tr>
+<tr class="memdesc:afa0c61fec25ed01907585ceccccc1b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponto de entrada para iniciar a execução do módulo de apresentação de ordens.  <br /></td></tr>
+<tr class="separator:afa0c61fec25ed01907585ceccccc1b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d8a8c1e027b3754be7288d612993a3" id="r_a82d8a8c1e027b3754be7288d612993a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d8a8c1e027b3754be7288d612993a3">setCntrlISOrdem</a> (<a class="el" href="classISOrdem.html">ISOrdem</a> *)=0</td></tr>
+<tr class="memdesc:a82d8a8c1e027b3754be7288d612993a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injeta a dependência da camada de serviço no controlador.  <br /></td></tr>
+<tr class="separator:a82d8a8c1e027b3754be7288d612993a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1937ae5d7114db9e60c3e6e05ec5c8c8" id="r_a1937ae5d7114db9e60c3e6e05ec5c8c8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1937ae5d7114db9e60c3e6e05ec5c8c8">~IAOrdem</a> ()</td></tr>
+<tr class="memdesc:a1937ae5d7114db9e60c3e6e05ec5c8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual.  <br /></td></tr>
+<tr class="separator:a1937ae5d7114db9e60c3e6e05ec5c8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros protegidos</h2></td></tr>
+<tr class="memitem:ac513da601567af5fcb1bc97123f1a6f3" id="r_ac513da601567af5fcb1bc97123f1a6f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac513da601567af5fcb1bc97123f1a6f3">mostrarOpcoes</a> ()=0</td></tr>
+<tr class="separator:ac513da601567af5fcb1bc97123f1a6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501d4433e2f5c4124405cd61598ffe36" id="r_a501d4433e2f5c4124405cd61598ffe36"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a501d4433e2f5c4124405cd61598ffe36">escolherOpcao</a> (int)=0</td></tr>
+<tr class="separator:a501d4433e2f5c4124405cd61598ffe36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f78684a0908358b0184596e313d279" id="r_a98f78684a0908358b0184596e313d279"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98f78684a0908358b0184596e313d279">criarOrdem</a> ()=0</td></tr>
+<tr class="separator:a98f78684a0908358b0184596e313d279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7993de94a39c2fa06e52c308f9076072" id="r_a7993de94a39c2fa06e52c308f9076072"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7993de94a39c2fa06e52c308f9076072">excluirOrdem</a> ()=0</td></tr>
+<tr class="separator:a7993de94a39c2fa06e52c308f9076072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af864a57c6683944e571cbc39bb590910" id="r_af864a57c6683944e571cbc39bb590910"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af864a57c6683944e571cbc39bb590910">listarOrdens</a> ()=0</td></tr>
+<tr class="separator:af864a57c6683944e571cbc39bb590910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Interface Abstrata para o Controlador de Apresentação de Ordem. </p>
+<p>Define as operações que uma interface de usuário para ordens deve realizar. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__ordem_8hpp_source.html#l00024">24</a> do ficheiro <a class="el" href="interface__apresentacao__ordem_8hpp_source.html">interface_apresentacao_ordem.hpp</a>.</p>
+</div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a1937ae5d7114db9e60c3e6e05ec5c8c8" name="a1937ae5d7114db9e60c3e6e05ec5c8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1937ae5d7114db9e60c3e6e05ec5c8c8">&#9670;&#160;</a></span>~IAOrdem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IAOrdem::~IAOrdem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor virtual. </p>
+<p>Garante que o destrutor da classe derivada seja chamado corretamente quando um objeto é deletado através de um ponteiro para a classe base. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__ordem_8hpp_source.html#l00061">61</a> do ficheiro <a class="el" href="interface__apresentacao__ordem_8hpp_source.html">interface_apresentacao_ordem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a98f78684a0908358b0184596e313d279" name="a98f78684a0908358b0184596e313d279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f78684a0908358b0184596e313d279">&#9670;&#160;</a></span>criarOrdem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::criarOrdem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a501d4433e2f5c4124405cd61598ffe36" name="a501d4433e2f5c4124405cd61598ffe36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a501d4433e2f5c4124405cd61598ffe36">&#9670;&#160;</a></span>escolherOpcao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool IAOrdem::escolherOpcao </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7993de94a39c2fa06e52c308f9076072" name="a7993de94a39c2fa06e52c308f9076072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7993de94a39c2fa06e52c308f9076072">&#9670;&#160;</a></span>excluirOrdem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::excluirOrdem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb04cf00e6ff551fbf8e7b6e444406bf" name="acb04cf00e6ff551fbf8e7b6e444406bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb04cf00e6ff551fbf8e7b6e444406bf">&#9670;&#160;</a></span>excluirOrdensUsuario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::excluirOrdensUsuario </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solicita a exclusão de todos os registros de ordem relacionados ao usuario. </p>
+<p>Este método deve ser chamado previamente a efetivação da exclusão de conta. </p>
+
+<p>Implementado em <a class="el" href="classCntrlIAOrdem.html#a2e037060113d6536e2ded37d19237849">CntrlIAOrdem</a>.</p>
+
+</div>
+</div>
+<a id="afa0c61fec25ed01907585ceccccc1b7f" name="afa0c61fec25ed01907585ceccccc1b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa0c61fec25ed01907585ceccccc1b7f">&#9670;&#160;</a></span>executar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::executar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ponto de entrada para iniciar a execução do módulo de apresentação de ordens. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigoCarteira</td><td>O código da carteira específica cujas ordens serão gerenciadas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado em <a class="el" href="classCntrlIAOrdem.html#a4d5964d782e08384f1b8e2388c73b6c8">CntrlIAOrdem</a>.</p>
+
+</div>
+</div>
+<a id="af864a57c6683944e571cbc39bb590910" name="af864a57c6683944e571cbc39bb590910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af864a57c6683944e571cbc39bb590910">&#9670;&#160;</a></span>listarOrdens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::listarOrdens </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac513da601567af5fcb1bc97123f1a6f3" name="ac513da601567af5fcb1bc97123f1a6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac513da601567af5fcb1bc97123f1a6f3">&#9670;&#160;</a></span>mostrarOpcoes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::mostrarOpcoes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82d8a8c1e027b3754be7288d612993a3" name="a82d8a8c1e027b3754be7288d612993a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d8a8c1e027b3754be7288d612993a3">&#9670;&#160;</a></span>setCntrlISOrdem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAOrdem::setCntrlISOrdem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classISOrdem.html">ISOrdem</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Injeta a dependência da camada de serviço no controlador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servicoOrdem</td><td>Ponteiro para uma implementação da interface <code><a class="el" href="classISOrdem.html" title="Interface Abstrata para o Serviço de Negócio de Ordem.">ISOrdem</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado em <a class="el" href="classCntrlIAOrdem.html#add358f604b8963a0c8189a740039cc43">CntrlIAOrdem</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>trabalho-1/src/apresentacao/ordem/<a class="el" href="interface__apresentacao__ordem_8hpp_source.html">interface_apresentacao_ordem.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classIAOrdem.html">IAOrdem</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Referência à classe IACarteira</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classIACarteira.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pro-methods">Membros protegidos</a> &#124;
+<a href="classIACarteira-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe IACarteira<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface Abstrata para o Controlador de Apresentação de Carteira.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="interface__apresentacao__carteira_8hpp_source.html">interface_apresentacao_carteira.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de heranças da classe IACarteira</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classIACarteira.png" usemap="#IACarteira_map" alt=""/>
+  <map id="IACarteira_map" name="IACarteira_map">
+<area href="classCntrlIACarteira.html" title="Controlador de Apresentação de Carteira para Interface de Console." alt="CntrlIACarteira" shape="rect" coords="0,56,97,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:ab2b9bc6e6bf7ca79b1908db2e5cc8791" id="r_ab2b9bc6e6bf7ca79b1908db2e5cc8791"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b9bc6e6bf7ca79b1908db2e5cc8791">excluirCarteirasUsuario</a> ()=0</td></tr>
+<tr class="memdesc:ab2b9bc6e6bf7ca79b1908db2e5cc8791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponto de partida para excluir todas as carteiras do usuário.  <br /></td></tr>
+<tr class="separator:ab2b9bc6e6bf7ca79b1908db2e5cc8791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d66aa503f34e800626caf0146bf75d" id="r_ad6d66aa503f34e800626caf0146bf75d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6d66aa503f34e800626caf0146bf75d">executar</a> ()=0</td></tr>
+<tr class="memdesc:ad6d66aa503f34e800626caf0146bf75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponto de entrada principal para iniciar a execução do módulo de apresentação.  <br /></td></tr>
+<tr class="separator:ad6d66aa503f34e800626caf0146bf75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0357e9f578d205086fb393ec2c35e4" id="r_ade0357e9f578d205086fb393ec2c35e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0357e9f578d205086fb393ec2c35e4">setCntrlISCarteira</a> (<a class="el" href="classISCarteira.html">ISCarteira</a> *)=0</td></tr>
+<tr class="memdesc:ade0357e9f578d205086fb393ec2c35e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injeta a dependência da camada de serviço no controlador.  <br /></td></tr>
+<tr class="separator:ade0357e9f578d205086fb393ec2c35e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a9db2cadd2276ae67814f9e36f0469" id="r_af7a9db2cadd2276ae67814f9e36f0469"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a9db2cadd2276ae67814f9e36f0469">~IACarteira</a> ()</td></tr>
+<tr class="memdesc:af7a9db2cadd2276ae67814f9e36f0469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual.  <br /></td></tr>
+<tr class="separator:af7a9db2cadd2276ae67814f9e36f0469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros protegidos</h2></td></tr>
+<tr class="memitem:a31fa81b89a0cd9ab3866821beb98b6d1" id="r_a31fa81b89a0cd9ab3866821beb98b6d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31fa81b89a0cd9ab3866821beb98b6d1">mostrarOpcoes</a> ()=0</td></tr>
+<tr class="separator:a31fa81b89a0cd9ab3866821beb98b6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d8208ef64e13b6ae892a4b0d18b614" id="r_ae7d8208ef64e13b6ae892a4b0d18b614"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7d8208ef64e13b6ae892a4b0d18b614">escolherOpcao</a> (int)=0</td></tr>
+<tr class="separator:ae7d8208ef64e13b6ae892a4b0d18b614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89e7a33dc1153aa53858cf9807e2409" id="r_ae89e7a33dc1153aa53858cf9807e2409"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae89e7a33dc1153aa53858cf9807e2409">criarCarteira</a> ()=0</td></tr>
+<tr class="separator:ae89e7a33dc1153aa53858cf9807e2409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119b2749cedfaa372fa89b2a5129ffa9" id="r_a119b2749cedfaa372fa89b2a5129ffa9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a119b2749cedfaa372fa89b2a5129ffa9">lerCarteira</a> ()=0</td></tr>
+<tr class="separator:a119b2749cedfaa372fa89b2a5129ffa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0786681aca963818b992cea92c3a846a" id="r_a0786681aca963818b992cea92c3a846a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0786681aca963818b992cea92c3a846a">editarCarteira</a> ()=0</td></tr>
+<tr class="separator:a0786681aca963818b992cea92c3a846a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b950fdbd51300ca4c123f60968ed93" id="r_a74b950fdbd51300ca4c123f60968ed93"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74b950fdbd51300ca4c123f60968ed93">excluirCarteira</a> ()=0</td></tr>
+<tr class="separator:a74b950fdbd51300ca4c123f60968ed93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a25d6216284c1a61451b1b1dc0b50d" id="r_a62a25d6216284c1a61451b1b1dc0b50d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a25d6216284c1a61451b1b1dc0b50d">listarCarteiras</a> ()=0</td></tr>
+<tr class="separator:a62a25d6216284c1a61451b1b1dc0b50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Interface Abstrata para o Controlador de Apresentação de Carteira. </p>
+<p>Define o conjunto de operações que uma interface de usuário para carteiras deve ser capaz de realizar. As classes que herdam de <code><a class="el" href="classIACarteira.html" title="Interface Abstrata para o Controlador de Apresentação de Carteira.">IACarteira</a></code> são responsáveis por implementar a lógica de interação com o usuário. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__carteira_8hpp_source.html#l00028">28</a> do ficheiro <a class="el" href="interface__apresentacao__carteira_8hpp_source.html">interface_apresentacao_carteira.hpp</a>.</p>
+</div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="af7a9db2cadd2276ae67814f9e36f0469" name="af7a9db2cadd2276ae67814f9e36f0469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a9db2cadd2276ae67814f9e36f0469">&#9670;&#160;</a></span>~IACarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IACarteira::~IACarteira </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor virtual. </p>
+<p>Garante que o destrutor da classe derivada seja chamado corretamente quando um objeto é deletado através de um ponteiro para a classe base. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__carteira_8hpp_source.html#l00073">73</a> do ficheiro <a class="el" href="interface__apresentacao__carteira_8hpp_source.html">interface_apresentacao_carteira.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="ae89e7a33dc1153aa53858cf9807e2409" name="ae89e7a33dc1153aa53858cf9807e2409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89e7a33dc1153aa53858cf9807e2409">&#9670;&#160;</a></span>criarCarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::criarCarteira </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0786681aca963818b992cea92c3a846a" name="a0786681aca963818b992cea92c3a846a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0786681aca963818b992cea92c3a846a">&#9670;&#160;</a></span>editarCarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::editarCarteira </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7d8208ef64e13b6ae892a4b0d18b614" name="ae7d8208ef64e13b6ae892a4b0d18b614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d8208ef64e13b6ae892a4b0d18b614">&#9670;&#160;</a></span>escolherOpcao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool IACarteira::escolherOpcao </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74b950fdbd51300ca4c123f60968ed93" name="a74b950fdbd51300ca4c123f60968ed93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b950fdbd51300ca4c123f60968ed93">&#9670;&#160;</a></span>excluirCarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::excluirCarteira </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2b9bc6e6bf7ca79b1908db2e5cc8791" name="ab2b9bc6e6bf7ca79b1908db2e5cc8791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b9bc6e6bf7ca79b1908db2e5cc8791">&#9670;&#160;</a></span>excluirCarteirasUsuario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::excluirCarteirasUsuario </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ponto de partida para excluir todas as carteiras do usuário. </p>
+<p>Este método é responsável por chamar o serviço de exclusão de carteiras e deve ser implementado para garantir que todas as carteiras sejam removidas antes de excluir a conta do usuário. Precisa ser público pois ControladorApresentacao usa esse método direto por meio da interface. </p>
+
+<p>Implementado em <a class="el" href="classCntrlIACarteira.html#af2193f456ec2687f347de8c00d3d3cea">CntrlIACarteira</a>.</p>
+
+</div>
+</div>
+<a id="ad6d66aa503f34e800626caf0146bf75d" name="ad6d66aa503f34e800626caf0146bf75d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d66aa503f34e800626caf0146bf75d">&#9670;&#160;</a></span>executar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::executar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ponto de entrada principal para iniciar a execução do módulo de apresentação. </p>
+<p>Este método deve conter o loop principal de interação com o usuário </p>
+
+<p>Implementado em <a class="el" href="classCntrlIACarteira.html#a6e540ff0ffd1fac9397be287b2f4c21f">CntrlIACarteira</a>.</p>
+
+</div>
+</div>
+<a id="a119b2749cedfaa372fa89b2a5129ffa9" name="a119b2749cedfaa372fa89b2a5129ffa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119b2749cedfaa372fa89b2a5129ffa9">&#9670;&#160;</a></span>lerCarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::lerCarteira </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62a25d6216284c1a61451b1b1dc0b50d" name="a62a25d6216284c1a61451b1b1dc0b50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a25d6216284c1a61451b1b1dc0b50d">&#9670;&#160;</a></span>listarCarteiras()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::listarCarteiras </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31fa81b89a0cd9ab3866821beb98b6d1" name="a31fa81b89a0cd9ab3866821beb98b6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fa81b89a0cd9ab3866821beb98b6d1">&#9670;&#160;</a></span>mostrarOpcoes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::mostrarOpcoes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade0357e9f578d205086fb393ec2c35e4" name="ade0357e9f578d205086fb393ec2c35e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0357e9f578d205086fb393ec2c35e4">&#9670;&#160;</a></span>setCntrlISCarteira()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IACarteira::setCntrlISCarteira </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classISCarteira.html">ISCarteira</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Injeta a dependência da camada de serviço no controlador. </p>
+<p>Essencial para o padrão de Injeção de Dependência, este método conecta a camada de apresentação com a camada de regras de negócio.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servicoCarteira</td><td>Ponteiro para uma implementação da interface <code><a class="el" href="classISCarteira.html" title="Interface Abstrata para o Serviço de Negócio de Carteira.">ISCarteira</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado em <a class="el" href="classCntrlIACarteira.html#ac359295932dfbe884a14827346be7d1f">CntrlIACarteira</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>trabalho-1/src/apresentacao/carteira/<a class="el" href="interface__apresentacao__carteira_8hpp_source.html">interface_apresentacao_carteira.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classIACarteira.html">IACarteira</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

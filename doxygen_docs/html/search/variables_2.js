@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sucesso_0',['SUCESSO',['../classTUDominio.html#a310e3abb0f0d0d7a892fef791d1a840d',1,'TUDominio::SUCESSO'],['../classTUEntidade.html#ac551ca58bef726a9424f709be6fed3e0',1,'TUEntidade::SUCESSO']]]
+  ['falha_0',['FALHA',['../classTUDominio.html#afed7fc4b29d311671934e82b4d1b48e0',1,'TUDominio::FALHA'],['../classTUEntidade.html#ab8435787a05c25ccbdb9fe0c0aa099ab',1,'TUEntidade::FALHA']]]
 ];

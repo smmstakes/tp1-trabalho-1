@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Código-Fonte de trabalho-1/src/persistencia/carteira/interface_repositorio_carteira.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('interface__repositorio__carteira_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interface_repositorio_carteira.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface__repositorio__carteira_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef INTERFACE_REPOSITORIO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define INTERFACE_REPOSITORIO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;../../../libs/tipos/estruturas.hpp&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;../../../libs/dominios/dominios.hpp&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;../../../libs/entidades/entidades.hpp&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classIPCarteira.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classIPCarteira.html">IPCarteira</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classIPCarteira.html#ae3f9cc6f4137774a7a5328a08b884a55">   35</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classIPCarteira.html#ae3f9cc6f4137774a7a5328a08b884a55">~IPCarteira</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classIPCarteira.html#a7e58254eb73faf7d512d0809677630f4">   44</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classIPCarteira.html#a7e58254eb73faf7d512d0809677630f4">contarCarteirasUsuario</a>(<span class="keyword">const</span> std::string&amp; cpfUsuario) = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classIPCarteira.html#a43164124c73a4f51067b82aaea6f90ba">   51</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classIPCarteira.html#a43164124c73a4f51067b82aaea6f90ba">obterUltimoCodigoCarteiraInserido</a>() = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classIPCarteira.html#a40d2f5654c4cca708ca0fcf6735f7604">   60</a></span>    <span class="keyword">virtual</span> std::vector&lt;Ordem&gt; <a class="code hl_function" href="classIPCarteira.html#a40d2f5654c4cca708ca0fcf6735f7604">getOrdensCarteira</a>(<span class="keyword">const</span> std::string codCarteira) = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classIPCarteira.html#ac3dfda92da29b3b45501ec77fad45fdc">   70</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIPCarteira.html#ac3dfda92da29b3b45501ec77fad45fdc">criarCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; perfil, <span class="keyword">const</span> std::string&amp; cpfUsuario) = 0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classIPCarteira.html#ae0a1d52778d2aeca0931a30c6a4e8d6f">   82</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIPCarteira.html#ae0a1d52778d2aeca0931a30c6a4e8d6f">editarNomeCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> std::string&amp; cpfUsuario, <span class="keyword">const</span> std::string&amp; novoNome) = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classIPCarteira.html#ae95428efb57444d50b75a5cb8d80961e">   94</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIPCarteira.html#ae95428efb57444d50b75a5cb8d80961e">editarPerfilCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> std::string&amp; cpfUsuario, <span class="keyword">const</span> std::string&amp; novoPerfil) = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classIPCarteira.html#a7d1700b6ba3916ffb37c653c60edd880">  105</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIPCarteira.html#a7d1700b6ba3916ffb37c653c60edd880">excluirCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> std::string&amp; cpfUsuario) = 0;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classIPCarteira.html#a7b5fcd090098ee9866d2841c1aa1f1bd">  114</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIPCarteira.html#a7b5fcd090098ee9866d2841c1aa1f1bd">excluirCarteirasPorCPF</a>(<span class="keyword">const</span> std::string&amp; cpfUsuario) = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classIPCarteira.html#af566e820887d53a2334b1313da23b72d">  123</a></span>    <span class="keyword">virtual</span> std::vector&lt;CarteiraComValor&gt; <a class="code hl_function" href="classIPCarteira.html#af566e820887d53a2334b1313da23b72d">getCarteiras</a>(<span class="keyword">const</span> std::string&amp; cpf) = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif  </span><span class="comment">// INTERFACE_REPOSITORIO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="ttc" id="aclassIPCarteira_html"><div class="ttname"><a href="classIPCarteira.html">IPCarteira</a></div><div class="ttdoc">Interface Abstrata para o Repositório da entidade Carteira.</div><div class="ttdef"><b>Definição</b> <a href="#l00030">interface_repositorio_carteira.hpp:30</a></div></div>
+<div class="ttc" id="aclassIPCarteira_html_a40d2f5654c4cca708ca0fcf6735f7604"><div class="ttname"><a href="classIPCarteira.html#a40d2f5654c4cca708ca0fcf6735f7604">IPCarteira::getOrdensCarteira</a></div><div class="ttdeci">virtual std::vector&lt; Ordem &gt; getOrdensCarteira(const std::string codCarteira)=0</div><div class="ttdoc">Recupera todas as ordens de uma carteira específica.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_a43164124c73a4f51067b82aaea6f90ba"><div class="ttname"><a href="classIPCarteira.html#a43164124c73a4f51067b82aaea6f90ba">IPCarteira::obterUltimoCodigoCarteiraInserido</a></div><div class="ttdeci">virtual std::string obterUltimoCodigoCarteiraInserido()=0</div><div class="ttdoc">Obtém o código da última carteira inserida no banco de dados.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_a7b5fcd090098ee9866d2841c1aa1f1bd"><div class="ttname"><a href="classIPCarteira.html#a7b5fcd090098ee9866d2841c1aa1f1bd">IPCarteira::excluirCarteirasPorCPF</a></div><div class="ttdeci">virtual void excluirCarteirasPorCPF(const std::string &amp;cpfUsuario)=0</div><div class="ttdoc">Exclui todas as carteiras associadas a um usuário.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_a7d1700b6ba3916ffb37c653c60edd880"><div class="ttname"><a href="classIPCarteira.html#a7d1700b6ba3916ffb37c653c60edd880">IPCarteira::excluirCarteira</a></div><div class="ttdeci">virtual bool excluirCarteira(const std::string &amp;codigo, const std::string &amp;cpfUsuario)=0</div><div class="ttdoc">Remove uma carteira do banco de dados.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_a7e58254eb73faf7d512d0809677630f4"><div class="ttname"><a href="classIPCarteira.html#a7e58254eb73faf7d512d0809677630f4">IPCarteira::contarCarteirasUsuario</a></div><div class="ttdeci">virtual int contarCarteirasUsuario(const std::string &amp;cpfUsuario)=0</div><div class="ttdoc">Conta o número de carteiras associadas a um CPF.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_ac3dfda92da29b3b45501ec77fad45fdc"><div class="ttname"><a href="classIPCarteira.html#ac3dfda92da29b3b45501ec77fad45fdc">IPCarteira::criarCarteira</a></div><div class="ttdeci">virtual void criarCarteira(const std::string &amp;codigo, const std::string &amp;nome, const std::string &amp;perfil, const std::string &amp;cpfUsuario)=0</div><div class="ttdoc">Insere uma nova carteira no banco de dados.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_ae0a1d52778d2aeca0931a30c6a4e8d6f"><div class="ttname"><a href="classIPCarteira.html#ae0a1d52778d2aeca0931a30c6a4e8d6f">IPCarteira::editarNomeCarteira</a></div><div class="ttdeci">virtual bool editarNomeCarteira(const std::string &amp;codigo, const std::string &amp;cpfUsuario, const std::string &amp;novoNome)=0</div><div class="ttdoc">Atualiza o nome de uma carteira existente.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_ae3f9cc6f4137774a7a5328a08b884a55"><div class="ttname"><a href="classIPCarteira.html#ae3f9cc6f4137774a7a5328a08b884a55">IPCarteira::~IPCarteira</a></div><div class="ttdeci">virtual ~IPCarteira()=default</div><div class="ttdoc">Destrutor virtual padrão.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_ae95428efb57444d50b75a5cb8d80961e"><div class="ttname"><a href="classIPCarteira.html#ae95428efb57444d50b75a5cb8d80961e">IPCarteira::editarPerfilCarteira</a></div><div class="ttdeci">virtual bool editarPerfilCarteira(const std::string &amp;codigo, const std::string &amp;cpfUsuario, const std::string &amp;novoPerfil)=0</div><div class="ttdoc">Atualiza o perfil de uma carteira existente.</div></div>
+<div class="ttc" id="aclassIPCarteira_html_af566e820887d53a2334b1313da23b72d"><div class="ttname"><a href="classIPCarteira.html#af566e820887d53a2334b1313da23b72d">IPCarteira::getCarteiras</a></div><div class="ttdeci">virtual std::vector&lt; CarteiraComValor &gt; getCarteiras(const std::string &amp;cpf)=0</div><div class="ttdoc">Recupera todas as carteiras de um usuário, incluindo o valor total de cada uma.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23095629569aa78ec444c88f65e23989.html">trabalho-1</a></li><li class="navelem"><a class="el" href="dir_1ba8a6b5653aec2a0b269606c9885314.html">src</a></li><li class="navelem"><a class="el" href="dir_ac3995ff51fd252c3b6a83316b3da508.html">persistencia</a></li><li class="navelem"><a class="el" href="dir_bd5e5d6320a7bd3b1c21de72c9035db1.html">carteira</a></li><li class="navelem"><a class="el" href="interface__repositorio__carteira_8hpp.html">interface_repositorio_carteira.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Referência à classe GerenciadorBD</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classGerenciadorBD.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pub-static-methods">Membros públicos estáticos</a> &#124;
+<a href="classGerenciadorBD-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe GerenciadorBD</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gerencia a conexão e o estado do banco de dados SQLite.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="gerenciador__bd_8hpp_source.html">gerenciador_bd.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a248baf5cc88dac0285196c57b515c1a5" id="r_a248baf5cc88dac0285196c57b515c1a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a248baf5cc88dac0285196c57b515c1a5">GerenciadorBD</a> (const <a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a248baf5cc88dac0285196c57b515c1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desabilita o construtor de cópia para garantir uma única instância.  <br /></td></tr>
+<tr class="separator:a248baf5cc88dac0285196c57b515c1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f43b11789f7c1ba177befa5dc69bd4" id="r_ac6f43b11789f7c1ba177befa5dc69bd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f43b11789f7c1ba177befa5dc69bd4">operator=</a> (const <a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ac6f43b11789f7c1ba177befa5dc69bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desabilita o operador de atribuição de cópia.  <br /></td></tr>
+<tr class="separator:ac6f43b11789f7c1ba177befa5dc69bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b09d25e556e147cc4dc72f49b0e213" id="r_aa3b09d25e556e147cc4dc72f49b0e213"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3b09d25e556e147cc4dc72f49b0e213">inicializarBanco</a> ()</td></tr>
+<tr class="memdesc:aa3b09d25e556e147cc4dc72f49b0e213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para inicializar o banco de dados.  <br /></td></tr>
+<tr class="separator:aa3b09d25e556e147cc4dc72f49b0e213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8986929c56ca24979a9a67081e993a" id="r_a2f8986929c56ca24979a9a67081e993a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8986929c56ca24979a9a67081e993a">conectar</a> (const std::string &amp;nome_arquivo)</td></tr>
+<tr class="memdesc:a2f8986929c56ca24979a9a67081e993a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abre a conexão com um arquivo de banco de dados SQLite.  <br /></td></tr>
+<tr class="separator:a2f8986929c56ca24979a9a67081e993a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf84f4bb94b4efa4fa51ef0011334018" id="r_aaf84f4bb94b4efa4fa51ef0011334018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf84f4bb94b4efa4fa51ef0011334018">desconectar</a> ()</td></tr>
+<tr class="memdesc:aaf84f4bb94b4efa4fa51ef0011334018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha a conexão com o banco de dados, se estiver aberta.  <br /></td></tr>
+<tr class="separator:aaf84f4bb94b4efa4fa51ef0011334018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63278db7d4ded939f346c1a5bb0f7fc2" id="r_a63278db7d4ded939f346c1a5bb0f7fc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63278db7d4ded939f346c1a5bb0f7fc2">criarTabelas</a> ()</td></tr>
+<tr class="memdesc:a63278db7d4ded939f346c1a5bb0f7fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa os comandos SQL para criar as tabelas do sistema, caso não existam.  <br /></td></tr>
+<tr class="separator:a63278db7d4ded939f346c1a5bb0f7fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddfedf4899568c3507abe3381cecc16" id="r_a3ddfedf4899568c3507abe3381cecc16"><td class="memItemLeft" align="right" valign="top">sqlite3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ddfedf4899568c3507abe3381cecc16">getDB</a> () const</td></tr>
+<tr class="memdesc:a3ddfedf4899568c3507abe3381cecc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fornece o ponteiro bruto para a conexão com o banco de dados.  <br /></td></tr>
+<tr class="separator:a3ddfedf4899568c3507abe3381cecc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr class="memitem:a546dace93110fead6a4027ca1ce8dcdf" id="r_a546dace93110fead6a4027ca1ce8dcdf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a546dace93110fead6a4027ca1ce8dcdf">getInstance</a> ()</td></tr>
+<tr class="memdesc:a546dace93110fead6a4027ca1ce8dcdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fornece acesso à instância única (Singleton) do gerenciador.  <br /></td></tr>
+<tr class="separator:a546dace93110fead6a4027ca1ce8dcdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Gerencia a conexão e o estado do banco de dados SQLite. </p>
+<p>Implementado como um Singleton, esta classe garante que existe apenas um ponto de controle para o banco de dados em toda a aplicação. Ela abstrai os detalhes de baixo nível da abertura e fechamento da conexão. </p>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8hpp_source.html#l00033">33</a> do ficheiro <a class="el" href="gerenciador__bd_8hpp_source.html">gerenciador_bd.hpp</a>.</p>
+</div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a248baf5cc88dac0285196c57b515c1a5" name="a248baf5cc88dac0285196c57b515c1a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248baf5cc88dac0285196c57b515c1a5">&#9670;&#160;</a></span>GerenciadorBD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GerenciadorBD::GerenciadorBD </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desabilita o construtor de cópia para garantir uma única instância. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a2f8986929c56ca24979a9a67081e993a" name="a2f8986929c56ca24979a9a67081e993a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8986929c56ca24979a9a67081e993a">&#9670;&#160;</a></span>conectar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorBD::conectar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome_arquivo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Abre a conexão com um arquivo de banco de dados SQLite. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome_arquivo</td><td>O caminho para o arquivo do banco de dados.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> em caso de sucesso na conexão. </dd>
+<dd>
+<code>false</code> se a conexão falhar. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8cpp_source.html#l00014">14</a> do ficheiro <a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                                                          {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">int</span> rc = sqlite3_open(nome_arquivo.c_str(), &amp;db);</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span>(rc) {</div>
+<div class="line"><span class="lineno">   17</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro ao abrir o banco de dados: &quot;</span> &lt;&lt; sqlite3_errmsg(db) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">return</span> conectado;</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span>    conectado = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> conectado;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="gerenciador__bd_8cpp_source.html#l00053">inicializarBanco()</a>.</p>
+
+</div>
+</div>
+<a id="a63278db7d4ded939f346c1a5bb0f7fc2" name="a63278db7d4ded939f346c1a5bb0f7fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63278db7d4ded939f346c1a5bb0f7fc2">&#9670;&#160;</a></span>criarTabelas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorBD::criarTabelas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executa os comandos SQL para criar as tabelas do sistema, caso não existam. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se todas as tabelas foram criadas com sucesso. </dd>
+<dd>
+<code>false</code> se ocorreu algum erro de SQL. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8cpp_source.html#l00031">31</a> do ficheiro <a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                                 {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span>(!conectado) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* sqls[] = {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS Conta (cpf TEXT PRIMARY KEY, nome TEXT NOT NULL, senha TEXT NOT NULL);&quot;</span>,</div>
+<div class="line"><span class="lineno">   36</span>        <span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS Carteira (codigo TEXT PRIMARY KEY, nome TEXT NOT NULL, perfil TEXT NOT NULL, cpf_conta TEXT, FOREIGN KEY (cpf_conta) REFERENCES Conta (cpf));&quot;</span>,</div>
+<div class="line"><span class="lineno">   37</span>        <span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS Ordem (codigo TEXT PRIMARY KEY, codNegociacao TEXT, data TEXT, preco REAL, quantidade INTEGER, cod_carteira TEXT, FOREIGN KEY (cod_carteira) REFERENCES Carteira (codigo));&quot;</span></div>
+<div class="line"><span class="lineno">   38</span>    };</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">char</span>* errMsg = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> sql : sqls) {</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordtype">int</span> rc = sqlite3_exec(db, sql, 0, 0, &amp;errMsg);</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span>(rc != SQLITE_OK) {</div>
+<div class="line"><span class="lineno">   44</span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro SQL: &quot;</span> &lt;&lt; errMsg &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   45</span>            sqlite3_free(errMsg);</div>
+<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="gerenciador__bd_8cpp_source.html#l00053">inicializarBanco()</a>.</p>
+
+</div>
+</div>
+<a id="aaf84f4bb94b4efa4fa51ef0011334018" name="aaf84f4bb94b4efa4fa51ef0011334018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf84f4bb94b4efa4fa51ef0011334018">&#9670;&#160;</a></span>desconectar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GerenciadorBD::desconectar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fecha a conexão com o banco de dados, se estiver aberta. </p>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8cpp_source.html#l00024">24</a> do ficheiro <a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                                {</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span>(conectado) {</div>
+<div class="line"><span class="lineno">   26</span>        sqlite3_close(db);</div>
+<div class="line"><span class="lineno">   27</span>        conectado = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3ddfedf4899568c3507abe3381cecc16" name="a3ddfedf4899568c3507abe3381cecc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ddfedf4899568c3507abe3381cecc16">&#9670;&#160;</a></span>getDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlite3 * GerenciadorBD::getDB </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fornece o ponteiro bruto para a conexão com o banco de dados. </p>
+<p>Este método é usado por outras classes (como <code>ComandoSQL</code>) que precisam interagir diretamente com a API do SQLite.</p>
+<dl class="section return"><dt>Retorna</dt><dd>sqlite3* O ponteiro para o handle do banco de dados, ou <code>nullptr</code> se não conectado. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8hpp_source.html#l00100">100</a> do ficheiro <a class="el" href="gerenciador__bd_8hpp_source.html">gerenciador_bd.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{ <span class="keywordflow">return</span> db; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a546dace93110fead6a4027ca1ce8dcdf" name="a546dace93110fead6a4027ca1ce8dcdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a546dace93110fead6a4027ca1ce8dcdf">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp; GerenciadorBD::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fornece acesso à instância única (Singleton) do gerenciador. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="classGerenciadorBD.html" title="Gerencia a conexão e o estado do banco de dados SQLite.">GerenciadorBD</a>&amp; Uma referência para a instância global. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8cpp_source.html#l00009">9</a> do ficheiro <a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                          {</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keyword">static</span> GerenciadorBD instancia;</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">return</span> instancia;</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="aplicacao__controlador_8cpp_source.html#l00003">CntrlIAAplicacao::inicializar()</a> e <a class="el" href="gerenciador__bd_8cpp_source.html#l00053">inicializarBanco()</a>.</p>
+
+</div>
+</div>
+<a id="aa3b09d25e556e147cc4dc72f49b0e213" name="aa3b09d25e556e147cc4dc72f49b0e213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b09d25e556e147cc4dc72f49b0e213">&#9670;&#160;</a></span>inicializarBanco()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorBD::inicializarBanco </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para inicializar o banco de dados. </p>
+<p>Realiza a sequência de conexão com o arquivo padrão e criação das tabelas.</p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se a conexão e a criação das tabelas foram bem-sucedidas. </dd>
+<dd>
+<code>false</code> se ocorreu algum erro durante o processo. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="gerenciador__bd_8cpp_source.html#l00053">53</a> do ficheiro <a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                     {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   55</span>        GerenciadorBD&amp; gerenciadorBD = <a class="code hl_function" href="#a546dace93110fead6a4027ca1ce8dcdf">GerenciadorBD::getInstance</a>();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (!gerenciadorBD.<a class="code hl_function" href="#a2f8986929c56ca24979a9a67081e993a">conectar</a>(<span class="stringliteral">&quot;data/sistema_de_investimentos.db&quot;</span>)) {</div>
+<div class="line"><span class="lineno">   58</span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;Falha ao conectar ao banco de dados.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (!gerenciadorBD.<a class="code hl_function" href="#a63278db7d4ded939f346c1a5bb0f7fc2">criarTabelas</a>()) {</div>
+<div class="line"><span class="lineno">   63</span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;Não foi possível criar as tabelas do banco de dados.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; excp) {</div>
+<div class="line"><span class="lineno">   70</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Ocorreu um erro durante a inicialização: &quot;</span> &lt;&lt; excp.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>}</div>
+<div class="ttc" id="aclassGerenciadorBD_html_a2f8986929c56ca24979a9a67081e993a"><div class="ttname"><a href="#a2f8986929c56ca24979a9a67081e993a">GerenciadorBD::conectar</a></div><div class="ttdeci">bool conectar(const std::string &amp;nome_arquivo)</div><div class="ttdoc">Abre a conexão com um arquivo de banco de dados SQLite.</div><div class="ttdef"><b>Definição</b> <a href="gerenciador__bd_8cpp_source.html#l00014">gerenciador_bd.cpp:14</a></div></div>
+<div class="ttc" id="aclassGerenciadorBD_html_a546dace93110fead6a4027ca1ce8dcdf"><div class="ttname"><a href="#a546dace93110fead6a4027ca1ce8dcdf">GerenciadorBD::getInstance</a></div><div class="ttdeci">static GerenciadorBD &amp; getInstance()</div><div class="ttdoc">Fornece acesso à instância única (Singleton) do gerenciador.</div><div class="ttdef"><b>Definição</b> <a href="gerenciador__bd_8cpp_source.html#l00009">gerenciador_bd.cpp:9</a></div></div>
+<div class="ttc" id="aclassGerenciadorBD_html_a63278db7d4ded939f346c1a5bb0f7fc2"><div class="ttname"><a href="#a63278db7d4ded939f346c1a5bb0f7fc2">GerenciadorBD::criarTabelas</a></div><div class="ttdeci">bool criarTabelas()</div><div class="ttdoc">Executa os comandos SQL para criar as tabelas do sistema, caso não existam.</div><div class="ttdef"><b>Definição</b> <a href="gerenciador__bd_8cpp_source.html#l00031">gerenciador_bd.cpp:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referências <a class="el" href="gerenciador__bd_8cpp_source.html#l00014">conectar()</a>, <a class="el" href="gerenciador__bd_8cpp_source.html#l00031">criarTabelas()</a> e <a class="el" href="gerenciador__bd_8cpp_source.html#l00009">getInstance()</a>.</p>
+
+</div>
+</div>
+<a id="ac6f43b11789f7c1ba177befa5dc69bd4" name="ac6f43b11789f7c1ba177befa5dc69bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f43b11789f7c1ba177befa5dc69bd4">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp; GerenciadorBD::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGerenciadorBD.html">GerenciadorBD</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desabilita o operador de atribuição de cópia. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
+<li>trabalho-1/src/persistencia/<a class="el" href="gerenciador__bd_8hpp_source.html">gerenciador_bd.hpp</a></li>
+<li>trabalho-1/src/persistencia/<a class="el" href="gerenciador__bd_8cpp_source.html">gerenciador_bd.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classGerenciadorBD.html">GerenciadorBD</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

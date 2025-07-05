@@ -106,6 +106,36 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+COMPILAR</h1>
+<div class="fragment"><div class="line">g++ main.cpp \</div>
+<div class="line">    $(find ./src -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./libs -name &quot;*.cpp&quot;) \</div>
+<div class="line">    -I./src \</div>
+<div class="line">    -I./libs \</div>
+<div class="line">    -o main \</div>
+<div class="line">    -lsqlite3 -lpthread -ldl</div>
+<div class="line"> </div>
+<div class="line">g++ $(find ./tests -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./src -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./libs -name &quot;*.cpp&quot;) \</div>
+<div class="line">    -I./tests \</div>
+<div class="line">    -I./src \</div>
+<div class="line">    -I./libs \</div>
+<div class="line">    -o tests \</div>
+<div class="line">    -lsqlite3 -lpthread -ldl</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+COMO RODAR O DB</h1>
+<ol type="1">
+<li>Ter o sqlite instalado no seu pc</li>
+<li>Rode no seu terminal: <div class="fragment"><div class="line">sqlite3 sistema.db</div>
+</div><!-- fragment --></li>
+<li>Alguns comandos uteis: <div class="fragment"><div class="line">.tables        -- lista as tabelas</div>
+<div class="line">.schema nome_da_tabela  -- mostra o esquema de uma tabela</div>
+<div class="line">SELECT * FROM nome_da_tabela;  -- mostra o conteúdo da tabela</div>
+<div class="line">.quit -- sai do modo interativo</div>
+</div><!-- fragment --> </li>
+</ol>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

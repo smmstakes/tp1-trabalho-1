@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Código-Fonte de trabalho-1/src/servicos/carteira/interface_servico_carteira.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('interface__servico__carteira_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interface_servico_carteira.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface__servico__carteira_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef INTERFACE_SERVICO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define INTERFACE_SERVICO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;../../../libs/tipos/estruturas.hpp&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;../../../libs/dominios/dominios.hpp&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;../../../libs/entidades/entidades.hpp&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;../../../libs/sessao_usuario/sessao_usuario.hpp&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classISCarteira.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classISCarteira.html">ISCarteira</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classISCarteira.html#af9800498a27ac1dd48c771af68e5099d">   38</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classISCarteira.html#af9800498a27ac1dd48c771af68e5099d">~ISCarteira</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classISCarteira.html#ac67ecbe9fe919752fbd529763b267493">   51</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISCarteira.html#ac67ecbe9fe919752fbd529763b267493">criarCarteira</a>(<span class="keyword">const</span> Nome&amp; nome, <span class="keyword">const</span> Perfil&amp; perfil) = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classISCarteira.html#a1f1331a1d2b03437fcdbc79a97cd6313">   61</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISCarteira.html#a1f1331a1d2b03437fcdbc79a97cd6313">editarNomeCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> Nome&amp; novoNome) = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classISCarteira.html#a444c6efa32010b4b698ea347b7109967">   71</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISCarteira.html#a444c6efa32010b4b698ea347b7109967">editarPerfilCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo, <span class="keyword">const</span> Perfil&amp; novoPerfil) = 0;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classISCarteira.html#abb56a46d29a8fc936d1e85bebafeff16">   80</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISCarteira.html#abb56a46d29a8fc936d1e85bebafeff16">excluirCarteira</a>(<span class="keyword">const</span> std::string&amp; codigo) = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classISCarteira.html#ae509fb4c17b8ee623a6b3cb7d46322f0">   88</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISCarteira.html#ae509fb4c17b8ee623a6b3cb7d46322f0">excluirCarteirasUsuario</a>() = 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classISCarteira.html#a53ad90c9bb6d5d3061e9ced00cab9037">  100</a></span>    <span class="keyword">virtual</span> std::vector&lt;CarteiraComValor&gt; <a class="code hl_function" href="classISCarteira.html#a53ad90c9bb6d5d3061e9ced00cab9037">getCarteiras</a>() = 0;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif </span><span class="comment">// INTERFACE_SERVICO_CARTEIRA_HPP_INCLUDED</span></div>
+<div class="ttc" id="aclassISCarteira_html"><div class="ttname"><a href="classISCarteira.html">ISCarteira</a></div><div class="ttdoc">Interface Abstrata para o Serviço de Negócio de Carteira.</div><div class="ttdef"><b>Definição</b> <a href="#l00033">interface_servico_carteira.hpp:33</a></div></div>
+<div class="ttc" id="aclassISCarteira_html_a1f1331a1d2b03437fcdbc79a97cd6313"><div class="ttname"><a href="classISCarteira.html#a1f1331a1d2b03437fcdbc79a97cd6313">ISCarteira::editarNomeCarteira</a></div><div class="ttdeci">virtual void editarNomeCarteira(const std::string &amp;codigo, const Nome &amp;novoNome)=0</div><div class="ttdoc">Edita o nome de uma carteira pertencente ao usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_a444c6efa32010b4b698ea347b7109967"><div class="ttname"><a href="classISCarteira.html#a444c6efa32010b4b698ea347b7109967">ISCarteira::editarPerfilCarteira</a></div><div class="ttdeci">virtual void editarPerfilCarteira(const std::string &amp;codigo, const Perfil &amp;novoPerfil)=0</div><div class="ttdoc">Edita o perfil de uma carteira pertencente ao usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_a53ad90c9bb6d5d3061e9ced00cab9037"><div class="ttname"><a href="classISCarteira.html#a53ad90c9bb6d5d3061e9ced00cab9037">ISCarteira::getCarteiras</a></div><div class="ttdeci">virtual std::vector&lt; CarteiraComValor &gt; getCarteiras()=0</div><div class="ttdoc">Recupera todas as carteiras do usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_abb56a46d29a8fc936d1e85bebafeff16"><div class="ttname"><a href="classISCarteira.html#abb56a46d29a8fc936d1e85bebafeff16">ISCarteira::excluirCarteira</a></div><div class="ttdeci">virtual void excluirCarteira(const std::string &amp;codigo)=0</div><div class="ttdoc">Exclui uma carteira pertencente ao usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_ac67ecbe9fe919752fbd529763b267493"><div class="ttname"><a href="classISCarteira.html#ac67ecbe9fe919752fbd529763b267493">ISCarteira::criarCarteira</a></div><div class="ttdeci">virtual void criarCarteira(const Nome &amp;nome, const Perfil &amp;perfil)=0</div><div class="ttdoc">Cria uma nova carteira de investimentos para o usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_ae509fb4c17b8ee623a6b3cb7d46322f0"><div class="ttname"><a href="classISCarteira.html#ae509fb4c17b8ee623a6b3cb7d46322f0">ISCarteira::excluirCarteirasUsuario</a></div><div class="ttdeci">virtual void excluirCarteirasUsuario()=0</div><div class="ttdoc">Exclui todas as carteiras do usuário logado.</div></div>
+<div class="ttc" id="aclassISCarteira_html_af9800498a27ac1dd48c771af68e5099d"><div class="ttname"><a href="classISCarteira.html#af9800498a27ac1dd48c771af68e5099d">ISCarteira::~ISCarteira</a></div><div class="ttdeci">virtual ~ISCarteira()=default</div><div class="ttdoc">Destrutor virtual padrão.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23095629569aa78ec444c88f65e23989.html">trabalho-1</a></li><li class="navelem"><a class="el" href="dir_1ba8a6b5653aec2a0b269606c9885314.html">src</a></li><li class="navelem"><a class="el" href="dir_fa4c75a1828b9a2f508f5247dfa54e61.html">servicos</a></li><li class="navelem"><a class="el" href="dir_d57fde9ecc4cddac179b396bcf339270.html">carteira</a></li><li class="navelem"><a class="el" href="interface__servico__carteira_8hpp.html">interface_servico_carteira.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
