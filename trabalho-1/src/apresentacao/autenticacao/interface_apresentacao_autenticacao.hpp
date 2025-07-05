@@ -40,7 +40,7 @@ public:
  * 
  * @details Este método deve conter o loop principal de interação com o usuário
  */
-    virtual void executar() = 0;
+    virtual bool executar() = 0;
 
 /**
  * @brief Injeta a dependência da camada de serviço no controlador.

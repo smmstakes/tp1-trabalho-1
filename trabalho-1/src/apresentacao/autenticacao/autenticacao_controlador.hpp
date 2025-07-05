@@ -56,9 +56,9 @@ private:
 
 public:
     /**
-     * @brief iniciar a execução do menu inicial pelo módulo de apresentação.
+     * @brief Iniciar a execução do menu inicial pelo módulo de apresentação.
      */
-    void executar() override;
+    bool executar() override;
 
     /**
      * @brief Define a dependência da camada de serviço.
