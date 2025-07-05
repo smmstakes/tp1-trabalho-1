@@ -58,6 +58,8 @@ Para compilar e executar o projeto, você precisará ter o `g++`, `gcc` e as bib
 A maneira mais robusta e recomendada de compilar este projeto é usando o próprio projeto `Code Blocks` fornecido,
 porém se não for possível utilizar o mesmo a sua compilação pelo método manual.
 
+> **OBS:** Ao utilizar o `Code::Blocks`, certifique-se de que em `Project -> Build Options -> Linker Settings -> Other linker options` tenha a seguinte *flag*: `-sqlite3`.
+
 ### Método Manual (via g++)
 
 Se preferir compilar manualmente, os comandos abaixo podem ser usados, deve ser executado na pasta `trabalho-1`.
