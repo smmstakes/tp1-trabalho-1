@@ -2,7 +2,7 @@
 
 #include "./utils/executor_de_testes.hpp"
 
-int test_main() {
+int main() {
     try {
         ExecutorDeTestes::executarTodos();
     } catch (const std::string& nomeTipo) {
