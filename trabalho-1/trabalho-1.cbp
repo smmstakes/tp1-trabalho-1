@@ -147,7 +147,6 @@
 		<Unit filename="tests/entidades/entidades_test.hpp" />
 		<Unit filename="tests/entidades/ordem_test.cpp" />
 		<Unit filename="tests/entidades/ordem_test.hpp" />
-		<Unit filename="tests/test_main.cpp" />
 		<Unit filename="tests/utils/executor_de_testes.cpp" />
 		<Unit filename="tests/utils/executor_de_testes.hpp" />
 		<Unit filename="tests/utils/tu_utils.cpp" />
