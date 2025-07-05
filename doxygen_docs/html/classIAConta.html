@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 1 - TP1: Referência à classe IAConta</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 1 - TP1
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classIAConta.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pro-methods">Membros protegidos</a> &#124;
+<a href="classIAConta-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe IAConta<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface Abstrata para o Controlador de Apresentação de Conta.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="interface__apresentacao__conta_8hpp_source.html">interface_apresentacao_conta.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de heranças da classe IAConta</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classIAConta.png" usemap="#IAConta_map" alt=""/>
+  <map id="IAConta_map" name="IAConta_map">
+<area href="classCntrlIAConta.html" title="Controlador de Apresentação de Conta para Interface de Console." alt="CntrlIAConta" shape="rect" coords="0,56,84,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a77379c52d4359c26d7751f2a00d9fc43" id="r_a77379c52d4359c26d7751f2a00d9fc43"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77379c52d4359c26d7751f2a00d9fc43">excluirConta</a> ()=0</td></tr>
+<tr class="memdesc:a77379c52d4359c26d7751f2a00d9fc43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclui a conta do usuário logado.  <br /></td></tr>
+<tr class="separator:a77379c52d4359c26d7751f2a00d9fc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a432e0e3c51b9cba089891380ecc3f357" id="r_a432e0e3c51b9cba089891380ecc3f357"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a432e0e3c51b9cba089891380ecc3f357">executar</a> ()=0</td></tr>
+<tr class="memdesc:a432e0e3c51b9cba089891380ecc3f357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iniciar a execução do módulo de apresentação.  <br /></td></tr>
+<tr class="separator:a432e0e3c51b9cba089891380ecc3f357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d499e89630fe1f8e9746fa9469f37bd" id="r_a0d499e89630fe1f8e9746fa9469f37bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d499e89630fe1f8e9746fa9469f37bd">setCntrlISConta</a> (<a class="el" href="classISConta.html">ISConta</a> *)=0</td></tr>
+<tr class="memdesc:a0d499e89630fe1f8e9746fa9469f37bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injeta a dependência da camada de serviço no controlador.  <br /></td></tr>
+<tr class="separator:a0d499e89630fe1f8e9746fa9469f37bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552ee04daa4400610cce35a4f8ba1702" id="r_a552ee04daa4400610cce35a4f8ba1702"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a552ee04daa4400610cce35a4f8ba1702">~IAConta</a> ()</td></tr>
+<tr class="memdesc:a552ee04daa4400610cce35a4f8ba1702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual.  <br /></td></tr>
+<tr class="separator:a552ee04daa4400610cce35a4f8ba1702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros protegidos</h2></td></tr>
+<tr class="memitem:aaf163a1468dd88c6d9fdd5457a018d07" id="r_aaf163a1468dd88c6d9fdd5457a018d07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf163a1468dd88c6d9fdd5457a018d07">mostrarOpcoes</a> ()=0</td></tr>
+<tr class="separator:aaf163a1468dd88c6d9fdd5457a018d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087bdf3232441f2ea1e4ff8f50f7dc87" id="r_a087bdf3232441f2ea1e4ff8f50f7dc87"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a087bdf3232441f2ea1e4ff8f50f7dc87">escolherOpcao</a> (int)=0</td></tr>
+<tr class="separator:a087bdf3232441f2ea1e4ff8f50f7dc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec6ac3863a118e053009c0db52bc97f" id="r_abec6ac3863a118e053009c0db52bc97f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abec6ac3863a118e053009c0db52bc97f">lerConta</a> ()=0</td></tr>
+<tr class="separator:abec6ac3863a118e053009c0db52bc97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41ab2f116f5599405dfdc2086641334" id="r_ac41ab2f116f5599405dfdc2086641334"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac41ab2f116f5599405dfdc2086641334">editarConta</a> ()=0</td></tr>
+<tr class="separator:ac41ab2f116f5599405dfdc2086641334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49cc5def0f1553c094a7545cee2a4c0e" id="r_a49cc5def0f1553c094a7545cee2a4c0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49cc5def0f1553c094a7545cee2a4c0e">solicitarExclusaoConta</a> ()=0</td></tr>
+<tr class="separator:a49cc5def0f1553c094a7545cee2a4c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Interface Abstrata para o Controlador de Apresentação de Conta. </p>
+<p>Define o conjunto de operações que uma interface de usuário para conta deve ser capaz de realizar. As classes que herdam de <code><a class="el" href="classIAConta.html" title="Interface Abstrata para o Controlador de Apresentação de Conta.">IAConta</a></code> são responsáveis por implementar a lógica de interação com o usuário. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__conta_8hpp_source.html#l00026">26</a> do ficheiro <a class="el" href="interface__apresentacao__conta_8hpp_source.html">interface_apresentacao_conta.hpp</a>.</p>
+</div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a552ee04daa4400610cce35a4f8ba1702" name="a552ee04daa4400610cce35a4f8ba1702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552ee04daa4400610cce35a4f8ba1702">&#9670;&#160;</a></span>~IAConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IAConta::~IAConta </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor virtual. </p>
+<p>Garante que o destrutor da classe derivada seja chamado corretamente quando um objeto é deletado através de um ponteiro para a classe base. </p>
+
+<p class="definition">Definido na linha <a class="el" href="interface__apresentacao__conta_8hpp_source.html#l00071">71</a> do ficheiro <a class="el" href="interface__apresentacao__conta_8hpp_source.html">interface_apresentacao_conta.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="ac41ab2f116f5599405dfdc2086641334" name="ac41ab2f116f5599405dfdc2086641334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac41ab2f116f5599405dfdc2086641334">&#9670;&#160;</a></span>editarConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::editarConta </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a087bdf3232441f2ea1e4ff8f50f7dc87" name="a087bdf3232441f2ea1e4ff8f50f7dc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087bdf3232441f2ea1e4ff8f50f7dc87">&#9670;&#160;</a></span>escolherOpcao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool IAConta::escolherOpcao </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77379c52d4359c26d7751f2a00d9fc43" name="a77379c52d4359c26d7751f2a00d9fc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77379c52d4359c26d7751f2a00d9fc43">&#9670;&#160;</a></span>excluirConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::excluirConta </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exclui a conta do usuário logado. </p>
+<p>Este método deve ser implementado para permitir que o usuário exclua sua conta. Precisa ser público para que o controlador da aplicação possa acessa-lo por meio do uso de sua interface. </p>
+
+<p>Implementado em <a class="el" href="classCntrlIAConta.html#a937682918c58037c46e1f1b4b69b8271">CntrlIAConta</a>.</p>
+
+</div>
+</div>
+<a id="a432e0e3c51b9cba089891380ecc3f357" name="a432e0e3c51b9cba089891380ecc3f357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a432e0e3c51b9cba089891380ecc3f357">&#9670;&#160;</a></span>executar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::executar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Iniciar a execução do módulo de apresentação. </p>
+<p>Este método deve conter o loop principal de interação com o usuário </p>
+
+<p>Implementado em <a class="el" href="classCntrlIAConta.html#a77508d6a837cb210a8262c800f167dff">CntrlIAConta</a>.</p>
+
+</div>
+</div>
+<a id="abec6ac3863a118e053009c0db52bc97f" name="abec6ac3863a118e053009c0db52bc97f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec6ac3863a118e053009c0db52bc97f">&#9670;&#160;</a></span>lerConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::lerConta </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf163a1468dd88c6d9fdd5457a018d07" name="aaf163a1468dd88c6d9fdd5457a018d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf163a1468dd88c6d9fdd5457a018d07">&#9670;&#160;</a></span>mostrarOpcoes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::mostrarOpcoes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d499e89630fe1f8e9746fa9469f37bd" name="a0d499e89630fe1f8e9746fa9469f37bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d499e89630fe1f8e9746fa9469f37bd">&#9670;&#160;</a></span>setCntrlISConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::setCntrlISConta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classISConta.html">ISConta</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Injeta a dependência da camada de serviço no controlador. </p>
+<p>Essencial para o padrão de Injeção de Dependência, este método conecta a camada de apresentação com a camada de regras de negócio.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servicoConta</td><td>Ponteiro para uma implementação da interface <code><a class="el" href="classISConta.html" title="Interface Abstrata para o Serviço de Negócio de Conta.">ISConta</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado em <a class="el" href="classCntrlIAConta.html#aac75ad077b217be066e7c68d004bbdb3">CntrlIAConta</a>.</p>
+
+</div>
+</div>
+<a id="a49cc5def0f1553c094a7545cee2a4c0e" name="a49cc5def0f1553c094a7545cee2a4c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49cc5def0f1553c094a7545cee2a4c0e">&#9670;&#160;</a></span>solicitarExclusaoConta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IAConta::solicitarExclusaoConta </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>trabalho-1/src/apresentacao/conta/<a class="el" href="interface__apresentacao__conta_8hpp_source.html">interface_apresentacao_conta.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classIAConta.html">IAConta</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

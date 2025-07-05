@@ -1,4 +1,5 @@
 #include "aplicacao_controlador.hpp"
+#include "../../libs/apresentacao_utils/apresentacao_utils.hpp"
 
 void CntrlIAAplicacao::inicializar() {
     if (!GerenciadorBD::getInstance().inicializarBanco()) {
@@ -65,7 +66,8 @@ void CntrlIAAplicacao::executar() {
 
     int opcao = 0;
     do {
-        std::cout << "\n=== MENU PRINCIPAL ===\n";
+        CLR_SCR();
+        std::cout << "=== MENU PRINCIPAL ===\n";
         std::cout << "1. Carteiras\n";
         std::cout << "2. Ordens\n";
         std::cout << "3. Conta\n";

@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Trabalho 1 - TP1", "index.html", [
-    [ "tp1-trabalho-1", "index.html", null ],
+    [ "Sistema de Aprendizado de Investimentos", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Lista de componentes", "annotated.html", "annotated_dup" ],
       [ "Índice dos componentes", "classes.html", null ],
@@ -37,14 +37,20 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Ficheiros", "files.html", [
-      [ "Lista de ficheiros", "files.html", "files_dup" ]
+      [ "Lista de ficheiros", "files.html", "files_dup" ],
+      [ "Membros dos Ficheiros", "globals.html", [
+        [ "Tudo", "globals.html", null ],
+        [ "Funções", "globals_func.html", null ],
+        [ "Variáveis", "globals_vars.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"classTUPerfil.html"
 ];
 
 var SYNCONMSG = 'clique para desativar a sincronização do painel';

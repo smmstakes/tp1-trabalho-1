@@ -158,8 +158,6 @@ void CntrlIAConta::solicitarExclusaoConta() {
         throw ExcecaoSolicitacaoExclusaoConta();
     } else {
         std::cout << "Operação cancelada.\n";
-        std::cout << "Pressione Enter para continuar...\n";
-        std::cin.get();
     }
 }
 

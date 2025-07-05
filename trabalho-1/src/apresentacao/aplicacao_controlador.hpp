@@ -41,13 +41,12 @@
  */
 
 /**
- * @class CntrlAAplicacao
+ * @class CntrlIAAplicacao
  * @brief Coordena a inicialização e execução dos módulos da aplicação.
  * 
  * @details Responsável por instanciar repositórios, serviços e controladores,
  * e por gerenciar o fluxo principal entre autenticação, carteiras, ordens, contas e dados históricos.
  */
-
 class CntrlIAAplicacao {
     private:
         void inicializarAutenticacao();

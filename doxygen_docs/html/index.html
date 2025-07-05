@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trabalho 1 - TP1: tp1-trabalho-1</title>
+<title>Trabalho 1 - TP1: Sistema de Aprendizado de Investimentos</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,10 +102,129 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">tp1-trabalho-1 </div></div>
+  <div class="headertitle"><div class="title">Sistema de Aprendizado de Investimentos </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<p>Este projeto, desenvolvido para a disciplina de Técnicas de Programação 1, é um sistema de software para promover o aprendizado sobre investimentos financeiros. Ele permite que os usuários criem contas, gerenciem carteiras de investimento e registrem ordens de compra de papéis, utilizando uma arquitetura robusta em camadas e persistência de dados com SQLite.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Autores</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Nome Completo   </th><th class="markdownTableHeadLeft">Matrícula    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Gabriel Francisco de Oliveira Castro   </td><td class="markdownTableBodyLeft">202066571    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">José Artur Nordestino Aguiar de Oliveira   </td><td class="markdownTableBodyLeft">180020439    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Matheus Duarte da Silva   </td><td class="markdownTableBodyLeft">211062277    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Pedro Vale de Souza   </td><td class="markdownTableBodyLeft">231038733    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Suyanne Sara Miranda Silva   </td><td class="markdownTableBodyLeft">222006445   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Características</h1>
+<p>O sistema implementa um conjunto completo de funcionalidades para simulação de uma plataforma de investimentos:</p>
+<ul>
+<li><b>Autenticação de Usuário</b><ul>
+<li>Criação de conta de usuário</li>
+<li>Autenticação segura via CPF e senha</li>
+</ul>
+</li>
+<li><b>Gerenciamento de Conta</b><ul>
+<li>Leitura dos dados da conta (CPF, nome) e do saldo total</li>
+<li>Edição dos dados da conta (nome, senha)</li>
+<li>Exclusão da conta de usuário</li>
+</ul>
+</li>
+<li><b>Gerenciamento de Carteiras</b><ul>
+<li>Criação de múltiplas carteiras de investimento por usuário</li>
+<li>Leitura dos dados da carteira (código, nome, perfil) e do seu saldo individual</li>
+<li>Edição dos dados da carteira</li>
+<li>Exclusão de carteiras</li>
+<li>Listagem de todas as carteiras associadas à conta do usuário</li>
+</ul>
+</li>
+<li><b>Gerenciamento de Ordens</b><ul>
+<li>Criação de ordens de compra, com preço calculado com base em dados históricos</li>
+<li>Leitura dos detalhes de uma ordem (código, papel, data, preço, quantidade)</li>
+<li>Exclusão de ordens</li>
+<li>Listagem de todas as ordens associadas a uma carteira específica</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Arquitetura</h1>
+<p>O software foi construído seguindo um estilo de <b>arquitetura em camadas</b>, visando alta coesão, baixo acoplamento e manutenibilidade.</p><ul>
+<li><b>Camada de Apresentação:</b> Responsável por toda a interação com o usuário (via console <code>cin</code>/<code>cout</code>) e pela validação sintática dos dados de entrada.</li>
+<li><b>Camada de Serviço:</b> Contém toda a lógica de negócio do sistema. Ela orquestra as operações, aplica as regras (como o cálculo de saldos) e se comunica com a camada de persistência.</li>
+<li><b>Módulos de Persistência:</b> Responsáveis por armazenar e recuperar os dados de Contas, Carteiras e Ordens em um banco de dados <b>SQLite</b>.</li>
+<li><b>Interfaces e Domínios:</b> A comunicação entre os módulos é feita por meio de interfaces (classes abstratas com métodos virtuais puros), garantindo o desacoplamento. Classes de Domínio asseguram a integridade dos dados, validando formatos de CPF, senhas, códigos, etc..</li>
+</ul>
+<blockquote class="doxtable">
+<p><b>OBS:</b> O diagrama de módulos e as suas especificações estão disponíveis em <code>diagrama/</code>. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Tecnologias e Dependências</h1>
+<ul>
+<li><b>Linguagem:</b> C++ (padrão C++17)</li>
+<li><b>Banco de Dados:</b> SQLite 3</li>
+<li><b>Compatibilidade:</b> O projeto é compatível com o ambiente de desenvolvimento <b>Code::Blocks</b></li>
+</ul>
+<p>Para compilar e executar o projeto, você precisará ter o <code>g++</code>, <code>gcc</code> e as bibliotecas de desenvolvimento do <code>sqlite3</code> instaladas no seu sistema.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Compilação e Execução</h1>
+<p>A maneira mais robusta e recomendada de compilar este projeto é usando o próprio projeto <code>Code Blocks</code> fornecido, porém se não for possível utilizar o mesmo a sua compilação pelo método manual.</p>
+<blockquote class="doxtable">
+<p><b>OBS:</b> Ao utilizar o <code>Code::Blocks</code>, certifique-se de que em <code>Project -&gt; Build Options -&gt; Linker Settings -&gt; Other linker options</code> tenha a seguinte <em>flag</em>: <code>-sqlite3</code>. </p>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Método Manual (via g++)</h2>
+<p>Se preferir compilar manualmente, os comandos abaixo podem ser usados, deve ser executado na pasta <code>trabalho-1</code>.</p>
+<div class="fragment"><div class="line"># Compilação do programa principal</div>
+<div class="line">g++ main.cpp \</div>
+<div class="line">    $(find ./src -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./libs -name &quot;*.cpp&quot;) \</div>
+<div class="line">    -I./src \</div>
+<div class="line">    -I./libs \</div>
+<div class="line">    -o main \</div>
+<div class="line">    -lsqlite3 -lpthread -ldl</div>
+<div class="line"> </div>
+<div class="line"># Compilação dos testes</div>
+<div class="line">g++ $(find ./tests -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./src -name &quot;*.cpp&quot;) \</div>
+<div class="line">    $(find ./libs -name &quot;*.cpp&quot;) \</div>
+<div class="line">    -I./tests \</div>
+<div class="line">    -I./src \</div>
+<div class="line">    -I./libs \</div>
+<div class="line">    -o tests \</div>
+<div class="line">    -lsqlite3 -lpthread -ldl</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+Como Executar o Programa</h2>
+<p>Após a compilação, o executável estará na pasta <code>trabalho-1</code>. Para rodar:</p>
+<div class="fragment"><div class="line">./main</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+Interagindo com o Banco de Dados</h1>
+<p>O projeto utiliza um banco de dados SQLite chamado <code>sistema_de_investimentos.db</code>. Você pode inspecioná-lo diretamente pelo terminal.</p>
+<ol type="1">
+<li><b>Pré-requisito:</b> Ter o cliente de linha de comando do SQLite instalado.</li>
+<li><b>Abra o banco de dados:</b> <code>sql sqlite3 sistema_de_investimentos.db </code></li>
+<li><p class="startli"><b>Comandos Úteis:</b> ```sql &ndash; Lista todas as tabelas no banco de dados .tables</p>
+<p class="startli">&ndash; Mostra o esquema de criação de uma tabela específica .schema Conta</p>
+<p class="startli">&ndash; Seleciona e exibe todos os registros de uma tabela SELECT * FROM Carteira;</p>
+<p class="startli">&ndash; Sai do cliente SQLite .quit ```</p>
+</li>
+</ol>
+<h4><a class="anchor" id="autotoc_md9"></a>
+Palavras-chave</h4>
+<ul>
+<li>C++</li>
+<li>SQLite</li>
+<li>Arquitetura em Camadas</li>
+<li>Universidade de Brasília (UnB)</li>
+<li>Técnicas de Programação 1 (TP1) </li>
+</ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['assertexcecao_0',['assertExcecao',['../classTUUtils.html#ad4f3b6795a76e93dcbbbe6ca22eeb8c1',1,'TUUtils']]],
-  ['assertigual_1',['assertIgual',['../classTUUtils.html#a5dfcf18774a979219d9299d85f3b38fc',1,'TUUtils']]]
+  ['banco_20de_20dados_0',['Interagindo com o Banco de Dados',['../index.html#autotoc_md8',1,'']]]
 ];

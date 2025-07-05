@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./apresentacao/aplicacao_controlador.hpp"
+#include "src/apresentacao/aplicacao_controlador.hpp"
 
 int main() {
     std::cout << "Inicializando sistema..." << std::endl;

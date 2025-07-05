@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['set_0',['set',['../classDominio.html#a7b9db4b3fb043c04b47d1d341623adfa',1,'Dominio']]],
-  ['setnome_1',['setNome',['../classCarteira.html#a0e3c7060e1c9719e3d2082ee9ff08846',1,'Carteira']]],
-  ['setperfil_2',['setPerfil',['../classCarteira.html#afba67fcee6e541be790b14398c5f8c83',1,'Carteira']]],
-  ['setup_3',['setUp',['../classTUDominio.html#ab92250b0a4f8e39d7cb9bbd89b9c37de',1,'TUDominio::setUp()'],['../classTUEntidade.html#a1466de1070f830c28cbd47091d6b4e7d',1,'TUEntidade::setUp()']]]
+  ['lercarteira_0',['lerCarteira',['../classIACarteira.html#a119b2749cedfaa372fa89b2a5129ffa9',1,'IACarteira']]],
+  ['lerconta_1',['lerConta',['../classIAConta.html#abec6ac3863a118e053009c0db52bc97f',1,'IAConta::lerConta()'],['../classServicoIConta.html#a8e4f13886c87c27ab940fd9dbc96f5b2',1,'ServicoIConta::lerConta()'],['../classISConta.html#a4407373ac99848d3428c0bc000cc645a',1,'ISConta::lerConta()']]],
+  ['listarcarteiras_2',['listarCarteiras',['../classIACarteira.html#a62a25d6216284c1a61451b1b1dc0b50d',1,'IACarteira']]],
+  ['listarordens_3',['listarOrdens',['../classIAOrdem.html#af864a57c6683944e571cbc39bb590910',1,'IAOrdem::listarOrdens()'],['../classISOrdem.html#a709f9050d2d77f5dd7186f5adde526b2',1,'ISOrdem::listarOrdens()'],['../classServicoIOrdem.html#a09767a4d69b6ecde1272081cad448081',1,'ServicoIOrdem::listarOrdens()']]]
 ];
