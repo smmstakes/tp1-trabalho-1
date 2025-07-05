@@ -12,6 +12,7 @@ var searchData=
   ['setcntrlisconta_9',['setCntrlISConta',['../classCntrlIAConta.html#aac75ad077b217be066e7c68d004bbdb3',1,'CntrlIAConta::setCntrlISConta()'],['../classIAConta.html#a0d499e89630fe1f8e9746fa9469f37bd',1,'IAConta::setCntrlISConta()']]],
   ['setcntrlisordem_10',['setCntrlISOrdem',['../classIAOrdem.html#a82d8a8c1e027b3754be7288d612993a3',1,'IAOrdem::setCntrlISOrdem()'],['../classCntrlIAOrdem.html#add358f604b8963a0c8189a740039cc43',1,'CntrlIAOrdem::setCntrlISOrdem()']]],
   ['setup_11',['setUp',['../classTUDominio.html#ab92250b0a4f8e39d7cb9bbd89b9c37de',1,'TUDominio::setUp()'],['../classTUEntidade.html#a1466de1070f830c28cbd47091d6b4e7d',1,'TUEntidade::setUp()']]],
-  ['solicitarexclusaoconta_12',['solicitarExclusaoConta',['../classIAConta.html#a49cc5def0f1553c094a7545cee2a4c0e',1,'IAConta']]],
-  ['sucesso_13',['SUCESSO',['../classTUDominio.html#a310e3abb0f0d0d7a892fef791d1a840d',1,'TUDominio::SUCESSO'],['../classTUEntidade.html#ac551ca58bef726a9424f709be6fed3e0',1,'TUEntidade::SUCESSO']]]
+  ['sistema_20de_20aprendizado_20de_20investimentos_12',['Sistema de Aprendizado de Investimentos',['../index.html',1,'']]],
+  ['solicitarexclusaoconta_13',['solicitarExclusaoConta',['../classIAConta.html#a49cc5def0f1553c094a7545cee2a4c0e',1,'IAConta']]],
+  ['sucesso_14',['SUCESSO',['../classTUDominio.html#a310e3abb0f0d0d7a892fef791d1a840d',1,'TUDominio::SUCESSO'],['../classTUEntidade.html#ac551ca58bef726a9424f709be6fed3e0',1,'TUEntidade::SUCESSO']]]
 ];

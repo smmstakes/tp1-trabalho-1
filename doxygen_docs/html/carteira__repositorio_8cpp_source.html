@@ -236,7 +236,7 @@ $(function(){initNavTree('carteira__repositorio_8cpp_source.html',''); initResiz
 <div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classRepositorioIPCarteira.html#a595c11aaea05fd863013376977ed481b">  115</a></span>std::vector&lt;CarteiraComValor&gt; <a class="code hl_function" href="classRepositorioIPCarteira.html#a595c11aaea05fd863013376977ed481b">RepositorioIPCarteira::getCarteiras</a>(<span class="keyword">const</span> std::string&amp; cpf) {</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    sqlite3* db = gerenciadorBD.getDB();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    std::string sql = <span class="stringliteral">&quot;SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco * o.quantidade), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    std::string sql = <span class="stringliteral">&quot;SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;&quot;</span>;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ComandoSQL comando(db, sql);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    comando.bind(1, cpf);</div>

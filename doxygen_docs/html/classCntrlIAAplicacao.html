@@ -147,56 +147,57 @@ Membros públicos</h2></td></tr>
 <p>Executa o fluxo principal do sistema. </p>
 <p>Inicia pelo menu de autenticação e segue para os menus das funcionalidades. </p>
 
-<p class="definition">Definido na linha <a class="el" href="aplicacao__controlador_8cpp_source.html#l00061">61</a> do ficheiro <a class="el" href="aplicacao__controlador_8cpp_source.html">aplicacao_controlador.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>                                {</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (!ctrlAutenticacao-&gt;executar()) {</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span> opcao = 0;</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   68</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;\n=== MENU PRINCIPAL ===\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   69</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;1. Carteiras\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   70</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;2. Ordens\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   71</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;3. Conta\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   72</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;0. Sair\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   73</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Escolha uma opção: &quot;</span>;</div>
-<div class="line"><span class="lineno">   74</span>        std::cin &gt;&gt; opcao;</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">switch</span> (opcao) {</div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   78</span>                ctrlCarteira-&gt;executar();</div>
-<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   81</span>                ctrlOrdem-&gt;executar();</div>
-<div class="line"><span class="lineno">   82</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   85</span>                    ctrlConta-&gt;executar();</div>
-<div class="line"><span class="lineno">   86</span>                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> ExcecaoSolicitacaoExclusaoConta&amp; e) {</div>
-<div class="line"><span class="lineno">   87</span>                    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>                    ctrlOrdem-&gt;excluirOrdensUsuario();</div>
-<div class="line"><span class="lineno">   90</span>                    ctrlCarteira-&gt;excluirCarteirasUsuario();</div>
-<div class="line"><span class="lineno">   91</span>                    ctrlConta-&gt;excluirConta();</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>                    std::cout &lt;&lt; <span class="stringliteral">&quot;Pressione Enter para continuar...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   94</span>                    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">   95</span>                    std::cin.get();</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>                    ctrlAutenticacao-&gt;executar();</div>
-<div class="line"><span class="lineno">   98</span>                }</div>
-<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">  102</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Saindo...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  105</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Opção inválida.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  106</span>        }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    } <span class="keywordflow">while</span> (opcao != 0);</div>
-<div class="line"><span class="lineno">  109</span>}</div>
+<p class="definition">Definido na linha <a class="el" href="aplicacao__controlador_8cpp_source.html#l00062">62</a> do ficheiro <a class="el" href="aplicacao__controlador_8cpp_source.html">aplicacao_controlador.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                                {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (!ctrlAutenticacao-&gt;executar()) {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> opcao = 0;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   69</span>        CLR_SCR();</div>
+<div class="line"><span class="lineno">   70</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;=== MENU PRINCIPAL ===\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   71</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;1. Carteiras\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   72</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;2. Ordens\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   73</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;3. Conta\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   74</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;0. Sair\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   75</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Escolha uma opção: &quot;</span>;</div>
+<div class="line"><span class="lineno">   76</span>        std::cin &gt;&gt; opcao;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">switch</span> (opcao) {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   80</span>                ctrlCarteira-&gt;executar();</div>
+<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   83</span>                ctrlOrdem-&gt;executar();</div>
+<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   87</span>                    ctrlConta-&gt;executar();</div>
+<div class="line"><span class="lineno">   88</span>                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> ExcecaoSolicitacaoExclusaoConta&amp; e) {</div>
+<div class="line"><span class="lineno">   89</span>                    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>                    ctrlOrdem-&gt;excluirOrdensUsuario();</div>
+<div class="line"><span class="lineno">   92</span>                    ctrlCarteira-&gt;excluirCarteirasUsuario();</div>
+<div class="line"><span class="lineno">   93</span>                    ctrlConta-&gt;excluirConta();</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>                    std::cout &lt;&lt; <span class="stringliteral">&quot;Pressione Enter para continuar...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   96</span>                    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   97</span>                    std::cin.get();</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>                    ctrlAutenticacao-&gt;executar();</div>
+<div class="line"><span class="lineno">  100</span>                }</div>
+<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  104</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Saindo...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  107</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Opção inválida.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    } <span class="keywordflow">while</span> (opcao != 0);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,19 +219,19 @@ Membros públicos</h2></td></tr>
 <p>Inicializa todos os módulos do sistema. </p>
 <p>Cria as instâncias de repositórios, serviços e controladores. </p>
 
-<p class="definition">Definido na linha <a class="el" href="aplicacao__controlador_8cpp_source.html#l00003">3</a> do ficheiro <a class="el" href="aplicacao__controlador_8cpp_source.html">aplicacao_controlador.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                   {</div>
-<div class="line"><span class="lineno">    4</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classGerenciadorBD.html#a546dace93110fead6a4027ca1ce8dcdf">GerenciadorBD::getInstance</a>().inicializarBanco()) {</div>
-<div class="line"><span class="lineno">    5</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Falha ao inicializar banco de dados.&quot;</span>);</div>
-<div class="line"><span class="lineno">    6</span>    };</div>
-<div class="line"><span class="lineno">    7</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Banco de dados inicializado.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">    8</span> </div>
-<div class="line"><span class="lineno">    9</span>    inicializarDadosHistoricos();</div>
-<div class="line"><span class="lineno">   10</span>    inicializarAutenticacao();</div>
-<div class="line"><span class="lineno">   11</span>    inicializarCarteira();</div>
-<div class="line"><span class="lineno">   12</span>    inicializarOrdem();</div>
-<div class="line"><span class="lineno">   13</span>    inicializarConta();</div>
-<div class="line"><span class="lineno">   14</span>};</div>
+<p class="definition">Definido na linha <a class="el" href="aplicacao__controlador_8cpp_source.html#l00004">4</a> do ficheiro <a class="el" href="aplicacao__controlador_8cpp_source.html">aplicacao_controlador.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>                                   {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classGerenciadorBD.html#a546dace93110fead6a4027ca1ce8dcdf">GerenciadorBD::getInstance</a>().inicializarBanco()) {</div>
+<div class="line"><span class="lineno">    6</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Falha ao inicializar banco de dados.&quot;</span>);</div>
+<div class="line"><span class="lineno">    7</span>    };</div>
+<div class="line"><span class="lineno">    8</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Banco de dados inicializado.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    inicializarDadosHistoricos();</div>
+<div class="line"><span class="lineno">   11</span>    inicializarAutenticacao();</div>
+<div class="line"><span class="lineno">   12</span>    inicializarCarteira();</div>
+<div class="line"><span class="lineno">   13</span>    inicializarOrdem();</div>
+<div class="line"><span class="lineno">   14</span>    inicializarConta();</div>
+<div class="line"><span class="lineno">   15</span>};</div>
 <div class="ttc" id="aclassGerenciadorBD_html_a546dace93110fead6a4027ca1ce8dcdf"><div class="ttname"><a href="classGerenciadorBD.html#a546dace93110fead6a4027ca1ce8dcdf">GerenciadorBD::getInstance</a></div><div class="ttdeci">static GerenciadorBD &amp; getInstance()</div><div class="ttdoc">Fornece acesso à instância única (Singleton) do gerenciador.</div><div class="ttdef"><b>Definição</b> <a href="gerenciador__bd_8cpp_source.html#l00009">gerenciador_bd.cpp:9</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referências <a class="el" href="gerenciador__bd_8cpp_source.html#l00009">GerenciadorBD::getInstance()</a>.</p>

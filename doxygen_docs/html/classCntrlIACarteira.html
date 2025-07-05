@@ -172,17 +172,17 @@ Membros públicos</h2></td></tr>
 
 <p>Implementa <a class="el" href="classIACarteira.html#ab2b9bc6e6bf7ca79b1908db2e5cc8791">IACarteira</a>.</p>
 
-<p class="definition">Definido na linha <a class="el" href="carteira__controlador_8cpp_source.html#l00320">320</a> do ficheiro <a class="el" href="carteira__controlador_8cpp_source.html">carteira_controlador.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  320</span>                                              {</div>
-<div class="line"><span class="lineno">  321</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Excluindo suas carteiras...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  322</span> </div>
-<div class="line"><span class="lineno">  323</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  324</span>        servicoCarteira-&gt;excluirCarteirasUsuario();</div>
-<div class="line"><span class="lineno">  325</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Todas as suas carteiras foram excluídas com sucesso.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  326</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><span class="lineno">  327</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro ao excluir carteiras: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><span class="lineno">  328</span>    }</div>
-<div class="line"><span class="lineno">  329</span>}</div>
+<p class="definition">Definido na linha <a class="el" href="carteira__controlador_8cpp_source.html#l00322">322</a> do ficheiro <a class="el" href="carteira__controlador_8cpp_source.html">carteira_controlador.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  322</span>                                              {</div>
+<div class="line"><span class="lineno">  323</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Excluindo suas carteiras...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  326</span>        servicoCarteira-&gt;excluirCarteirasUsuario();</div>
+<div class="line"><span class="lineno">  327</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Todas as suas carteiras foram excluídas com sucesso.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  328</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><span class="lineno">  329</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro ao excluir carteiras: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><span class="lineno">  330</span>    }</div>
+<div class="line"><span class="lineno">  331</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,7 +219,7 @@ Membros públicos</h2></td></tr>
 <div class="line"><span class="lineno">   59</span> </div>
 <div class="line"><span class="lineno">   60</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line"><span class="lineno">   61</span>        CLR_SCR();</div>
-<div class="line"><span class="lineno">   62</span>        mostrarOpcoes(); </div>
+<div class="line"><span class="lineno">   62</span>        mostrarOpcoes();</div>
 <div class="line"><span class="lineno">   63</span> </div>
 <div class="line"><span class="lineno">   64</span>        std::cin &gt;&gt; entrada;</div>
 <div class="line"><span class="lineno">   65</span> </div>
@@ -231,7 +231,7 @@ Membros públicos</h2></td></tr>
 <div class="line"><span class="lineno">   71</span>            std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><span class="lineno">   72</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Pressione Enter para continuar...\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   73</span>            std::cin.get();</div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">continue</span>; </div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   75</span>        }</div>
 <div class="line"><span class="lineno">   76</span> </div>
 <div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (!escolherOpcao(entrada))</div>
@@ -239,7 +239,7 @@ Membros públicos</h2></td></tr>
 <div class="line"><span class="lineno">   79</span> </div>
 <div class="line"><span class="lineno">   80</span>        <span class="comment">// Pausa para o usuário poder ler a saída antes de limpar a tela novamente.</span></div>
 <div class="line"><span class="lineno">   81</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;\nPressione Enter para continuar...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   82</span>        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);     <span class="comment">// Limpa buffer </span></div>
+<div class="line"><span class="lineno">   82</span>        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);     <span class="comment">// Limpa buffer</span></div>
 <div class="line"><span class="lineno">   83</span>        std::cin.get();</div>
 <div class="line"><span class="lineno">   84</span>    }</div>
 <div class="line"><span class="lineno">   85</span>}</div>

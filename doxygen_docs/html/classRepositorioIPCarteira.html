@@ -580,7 +580,7 @@ Membros públicos</h2></td></tr>
 <p class="definition">Definido na linha <a class="el" href="carteira__repositorio_8cpp_source.html#l00115">115</a> do ficheiro <a class="el" href="carteira__repositorio_8cpp_source.html">carteira_repositorio.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  115</span>                                                                                    {</div>
 <div class="line"><span class="lineno">  116</span>    sqlite3* db = gerenciadorBD.getDB();</div>
-<div class="line"><span class="lineno">  117</span>    std::string sql = <span class="stringliteral">&quot;SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco * o.quantidade), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;&quot;</span>;</div>
+<div class="line"><span class="lineno">  117</span>    std::string sql = <span class="stringliteral">&quot;SELECT c.codigo, c.nome, c.perfil, COALESCE(SUM(o.preco), 0.0) as valor_total FROM Carteira c LEFT JOIN Ordem o ON c.codigo = o.cod_carteira WHERE c.cpf_conta = ? GROUP BY c.codigo, c.nome, c.perfil;&quot;</span>;</div>
 <div class="line"><span class="lineno">  118</span> </div>
 <div class="line"><span class="lineno">  119</span>    ComandoSQL comando(db, sql);</div>
 <div class="line"><span class="lineno">  120</span>    comando.bind(1, cpf);</div>

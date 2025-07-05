@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Trabalho 1 - TP1", "index.html", [
-    [ "tp1-trabalho-1", "index.html", "index" ],
+    [ "Sistema de Aprendizado de Investimentos", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Lista de componentes", "annotated.html", "annotated_dup" ],
       [ "Índice dos componentes", "classes.html", null ],

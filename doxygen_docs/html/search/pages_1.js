@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tp1_20trabalho_201_0',['tp1-trabalho-1',['../index.html',1,'']]],
-  ['trabalho_201_1',['tp1-trabalho-1',['../index.html',1,'']]]
+  ['de_20aprendizado_20de_20investimentos_0',['Sistema de Aprendizado de Investimentos',['../index.html',1,'']]],
+  ['de_20investimentos_1',['Sistema de Aprendizado de Investimentos',['../index.html',1,'']]]
 ];

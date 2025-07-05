@@ -418,7 +418,7 @@ Membros públicos</h2></td></tr>
 <div class="line"><span class="lineno">   71</span>    std::string cpfUsuario = getCPFSessao();</div>
 <div class="line"><span class="lineno">   72</span> </div>
 <div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(!persistencia-&gt;excluirCarteira(codigo, cpfUsuario))</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;O código informado não corresponde aos das carteiras.&quot;</span>);    </div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;O código informado não corresponde aos das carteiras.&quot;</span>);</div>
 <div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment -->
 </div>
